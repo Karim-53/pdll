@@ -1,0 +1,39 @@
+# to run the pre-commits automatically each time you commit your code then
+#    in cmd, after changing to you project's directory pdl use the following command
+#    ```shell
+#    pre-commit install
+#    ```
+# You can run `pre-commit run --all-files` to clean the project
+default_language_version:
+  python: "python3.11.4"
+repos:
+
+-   repo: https://github.com/Karim-53/no-commit-on-main
+    rev: v1.2
+    hooks:
+    -   id: no-commit-on-main
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+    -   id: trailing-whitespace
+    -   id: end-of-file-fixer
+    -   id: check-docstring-first
+    -   id: check-yaml
+    -   id: debug-statements
+    -   id: name-tests-test
+    -   id: requirements-txt-fixer
+-   repo: https://github.com/asottile/setup-cfg-fmt
+    rev: v2.2.0
+    hooks:
+    -   id: setup-cfg-fmt
+
+-   repo: https://github.com/asottile/pyupgrade
+    rev: v3.3.1
+    hooks:
+    -   id: pyupgrade
+        args: [--py311-plus]
+-   repo: https://github.com/pre-commit/mirrors-autopep8
+    rev: v2.0.4
+    hooks:
+    -   id: autopep8
+        args: [--max-line-length=150, --jobs=-1, --in-place, --ignore=E402]
