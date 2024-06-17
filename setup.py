@@ -21,7 +21,7 @@ setup(
     version='0.1.0',
     author='Mohamed Karim Belaid',
     author_email='karim.belaid@idiada.com',
-    description='Pairwise Difference learning library is a scikit learn compatible library for learning from pairwise differences.',
+    description='Pairwise difference learning library is a scikit learn compatible library for learning from pairwise differences.',
     long_description=long_description,
     long_description_content_type='text/markdown',
     project_urls={

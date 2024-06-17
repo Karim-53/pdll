@@ -7,6 +7,7 @@ import numpy as np
 import pandas as pd
 import sklearn.base
 from sklearn.utils.validation import check_is_fitted
+from scipy.special import softmax
 
 # todo Developing scikit-learn estimators: https://scikit-learn.org/stable/developers/develop.html    and this for common term    https://scikit-learn.org/stable/glossary.html
 # todo follow this https://scikit-learn.org/stable/auto_examples/developing_estimators/sklearn_is_fitted.html#sphx-glr-auto-examples-developing-estimators-sklearn-is-fitted-py
@@ -37,7 +38,6 @@ class PairwiseDifferenceBase(sklearn.base.BaseEstimator):
     @staticmethod
     def pair_output_difference(y1: pd.Series, y2: pd.Series, nb_classes: int) -> pd.Series:
         """For MultiClassClassification base on difference only"""
-        # todo check if this is not https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.paired_distances.html#sklearn.metrics.pairwise.paired_distances
         y_pair_diff = PairwiseDifferenceBase.pair_output(y1, y2)
         y_pair_diff[y_pair_diff != 0] = 1
         assert y_pair_diff.nunique() <= 2, f'should only be 0 and 1 {y_pair_diff.unique()}'
@@ -113,6 +113,7 @@ class PairwiseDifferenceBase(sklearn.base.BaseEstimator):
 class PairwiseDifferenceClassifier(sklearn.base.BaseEstimator, sklearn.base.ClassifierMixin):
     """ Works on binary and Multi class classification"""
     estimator = None
+    use_prior = True
     X_train_: pd.DataFrame
     y_train_: pd.Series
     sample_weight_: pd.Series
@@ -130,6 +131,7 @@ class PairwiseDifferenceClassifier(sklearn.base.BaseEstimator, sklearn.base.Clas
         super().__init__()
         self.estimator = estimator
         self.prior = None
+        self.use_prior = 'auto'
 
     def fit(
             self,
@@ -138,9 +140,6 @@ class PairwiseDifferenceClassifier(sklearn.base.BaseEstimator, sklearn.base.Clas
             X_val: pd.DataFrame | None = None,
             y_val: pd.Series | None = None, weight_method='OptimizeOnValidation',
             check_input=True):
-        # todo add the possibility to change the anchor set
-        #  todo change the sample weights to anchor weights
-        # todo add verbose param to print train size, inner train score, pairwise's train score, before and after, val scores before and after
         # todo add **karg to pass to the inner model
         self.check_input = check_input
         if not isinstance(X, pd.DataFrame):
@@ -185,7 +184,6 @@ class PairwiseDifferenceClassifier(sklearn.base.BaseEstimator, sklearn.base.Clas
             PairwiseDifferenceBase.check_input(X)
 
         X_pair, X_pair_sym = PairwiseDifferenceBase.pair_input(X, X_anchors)
-        # todo implement the case where the base classifier do not have .predict_proba()
         if hasattr(self.estimator, 'predict_proba'):
             predict_proba = self.estimator.predict_proba
         else:
@@ -224,8 +222,13 @@ class PairwiseDifferenceClassifier(sklearn.base.BaseEstimator, sklearn.base.Clas
         # Convert class priors to a dictionary
         self.prior = class_priors.sort_index().values
 
+    def decide_use_prior(self) -> bool:
+        if isinstance(self.use_prior, bool):
+            return self.use_prior
+        else:
+            return not (self.y_train_.value_counts().min() >= 5)
+
     def predict_proba_samples(self, X: pd.DataFrame) -> np.ndarray:
-        # todo add unit test with weight ==[1 1 1 ] and weights = None
         if not isinstance(X, pd.DataFrame):
             X = pd.DataFrame(X)
         predictions_proba_similarity_df: pd.DataFrame = self.predict_similarity_samples(X)
@@ -280,22 +283,41 @@ class PairwiseDifferenceClassifier(sklearn.base.BaseEstimator, sklearn.base.Clas
             sample_weight = self.sample_weight_.loc[self.y_train_.index].values
         else:
             sample_weight = np.full(len(self.y_train_), 1 / len(self.y_train_))
+        if self.decide_use_prior():
+            tests_trains_classes_likelihood = self.predict_proba_samples(X)
+            tests_classes_likelihood = self._apply_weights(tests_trains_classes_likelihood, sample_weight)
 
-        tests_trains_classes_likelihood = self.predict_proba_samples(X)
-        tests_classes_likelihood = self._apply_weights(tests_trains_classes_likelihood, sample_weight)
+            assert tests_classes_likelihood.max() < 1.00001, tests_classes_likelihood.max()
+            assert tests_classes_likelihood.min() > -.00001, tests_classes_likelihood.min()
 
-        assert tests_classes_likelihood.max() < 1.00001, tests_classes_likelihood.max()
-        assert tests_classes_likelihood.min() > -.00001, tests_classes_likelihood.min()
+            eps = np.finfo(tests_classes_likelihood.dtype).eps
+            tests_classes_likelihood = tests_classes_likelihood / tests_classes_likelihood.sum(axis=1)[:, np.newaxis]
+            assert np.isclose(tests_classes_likelihood.sum(axis=1), 1, rtol=1e-15, atol=5 * eps).all(), tests_classes_likelihood.sum(axis=1)
 
-        eps = np.finfo(tests_classes_likelihood.dtype).eps
-        tests_classes_likelihood = tests_classes_likelihood / tests_classes_likelihood.sum(axis=1)[:, np.newaxis]
-        assert np.isclose(tests_classes_likelihood.sum(axis=1), 1, rtol=1e-15, atol=5 * eps).all(), tests_classes_likelihood.sum(axis=1)
+            tests_classes_likelihood = tests_classes_likelihood.clip(0, 1)
+            if input_type is np.ndarray:
+                return tests_classes_likelihood
+            tests_classes_likelihood_df = pd.DataFrame(tests_classes_likelihood, index=X.index)
+            return tests_classes_likelihood_df
+        else:
+            if not isinstance(X, pd.DataFrame):
+                X = pd.DataFrame(X)
+            predictions_proba_similarity_df: pd.DataFrame = self.predict_similarity_samples(X)
+            if self.sample_weight_ is not None:
+                raise NotImplementedError('Not implemented')
+            else:
+                def f(predictions_proba_similarity: pd.Series) -> pd.Series:
+                    # if self.sample_weight_ is not None:
+                    #     predictions_proba_similarity = predictions_proba_similarity * self.sample_weight_
+                    df = pd.DataFrame({'start': self.y_train_, 'similarity': predictions_proba_similarity})
+                    mean = df.groupby('start').mean()['similarity']
+                    return mean
 
-        tests_classes_likelihood = tests_classes_likelihood.clip(0, 1)
-        if input_type is np.ndarray:
-            return tests_classes_likelihood
-        tests_classes_likelihood_df = pd.DataFrame(tests_classes_likelihood, index=X.index)
-        return tests_classes_likelihood_df
+                tests_classes_likelihood_np = predictions_proba_similarity_df.apply(f, axis='columns')
+                tests_classes_likelihood_np = softmax(tests_classes_likelihood_np, axis=-1)
+                if input_type is np.ndarray:
+                    return tests_classes_likelihood_np
+                return pd.DataFrame(tests_classes_likelihood_np, index=X.index)
 
     def predict(self, X) -> pd.Series:
         """ For each input sample, output one prediction the most probable class.

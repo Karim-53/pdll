@@ -1,9 +1,12 @@
 """Quick test."""
+import sys
+sys.path.extend('../')
+from pl import PairwiseDifferenceClassifier
+
 import numpy as np
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.datasets import make_blobs
 
-from pl import PairwiseDifferenceClassifier
 
 if __name__ == "__main__":
     # Set the random seed for reproducibility
