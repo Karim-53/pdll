@@ -12,3 +12,8 @@ To build the project run the following command in the terminal
 python -m build
 twine check dist/*
 ````
+Then upload using 
+````shell
+py -m twine upload dist/*
+````
+then enter the api code

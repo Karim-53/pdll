@@ -1,7 +1,7 @@
 """Quick test."""
 import sys
 sys.path.extend('../')
-from pl import PairwiseDifferenceClassifier
+from pdll import PairwiseDifferenceClassifier
 
 import numpy as np
 from sklearn.ensemble import RandomForestClassifier

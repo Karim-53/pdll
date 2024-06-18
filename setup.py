@@ -4,7 +4,7 @@ from setuptools import setup
 
 
 # try:
-# 	from pl import __version__
+# 	from pdll import __version__
 # except:
 # 	print("failed to load version, assuming 0.0.1")
 # 	__version__ = "0.0.1dev"
@@ -17,7 +17,7 @@ long_description = (this_directory / "README.md").read_text()
 
 
 setup(
-    name='pl',
+    name='pdll',
     version='0.1.0',
     author='Mohamed Karim Belaid',
     author_email='karim.belaid@idiada.com',
@@ -25,8 +25,8 @@ setup(
     long_description=long_description,
     long_description_content_type='text/markdown',
     project_urls={
-        "Tracker": "https://github.com/Karim-53/pl/issues",
-        "Source": "https://github.com/Karim-53/pl",
+        "Tracker": "https://github.com/Karim-53/pdll/issues",
+        "Source": "https://github.com/Karim-53/pdll",
     },
     license="Apache-2.0",
     # python_requires='>=3.6',
@@ -39,7 +39,7 @@ setup(
 
     # packages=find_packages(),
     packages=[
-        'pl',
+        'pdll',
         # 'pdl.examples',
     ],
     classifiers=[

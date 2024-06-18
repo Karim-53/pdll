@@ -1,4 +1,4 @@
-# Pairwise difference learning (pl)
+# Pairwise difference learning library (pdll)
 **Pairwise Difference Learning** (PDL) library is a python module. It contains a scikit-learn compatible implementation of PDL Classifier, as described in (todo add arxiv). 
 
 **PDL Classifier** or PDC is a meta learner that can reduce multiclass classification problem into a binary classification problem (similar/different).
@@ -8,14 +8,14 @@
 ## Installation
 To install the package, run the following command:
 ```shell
-pip install -U pl
+pip install -U pdll
 ```
 
 [comment]: <> (todo conda link)
 
 ## Usage
 ```python
-from pl import PairwiseDifferenceClassifier
+from pdll import PairwiseDifferenceClassifier
 
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.datasets import make_blobs

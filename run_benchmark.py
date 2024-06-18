@@ -10,7 +10,7 @@ from sklearn.model_selection import RepeatedStratifiedKFold, cross_validate
 from sklearn.model_selection import ParameterGrid
 from tqdm import tqdm
 from datetime import datetime
-from pl import PairwiseDifferenceClassifier
+from pdll import PairwiseDifferenceClassifier
 from benchmark.benchmark_utils import *
 
 using_mpi = False
