@@ -15,7 +15,7 @@ from scipy.special import softmax
 
 class PairwiseDifferenceBase(sklearn.base.BaseEstimator):
     @staticmethod
-    def pair_input(X1, X2) -> tuple[pd.DataFrame, pd.DataFrame]:
+    def pair_input(X1, X2):  #  -> tuple[pd.DataFrame, pd.DataFrame]:
         X_pair = X1.merge(X2, how="cross")
         x1_pair = X_pair[[f'{column}_x' for column in X1.columns]].rename(columns={f'{column}_x': f'{column}_diff' for column in X1.columns})
         x2_pair = X_pair[[f'{column}_y' for column in X1.columns]].rename(columns={f'{column}_y': f'{column}_diff' for column in X1.columns})
@@ -120,8 +120,11 @@ class PairwiseDifferenceClassifier(sklearn.base.BaseEstimator, sklearn.base.Clas
 
     def __init__(
         self,
-        estimator,
+        estimator=None,
     ):
+        if estimator is None:
+            from sklearn.ensemble import RandomForestClassifier
+            estimator = RandomForestClassifier()
         if isinstance(estimator, type):
             raise TypeError("estimator must be an instance of the class not a class, i.e., use MyEstimator() but not MyEstimator")
         if not sklearn.base.is_classifier(estimator):
