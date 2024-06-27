@@ -1,5 +1,5 @@
 # Pairwise difference learning library (pdll)
-**Pairwise Difference Learning** (PDL) library is a python module. It contains a scikit-learn compatible implementation of PDL Classifier, as described in (todo add arxiv). 
+**Pairwise Difference Learning** (PDL) library is a python module. It contains a scikit-learn compatible implementation of PDL Classifier, as described in Belaid et al. 2024 
 
 **PDL Classifier** or PDC is a meta learner that can reduce multiclass classification problem into a binary classification problem (similar/different).
 
@@ -47,15 +47,15 @@ We provide a minimalist classification example using the Iris dataset. The datas
 p(Setosa) = p(Versicolour) = p(Virginica) = 1/3
 
 
-### Three Anchor Points
+**Three Anchor Points**
 - Flower 1: `y1 = Setosa`
 - Flower 2: `y2 = Versicolour`
 - Flower 3: `y3 = Virginica`
 
-### One Query Point
+**One Query Point**
 - Flower Q: `yq` (unknown target)
 
-### Pairwise Predictions
+**Pairwise Predictions**
 The model predicts the likelihood that both points have a similar class:
 - g_sym(Flower Q, Flower 1) = 0.6
 - g_sym(Flower Q, Flower 2) = 0.3
@@ -100,7 +100,7 @@ To reproduce the experiment of the paper, please run `run_benchmark.py` with a b
 Scores will be stored in `./results/tmp/` directory.
 
 ### Experiment
-We use 99 datasets from the OpenML repository. We compare the performance of the PDC algorithm with 7 base learners. We use the F1 score as a metric.
+We use 99 datasets from the OpenML repository. We compare the performance of the PDC algorithm with 7 base learners. We use the macro F1 score as a metric.
 The search space is inspired from TPOT a state-of-the-art library in optimizing Sklearn pipelines
 
 <details>
@@ -285,18 +285,20 @@ The search space is inspired from TPOT a state-of-the-art library in optimizing 
 
 
 
-## Acknowledgments
-We would like to thank [Tim Wibiral](https://github.com/twibiral), [Dorra ElMekki](https://github.com/DorraElMekki), Viktor Bengs, Muhammad Zeeshan Anwer,  Muhammad Hossein Shaker, and Alireza Javanmardi for their early comments on this work.
 
 ## Reference
-Please cite the following paper if you use this library in your research:
+Please cite us if you use this library in your research:
 ```
-% The first commit correspond to the original implementation of the PDC algorithm
-
-todo
+@article{belaid2023pairwise,
+  title={{Pairwise Difference Learning for Classification}},
+  author={Belaid, Mohamed Karim and Rabus, Maximilian and H{\"u}llermeier, Eyke},
+  year={2024}
+}
 ```
+The first commit correspond to the original implementation of the PDC algorithm
 
 
-
-![counter](https://t.bkit.co/w_66720132d9003.gif)
-
+**Acknowledgments:** We would like to thank [Tim Wibiral](https://github.com/twibiral), [Dorra ElMekki](https://github.com/DorraElMekki), Viktor Bengs, Muhammad Zeeshan Anwer,  Muhammad Hossein Shaker, Alireza Javanmardi, [Patrick Kolpaczki](https://github.com/kolpaczki), and [Maximilian Muschalik](https://github.com/mmschlk) for their early comments on this work.
+We also acknowledge LRZ and IDIADA for computational resources.
+![LRZ](https://www.lrz.de/bilder/logos/lrz-logos/lrz_logo_en.png)
+![IDIADA](https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Applus%2B_IDIADA_Logo.svg/320px-Applus%2B_IDIADA_Logo.svg.png)

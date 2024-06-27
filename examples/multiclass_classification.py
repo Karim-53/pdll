@@ -1,5 +1,6 @@
 """Quick test."""
 import sys
+
 sys.path.extend('../')
 from pdll import PairwiseDifferenceClassifier
 
@@ -8,7 +9,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.datasets import make_blobs
 
 
-if __name__ == "__main__":
+def test_multiclass_classification():
     # Set the random seed for reproducibility
     np.random.seed(53)
 
@@ -28,3 +29,7 @@ if __name__ == "__main__":
     proba_pred = pdc.predict_proba(X)
 
     assert pdc.score(X, y) == 1.0
+
+
+if __name__ == "__main__":
+    test_multiclass_classification()

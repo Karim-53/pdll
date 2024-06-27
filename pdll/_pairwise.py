@@ -1,21 +1,28 @@
 """Pairwise Difference Learning meta-estimator."""
 
 # Author: Mohamed Karim Belaid <karim.belaid@idiada.com> or <extern.karim.belaid@porsche.de>
-# License: CC BY-ND 4.0 clause
+# License: Apache-2.0 clause
 
 import numpy as np
 import pandas as pd
 import sklearn.base
 from sklearn.utils.validation import check_is_fitted
 from scipy.special import softmax
+from pandas.core.dtypes.common import is_unsigned_integer_dtype
+
 
 # todo Developing scikit-learn estimators: https://scikit-learn.org/stable/developers/develop.html    and this for common term    https://scikit-learn.org/stable/glossary.html
 # todo follow this https://scikit-learn.org/stable/auto_examples/developing_estimators/sklearn_is_fitted.html#sphx-glr-auto-examples-developing-estimators-sklearn-is-fitted-py
 # todo PairwiseDifference class that can detect if it is classifiaction or regression if it implement predict proba
+# todo change assert to raise error
 
 class PairwiseDifferenceBase(sklearn.base.BaseEstimator):
+    """
+    Base class for Pairwise Difference Learning.
+    """
+
     @staticmethod
-    def pair_input(X1, X2):  #  -> tuple[pd.DataFrame, pd.DataFrame]:
+    def pair_input(X1, X2):  # -> tuple[pd.DataFrame, pd.DataFrame]:
         X_pair = X1.merge(X2, how="cross")
         x1_pair = X_pair[[f'{column}_x' for column in X1.columns]].rename(columns={f'{column}_x': f'{column}_diff' for column in X1.columns})
         x2_pair = X_pair[[f'{column}_y' for column in X1.columns]].rename(columns={f'{column}_y': f'{column}_diff' for column in X1.columns})
@@ -29,11 +36,10 @@ class PairwiseDifferenceBase(sklearn.base.BaseEstimator):
 
     @staticmethod
     def pair_output(y1: pd.Series, y2: pd.Series) -> pd.Series:
-        """For regresion. beware this is different from regression this is b-a not a-b"""
+        """For regression. Beware this is different from regression this is b-a not a-b"""
         y_pair = pd.DataFrame(y1).merge(y2, how="cross")
         y_pair_diff = y_pair.iloc[:, 1] - y_pair.iloc[:, 0]
         return y_pair_diff
-
 
     @staticmethod
     def pair_output_difference(y1: pd.Series, y2: pd.Series, nb_classes: int) -> pd.Series:
@@ -42,7 +48,6 @@ class PairwiseDifferenceBase(sklearn.base.BaseEstimator):
         y_pair_diff[y_pair_diff != 0] = 1
         assert y_pair_diff.nunique() <= 2, f'should only be 0 and 1 {y_pair_diff.unique()}'
         return y_pair_diff
-
 
     @staticmethod
     def get_pair_feature_names(features: list) -> list:
@@ -71,37 +76,6 @@ class PairwiseDifferenceBase(sklearn.base.BaseEstimator):
             y.name = 'output'
 
     @staticmethod
-    def check_sample_weight(sample_weight: pd.Series, y_train: pd.Series) -> None:
-        if sample_weight is None:
-            pass
-        elif isinstance(sample_weight, pd.Series):
-            # check
-            if len(sample_weight) != len(y_train):
-                raise ValueError(f'sample_weight size {len(sample_weight)} should be equal to the train size {len(y_train)}')
-            if not sample_weight.index.equals(y_train.index):
-                raise ValueError(f'sample_weight and y_train must have the same index\n{sample_weight.index}\n{y_train.index}')
-            if all(sample_weight.fillna(0) <= 0):
-                raise ValueError(f'sample_weight are all negative/Nans.\n{sample_weight}')
-
-            # norm
-            class_sums = np.bincount(y_train, sample_weight)
-            sample_weight = sample_weight / class_sums[y_train.astype(np.int)]
-        else:
-            raise NotImplementedError()
-
-    @staticmethod
-    def correct_sample_weight(sample_weight: pd.Series, y_train: pd.Series) -> pd.Series:
-        if sample_weight is not None:
-            sample_weight = sample_weight / sum(sample_weight)
-            # norm
-            # class_sums = np.bincount(y_train, sample_weight)
-            # sample_weight = sample_weight / class_sums[y_train.astype(int)]
-
-        #     # if sample_weight.min() < 0:  # dolla weight change : improvement +0.0032 bof
-        #     #     sample_weight = sample_weight - sample_weight.min()
-        return sample_weight
-
-    @staticmethod
     def predict(y_prob, input_type=pd.DataFrame):
         predicted_classes = np.argmax(y_prob.values, axis=1)
         if input_type is np.ndarray:
@@ -116,11 +90,10 @@ class PairwiseDifferenceClassifier(sklearn.base.BaseEstimator, sklearn.base.Clas
     use_prior = True
     X_train_: pd.DataFrame
     y_train_: pd.Series
-    sample_weight_: pd.Series
 
     def __init__(
-        self,
-        estimator=None,
+            self,
+            estimator=None,
     ):
         if estimator is None:
             from sklearn.ensemble import RandomForestClassifier
@@ -163,19 +136,10 @@ class PairwiseDifferenceClassifier(sklearn.base.BaseEstimator, sklearn.base.Clas
         # todo add assert on y_pair_diff: min<0  , max>0 and dtype float not uint
         self.estimator.fit(X_pair, y_pair_diff)
         #  plot scatter train improvement vs test improvement
-        self.sample_weight_ = None
-        return self
-
-    def set_sample_weight(self, sample_weight):
-        PairwiseDifferenceBase.check_sample_weight(sample_weight, self.y_train_)
-        sample_weight = PairwiseDifferenceBase.correct_sample_weight(sample_weight, self.y_train_)
-        PairwiseDifferenceBase.check_sample_weight(sample_weight, self.y_train_)
-        self.sample_weight_ = sample_weight
         return self
 
     def predict_similarity_samples(self, X: pd.DataFrame, X_anchors=None, reshape=True) -> pd.DataFrame:
         """ For each input sample, output C probabilities for each N train pair.
-        Beware that this function does not apply the weights at this level
         """
         if X_anchors is None:
             X_anchors = self.X_train_
@@ -258,10 +222,6 @@ class PairwiseDifferenceClassifier(sklearn.base.BaseEstimator, sklearn.base.Clas
             # test_i_trains_classes is part of the 3d array that I will not return for now
             np.testing.assert_array_almost_equal(test_i_trains_classes.sum(axis=1), 1.)
             return test_i_trains_classes
-            # test_i_classes = np.sum(test_i_trains_classes*sample_weight[:, np.newaxis]).mean(axis=0)
-            # np.testing.assert_almost_equal(sum(test_i_classes), 1.)
-            # return test_i_classes
-            # return pd.Series(test_i_classes)
 
         tests_trains_classes_likelihood = np.apply_along_axis(
             f, axis=1, arr=predictions_proba_similarity_df.values)  # todo  guess this is slow, get rid of it
@@ -280,10 +240,7 @@ class PairwiseDifferenceClassifier(sklearn.base.BaseEstimator, sklearn.base.Clas
         input_type = type(X)
         if not isinstance(X, pd.DataFrame):
             X = pd.DataFrame(X)
-        if self.sample_weight_ is not None:
-            sample_weight = self.sample_weight_.loc[self.y_train_.index].values
-        else:
-            sample_weight = np.full(len(self.y_train_), 1 / len(self.y_train_))
+        sample_weight = np.full(len(self.y_train_), 1 / len(self.y_train_))
         if self.decide_use_prior():
             tests_trains_classes_likelihood = self.predict_proba_samples(X)
             tests_classes_likelihood = self._apply_weights(tests_trains_classes_likelihood, sample_weight)
@@ -304,21 +261,17 @@ class PairwiseDifferenceClassifier(sklearn.base.BaseEstimator, sklearn.base.Clas
             if not isinstance(X, pd.DataFrame):
                 X = pd.DataFrame(X)
             predictions_proba_similarity_df: pd.DataFrame = self.predict_similarity_samples(X)
-            if self.sample_weight_ is not None:
-                raise NotImplementedError('Not implemented')
-            else:
-                def f(predictions_proba_similarity: pd.Series) -> pd.Series:
-                    # if self.sample_weight_ is not None:
-                    #     predictions_proba_similarity = predictions_proba_similarity * self.sample_weight_
-                    df = pd.DataFrame({'start': self.y_train_, 'similarity': predictions_proba_similarity})
-                    mean = df.groupby('start').mean()['similarity']
-                    return mean
 
-                tests_classes_likelihood_np = predictions_proba_similarity_df.apply(f, axis='columns')
-                tests_classes_likelihood_np = softmax(tests_classes_likelihood_np, axis=-1)
-                if input_type is np.ndarray:
-                    return tests_classes_likelihood_np
-                return pd.DataFrame(tests_classes_likelihood_np, index=X.index)
+            def f(predictions_proba_similarity: pd.Series) -> pd.Series:
+                df = pd.DataFrame({'start': self.y_train_, 'similarity': predictions_proba_similarity})
+                mean = df.groupby('start').mean()['similarity']
+                return mean
+
+            tests_classes_likelihood_np = predictions_proba_similarity_df.apply(f, axis='columns')
+            tests_classes_likelihood_np = softmax(tests_classes_likelihood_np, axis=-1)
+            if input_type is np.ndarray:
+                return tests_classes_likelihood_np
+            return pd.DataFrame(tests_classes_likelihood_np, index=X.index)
 
     def predict(self, X) -> pd.Series:
         """ For each input sample, output one prediction the most probable class.
@@ -347,3 +300,144 @@ class PairwiseDifferenceClassifier(sklearn.base.BaseEstimator, sklearn.base.Clas
         predictions_proba_similarity: pd.DataFrame = self.predict_similarity_samples(X, reshape=False)  # 0% if different, 100% if similar
 
         return abs(y_pair_diff - (1 - predictions_proba_similarity)).mean()
+
+
+class PairwiseDifferenceRegressor(sklearn.base.BaseEstimator, sklearn.base.RegressorMixin):
+    """
+    Pairwise Difference Regressor (PDR) is a meta-estimator that estimates the regression task by estimating the difference between data points.
+    PDR estimates the regression task by estimating the distance of the given sample to each of the training samples (the anchors).
+    PDR is a modified version implemented by Belaid et al. 2024 of the PAirwise Difference REgressor (Padre) by Tynes et al. 2021
+    """
+    estimator = None
+    X_train_: pd.DataFrame
+    y_train_: pd.Series
+
+    def __init__(
+            self,
+            estimator: sklearn.base.RegressorMixin
+    ):
+        """
+        :param estimator: sklearn regressor for estimating the distance (Default: sklearn.ensemble.HistGradientBoostingRegressor)
+        """
+        super().__init__()
+        self.estimator = estimator
+
+        if estimator is None:  # Set default
+            self.estimator = sklearn.ensemble.HistGradientBoostingRegressor()
+
+    @staticmethod
+    def _to_pandas(*args):
+        return (data if data is None or isinstance(data, (pd.DataFrame, pd.Series)) else pd.DataFrame(data) for data in args)
+
+    @staticmethod
+    def _pair_data(X1, X2, y1=None, y2=None):
+        X1, y1, X2, y2 = PairwiseDifferenceRegressor._to_pandas(X1, y1, X2, y2)
+        assert not is_unsigned_integer_dtype(y1), "_pair_data()'s input y1 is an unsigned integer."
+        assert not is_unsigned_integer_dtype(y2), "_pair_data()'s input y2 is an unsigned integer."
+
+        X_pair = X1.merge(X2, how="cross")
+        x1_pair = X_pair[[f'{column}_x' for column in X1.columns]].rename(columns={f'{column}_x': f'{column}_diff' for column in X1.columns})
+        x2_pair = X_pair[[f'{column}_y' for column in X1.columns]].rename(columns={f'{column}_y': f'{column}_diff' for column in X1.columns})
+        X_pair = pd.concat([X_pair, x1_pair - x2_pair], axis='columns')
+        # Symmetric
+        x2_pair_sym = X_pair[[f'{column}_x' for column in X1.columns]].rename(columns={f'{column}_x': f'{column}_y' for column in X1.columns})
+        x1_pair_sym = X_pair[[f'{column}_y' for column in X1.columns]].rename(columns={f'{column}_y': f'{column}_x' for column in X1.columns})
+        X_pair_sym = pd.concat([x1_pair_sym, x2_pair_sym, x2_pair - x1_pair], axis='columns')
+
+        if y1 is not None:
+            assert isinstance(y1, pd.Series) or y1.shape[1] == 1, f"Didn't expect more than one output {y1.shape}"
+            assert isinstance(y2, pd.Series) or y2.shape[1] == 1, f"Didn't expect more than one output {y2.shape}"
+
+            y_pair = pd.DataFrame(y1).merge(y2, how="cross")
+            y_pair_diff = y_pair.iloc[:, 0] - y_pair.iloc[:, 1]
+        else:
+            y_pair_diff = None
+
+        return X_pair, X_pair_sym, y_pair_diff
+
+    @staticmethod
+    def _get_pair_feature_names(features: list) -> list:
+        """ Get the new name of features after pairing points. """
+        return [f'{name}_x' for name in features] + [f'{name}_y' for name in features]
+
+    def fit(self, X: pd.DataFrame, y: pd.Series, sample_weight=None, check_input=True):
+        """ Transform the data into the pair+difference format and train a ML model. """
+        if not isinstance(X, pd.DataFrame):
+            X = pd.DataFrame(X)
+        if not isinstance(y, pd.Series):
+            y = pd.Series(y)
+        if y.name is None:
+            # just put any name to the output to avoid a bug later
+            y.name = 'output'
+
+        self.X_train_ = X
+        self.y_train_ = y
+        self.feature_names_in_ = X.columns
+
+        X_pair, _, y_pair_diff = self._pair_data(self.X_train_, self.X_train_, self.y_train_, self.y_train_)
+        assert y_pair_diff.abs().max() <= 2 * \
+               self.y_train_.abs().max(), f'should be a-(-a) <= 2*a Expected:\n{y_pair_diff.abs().max()} <=  {2 * self.y_train_.abs().max()}'
+        # todo add assert on y_pair_diff: min<0  , max>0 and dtype float not uint
+        self.estimator.fit(X_pair, y_pair_diff)
+        return self
+
+    def _predict_samples(self, X: pd.DataFrame, force_symmetry=True) -> tuple[pd.DataFrame, pd.DataFrame]:
+        """
+        For each input sample, output N predictions (where N = the number of anchors).
+        prediction = difference + y_train
+        """
+        check_is_fitted(self)
+        if not isinstance(X, pd.DataFrame):
+            X = pd.DataFrame(X)
+        assert len(X.shape) == 2
+
+        # Create pairs of the new instance each anchor (training instance)
+        X_pair, X_pair_sym, _ = self._pair_data(X, self.X_train_, None, None)
+        assert isinstance(self.y_train_, (pd.Series, pd.DataFrame)), type(self.y_train_)
+
+        def repeat(s: pd.Series, n_times: int):
+            return pd.concat([s] * n_times, ignore_index=True).values
+
+        # Estimator predicts the difference between each anchor (training instance) and each prediction instance:
+        predictions_difference: np.ndarray = self.estimator.predict(X_pair)
+        assert isinstance(predictions_difference, np.ndarray), type(predictions_difference)
+        if force_symmetry:
+            difference_sym: np.ndarray = self.estimator.predict(X_pair_sym)
+            predictions_difference = (predictions_difference - difference_sym) / 2.
+
+        # The known y for the training instances
+        predictions_start: np.ndarray = repeat(self.y_train_, n_times=len(X))
+        assert isinstance(predictions_start, np.ndarray), type(predictions_start)
+
+        # Combine the difference predicted by the model with the known y => train_y + predicted difference
+        predictions: np.ndarray = predictions_start + predictions_difference
+        assert isinstance(predictions, np.ndarray), type(predictions)
+
+        # Set of absolute predictions for each anchor for each prediction instance:
+        prediction_samples_df = pd.DataFrame(predictions.reshape((-1, len(self.X_train_))), index=X.index,
+                                             columns=self.X_train_.index)
+        # The predicted difference to the anchors:
+        pred_diff_samples_df = pd.DataFrame(predictions_difference.reshape((-1, len(self.X_train_))), index=X.index,
+                                            columns=self.X_train_.index)
+        return prediction_samples_df, pred_diff_samples_df
+
+    # def _predict_distribution(self, X) -> pd.DataFrame:  # maybe outdated that's why I comment it until I check it
+    #     """ For each input sample, output one pair (mean, std) of the predicted samples.
+    #     The return is of shape pd.Series"""
+    #     prediction_samples_df = self._predict_samples(X)
+    #     prediction_stats = prediction_samples_df.apply(lambda samples: (samples.mean(), samples.std(df=1)), axis='columns')
+    #     prediction_stats.columns = ['mean', 'std']
+    #     return prediction_stats
+
+    def predict(self, X, force_symmetry=True) -> pd.Series:
+        """ For each input sample, output one prediction, the mean of the predicted samples. """
+        if not isinstance(X, pd.DataFrame):
+            X = pd.DataFrame(X)
+        prediction_samples_df, _ = self._predict_samples(X, force_symmetry=force_symmetry)
+
+        prediction_stats = prediction_samples_df.mean(axis=1)
+
+        assert len(X) == len(prediction_stats)
+        assert not any(pd.isna(prediction_stats)), f'Prediction should not contain Nans\n{prediction_samples_df}\n{prediction_stats}'
+        prediction_stats = pd.Series(prediction_stats, index=X.index)
+        return prediction_stats
