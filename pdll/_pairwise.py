@@ -381,7 +381,7 @@ class PairwiseDifferenceRegressor(sklearn.base.BaseEstimator, sklearn.base.Regre
         self.estimator.fit(X_pair, y_pair_diff)
         return self
 
-    def _predict_samples(self, X: pd.DataFrame, force_symmetry=True) -> tuple[pd.DataFrame, pd.DataFrame]:
+    def _predict_samples(self, X: pd.DataFrame, force_symmetry=True):  # -> tuple[pd.DataFrame, pd.DataFrame]:
         """
         For each input sample, output N predictions (where N = the number of anchors).
         prediction = difference + y_train

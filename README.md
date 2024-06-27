@@ -279,7 +279,7 @@ The search space is inspired from TPOT a state-of-the-art library in optimizing 
 
 ### 2D datasets Examples
 ![2d datasets](./results/2d_datasets.png)
-
+Here we see the difference in the learned patterns between PDL and the base learner. In case PDL is compatible with the base learner (DecisionTree, RandomForest) then the scores improves. In case the base learner is not compatible with PDL (SVC, AdaBoost, ...) then the scores gets lower. 
 
 
 
