@@ -10,6 +10,7 @@ import pandas as pd
 import sklearn.base
 from scipy.optimize import LinearConstraint, minimize
 from scipy.stats import entropy
+from sklearn.linear_model import LinearRegression, Lasso, Ridge, ElasticNet
 from sklearn.utils.validation import check_is_fitted
 from scipy.special import softmax
 from pandas.core.dtypes.common import is_unsigned_integer_dtype
@@ -332,8 +333,23 @@ class PairwiseDifferenceRegressor(sklearn.base.BaseEstimator, sklearn.base.Regre
         # Save information about the weighting methods as here for better availability
         self.__name_to_method_mapping__ = {
             'OptimizeOnValidation': self._sample_weight_optimize_on_validation,
+            # Error based methods
             'NegativeError': self._sample_weight_negative_error,
             'OrderedVoting': self._sample_weight_ordered_votes,
+            # Linear methods
+            'LinearRegression': self._sample_weight_with_linear_regression,
+            'LassoRegression': functools.partial(
+                self._sample_weight_with_linear_regression, regularization_method='L1'
+            ),
+            'Over-regularized Lasso': functools.partial(
+                self._sample_weight_with_linear_regression, regularization_method='L1', regularization_alpha=0.8
+            ),
+            'ElasticNet': functools.partial(
+                self._sample_weight_with_linear_regression, regularization_method='ELASTICNET'
+            ),
+            'RidgeRegression': functools.partial(
+                self._sample_weight_with_linear_regression, regularization_method='L2'
+            ),
         }
 
     @staticmethod
@@ -466,7 +482,8 @@ class PairwiseDifferenceRegressor(sklearn.base.BaseEstimator, sklearn.base.Regre
             weights = pd.Series(1., index=weights.index)
         return weights
 
-    def _sample_weight_optimize_on_validation(self, X_val: pd.DataFrame, y_val: pd.Series, alpha=0.05, **kwargs) -> pd.Series:
+    def _sample_weight_optimize_on_validation(self, X_val: pd.DataFrame, y_val: pd.Series,
+                                              force_symmetry=True, alpha=0.05, **kwargs) -> pd.Series:
         """
         Minimize the validation MAE using SLSQP optimizer with a linear constraint on the sum of the weights.
 
@@ -547,4 +564,58 @@ class PairwiseDifferenceRegressor(sklearn.base.BaseEstimator, sklearn.base.Regre
         weights = pd.Series(weighted_votes, index=self.X_train_.index)
         return self._normalize_weights_to_0_to_1(weights)
 
+    def _sample_weight_with_linear_regression(self, X_val, y_val, force_symmetry=True,
+                                              regularization_method: str = None, regularization_alpha: float = 0.1,
+                                              **kwargs):
+        """
+        Calculate weights as the coefficient of a linear regression applied on the samples prediction diff and y_val.
+        Use regularization_method to choose an appropriate regularization method.
 
+        The linear regression tries to predict the weights of the anchors based on the pred of the validation
+
+        :param X_val: Features of the validation set
+        :param y_val: Target values of the validation set
+        :param force_symmetry: Sets the force_symmetry parameter of the prediction function
+        :param regularization: One of {'None', 'L1', 'LASSO', 'L2', 'RIDGE', 'ELASTICNET'}
+        :param regularization_alpha: The regularization strength (alpha=0 is no regularization, must be >0, Default=0.1)
+        :return: The weights as np.NDarray
+        """
+        if not isinstance(X_val, pd.DataFrame):
+            X_val = pd.DataFrame(X_val)
+        pred_per_sample, _ = self._predict_samples(X_val, force_symmetry=force_symmetry)
+
+        if regularization_alpha <= 0:
+            raise ValueError("Regularization alpha for must be >0")
+
+        if regularization_alpha <= 0.0001:
+            print(f"Warning: regularization_alpha is too small ({regularization_alpha})! Setting all weights to 1.0.")
+            return pd.Series(1, index=self.X_train_.index)
+
+        if regularization_method is not None:
+            regularization_method = regularization_method.upper()
+        match regularization_method:
+            case None:  # No regularization, normal linear regression
+                lr = LinearRegression(fit_intercept=False)
+            case 'L1' | 'LASSO':  # Lasso regression
+                lr = Lasso(fit_intercept=False, alpha=regularization_alpha)
+            case 'L2' | 'RIDGE':
+                lr = Ridge(fit_intercept=False, alpha=regularization_alpha)
+            case 'ELASTICNET':
+                lr = ElasticNet(fit_intercept=False, alpha=regularization_alpha, l1_ratio=0.5)
+            case _:
+                raise ValueError(f"Regularization {regularization_method} unknown! Use one of the following:"
+                                 "'None', 'L1', 'LASSO', 'L2', 'RIDGE', 'ELASTICNET'")
+
+        # Apply linear regression on prediction diff and y_val:
+        lr.fit(pred_per_sample, y_val)
+
+        # Rerun when regularization was too strong (all weights set to 0)
+        if lr.coef_.sum() == 0:
+            new_alpha = regularization_alpha * 0.75
+            print(f"Warning: regularization was too strong (all weights set to 0)! "
+                  f"Rerunning {regularization_method} with alpha = {new_alpha}")
+            return self._sample_weight_with_linear_regression(X_val, y_val, force_symmetry, regularization_method, new_alpha)
+
+        # Weights = coefficients of the linear regression
+        weights = pd.Series(lr.coef_, index=self.X_train_.index)
+        return self._normalize_weights_to_0_to_1(weights)  # normalize to [0,1]
