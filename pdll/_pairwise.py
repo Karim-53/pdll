@@ -354,7 +354,7 @@ class PairwiseDifferenceRegressor(sklearn.base.BaseEstimator, sklearn.base.Regre
                 self._sample_weight_with_linear_regression, regularization_method='L2'
             ),
             # Other Methods:
-            'KNNClusterCenters': self._sample_weight_by_knn_prototypes,
+            'KmeansClusterCenters': self._sample_weight_by_kmeans_prototypes,
         }
 
     @staticmethod
@@ -625,10 +625,11 @@ class PairwiseDifferenceRegressor(sklearn.base.BaseEstimator, sklearn.base.Regre
         weights = pd.Series(lr.coef_, index=self.X_train_.index)
         return self._normalize_weights_to_0_to_1(weights)  # normalize to [0,1]
 
-    def _sample_weight_by_knn_prototypes(self, k=None, **kwargs):
+    def _sample_weight_by_kmeans_prototypes(self, k=None, **kwargs):
         """
-        Use k-nearest neighbors to cluster the train data. Use the k centroids/prototypes found by knn as weights.
-        We keep only K anchors that are the prototypes. all other anchors receive a weight of 0
+        Use k neighbors found by clustering the train data using kmeans.
+        Use the k centroids/prototypes found by kmeans as weights.
+        We keep only K anchors that are the prototypes. All other anchors receive a weight of 0.
 
         :param k: The number of prototypes to use. If None, 10% of the training set is used as prototypes
         :return: The weights as np.NDarray
