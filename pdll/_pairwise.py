@@ -333,6 +333,7 @@ class PairwiseDifferenceRegressor(sklearn.base.BaseEstimator, sklearn.base.Regre
         self.__name_to_method_mapping__ = {
             'OptimizeOnValidation': self._sample_weight_optimize_on_validation,
             'NegativeError': self._sample_weight_negative_error,
+            'OrderedVoting': self._sample_weight_ordered_votes,
         }
 
     @staticmethod
@@ -452,6 +453,19 @@ class PairwiseDifferenceRegressor(sklearn.base.BaseEstimator, sklearn.base.Regre
         prediction_stats = pd.Series(prediction_stats, index=X.index)
         return prediction_stats
 
+    @staticmethod
+    def _normalize_weights_to_0_to_1(weights: pd.Series) -> pd.Series:
+        """
+        Normalize the weights to be between 0 and 1
+        :param weights: The weights to be normalized as a pd.Series
+        """
+        weights -= weights.min()
+        if not np.isclose(weights.max(), 0.):
+            weights /= weights.max()
+        if all(np.isclose(weights, 0.)):
+            weights = pd.Series(1., index=weights.index)
+        return weights
+
     def _sample_weight_optimize_on_validation(self, X_val: pd.DataFrame, y_val: pd.Series, alpha=0.05, **kwargs) -> pd.Series:
         """
         Minimize the validation MAE using SLSQP optimizer with a linear constraint on the sum of the weights.
@@ -513,3 +527,24 @@ class PairwiseDifferenceRegressor(sklearn.base.BaseEstimator, sklearn.base.Regre
         shifted_inverted_error = negative_error + abs(np.mean(negative_error))  # centered around 0
         weights = pd.Series(shifted_inverted_error, index=self.X_train_.index)
         return self._normalize_weights_to_0_to_1(weights)   # normalize to [0, 1]
+
+    def _sample_weight_ordered_votes(self, X_val, y_val, force_symmetry=True, **kwargs):
+        """
+        The best of n anchors gets n votes, the worst gets 1 vote. n is the nb of anchors.
+        Uses the _sample_weight_negative_error function for distributing votes.
+        :param X_val: Features of the validation set
+        :param y_val: Target values of the validation set
+        :param force_symmetry: Sets the force_symmetry parameter of the prediction function
+        :return: The weights as np.NDarray
+        """
+        weights = self._sample_weight_negative_error(X_val, y_val, force_symmetry=force_symmetry)
+        if weights.isna().any():
+            print(weights)
+        sorted_indices = np.argsort(weights)
+        reversed_assigned_votes = np.arange(0, len(weights))[sorted_indices]
+        votes = len(weights) - reversed_assigned_votes + 1
+        weighted_votes = votes / sum(votes)
+        weights = pd.Series(weighted_votes, index=self.X_train_.index)
+        return self._normalize_weights_to_0_to_1(weights)
+
+
