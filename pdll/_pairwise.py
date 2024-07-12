@@ -1,4 +1,6 @@
 """Pairwise Difference Learning meta-estimator."""
+import functools
+import warnings
 
 # Author: Mohamed Karim Belaid <karim.belaid@idiada.com> or <extern.karim.belaid@porsche.de>
 # License: Apache-2.0 clause
@@ -6,6 +8,8 @@
 import numpy as np
 import pandas as pd
 import sklearn.base
+from scipy.optimize import LinearConstraint, minimize
+from scipy.stats import entropy
 from sklearn.utils.validation import check_is_fitted
 from scipy.special import softmax
 from pandas.core.dtypes.common import is_unsigned_integer_dtype
@@ -325,6 +329,12 @@ class PairwiseDifferenceRegressor(sklearn.base.BaseEstimator, sklearn.base.Regre
         if estimator is None:  # Set default
             self.estimator = sklearn.ensemble.HistGradientBoostingRegressor()
 
+        # Save information about the weighting methods as here for better availability
+        self.__name_to_method_mapping__ = {
+            'OptimizeOnValidation': self._sample_weight_optimize_on_validation,
+            'NegativeError': self._sample_weight_negative_error,
+        }
+
     @staticmethod
     def _to_pandas(*args):
         return (data if data is None or isinstance(data, (pd.DataFrame, pd.Series)) else pd.DataFrame(data) for data in args)
@@ -441,3 +451,65 @@ class PairwiseDifferenceRegressor(sklearn.base.BaseEstimator, sklearn.base.Regre
         assert not any(pd.isna(prediction_stats)), f'Prediction should not contain Nans\n{prediction_samples_df}\n{prediction_stats}'
         prediction_stats = pd.Series(prediction_stats, index=X.index)
         return prediction_stats
+
+    def _sample_weight_optimize_on_validation(self, X_val: pd.DataFrame, y_val: pd.Series, alpha=0.05, **kwargs) -> pd.Series:
+        """
+        Minimize the validation MAE using SLSQP optimizer with a linear constraint on the sum of the weights.
+
+        :param X_val: Features of the validation set
+        :param y_val: Target values of the validation set
+        :param alpha: alpha=0.01 i.e. I am ready to lose 1% of the validation MAE to make the solution more general
+        :return:
+        """
+        prediction_samples_df, _ = self._predict_samples(X_val)
+        pred_val_samples_np = prediction_samples_df.values
+        train_size = len(self.X_train_)
+        weights_initial_guess = np.ones(train_size) / train_size
+        initial_mae = sklearn.metrics.mean_absolute_error(y_val, np.matmul(pred_val_samples_np, weights_initial_guess))
+
+        def mae(weights: np.ndarray) -> float:
+            predictions = np.matmul(pred_val_samples_np, weights / sum(weights))
+            if alpha == 0:  # todo factor in same function like classifiaction
+                regularisation = 0
+            else:
+                regularisation = alpha * initial_mae * entropy(weights, weights_initial_guess) / train_size
+            try:
+                mae_error = sklearn.metrics.mean_absolute_error(y_val, predictions) + regularisation
+            except Exception: # Exception in error calculation -> return high error value
+                return 999999.
+            return mae_error
+
+        mx = 1.  # since the sum of weights is anyway 1, no need to have a higher value
+        weights_initial_guess = np.ones(train_size) / train_size
+        variable_bounds = [(0.0001, mx) for _ in range(train_size)]
+        sum_constraint = LinearConstraint(np.ones(train_size), lb=1, ub=1)
+
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore")
+            result = minimize(mae, weights_initial_guess, method='SLSQP',
+                              bounds=variable_bounds, constraints=[sum_constraint])
+        # Extract the solution
+        optimal_weight = result.x
+        return pd.Series(optimal_weight, index=self.X_train_.index)
+
+    def _sample_weight_negative_error(self, X_val, y_val, force_symmetry=True, **kwargs):
+        """
+        Calculate weights as the negative mean absolute error
+        :param X_val: Features of the validation set
+        :param y_val: Target values of the validation set
+        :param force_symmetry: If True, the model will be forced to be symmetric
+        :return: The weights as np.NDarray
+        """
+        if not isinstance(X_val, pd.DataFrame):
+            X_val = pd.DataFrame(X_val)
+
+        pred_per_sample, _ = self._predict_samples(X_val, force_symmetry=force_symmetry)
+        new_y = np.array(y_val)[:, np.newaxis].repeat(self.X_train_.shape[0], axis=1)
+
+        # mse per anchor (already avged on the validation points):
+        mse_per_sample = ((np.array(pred_per_sample) - new_y) ** 2).sum(axis=0) / new_y.shape[0]
+
+        negative_error = -mse_per_sample
+        shifted_inverted_error = negative_error + abs(np.mean(negative_error))  # centered around 0
+        weights = pd.Series(shifted_inverted_error, index=self.X_train_.index)
+        return self._normalize_weights_to_0_to_1(weights)   # normalize to [0, 1]
