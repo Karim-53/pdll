@@ -314,10 +314,14 @@ class PairwiseDifferenceRegressor(sklearn.base.BaseEstimator, sklearn.base.Regre
     Pairwise Difference Regressor (PDR) is a meta-estimator that estimates the regression task by estimating the difference between data points.
     PDR estimates the regression task by estimating the distance of the given sample to each of the training samples (the anchors).
     PDR is a modified version implemented by Belaid et al. 2024 of the PAirwise Difference REgressor (Padre) by Tynes et al. 2021
+
+    After fitting, you can use the method `learn_sample_weight` to learn
+    weights for the anchors using the given validation data.
     """
     estimator = None
     X_train_: pd.DataFrame
     y_train_: pd.Series
+    sample_weight_: pd.Series
 
     def __init__(
             self,
@@ -467,12 +471,114 @@ class PairwiseDifferenceRegressor(sklearn.base.BaseEstimator, sklearn.base.Regre
             X = pd.DataFrame(X)
         prediction_samples_df, _ = self._predict_samples(X, force_symmetry=force_symmetry)
 
-        prediction_stats = prediction_samples_df.mean(axis=1)
+        if self.sample_weight_ is None: # No weights
+            prediction_stats = prediction_samples_df.mean(axis=1)
+
+        elif isinstance(self.sample_weight_, pd.Series):
+            def weighted_avg(samples: pd.Series, weights: pd.Series) -> float:
+                weights[weights <= 0] = np.nan
+                summed = np.nansum(samples.multiply(weights))
+                return  summed / np.nansum(weights)
+
+            prediction_stats = prediction_samples_df.apply(
+                lambda samples: weighted_avg(samples, self.sample_weight_),
+                axis='columns'
+            )
+
+        elif isinstance(self.sample_weight_, pd.DataFrame):
+            self.sample_weight_[self.sample_weight_ < 0] = np.nan
+            summed = pd.Series(np.nansum(self.sample_weight_, axis=1), index=X.index)
+            self.sample_weight_ = self.sample_weight_.apply(lambda row: row / summed)
+            np.testing.assert_array_almost_equal(self.sample_weight_.sum(axis=1), 1.)
+            prediction_stats = (prediction_samples_df * self.sample_weight_).sum(axis=1)
+
+        else:
+            raise NotImplementedError("weights must be a pd.Series or a pd.DataFrame")
 
         assert len(X) == len(prediction_stats)
         assert not any(pd.isna(prediction_stats)), f'Prediction should not contain Nans\n{prediction_samples_df}\n{prediction_stats}'
         prediction_stats = pd.Series(prediction_stats, index=X.index)
         return prediction_stats
+
+    def learn_sample_weight(
+            self,
+            X_val: pd.DataFrame = None,
+            y_val: pd.Series = None,
+            X_test: pd.DataFrame = None,
+            method: str = 'OptimizeOnValidation',
+            enable_warnings=True,
+            **kwargs):
+        """
+        Call this method after the training to create weights for the anchors
+        using the given validation data.
+        Use the `method` parameter to select one of the following
+        weighting methods:
+        - 'OptimizeOnValidation': Minimize the validation MAE using the SLSQP optimizer with a linear constraint on the sum of the weights.
+        - 'NegativeError': Calculate weights as the negative mean absolute error.
+        - 'OrderedVoting': The best of n anchors gets n votes, the worst gets 1 vote. n is the number of anchors.
+        - 'LinearRegression': Calculate weights as the coefficient of a linear regression applied on the samples prediction diff and y_val.
+        - 'LassoRegression': Calculate weights as the coefficient of a Lasso regression applied on the samples prediction diff and y_val.
+        - 'Over-regularized Lasso': Calculate weights as the coefficient of a Lasso regression applied on the samples prediction diff and y_val with a high regularization strength.
+        - 'ElasticNet': Calculate weights as the coefficient of an ElasticNet regression applied on the samples prediction diff and y_val.
+        - 'RidgeRegression': Calculate weights as the coefficient of a Ridge regression applied on the samples prediction diff and y_val.
+        - 'KmeansClusterCenters': Calculate weights as the distance to the cluster centers of the KMeans algorithm.
+
+        :param X_val: X of a validation set
+        :param y_val: y of a validation set
+        :param X_test: y of the test set
+        :param method: one of
+        :param enable_warnings: Set to true if you want to be warned about changing scores (Default: True)
+        :param kwargs: Additional parameters for the weighting method (e.g. K for k-nearest neighbors)
+        :return: self (with updated weights)
+        """
+        # todo merge into fit like sklearn
+        if y_val is not None:
+            old_validation_error = sklearn.metrics.mean_absolute_error(self.predict(X_val), y_val)
+        else:
+            old_validation_error = 0
+
+        if method not in self.__name_to_method_mapping__.keys():
+            raise NotImplementedError(f"Weighting method {method} unknown! Use one of the following:"
+                                      f" '{', '.join(list(self.__name_to_method_mapping__.keys()))}'")
+
+        sample_weight: pd.Series = self.__name_to_method_mapping__[method](X_val=X_val, y_val=y_val, X_test=X_test, **kwargs)
+        assert not sample_weight.isna().any(), f'Nans values in sample_weights using {method}\n {sample_weight}'
+        self.set_sample_weight(sample_weight)
+        if y_val is not None:
+            new_validation_error = sklearn.metrics.mean_absolute_error(self.predict(X_val), y_val)
+            if new_validation_error > old_validation_error and enable_warnings:
+                print(f'WARNING: \t new val MAE: {new_validation_error} \t old val MAE:  {old_validation_error}')
+        return self
+
+    def set_sample_weight(self, sample_weight: pd.Series):
+        """
+        Sets the weights for the anchors to the given weights in sample_weight.
+
+        :param sample_weight: The weights for the anchors as a pd.Series
+        :return: self (with updated weights)
+        """
+        if sample_weight is None:
+            pass
+        elif isinstance(sample_weight, pd.Series):
+            if len(sample_weight) != len(self.y_train_):
+                raise ValueError(
+                    f'sample_weight size {len(sample_weight)} should be equal to the train size {len(self.y_train_)}')
+            if not sample_weight.index.equals(self.y_train_.index):
+                raise ValueError(
+                    f'sample_weight and y_train must have the same index\n{sample_weight.index}\n{self.y_train_.index}')
+
+            if all(sample_weight.fillna(0) == 0):  # All weights are 0 => Set them to 1
+                sample_weight = pd.Series(1, index=self.y_train_.index)
+
+            if all(sample_weight.fillna(0) < 0):
+                raise ValueError(f'sample_weight are all negative/Nans.\n{sample_weight}')
+            if any(pd.isna(sample_weight)):
+                raise ValueError(f'sample_weight contains NaNs.\n{sample_weight}')
+        else:
+            raise ValueError('sample_weight must be a pd.Series')
+
+        self.sample_weight_ = sample_weight
+        return self
 
     @staticmethod
     def _normalize_weights_to_0_to_1(weights: pd.Series) -> pd.Series:
