@@ -9,7 +9,9 @@ import numpy as np
 import pandas as pd
 import sklearn.base
 from scipy.optimize import LinearConstraint, minimize
+from scipy.spatial.distance import cdist
 from scipy.stats import entropy
+from sklearn.cluster import KMeans
 from sklearn.linear_model import LinearRegression, Lasso, Ridge, ElasticNet
 from sklearn.utils.validation import check_is_fitted
 from scipy.special import softmax
@@ -332,6 +334,7 @@ class PairwiseDifferenceRegressor(sklearn.base.BaseEstimator, sklearn.base.Regre
 
         # Save information about the weighting methods as here for better availability
         self.__name_to_method_mapping__ = {
+            # Recommended method - OptimizeOnValidation:
             'OptimizeOnValidation': self._sample_weight_optimize_on_validation,
             # Error based methods
             'NegativeError': self._sample_weight_negative_error,
@@ -350,6 +353,8 @@ class PairwiseDifferenceRegressor(sklearn.base.BaseEstimator, sklearn.base.Regre
             'RidgeRegression': functools.partial(
                 self._sample_weight_with_linear_regression, regularization_method='L2'
             ),
+            # Other Methods:
+            'KNNClusterCenters': self._sample_weight_by_knn_prototypes,
         }
 
     @staticmethod
@@ -619,3 +624,29 @@ class PairwiseDifferenceRegressor(sklearn.base.BaseEstimator, sklearn.base.Regre
         # Weights = coefficients of the linear regression
         weights = pd.Series(lr.coef_, index=self.X_train_.index)
         return self._normalize_weights_to_0_to_1(weights)  # normalize to [0,1]
+
+    def _sample_weight_by_knn_prototypes(self, k=None, **kwargs):
+        """
+        Use k-nearest neighbors to cluster the train data. Use the k centroids/prototypes found by knn as weights.
+        We keep only K anchors that are the prototypes. all other anchors receive a weight of 0
+
+        :param k: The number of prototypes to use. If None, 10% of the training set is used as prototypes
+        :return: The weights as np.NDarray
+        """
+        if not k:
+            # 10% and min 3 of the training set data points is used as weights
+            k = max(int(len(self.X_train_) / 10), 3)
+
+        kmeans = KMeans(n_clusters=k, n_init="auto", random_state=0)
+        kmeans.fit(self.X_train_)
+
+        cluster_centers = kmeans.cluster_centers_  # Get the cluster centers (prototypical data points)
+        distances = cdist(self.X_train_, cluster_centers)  # distance between each data point and each cluster center
+        closest_indices = np.argmin(distances, axis=0)  # Get the index of the closest data points to the clusters
+
+        # Create an array to mark the closest data points
+        # Sets weight of all non-prototype data points to 0 and all prototype data points to 1
+        closest_array = np.zeros(len(self.X_train_))
+        closest_array[closest_indices] = 1
+
+        return pd.Series(closest_array, index=self.X_train_.index)
