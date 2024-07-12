@@ -321,7 +321,7 @@ class PairwiseDifferenceRegressor(sklearn.base.BaseEstimator, sklearn.base.Regre
     estimator = None
     X_train_: pd.DataFrame
     y_train_: pd.Series
-    sample_weight_: pd.Series
+    sample_weight_: pd.Series = None
 
     def __init__(
             self,
@@ -537,11 +537,11 @@ class PairwiseDifferenceRegressor(sklearn.base.BaseEstimator, sklearn.base.Regre
         else:
             old_validation_error = 0
 
-        if method not in self.__name_to_method_mapping__.keys():
+        if method not in self._name_to_method_mapping.keys():
             raise NotImplementedError(f"Weighting method {method} unknown! Use one of the following:"
-                                      f" '{', '.join(list(self.__name_to_method_mapping__.keys()))}'")
+                                      f" '{', '.join(list(self._name_to_method_mapping.keys()))}'")
 
-        sample_weight: pd.Series = self.__name_to_method_mapping__[method](X_val=X_val, y_val=y_val, X_test=X_test, **kwargs)
+        sample_weight: pd.Series = self._name_to_method_mapping[method](X_val=X_val, y_val=y_val, X_test=X_test, **kwargs)
         assert not sample_weight.isna().any(), f'Nans values in sample_weights using {method}\n {sample_weight}'
         self.set_sample_weight(sample_weight)
         if y_val is not None:
