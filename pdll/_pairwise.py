@@ -333,7 +333,7 @@ class PairwiseDifferenceRegressor(sklearn.base.BaseEstimator, sklearn.base.Regre
             self.estimator = sklearn.ensemble.HistGradientBoostingRegressor()
 
         # Save information about the weighting methods as here for better availability
-        self.__name_to_method_mapping__ = {
+        self._name_to_method_mapping = {
             # Recommended method - OptimizeOnValidation:
             'OptimizeOnValidation': self._sample_weight_optimize_on_validation,
             # Error based methods
@@ -505,7 +505,7 @@ class PairwiseDifferenceRegressor(sklearn.base.BaseEstimator, sklearn.base.Regre
 
         def mae(weights: np.ndarray) -> float:
             predictions = np.matmul(pred_val_samples_np, weights / sum(weights))
-            if alpha == 0:  # todo factor in same function like classifiaction
+            if alpha == 0:  # todo factor in same function like classification
                 regularisation = 0
             else:
                 regularisation = alpha * initial_mae * entropy(weights, weights_initial_guess) / train_size
@@ -516,7 +516,6 @@ class PairwiseDifferenceRegressor(sklearn.base.BaseEstimator, sklearn.base.Regre
             return mae_error
 
         mx = 1.  # since the sum of weights is anyway 1, no need to have a higher value
-        weights_initial_guess = np.ones(train_size) / train_size
         variable_bounds = [(0.0001, mx) for _ in range(train_size)]
         sum_constraint = LinearConstraint(np.ones(train_size), lb=1, ub=1)
 
