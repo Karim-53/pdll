@@ -703,18 +703,19 @@ class PairwiseDifferenceRegressor(sklearn.base.BaseEstimator, sklearn.base.Regre
 
         if regularization_method is not None:
             regularization_method = regularization_method.upper()
-        match regularization_method:
-            case None:  # No regularization, normal linear regression
-                lr = LinearRegression(fit_intercept=False)
-            case 'L1' | 'LASSO':  # Lasso regression
-                lr = Lasso(fit_intercept=False, alpha=regularization_alpha)
-            case 'L2' | 'RIDGE':
-                lr = Ridge(fit_intercept=False, alpha=regularization_alpha)
-            case 'ELASTICNET':
-                lr = ElasticNet(fit_intercept=False, alpha=regularization_alpha, l1_ratio=0.5)
-            case _:
-                raise ValueError(f"Regularization {regularization_method} unknown! Use one of the following:"
-                                 "'None', 'L1', 'LASSO', 'L2', 'RIDGE', 'ELASTICNET'")
+        elif regularization_method is None:  # No regularization, normal linear regression
+            lr = LinearRegression(fit_intercept=False)
+        elif (regularization_method.upper() == 'L1'
+              or regularization_method.upper() == 'LASSO'):  # Lasso regression
+            lr = Lasso(fit_intercept=False, alpha=regularization_alpha)
+        elif (regularization_method.upper() == 'L2'
+              or regularization_method.upper() == 'RIDGE'):  # Ridge regression
+            lr = Ridge(fit_intercept=False, alpha=regularization_alpha)
+        elif regularization_method.upper() == 'ELASTICNET':  # ElasticNet regression
+            lr = ElasticNet(fit_intercept=False, alpha=regularization_alpha, l1_ratio=0.5)
+        else:
+            raise ValueError(f"Regularization {regularization_method} unknown! Use one of the following:"
+                             "'None', 'L1', 'LASSO', 'L2', 'RIDGE', 'ELASTICNET'")
 
         # Apply linear regression on prediction diff and y_val:
         lr.fit(pred_per_sample, y_val)
