@@ -203,7 +203,7 @@ wrong_regression_datasets = list({
 
 def load_datasets(task='classification', from_cache=True, size=6000):
     assert task in ['classification', 'regression']
-    if from_cache:
+    if from_cache and os.path.exists(f'./benchmark/{task}_datasets.parquet'):
         datasets = pd.read_parquet(f'./benchmark/{task}_datasets.parquet').sort_values(['pairwise_complexity'], ascending=True)
     else:
         datasets = openml.datasets.list_datasets(status='active',
