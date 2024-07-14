@@ -315,7 +315,7 @@ class PairwiseDifferenceRegressor(sklearn.base.BaseEstimator, sklearn.base.Regre
     PDR estimates the regression task by estimating the distance of the given sample to each of the training samples (the anchors).
     PDR is a modified version implemented by Belaid et al. 2024 of the PAirwise Difference REgressor (Padre) by Tynes et al. 2021
 
-    After fitting, you can use the method `learn_sample_weight` to learn
+    After fitting, you can use the method `learn_anchor_weights` to learn
     weights for the anchors using the given validation data.
     """
     estimator = None
@@ -338,8 +338,8 @@ class PairwiseDifferenceRegressor(sklearn.base.BaseEstimator, sklearn.base.Regre
 
         # Save information about the weighting methods as here for better availability
         self._name_to_method_mapping = {
-            # Recommended method - OptimizeOnValidation:
-            'OptimizeOnValidation': self._sample_weight_optimize_on_validation,
+            # Recommended method - KLD:
+            'KLD': self._sample_weight_optimize_on_validation,
             # Error based methods
             'NegativeError': self._sample_weight_negative_error,
             'OrderedVoting': self._sample_weight_ordered_votes,
@@ -500,12 +500,12 @@ class PairwiseDifferenceRegressor(sklearn.base.BaseEstimator, sklearn.base.Regre
         prediction_stats = pd.Series(prediction_stats, index=X.index)
         return prediction_stats
 
-    def learn_sample_weight(
+    def learn_anchor_weights(
             self,
             X_val: pd.DataFrame = None,
             y_val: pd.Series = None,
             X_test: pd.DataFrame = None,
-            method: str = 'OptimizeOnValidation',
+            method: str = 'KLD',
             enable_warnings=True,
             **kwargs):
         """
@@ -513,7 +513,7 @@ class PairwiseDifferenceRegressor(sklearn.base.BaseEstimator, sklearn.base.Regre
         using the given validation data.
         Use the `method` parameter to select one of the following
         weighting methods:
-        - 'OptimizeOnValidation': Minimize the validation MAE using the SLSQP optimizer with a linear constraint on the sum of the weights.
+        - 'KLD': Minimize the validation MAE using the SLSQP optimizer with a linear constraint on the sum of the weights.
         - 'NegativeError': Calculate weights as the negative mean absolute error.
         - 'OrderedVoting': The best of n anchors gets n votes, the worst gets 1 vote. n is the number of anchors.
         - 'LinearRegression': Calculate weights as the coefficient of a linear regression applied on the samples prediction diff and y_val.

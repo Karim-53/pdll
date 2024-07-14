@@ -97,7 +97,7 @@ def evaluate_model_on_dataset(model, X_train, X_val, X_test, y_train, y_val, y_t
     best_theoretical_weighted_score = float("inf")
     best_theoretical_weighted_method = {}
     for weighting_method in padre._name_to_method_mapping.keys():
-        padre.learn_sample_weight(X_val=X_val, y_val=y_val, X_test=X_test, method=weighting_method, enable_warnings=False)
+        padre.learn_anchor_weights(X_val=X_val, y_val=y_val, X_test=X_test, method=weighting_method, enable_warnings=False)
         val_error = score(y_val, padre.predict(X_val))
         test_error = score(y_test, padre.predict(X_test))
         results.append({'method': f"Padre {weighting_method}",
@@ -112,7 +112,7 @@ def evaluate_model_on_dataset(model, X_train, X_val, X_test, y_train, y_val, y_t
             best_theoretical_weighted_score = test_error
             best_theoretical_weighted_method = results[-1]
 
-        padre.learn_sample_weight(X_train, y_train, method=weighting_method, enable_warnings=False)
+        padre.learn_anchor_weights(X_train, y_train, method=weighting_method, enable_warnings=False)
         val_error = score(y_val, padre.predict(X_val))
         test_error = score(y_test, padre.predict(X_test))
         results.append({'method': f"Padre {weighting_method}",
