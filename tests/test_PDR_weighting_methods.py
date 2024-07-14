@@ -37,6 +37,6 @@ print('test score:', pdr.score(X_test, y_test))
 # Now try out all the weighting methods to see if any of them improve the score:
 for method in pdr._name_to_method_mapping.keys():
     print(f"\n\nScore for {method}:")
-    pdr.learn_sample_weight(X_validation, y_validation, method=method)
+    pdr.learn_anchor_weights(X_validation, y_validation, method=method)
     print('train score:', pdr.score(X_train, y_train))
     print('test score:', pdr.score(X_test, y_test))
