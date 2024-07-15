@@ -7,3 +7,4 @@ openml~=0.14.2
 psutil~=5.9.8
 joblib~=1.2.0
 scipy~=1.11.4
+fastparquet
