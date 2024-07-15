@@ -12,6 +12,7 @@ python run_benchmark_weighted_pdr.py --regressor RandomForestRegressor --data 4
 
 The needed time to run depends on the regressor and the dataset.
 """
+import argparse
 import inspect
 import itertools
 import os
@@ -41,7 +42,6 @@ K = 5  # Knn parameter
 
 PATH = f'./results/{SEED}/'.lower()
 os.makedirs(PATH, exist_ok=True)
-
 
 def instantiate_base_model(model):
     """ Create a model based on the model parameter and the models supported features. """
@@ -273,3 +273,5 @@ if __name__ == '__main__':
 
         list_of_dfs.append(df)
         df.to_parquet(parquet_file)     # Save each iteration to avoid losing data in case of crash
+        if args.get('quicktest',False):
+            break

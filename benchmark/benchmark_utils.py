@@ -34,6 +34,7 @@ def decode_args():
     parser.add_argument('--data', nargs="+", type=int, help='Data value')
     parser.add_argument('--n_jobs', type=int, help='modify n_jobs')  # deprecated
     parser.add_argument('--hyper', action='store_true', help='Hyperparameter')
+    parser.add_argument('--quicktest', help='quick test', action='store_true')
 
     # Parse the arguments
     args = parser.parse_args()
