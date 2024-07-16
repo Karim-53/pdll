@@ -1,12 +1,14 @@
 # This workflow will install Python dependencies, run tests and lint with a variety of Python versions
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
 
-name: Test PyPi wheel
+name: Test benchmark regressor
 
 on:
   push:
     branches: [ "main" ]
-    # change to release or pre-release
+  pull_request:
+    branches: [ "main" ]
+
 jobs:
   build:
 
@@ -14,7 +16,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.7", "3.8", "3.9", "3.10", "3.11", "3.12"]
+        python-version: ["3.9", "3.10", "3.11", "3.12"]
 
     steps:
     - uses: actions/checkout@v4
@@ -27,8 +29,7 @@ jobs:
         pip install setuptools
         python -m ensurepip --upgrade
         python -m pip install --upgrade pip
-        python -m pip install pdll
-    - name: Run examples (main step)
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: Run benchmarks (main step)
       run: |
-        python ./examples/multiclass_classification_test.py
-        python ./examples/regression_test.py
+         python ./run_benchmark_weighted_pdr.py --quicktest

@@ -34,6 +34,7 @@ def decode_args():
     parser.add_argument('--data', nargs="+", type=int, help='Data value')
     parser.add_argument('--n_jobs', type=int, help='modify n_jobs')  # deprecated
     parser.add_argument('--hyper', action='store_true', help='Hyperparameter')
+    parser.add_argument('--quicktest', help='quick test', action='store_true')
 
     # Parse the arguments
     args = parser.parse_args()
@@ -203,7 +204,7 @@ wrong_regression_datasets = list({
 
 def load_datasets(task='classification', from_cache=True, size=6000):
     assert task in ['classification', 'regression']
-    if from_cache:
+    if from_cache and os.path.exists(f'./benchmark/{task}_datasets.parquet'):
         datasets = pd.read_parquet(f'./benchmark/{task}_datasets.parquet').sort_values(['pairwise_complexity'], ascending=True)
     else:
         datasets = openml.datasets.list_datasets(status='active',
