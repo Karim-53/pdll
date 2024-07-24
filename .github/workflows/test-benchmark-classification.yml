@@ -31,5 +31,7 @@ jobs:
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Run benchmarks (main step)
-      run: |
+      run: |      
+         mkdir -p /home/runner/.config/openml
+         chmod -R 777 /home/runner/.config/openml
          python ./run_benchmark.py --model DecisionTreeClassifier --data 0
