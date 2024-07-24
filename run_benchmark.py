@@ -104,7 +104,7 @@ def get_processed_classification_dataset(data_id, number_classes=None):
 
 
 def get_path(seed=9):
-    path = f'./results/'
+    path = f'./results/{seed}/'
     return path.lower()
 
 
