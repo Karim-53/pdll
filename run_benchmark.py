@@ -268,7 +268,7 @@ def safe_cross_validate(model, n_jobs=-1, param_grid=None) -> dict:
     # return convert_cv_result(results, prefix=prefix)
     last_exception = None
     os.environ['NUMEXPR_MAX_THREADS'] = str(os.cpu_count())
-    n_jobs_cv = 13
+    n_jobs_cv = int(os.cpu_count())
     while n_jobs_cv is None or n_jobs_cv >= 1:
         try:
             results = cross_validate(model,
