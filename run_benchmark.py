@@ -448,20 +448,6 @@ if __name__ == '__main__':
                     traceback.print_exception(*_exc_info)
                 continue
 
-            # pbar.set_description(f"{description} eyke")
-            # regressor_instance = estimators[classifier_name.replace('Classifier', 'Regressor')]()
-            # eyke = PairwiseDifferenceClassifierFromRegressor(estimator=regressor_instance).fit(X_train, y_train)
-            # joblib.dump(eyke, f'{path}joblib/eyke_{classifier_name}_{data_id}.joblib')
-            #
-            # result.update(score_pairwise_difference_classifier(eyke, X_train, y_train, prefix='eyke_train_'))
-            # result.update(score_pairwise_difference_classifier(eyke, X_test, y_test, prefix='eyke_test_'))
-            # result.update(score_conformal_prediction(eyke, X_val, y_val, X_test, y_test.astype(int).values, prefix='eyke_'))
-
-            # weighted = pdc
-            # weighted._learn_sample_weight(X_val, y_val)
-            # assert weighted.sample_weight_ is not None
-            # result['weighted_test_f1'] = weighted.score(X_test, y_test)
-            # result['weighted_test_f1'] = 0
             result.update(datasets.loc[data_id].to_dict())
             results.append(result)
             sys.stdout.flush()
