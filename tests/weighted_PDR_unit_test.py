@@ -9,7 +9,7 @@ from sklearn.tree import DecisionTreeRegressor
 from pdll import PairwiseDifferenceRegressor
 
 
-def load_fake_data(n_samples, n_validation_samples, n_test_samples, n_features, noise_level=0.):
+def load_fake_data(n_samples = 50, n_validation_samples = 10, n_test_samples = 10, n_features = 8, noise_level=0.):
     # Set the random seed for reproducibility:
     np.random.seed(42)
 
@@ -38,12 +38,7 @@ def load_fake_data(n_samples, n_validation_samples, n_test_samples, n_features, 
 
 
 def score_weighting_stability1(weighting_method):
-    fake_data = load_fake_data(
-        n_samples=50,
-        n_validation_samples=10,
-        n_test_samples=10,
-        n_features=8,
-    )
+    fake_data = load_fake_data()
     X_train, X_validation, X_test, y_train, y_validation, y_test = fake_data
 
     pdr = PairwiseDifferenceRegressor(estimator=DecisionTreeRegressor())
@@ -164,6 +159,45 @@ class WeightedPDRTestPermutationDistance(unittest.TestCase):
         # For error-based methods, correlation should be very high
         test_score = score_permutation_distance('OrderedVoting')
         self.assertGreater(test_score, 0.9, "Permutation distance is too high!")
+
+    def test_all_weighting_methods(self):
+        np.random.seed(42)
+
+        # Define the number of data points and features:
+        n_samples = 50
+        n_validation_samples = 10
+        n_test_samples = 10
+        n_features = 8
+        n_classes = 3
+
+        # Generate random data with 8 features, 50 points, and 3 classes:
+        X, y = make_regression(n_samples=n_samples + n_validation_samples + n_test_samples, n_features=n_features, random_state=53)
+
+        # Random split:
+        X_train = X[:n_samples]
+        X_validation = X[n_samples:n_samples + n_validation_samples]
+        X_test = X[n_samples + n_validation_samples:]
+        y_train = y[:n_samples]
+        y_validation = y[n_samples:n_samples + n_validation_samples]
+        y_test = y[n_samples + n_validation_samples:]
+
+        # Train the PairwiseDifferenceRegressor model:
+        pdr = PairwiseDifferenceRegressor(estimator=DecisionTreeRegressor())
+
+        # Fit the model:
+        pdr.fit(X_train, y_train)
+
+        # Print the score:
+        print('train score:', pdr.score(X_train, y_train))
+        print('test score:', pdr.score(X_test, y_test))
+
+        # Now try out all the weighting methods to see if any of them improve the score:
+        for method in pdr._name_to_method_mapping.keys():
+            print(f"\n\nScore for {method}:")
+            pdr.learn_anchor_weights(X_validation, y_validation, method=method)
+            print('train score:', pdr.score(X_train, y_train))
+            print('test score:', pdr.score(X_test, y_test))
+            # todo add some assert here
 
 
 class WeightedPDRTestStability(unittest.TestCase):
