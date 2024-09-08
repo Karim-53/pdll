@@ -12,6 +12,7 @@ from scipy.optimize import LinearConstraint, minimize
 from scipy.spatial.distance import cdist
 from scipy.stats import entropy
 from sklearn.cluster import KMeans
+from sklearn.compose import ColumnTransformer
 from sklearn.linear_model import LinearRegression, Lasso, Ridge, ElasticNet
 from sklearn.utils.validation import check_is_fitted
 from scipy.special import softmax
@@ -43,7 +44,7 @@ class PairwiseDifferenceBase(sklearn.base.BaseEstimator):
 
     @staticmethod
     def pair_output(y1: pd.Series, y2: pd.Series) -> pd.Series:
-        """For regression. Beware this is different from regression this is b-a not a-b"""
+        """For regresion. beware this is different from regression this is b-a not a-b"""
         y_pair = pd.DataFrame(y1).merge(y2, how="cross")
         y_pair_diff = y_pair.iloc[:, 1] - y_pair.iloc[:, 0]
         return y_pair_diff
@@ -51,9 +52,9 @@ class PairwiseDifferenceBase(sklearn.base.BaseEstimator):
     @staticmethod
     def pair_output_difference(y1: pd.Series, y2: pd.Series, nb_classes: int) -> pd.Series:
         """For MultiClassClassification base on difference only"""
-        y_pair_diff = PairwiseDifferenceBase.pair_output(y1, y2)
-        y_pair_diff[y_pair_diff != 0] = 1
-        assert y_pair_diff.nunique() <= 2, f'should only be 0 and 1 {y_pair_diff.unique()}'
+        y_pair = pd.DataFrame(y1).merge(y2, how="cross")
+        y_pair_diff = (y_pair.iloc[:, 1] != y_pair.iloc[:, 0]).astype(int)
+        assert y_pair_diff.nunique() <= 2, f'should only be 0s and 1s {y_pair_diff.unique()}'
         return y_pair_diff
 
     @staticmethod
@@ -83,12 +84,46 @@ class PairwiseDifferenceBase(sklearn.base.BaseEstimator):
             y.name = 'output'
 
     @staticmethod
+    def check_sample_weight(sample_weight: pd.Series, y_train: pd.Series) -> None:
+        if sample_weight is None:
+            pass
+        elif isinstance(sample_weight, pd.Series):
+            # check
+            if len(sample_weight) != len(y_train):
+                raise ValueError(
+                    f'sample_weight size {len(sample_weight)} should be equal to the train size {len(y_train)}')
+            if not sample_weight.index.equals(y_train.index):
+                raise ValueError(
+                    f'sample_weight and y_train must have the same index\n{sample_weight.index}\n{y_train.index}')
+            if all(sample_weight.fillna(0) <= 0):
+                raise ValueError(f'sample_weight are all negative/Nans.\n{sample_weight}')
+
+            # norm
+            class_sums = np.bincount(y_train, sample_weight)
+            sample_weight = sample_weight / class_sums[y_train.astype(int)]
+        else:
+            raise NotImplementedError()
+
+    @staticmethod
+    def correct_sample_weight(sample_weight: pd.Series, y_train: pd.Series) -> pd.Series:
+        if sample_weight is not None:
+            sample_weight = sample_weight / sum(sample_weight)
+            # norm
+            # class_sums = np.bincount(y_train, sample_weight)
+            # sample_weight = sample_weight / class_sums[y_train.astype(int)]
+
+        #     # if sample_weight.min() < 0:  # dolla weight change : improvement +0.0032 bof
+        #     #     sample_weight = sample_weight - sample_weight.min()
+        return sample_weight
+
+    @staticmethod
     def predict(y_prob, input_type=pd.DataFrame):
-        predicted_classes = np.argmax(y_prob.values, axis=1)
+        predicted_classes = y_prob.columns[np.argmax(y_prob.values, axis=1)].values
         if input_type is np.ndarray:
             return predicted_classes
         predicted_classes_series = pd.Series(predicted_classes, index=y_prob.index)
         return predicted_classes_series
+
 
 
 class PairwiseDifferenceClassifier(sklearn.base.BaseEstimator, sklearn.base.ClassifierMixin):
@@ -97,16 +132,18 @@ class PairwiseDifferenceClassifier(sklearn.base.BaseEstimator, sklearn.base.Clas
     use_prior = True
     X_train_: pd.DataFrame
     y_train_: pd.Series
+    sample_weight_: pd.Series = None
 
     def __init__(
             self,
             estimator=None,
     ):
         if estimator is None:
-            from sklearn.ensemble import RandomForestClassifier
-            estimator = RandomForestClassifier()
+            from sklearn.ensemble import ExtraTreesClassifier
+            estimator = ExtraTreesClassifier(class_weight='balanced', n_jobs=-1)
         if isinstance(estimator, type):
-            raise TypeError("estimator must be an instance of the class not a class, i.e., use MyEstimator() but not MyEstimator")
+            raise TypeError(
+                "estimator must be an instance of the class not a class, i.e., use MyEstimator() but not MyEstimator")
         if not sklearn.base.is_classifier(estimator):
             print('WARNING: estimator must be a Sklearn classifier')
         # todo check it is not multilabel problem: multiclass.is_multilabel: Helper function to check if the task is a multi-label classification one.
@@ -115,11 +152,14 @@ class PairwiseDifferenceClassifier(sklearn.base.BaseEstimator, sklearn.base.Clas
         self.estimator = estimator
         self.prior = None
         self.use_prior = 'auto'
+        self.proba_aggregate_method = 'norm'
 
     def fit(
             self,
             X: pd.DataFrame,
             y: pd.Series,
+            X_val: pd.DataFrame | None = None,
+            y_val: pd.Series | None = None, weight_method='OptimizeOnValidation',
             check_input=True):
         # todo add **karg to pass to the inner model
         self.check_input = check_input
@@ -143,10 +183,12 @@ class PairwiseDifferenceClassifier(sklearn.base.BaseEstimator, sklearn.base.Clas
         # todo add assert on y_pair_diff: min<0  , max>0 and dtype float not uint
         self.estimator.fit(X_pair, y_pair_diff)
         #  plot scatter train improvement vs test improvement
+
         return self
 
     def predict_similarity_samples(self, X: pd.DataFrame, X_anchors=None, reshape=True) -> pd.DataFrame:
         """ For each input sample, output C probabilities for each N train pair.
+        Beware that this function does not apply the weights at this level
         """
         if X_anchors is None:
             X_anchors = self.X_train_
@@ -177,8 +219,9 @@ class PairwiseDifferenceClassifier(sklearn.base.BaseEstimator, sklearn.base.Clas
         if not reshape:
             return predictions_proba_similarity
         else:
-            predictions_proba_similarity_df = pd.DataFrame(predictions_proba_similarity.reshape((-1, len(self.X_train_))),
-                                                           index=X.index, columns=self.X_train_.index)
+            predictions_proba_similarity_df = pd.DataFrame(
+                predictions_proba_similarity.reshape((-1, len(self.X_train_))),
+                index=X.index, columns=self.X_train_.index)
             return predictions_proba_similarity_df
 
     def predict_samples(self, X: pd.DataFrame) -> pd.DataFrame:
@@ -201,6 +244,7 @@ class PairwiseDifferenceClassifier(sklearn.base.BaseEstimator, sklearn.base.Clas
             return not (self.y_train_.value_counts().min() >= 5)
 
     def predict_proba_samples(self, X: pd.DataFrame) -> np.ndarray:
+        # todo add unit test with weight ==[1 1 1 ] and weights = None
         if not isinstance(X, pd.DataFrame):
             X = pd.DataFrame(X)
         predictions_proba_similarity_df: pd.DataFrame = self.predict_similarity_samples(X)
@@ -214,7 +258,8 @@ class PairwiseDifferenceClassifier(sklearn.base.BaseEstimator, sklearn.base.Clas
             """
             # likelyhood_per_anchor = (1 - predicted_similarity) * self.prior / (1 - self.prior[anchor_class])  # todo beware of division by zero, output an error directly at the fit step
             # todo beware of division by zero, output an error directly at the fit step
-            likelyhood_per_anchor = ((1 - predicted_similarity) / (1 - self.prior[anchor_class]))[:, np.newaxis] * self.prior
+            likelyhood_per_anchor = ((1 - predicted_similarity) / (1 - self.prior[anchor_class]))[:,
+                                                                                                  np.newaxis] * self.prior
             likelyhood_per_anchor[np.arange(len(likelyhood_per_anchor)), anchor_class] = predicted_similarity
             return likelyhood_per_anchor
 
@@ -233,13 +278,15 @@ class PairwiseDifferenceClassifier(sklearn.base.BaseEstimator, sklearn.base.Clas
         tests_trains_classes_likelihood = np.apply_along_axis(
             f, axis=1, arr=predictions_proba_similarity_df.values)  # todo  guess this is slow, get rid of it
 
-        np.testing.assert_array_equal(tests_trains_classes_likelihood.shape, (len(X), len(self.y_train_), self.nb_classes_))
+        np.testing.assert_array_equal(tests_trains_classes_likelihood.shape,
+                                      (len(X), len(self.y_train_), self.nb_classes_))
         np.testing.assert_array_almost_equal(tests_trains_classes_likelihood.sum(axis=-1), 1.)
         return tests_trains_classes_likelihood
 
     @staticmethod
     def _apply_weights(tests_trains_classes_likelihood: np.ndarray, sample_weight: np.ndarray) -> np.ndarray:
-        tests_classes_likelihood = (tests_trains_classes_likelihood * sample_weight[np.newaxis, :, np.newaxis]).sum(axis=1)
+        tests_classes_likelihood = (tests_trains_classes_likelihood * sample_weight[np.newaxis, :, np.newaxis]).sum(
+            axis=1)
         np.testing.assert_array_almost_equal(tests_classes_likelihood.sum(axis=-1), 1.)
         return tests_classes_likelihood
 
@@ -247,7 +294,10 @@ class PairwiseDifferenceClassifier(sklearn.base.BaseEstimator, sklearn.base.Clas
         input_type = type(X)
         if not isinstance(X, pd.DataFrame):
             X = pd.DataFrame(X)
-        sample_weight = np.full(len(self.y_train_), 1 / len(self.y_train_))
+        if self.sample_weight_ is not None:
+            sample_weight = self.sample_weight_.loc[self.y_train_.index].values
+        else:
+            sample_weight = np.full(len(self.y_train_), 1 / len(self.y_train_))
         if self.decide_use_prior():
             tests_trains_classes_likelihood = self.predict_proba_samples(X)
             tests_classes_likelihood = self._apply_weights(tests_trains_classes_likelihood, sample_weight)
@@ -268,17 +318,29 @@ class PairwiseDifferenceClassifier(sklearn.base.BaseEstimator, sklearn.base.Clas
             if not isinstance(X, pd.DataFrame):
                 X = pd.DataFrame(X)
             predictions_proba_similarity_df: pd.DataFrame = self.predict_similarity_samples(X)
+            if self.sample_weight_ is not None:
+                raise NotImplementedError()
+            else:
+                def f(predictions_proba_similarity: pd.Series) -> pd.Series:
+                    df = pd.DataFrame({'start': self.y_train_.reset_index(drop=True), 'similarity': predictions_proba_similarity})
+                    mean = df.groupby('start', observed=False).mean()['similarity']
+                    return mean
 
-            def f(predictions_proba_similarity: pd.Series) -> pd.Series:
-                df = pd.DataFrame({'start': self.y_train_, 'similarity': predictions_proba_similarity})
-                mean = df.groupby('start').mean()['similarity']
-                return mean
 
-            tests_classes_likelihood_np = predictions_proba_similarity_df.apply(f, axis='columns')
-            tests_classes_likelihood_np = softmax(tests_classes_likelihood_np, axis=-1)
-            if input_type is np.ndarray:
-                return tests_classes_likelihood_np
-            return pd.DataFrame(tests_classes_likelihood_np, index=X.index)
+                tests_classes_likelihood_np = predictions_proba_similarity_df.apply(f, axis='columns')
+                # without this normalization it should work for multiclass-multilabel
+                if self.proba_aggregate_method == 'norm':
+                    tests_classes_likelihood_np = tests_classes_likelihood_np.values / tests_classes_likelihood_np.values.sum(axis=-1)[:, np.newaxis]
+                    # asset if any nan in tests_classes_likelihood_np
+                    assert not pd.isna(tests_classes_likelihood_np).any().any()
+                    np.testing.assert_almost_equal(np.sum(tests_classes_likelihood_np, axis=-1), 1.)
+                elif self.proba_aggregate_method == 'softmax':
+                    tests_classes_likelihood_np = softmax(tests_classes_likelihood_np, axis=-1)
+                    np.testing.assert_almost_equal(np.sum(tests_classes_likelihood_np, axis=-1), 1.)
+
+                if input_type is np.ndarray:
+                    return tests_classes_likelihood_np
+                return pd.DataFrame(tests_classes_likelihood_np, index=X.index)
 
     def predict(self, X) -> pd.Series:
         """ For each input sample, output one prediction the most probable class.
@@ -294,17 +356,26 @@ class PairwiseDifferenceClassifier(sklearn.base.BaseEstimator, sklearn.base.Clas
         """
         input_type = type(X)
         if not isinstance(X, pd.DataFrame):
-            X = pd.DataFrame(X)
+            try:
+                X = pd.DataFrame(X)
+            except:
+                print(X)
+                print(X.shape)
+                raise
         predict_proba = self.predict_proba(X)
+        predict_proba.columns = self.classes_
         return PairwiseDifferenceBase.predict(predict_proba, input_type=input_type)
+
 
     def score_difference(self, X, y) -> float:
         """ WE RETURN THE MAE score XD """
         if self.check_input:
             PairwiseDifferenceBase.check_output(y)
 
-        y_pair_diff = PairwiseDifferenceBase.pair_output_difference(y, self.y_train_, self.nb_classes_)  # 0 if similar, 1 if diff
-        predictions_proba_similarity: pd.DataFrame = self.predict_similarity_samples(X, reshape=False)  # 0% if different, 100% if similar
+        y_pair_diff = PairwiseDifferenceBase.pair_output_difference(y, self.y_train_,
+                                                                    self.nb_classes_)  # 0 if similar, 1 if diff
+        predictions_proba_similarity: pd.DataFrame = self.predict_similarity_samples(X,
+                                                                                     reshape=False)  # 0% if different, 100% if similar
 
         return abs(y_pair_diff - (1 - predictions_proba_similarity)).mean()
 
@@ -325,11 +396,14 @@ class PairwiseDifferenceRegressor(sklearn.base.BaseEstimator, sklearn.base.Regre
 
     def __init__(
             self,
-            estimator: sklearn.base.RegressorMixin
+            estimator: sklearn.base.RegressorMixin = None
     ):
         """
         :param estimator: sklearn regressor for estimating the distance (Default: sklearn.ensemble.HistGradientBoostingRegressor)
         """
+        if estimator is None:
+            from sklearn.ensemble import ExtraTreesRegressor
+            estimator = ExtraTreesRegressor()
         super().__init__()
         self.estimator = estimator
 
@@ -338,9 +412,8 @@ class PairwiseDifferenceRegressor(sklearn.base.BaseEstimator, sklearn.base.Regre
 
         # Save information about the weighting methods as here for better availability
         self._name_to_method_mapping = {
-            # Recommended method - L2:
-            'L2': functools.partial(self._sample_weight_optimize, l2_lambda=0.1),
             # Optimization based methods:
+            'L2': functools.partial(self._sample_weight_optimize, l2_lambda=0.1), # Recommended method
             'KLD': functools.partial(self._sample_weight_optimize, kld_lambda=0.05),
             'Optimize': self._sample_weight_optimize,
             'L1L2': functools.partial(self._sample_weight_optimize, l1_lambda=0.05, l2_lambda=0.025),
@@ -729,3 +802,67 @@ class PairwiseDifferenceRegressor(sklearn.base.BaseEstimator, sklearn.base.Regre
         s = s.fillna(0)  # I don't know why there are NaNs rather than 0s
         assert not s.isna().any(), f'Nans values in sample_weights using KMeans\n {s}'
         return s
+
+class PDCDataTransformer(sklearn.base.BaseEstimator, sklearn.base.TransformerMixin):
+    """
+    Transform the data so that it can be processed by PDL models.
+    """
+    preprosessing_: ColumnTransformer
+
+    def __init__(self, numeric_features=None, ordinal_features=None, string_features=None):
+        self.numeric_features = numeric_features
+        self.ordinal_features = ordinal_features
+        self.string_features = string_features
+
+    def fit(self, X, y=None):
+
+        # X, y, categorical_indicator, attribute_names = dataset.get_data(target=dataset.default_target_attribute)
+
+        # Data processing
+
+        # y = y.astype('category').cat.codes.astype(np.float32) # todo since I cannot transform the output at least add raise type error on it
+        if self.numeric_features is None and self.ordinal_features is None and self.string_features is None:
+            self.numeric_features = []
+            self.ordinal_features = []  # todo fix name, will be processed a ordinal
+            self.string_features = []
+            for column in X.columns:
+                dtype = X[column].dtype
+                if pd.api.types.is_numeric_dtype(dtype):
+                    self.numeric_features.append(column)
+                elif isinstance(dtype, pd.CategoricalDtype):
+                    if dtype.ordered:
+                        self.ordinal_features.append(column)  # ordinal...
+                    else:
+                        self.string_features.append(column)
+                elif pd.api.types.is_bool_dtype(dtype):  # pd.api.types.is_categorical_dtype(dtype) deprecated
+                        self.string_features.append(column)
+                elif pd.api.types.is_string_dtype(dtype):
+                    self.string_features.append(column)
+
+        from benchmark.benchmark_utils import cast_uint, get_generic_preprocessing
+        X, _ = cast_uint(X)
+        self.preprosessing_ = get_generic_preprocessing(self.numeric_features, self.ordinal_features, self.string_features)
+        self.preprosessing_.fit(X)
+
+        return self
+
+    def transform(self, X, y=None):
+        check_is_fitted(self)
+        from benchmark.benchmark_utils import cast_uint
+        X, _ = cast_uint(X)
+        X = pd.DataFrame(self.preprosessing_.transform(X))
+        from scipy.sparse import csr_matrix
+        if any(isinstance(e, csr_matrix) for e in X.values.flatten()):
+            raise NotImplementedError('error in data \t X contains csr_matrix')
+        X = X.dropna(axis=1, how='all')  # Drop columns with all NaN values
+        X = X.astype(np.float32)
+
+        if len(X.columns) == 0:
+            raise ValueError('error in data \t X no features left after pre-processing')
+        if X.isna().any().any():
+            raise NotImplementedError('error in data \t Some features are NaNs in the X set')
+        if any(x in pd.Series(X.values.flatten()).apply(type).unique() for x in ('csr_matrix', 'date',)):  # todo think about adding  'str'
+            raise NotImplementedError('error in data \t Dataset contains sparse data')
+        if y is None:
+            return X.values
+        return X.values, y.values if y is not None else None
