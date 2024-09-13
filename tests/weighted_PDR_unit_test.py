@@ -245,70 +245,70 @@ class WeightedPDRTestPermutationDistance(unittest.TestCase):
 class WeightedPDRTestStability(unittest.TestCase):
     """ Make sure all weighting methods run without crashing. """
 
-    def score_weighting_stability_optimize(self):
+    def test_score_weighting_stability_optimize(self):
         test_score = score_weighting_stability1('Optimize')
         self.assertLess(test_score, .7, "Test score is too high!")
 
         test_score2 = score_weighting_stability2('Optimize')
         self.assertLess(test_score2, .9, "Test score is too high!")
 
-    def score_weighting_stability_kld(self):
+    def test_score_weighting_stability_kld(self):
         test_score = score_weighting_stability1('KLD')
         self.assertLess(test_score, .7, "Test score is too high!")
 
         test_score2 = score_weighting_stability2('KLD')
         self.assertLess(test_score2, .9, "Test score is too high!")
 
-    def score_weighting_stability_l1(self):
+    def test_score_weighting_stability_l1(self):
         test_score = score_weighting_stability1('L1')
         self.assertLess(test_score, .7, "Test score is too high!")
 
         test_score2 = score_weighting_stability2('L1')
         self.assertLess(test_score2, .9, "Test score is too high!")
 
-    def score_weighting_stability_l2(self):
+    def test_score_weighting_stability_l2(self):
         test_score = score_weighting_stability1('L2')
         self.assertLess(test_score, .7, "Test score is too high!")
 
         test_score2 = score_weighting_stability2('L2')
         self.assertLess(test_score2, .9, "Test score is too high!")
 
-    def score_weighting_stability_elasticnet(self):
+    def test_score_weighting_stability_elasticnet(self):
         test_score = score_weighting_stability1('L1L2')
         self.assertLess(test_score, .7, "Test score is too high!")
 
         test_score2 = score_weighting_stability2('L1L2')
         self.assertLess(test_score2, .9, "Test score is too high!")
 
-    def score_weighting_stability_extreme_weight_pruning(self):
+    def test_score_weighting_stability_extreme_weight_pruning(self):
         test_score = score_weighting_stability1('ExtremeWeightPruning')
         self.assertLess(test_score, .7, "Test score is too high!")
 
         test_score2 = score_weighting_stability2('ExtremeWeightPruning')
         self.assertLess(test_score2, .9, "Test score is too high!")
 
-    def score_weighting_stability_negative_error(self):
+    def test_score_weighting_stability_negative_error(self):
         test_score = score_weighting_stability1('NegativeError')
         self.assertLess(test_score, .7, "Test score is too high!")
 
         test_score2 = score_weighting_stability2('negative error')
         self.assertLess(test_score2, .95, "Test score is too high!")
 
-    def score_weighting_stability_inverse_error(self):
+    def test_score_weighting_stability_inverse_error(self):
         test_score = score_weighting_stability1('InverseError')
         self.assertLess(test_score, .7, "Test score is too high!")
 
         test_score2 = score_weighting_stability2('InverseError')
         self.assertLess(test_score2, .95, "Test score is too high!")
 
-    def score_weighting_stability_ordered_voting(self):
+    def test_score_weighting_stability_ordered_voting(self):
         test_score = score_weighting_stability1('OrderedVoting')
         self.assertLess(test_score, .7, "Test score is too high!")
 
         test_score2 = score_weighting_stability2('OrderedVoting')
         self.assertLess(test_score2, .95, "Test score is too high!")
 
-    def score_weighting_stability_KMeansClusterCenters(self):
+    def test_score_weighting_stability_KMeansClusterCenters(self):
         test_score = score_weighting_stability1('KMeansclustercenters')
         self.assertLess(test_score, .7, "Test score is too high!")
 
