@@ -1,4 +1,6 @@
 # Pairwise difference learning library (pdll)
+[![Downloads](https://static.pepy.tech/badge/pdll)](https://pepy.tech/project/pdll)
+
 **Pairwise Difference Learning** (PDL) library is a python module. It contains a scikit-learn compatible implementation of PDL Classifier, as described in [Belaid et al. 2024](https://arxiv.org/abs/2406.20031) 
 
 **PDL Classifier** or PDC is a meta learner that can reduce multiclass classification problem into a binary classification problem (similar/different).

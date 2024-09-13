@@ -37,10 +37,9 @@ def decode_args():
     parser.add_argument('--quicktest', help='quick test', action='store_true')
 
     # Parse the arguments
-    args = parser.parse_args()
-
+    args = parser.parse_known_args()
     # Convert arguments to dictionary
-    arguments_dict = vars(args)
+    arguments_dict = vars(args[0])
 
     return arguments_dict
 

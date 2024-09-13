@@ -1,12 +1,5 @@
-todo
 
-
-
-
-
-todo add unit tests 
-
-
+# Publish New Version on pypi
 To build the project run the following command in the terminal
 ````shell
 python -m build
