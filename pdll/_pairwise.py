@@ -158,8 +158,8 @@ class PairwiseDifferenceClassifier(sklearn.base.BaseEstimator, sklearn.base.Clas
             self,
             X: pd.DataFrame,
             y: pd.Series,
-            X_val: pd.DataFrame | None = None,
-            y_val: pd.Series | None = None, weight_method='OptimizeOnValidation',
+            # X_val: pd.DataFrame | None = None,
+            # y_val: pd.Series | None = None, weight_method='OptimizeOnValidation',
             check_input=True):
         # todo add **karg to pass to the inner model
         self.check_input = check_input
