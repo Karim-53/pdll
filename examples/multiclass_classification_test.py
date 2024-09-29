@@ -21,7 +21,8 @@ def test_multiclass_classification():
     # Generate random data with 2 features, 10 points, and 3 classes
     X, y = make_blobs(n_samples=n_samples, n_features=n_features, centers=n_classes, random_state=0)
 
-    pdc = PairwiseDifferenceClassifier(estimator=RandomForestClassifier())
+    base = RandomForestClassifier(class_weight="balanced", random_state=0)
+    pdc = PairwiseDifferenceClassifier(estimator=base)
     pdc.fit(X, y)
     print('score:', pdc.score(X, y))
 

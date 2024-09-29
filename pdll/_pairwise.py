@@ -13,7 +13,6 @@ from scipy.spatial.distance import cdist
 from scipy.stats import entropy
 from sklearn.cluster import KMeans
 from sklearn.compose import ColumnTransformer
-from sklearn.linear_model import LinearRegression, Lasso, Ridge, ElasticNet
 from sklearn.utils.validation import check_is_fitted
 from scipy.special import softmax
 from pandas.core.dtypes.common import is_unsigned_integer_dtype
@@ -84,6 +83,37 @@ class PairwiseDifferenceBase(sklearn.base.BaseEstimator):
             y.name = 'output'
 
     @staticmethod
+    def check_estimator(estimator, expecting_classifier=False, expecting_regressor=False) -> None:
+        try:
+            # todo check if it has the fit method
+            if isinstance(estimator, sklearn.base.BaseEstimator):
+                if expecting_regressor and not sklearn.base.is_regressor(estimator):
+                    warnings.warn('estimator must be a regressor.')
+                if expecting_classifier:
+                    if not sklearn.base.is_classifier(estimator):
+                        warnings.warn('estimator must be a classifier.')
+                    import inspect
+                    if 'class_weight' in inspect.signature(estimator.__class__.__init__).parameters and (estimator.class_weight is None or estimator.class_weight != 'balanced'):
+                        warnings.warn('For better performance, estimator should have class_weight="balanced".')
+
+                from sklearn.neural_network import MLPClassifier, MLPRegressor
+                from sklearn.neighbors import KNeighborsClassifier, KNeighborsRegressor
+                from sklearn.naive_bayes import GaussianNB, BernoulliNB, MultinomialNB
+                from sklearn.linear_model import SGDClassifier, LogisticRegression, RidgeClassifier, LinearRegression, Lasso, Ridge, ElasticNet
+                from sklearn.svm import LinearSVC, SVC, SVR
+                from sklearn.gaussian_process import GaussianProcessClassifier, GaussianProcessRegressor
+
+                incompatible_estimators = (MLPClassifier, KNeighborsClassifier, GaussianNB, BernoulliNB, SGDClassifier, LinearSVC, LogisticRegression,
+                                           RidgeClassifier, GaussianProcessClassifier, SVC, MultinomialNB, LinearRegression, MLPRegressor,
+                                           KNeighborsRegressor, GaussianProcessRegressor, Ridge, Lasso, ElasticNet, SVR)
+                if isinstance(estimator, incompatible_estimators):
+                    warnings.warn('PDL is not compatible with base estimators of type parametric models, i.e., even if the code works there is low chance of improvement compared to using directly that estimator. To obtain an improvement, it is better to use a tree-based model like: ExtraTrees, RandomForest, DecisionTree, Bagging, etc.')
+            else:
+                warnings.warn('Make sure the estimator has a .fit() and .predict() methods.')
+        except:
+            return
+
+    @staticmethod
     def check_sample_weight(sample_weight: pd.Series, y_train: pd.Series) -> None:
         if sample_weight is None:
             pass
@@ -141,6 +171,8 @@ class PairwiseDifferenceClassifier(sklearn.base.BaseEstimator, sklearn.base.Clas
         if estimator is None:
             from sklearn.ensemble import ExtraTreesClassifier
             estimator = ExtraTreesClassifier(class_weight='balanced', n_jobs=-1)
+        else:
+            PairwiseDifferenceBase.check_estimator(estimator, expecting_classifier=True)
         if isinstance(estimator, type):
             raise TypeError(
                 "estimator must be an instance of the class not a class, i.e., use MyEstimator() but not MyEstimator")
@@ -404,11 +436,10 @@ class PairwiseDifferenceRegressor(sklearn.base.BaseEstimator, sklearn.base.Regre
         if estimator is None:
             from sklearn.ensemble import ExtraTreesRegressor
             estimator = ExtraTreesRegressor()
+        else:
+            PairwiseDifferenceBase.check_estimator(estimator, expecting_regressor=True)
         super().__init__()
         self.estimator = estimator
-
-        if estimator is None:  # Set default
-            self.estimator = sklearn.ensemble.HistGradientBoostingRegressor()
 
         # Save information about the weighting methods as here for better availability
         self._name_to_method_mapping = {
