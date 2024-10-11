@@ -18,7 +18,7 @@ long_description = (this_directory / "README.md").read_text()
 
 setup(
     name='pdll',
-    version='0.3.0',
+    version='0.3.1',
     author='Mohamed Karim Belaid',
     author_email='karim.belaid@idiada.com',
     description='Pairwise difference learning library is a scikit learn compatible library for learning from pairwise differences.',

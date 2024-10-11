@@ -26,20 +26,12 @@ class PDLTest(unittest.TestCase):
         assert dataset.qualities['NumberOfInstances'] <= 11000, f'error in data ID: {task.dataset_id} \t Dataset is too large and would slow the experiment'
 
         X, y, categorical_indicator, attribute_names = dataset.get_data(target=dataset.default_target_attribute)
+        # fill X['sepallength'] with strings
+        X['sepallength'] = X['sepallength'].astype(str)
         print('input data shape', X.shape)
         numeric_features, nominal_features, string_features = group_features(dataset.features, X.columns)
         data_transformer = PDCDataTransformer(numeric_features, nominal_features, string_features)
-        # knn = neighbors.KNeighborsClassifier(n_neighbors=5)
-        # clf = Pipeline(steps=[
-        #     ('preprocessor', data_transformer),
-        #     ('classifier', neighbors.KNeighborsClassifier(n_neighbors=5))
-        # ])
-        # clf = PairwiseDifferenceClassifier(DecisionTreeClassifier())
-        # clf = Pipeline(steps=[
-        #     ('preprocessor', data_transformer),
-        #     ('classifier', clf)
-        # ])
-        clf = PairwiseDifferenceClassifier(estimator=DecisionTreeClassifier())
+        clf = PairwiseDifferenceClassifier(estimator=DecisionTreeClassifier(class_weight="balanced"))
         clf = Pipeline(steps=[
             ('pre-processor', data_transformer),
             ('PDL.Classifier', clf),
