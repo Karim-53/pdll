@@ -1,6 +1,7 @@
 """Pairwise Difference Learning meta-estimator."""
 import functools
 import warnings
+from typing import Iterable
 
 # Author: Mohamed Karim Belaid <karim.belaid@idiada.com> or <extern.karim.belaid@porsche.de>
 # License: Apache-2.0 clause
@@ -33,7 +34,15 @@ class PairwiseDifferenceBase(sklearn.base.BaseEstimator):
         X_pair = X1.merge(X2, how="cross")
         x1_pair = X_pair[[f'{column}_x' for column in X1.columns]].rename(columns={f'{column}_x': f'{column}_diff' for column in X1.columns})
         x2_pair = X_pair[[f'{column}_y' for column in X1.columns]].rename(columns={f'{column}_y': f'{column}_diff' for column in X1.columns})
-        X_pair = pd.concat([X_pair, x1_pair - x2_pair], axis='columns')
+
+        try:
+            calculate_difference = x1_pair - x2_pair
+        except:
+            raise ValueError("PairwiseDifference: The input data is not compatible with the subtraction operation. Either transform all data to numeric features or use a ColumnTransformer to transform the data.")
+        # It means that the input data is not compatible with the subtraction operation.
+        # Simply turn all your data into numbers
+
+        X_pair = pd.concat([X_pair, calculate_difference], axis='columns')
         # Symmetric
         x2_pair_sym = X_pair[[f'{column}_x' for column in X1.columns]].rename(columns={f'{column}_x': f'{column}_y' for column in X1.columns})
         x1_pair_sym = X_pair[[f'{column}_y' for column in X1.columns]].rename(columns={f'{column}_y': f'{column}_x' for column in X1.columns})
@@ -64,12 +73,22 @@ class PairwiseDifferenceBase(sklearn.base.BaseEstimator):
     @staticmethod
     def check_input(X: pd.DataFrame) -> None:
         # todo use https://scikit-learn.org/stable/modules/generated/sklearn.utils.check_X_y.html#sklearn.utils.check_X_y
-        assert X is not None
-        assert isinstance(X, pd.DataFrame)
-        assert 'uint' not in str(X.dtypes), X.dtypes
-        # todo write more informative error msg
-        # todo turn assert into raise val err
-        assert len(X.shape) == 2
+        if X is None:
+            raise ValueError('X cannot be None')
+        if len(X.shape) != 2:
+            raise ValueError('X must be 2D')
+        if isinstance(X, pd.DataFrame):
+            if 'uint' in str(X.dtypes):
+                raise ValueError(f'X cannot have unsigned integers (uint)\n{X.dtypes}')
+            # check that all dtypes are numeric
+            if any( not np.issubdtype(dtype, np.number) for dtype in X.dtypes):
+                raise ValueError(f'X must have numeric dtypes like float32 float64 int... Current dtypes are:\n{X.dtypes}\n You can manually convert/one-hot-encode the features or use a predefined transformer. See https://github.com/Karim-53/pdll/tree/main/examples/any_datatype_train_test.py')
+        elif isinstance(X, np.ndarray):
+            if is_unsigned_integer_dtype(X):
+                raise ValueError(f'X cannot have unsigned integers (uint). Current dtypes:\n{X.dtype}')
+            # check that all dtypes are numeric
+            if not np.issubdtype(X.dtype, np.number):
+                raise ValueError(f'X must have numeric dtypes\n{X.dtype}')
 
     @staticmethod
     def check_output(y: pd.Series) -> None:
@@ -495,6 +514,7 @@ class PairwiseDifferenceRegressor(sklearn.base.BaseEstimator, sklearn.base.Regre
 
     def fit(self, X: pd.DataFrame, y: pd.Series, sample_weight=None, check_input=True):
         """ Transform the data into the pair+difference format and train a ML model. """
+        self.check_input = check_input
         if not isinstance(X, pd.DataFrame):
             X = pd.DataFrame(X)
         if not isinstance(y, pd.Series):
@@ -502,6 +522,8 @@ class PairwiseDifferenceRegressor(sklearn.base.BaseEstimator, sklearn.base.Regre
         if y.name is None:
             # just put any name to the output to avoid a bug later
             y.name = 'output'
+        if self.check_input:
+            PairwiseDifferenceBase.check_input(X)
 
         self.X_train_ = X
         self.y_train_ = y
@@ -838,12 +860,16 @@ class PDCDataTransformer(sklearn.base.BaseEstimator, sklearn.base.TransformerMix
     """
     Transform the data so that it can be processed by PDL models.
     """
-    preprosessing_: ColumnTransformer
+    preprocessing_: ColumnTransformer
+    preprocessing_y_: ColumnTransformer # todo fix the ColumnTransformer annotation
 
-    def __init__(self, numeric_features=None, ordinal_features=None, string_features=None):
+    def __init__(self, numeric_features:Iterable=None, ordinal_features:Iterable=None, string_features:Iterable=None, y_type:str=None):
         self.numeric_features = numeric_features
         self.ordinal_features = ordinal_features
         self.string_features = string_features
+        if y_type is not None and y_type not in ('numeric', 'ordinal', 'string'):
+            raise ValueError(f"y_type must be one of 'numeric', 'ordinal', 'string' but got {y_type}")
+        self.y_type = y_type
 
     def fit(self, X, y=None):
 
@@ -872,8 +898,24 @@ class PDCDataTransformer(sklearn.base.BaseEstimator, sklearn.base.TransformerMix
 
         from benchmark.benchmark_utils import cast_uint, get_generic_preprocessing
         X, _ = cast_uint(X)
-        self.preprosessing_ = get_generic_preprocessing(self.numeric_features, self.ordinal_features, self.string_features)
-        self.preprosessing_.fit(X)
+        self.preprocessing_ = get_generic_preprocessing(self.numeric_features, self.ordinal_features, self.string_features)
+        self.preprocessing_.fit(X)
+
+        self.preprocessing_y_ = None
+        if self.y_type == 'numeric':
+            from sklearn.preprocessing import StandardScaler
+            self.preprocessing_y_ = StandardScaler()
+        elif self.y_type == 'ordinal': #  string
+            from sklearn.preprocessing import OrdinalEncoder
+            self.preprocessing_y_ = OrdinalEncoder()
+        elif self.y_type == 'string':
+            from sklearn.preprocessing import OneHotEncoder
+            self.preprocessing_y_ = OneHotEncoder()
+
+        if y is not None and self.preprocessing_y_ is not None:
+            if isinstance(y, pd.Series):
+                y = pd.DataFrame(y)
+            self.preprocessing_y_.fit(y)
 
         return self
 
@@ -881,19 +923,22 @@ class PDCDataTransformer(sklearn.base.BaseEstimator, sklearn.base.TransformerMix
         check_is_fitted(self)
         from benchmark.benchmark_utils import cast_uint
         X, _ = cast_uint(X)
-        X = pd.DataFrame(self.preprosessing_.transform(X))
+        X = pd.DataFrame(self.preprocessing_.transform(X))
         from scipy.sparse import csr_matrix
         if any(isinstance(e, csr_matrix) for e in X.values.flatten()):
-            raise NotImplementedError('error in data \t X contains csr_matrix')
+            raise NotImplementedError('error in data \t X contains sparse features (csr_matrix)')
         X = X.dropna(axis=1, how='all')  # Drop columns with all NaN values
         X = X.astype(np.float32)
 
         if len(X.columns) == 0:
             raise ValueError('error in data \t X no features left after pre-processing')
-        if X.isna().any().any():
-            raise NotImplementedError('error in data \t Some features are NaNs in the X set')
+        # if X.isna().any().any():
+        #     raise NotImplementedError('error in data \t Some features are NaNs in the X set')
         if any(x in pd.Series(X.values.flatten()).apply(type).unique() for x in ('csr_matrix', 'date',)):  # todo think about adding  'str'
             raise NotImplementedError('error in data \t Dataset contains sparse data')
+
+        if y is not None and self.preprocessing_ is not None:
+            y = pd.Series(self.preprocessing_.transform(y), name='y')
         if y is None:
             return X.values
-        return X.values, y.values if y is not None else None
+        return X.values, y.values

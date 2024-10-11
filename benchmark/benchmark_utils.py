@@ -89,7 +89,7 @@ if args['model'] is None:
     ]
 args['model'] = [classifier_dict[int(m)] if m.isdigit() else m for m in args['model']]
 classifier_names = args['model']
-assert all(m in classifier_dict.values() for m in classifier_names), f'Unknown classifier: {classifier_names}'
+# assert all(m in classifier_dict.values() for m in classifier_names), f'Unknown classifier: {classifier_names}'
 
 
 classifier_cpu_usage = {  # None==full parallelism  # CPU    RAM without paralelism
@@ -179,8 +179,8 @@ estimators = {
     'RidgeClassifier': RidgeClassifier,
 }
 
-if unknown := [clf for clf in classifier_names if clf not in estimators.keys()]:
-    raise ValueError(f'Unknown classifiers: {unknown}')
+# if unknown := [clf for clf in classifier_names if clf not in estimators.keys()]:
+#     raise ValueError(f'Unknown classifiers: {unknown}')
 
 
 wrong_classification_datasets = list({
@@ -378,7 +378,7 @@ def get_generic_preprocessing(numeric_features, nominal_features, string_feature
 
 def cast_uint(X: pd.DataFrame, y: pd.Series = None):
     numeric_cols = X.select_dtypes(include=['number']).columns
-    X[numeric_cols] = X[numeric_cols].astype('float32')
+    X.loc[:, numeric_cols] = X[numeric_cols].astype('float32')
     if y is not None:
         y = y.astype('float32')
     return X, y
