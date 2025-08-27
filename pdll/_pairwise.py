@@ -1,5 +1,4 @@
 """Pairwise Difference Learning meta-estimator."""
-# Data manipulation and analysis
 import pandas as pd
 import numpy as np
 
