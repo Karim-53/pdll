@@ -6,7 +6,8 @@ name: Test PyPi wheel
 on:
   push:
     branches: [ "main" ]
-    # change to release or pre-release
+  pull_request:
+    branches: [ "main" ]
 jobs:
   build:
 
