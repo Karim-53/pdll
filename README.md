@@ -1,15 +1,31 @@
-# Pairwise difference learning library (pdll)
-[![Downloads](https://static.pepy.tech/badge/pdll)](https://pepy.tech/project/pdll)
+<h1 align="center">Pairwise Difference Learning (pdll)</h1>
 
-**Pairwise Difference Learning** (PDL) library is a python module. It contains a scikit-learn compatible implementation of PDL Classifier, as described in [Belaid et al. 2024](https://arxiv.org/abs/2406.20031) 
+<p align="center">
+  <b>A scikit-learn compatible meta-learner that boosts tabular classifiers by learning from <i>pairs of points</i> instead of single points.</b>
+</p>
 
-**PDL Classifier** or PDC is a meta learner that can reduce multiclass classification problem into a binary classification problem (similar/different).
+<p align="center">
+  <a href="https://pypi.org/project/pdll/"><img alt="PyPI" src="https://img.shields.io/pypi/v/pdll?color=blue"></a>
+  <a href="https://pypi.org/project/pdll/"><img alt="Python" src="https://img.shields.io/pypi/pyversions/pdll"></a>
+  <a href="https://pepy.tech/project/pdll"><img alt="Downloads" src="https://static.pepy.tech/badge/pdll"></a>
+  <a href="https://github.com/Karim-53/pdll/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/badge/license-Apache%202.0-green"></a>
+  <a href="https://arxiv.org/abs/2406.20031"><img alt="Paper" src="https://img.shields.io/badge/paper-Discovery%20Science%202024-b31b1b"></a>
+</p>
 
-[//]: # (**PDL Regressor** or PDR is a meta learner that solves regression problem by learning the difference.)
+**Pairwise Difference Learning (PDL)** turns a hard multiclass problem into an easy binary one. Instead of asking *"what class is this point?"*, PDL asks *"are these two points the same class?"* — a reformulation that squeezes more signal out of the same training data and consistently improves the accuracy of tree-based models such as Random Forest and Gradient Boosting.
+
+This library provides a drop-in, scikit-learn compatible `PairwiseDifferenceClassifier` (PDC), as introduced in [Belaid et al., *Pairwise Difference Learning for Classification*, Discovery Science 2024](https://arxiv.org/abs/2406.20031).
+
+### ✨ Highlights
+- 🔌 **Drop-in** — wraps any scikit-learn classifier; keeps `.fit`, `.predict`, `.predict_proba`, `.score`.
+- 📈 **Better accuracy** — benchmarked on 99 OpenML datasets against 7 base learners (macro-F1); wins on compatible learners.
+- 🧠 **Principled** — probabilistic reformulation of multiclass classification into a similarity task.
+- 🪶 **Lightweight** — pure Python, only `numpy`, `pandas`, and `scikit-learn` as dependencies.
 
 [<img src="https://github.com/user-attachments/assets/e15057cf-fef8-4061-8bb9-611adde0128b" width="70%">](https://youtu.be/5Yl6yFiNK3U?si=SXuRrO3mibD188xF "Learn more about PDL on youtube")
 
-
+### 📖 Contents
+[Installation](#installation) · [Usage](#usage) · [How does it work?](#how-does-it-work) · [Evaluation](#evaluation) · [Reference](#reference)
 
 ## Installation
 To install the package, run the following command:
