@@ -182,6 +182,7 @@ class PairwiseDifferenceClassifier(sklearn.base.BaseEstimator, sklearn.base.Clas
     X_train_: pd.DataFrame
     y_train_: pd.Series
     sample_weight_: pd.Series = None
+    n_classes_: int
 
     def __init__(
             self,
@@ -227,10 +228,10 @@ class PairwiseDifferenceClassifier(sklearn.base.BaseEstimator, sklearn.base.Clas
         self.X_train_ = X
         self.y_train_ = y
         self.feature_names_in_ = X.columns
-        self.nb_classes_ = self.y_train_.nunique()
+        self.n_classes_ = self.y_train_.nunique()
         self._estimate_prior()
         X_pair, _ = PairwiseDifferenceBase.pair_input(self.X_train_, self.X_train_)
-        y_pair_diff = PairwiseDifferenceBase.pair_output_difference(self.y_train_, self.y_train_, self.nb_classes_)
+        y_pair_diff = PairwiseDifferenceBase.pair_output_difference(self.y_train_, self.y_train_, self.n_classes_)
         # todo add assert on y_pair_diff: min<0  , max>0 and dtype float not uint
         self.estimator.fit(X_pair, y_pair_diff)
         #  plot scatter train improvement vs test improvement
@@ -321,7 +322,7 @@ class PairwiseDifferenceClassifier(sklearn.base.BaseEstimator, sklearn.base.Clas
             Given its similarity probabilities.
             Return the probability for each class"""
             test_i_trains_classes = g(anchor_class=anchor_class, predicted_similarity=predictions_proba_similarity)
-            np.testing.assert_array_equal(test_i_trains_classes.shape, (len(self.y_train_), self.nb_classes_))
+            np.testing.assert_array_equal(test_i_trains_classes.shape, (len(self.y_train_), self.n_classes_))
             # test_i_trains_classes is part of the 3d array that I will not return for now
             np.testing.assert_array_almost_equal(test_i_trains_classes.sum(axis=1), 1.)
             return test_i_trains_classes
@@ -330,7 +331,7 @@ class PairwiseDifferenceClassifier(sklearn.base.BaseEstimator, sklearn.base.Clas
             f, axis=1, arr=predictions_proba_similarity_df.values)  # todo  guess this is slow, get rid of it
 
         np.testing.assert_array_equal(tests_trains_classes_likelihood.shape,
-                                      (len(X), len(self.y_train_), self.nb_classes_))
+                                      (len(X), len(self.y_train_), self.n_classes_))
         np.testing.assert_array_almost_equal(tests_trains_classes_likelihood.sum(axis=-1), 1.)
         return tests_trains_classes_likelihood
 
@@ -424,7 +425,7 @@ class PairwiseDifferenceClassifier(sklearn.base.BaseEstimator, sklearn.base.Clas
             PairwiseDifferenceBase.check_output(y)
 
         y_pair_diff = PairwiseDifferenceBase.pair_output_difference(y, self.y_train_,
-                                                                    self.nb_classes_)  # 0 if similar, 1 if diff
+                                                                    self.n_classes_)  # 0 if similar, 1 if diff
         predictions_proba_similarity: pd.DataFrame = self.predict_similarity_samples(X,
                                                                                      reshape=False)  # 0% if different, 100% if similar
 
@@ -444,6 +445,7 @@ class PairwiseDifferenceRegressor(sklearn.base.BaseEstimator, sklearn.base.Regre
     X_train_: pd.DataFrame
     y_train_: pd.Series
     sample_weight_: pd.Series = None
+    n_classes_: int
 
     def __init__(
             self,
