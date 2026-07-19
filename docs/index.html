@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PDL live demo — Pairwise Difference Learning in your browser</title>
+<meta name="description" content="Upload a CSV and benchmark scikit-learn baselines against Pairwise Difference Learning (PDL) — trained 100% locally in your browser, no data ever uploaded.">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>➖</text></svg>">
+</head>
+<body>
+
+<header class="hero">
+  <nav class="nav">
+    <div class="brand">➖ <strong>pdll</strong> <span class="muted">· live demo</span></div>
+    <div class="nav-links">
+      <a href="https://github.com/Karim-53/pdll" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://arxiv.org/abs/2406.20031" target="_blank" rel="noopener">Paper</a>
+      <a href="https://pypi.org/project/pdll/" target="_blank" rel="noopener">PyPI</a>
+    </div>
+  </nav>
+  <h1>Is <span class="grad">Pairwise Difference Learning</span><br>better on <em>your</em> data?</h1>
+  <p class="sub">
+    Drop a dataset below and benchmark scikit-learn baselines against
+    <strong>PDL(DecisionTree)</strong>, <strong>PDL(RandomForest)</strong> and <strong>PDL(ExtraTrees)</strong> —
+    classification or regression, decided automatically.
+  </p>
+  <p class="privacy">🔒 Everything runs <strong>in your browser</strong> (Python + scikit-learn via WebAssembly).
+     Your data never leaves your machine — you can even go offline once the page has loaded.</p>
+  <div id="runtime-pill" class="pill busy"><span class="spinner"></span><span id="runtime-msg">Starting the in-browser Python runtime…</span></div>
+</header>
+
+<main>
+  <!-- STEP 1 — data -->
+  <section class="card">
+    <h2><span class="step">1</span> Bring your data</h2>
+    <p class="muted">CSV, TSV, TXT, XLSX or JSON. The column named <code>target</code> is the label
+       (any other name: you can pick it below). Everything else is used as input features.
+       Quick-demo limit: training uses at most <strong>599 rows</strong>.</p>
+    <div class="dz-grid">
+      <div id="dz-train" class="dropzone" tabindex="0" role="button" aria-label="Upload training file">
+        <div class="dz-icon">📄</div>
+        <div class="dz-label">Drop your <strong>train</strong> file here — or click to browse</div>
+        <input id="file-train" type="file" accept=".csv,.tsv,.txt,.xlsx,.xlsm,.xls,.json" hidden>
+      </div>
+      <div id="dz-test" class="dropzone optional" tabindex="0" role="button" aria-label="Upload optional test file">
+        <div class="dz-icon">🧪</div>
+        <div class="dz-label">Optional: drop a <strong>test</strong> file here</div>
+        <input id="file-test" type="file" accept=".csv,.tsv,.txt,.xlsx,.xlsm,.xls,.json" hidden>
+      </div>
+    </div>
+    <div class="demo-row">
+      <span class="muted">No file at hand? Try a built-in example:</span>
+      <button class="btn ghost demo-btn needs-runtime" data-demo="iris" disabled>🌸 Iris (classification)</button>
+      <button class="btn ghost demo-btn needs-runtime" data-demo="blobs" disabled>⚖️ Imbalanced + missing (classification)</button>
+      <button class="btn ghost demo-btn needs-runtime" data-demo="diabetes" disabled>📈 Diabetes (regression)</button>
+    </div>
+  </section>
+
+  <!-- STEP 2 — analysis -->
+  <section id="analysis-card" class="card" hidden>
+    <h2><span class="step">2</span> Check the diagnosis</h2>
+    <div id="data-chips" class="chips"></div>
+    <div class="config-row">
+      <label id="target-row">Target column
+        <select id="target-select"></select>
+      </label>
+      <label>Task
+        <select id="task-select">
+          <option value="classification">Classification</option>
+          <option value="regression">Regression</option>
+        </select>
+      </label>
+      <button id="train-btn" class="btn primary needs-runtime" disabled>🚀 Train all models</button>
+    </div>
+    <div id="balance" class="balance" hidden></div>
+    <div id="analysis-notices" class="notices" hidden></div>
+  </section>
+
+  <!-- STEP 3 — results -->
+  <section id="results-card" class="card" hidden>
+    <h2><span class="step">3</span> Scores <span class="muted" id="eval-caption"></span></h2>
+    <div id="results-notices" class="notices" hidden></div>
+    <div class="table-wrap">
+      <table class="results">
+        <thead><tr id="results-head"></tr></thead>
+        <tbody id="results-body"></tbody>
+      </table>
+    </div>
+    <p class="muted small">Models run fastest-first; if one fails the run simply continues with the next.
+       Downloads are standard Python pickles — load them with <code>pip install pdll scikit-learn</code>.</p>
+    <div id="insights" class="insights" hidden></div>
+  </section>
+
+  <div id="error-box" class="notice blocker big" hidden></div>
+
+  <!-- About -->
+  <section class="card about">
+    <h2>What is PDL?</h2>
+    <p><strong>Pairwise Difference Learning</strong> turns a hard multiclass problem into an easy binary one.
+       Instead of asking <em>“what class is this point?”</em>, it asks <em>“are these two points the same class?”</em> —
+       so <em>n</em> training rows become <em>n²</em> pairwise examples, squeezing far more signal out of small datasets.
+       For regression, the model learns the <em>difference</em> between pairs of targets and averages the anchored predictions.</p>
+    <div class="facts">
+      <div class="fact"><div class="fact-num">99</div><div>OpenML datasets in the paper’s benchmark</div></div>
+      <div class="fact"><div class="fact-num">7</div><div>base learners compared (macro F1)</div></div>
+      <div class="fact"><div class="fact-num">n²</div><div>training pairs generated from n rows</div></div>
+    </div>
+    <p class="muted">Rule of thumb from the paper: PDL shines on <strong>small</strong> (&lt; 2000 rows), <strong>balanced</strong>,
+       fully observed tabular data with <strong>tree-based</strong> learners; it loses ground with unbalanced classes,
+       missing values, very large datasets, or parametric base models (linear, SVM, kNN, MLP).</p>
+    <details>
+      <summary>Cite this work</summary>
+      <pre class="cite">@article{belaid2024pairwise,
+  title   = {Pairwise Difference Learning for Classification},
+  author  = {Belaid, Mohamed Karim and Rabus, Maximilian and H{\"u}llermeier, Eyke},
+  journal = {Discovery Science},
+  year    = {2024},
+  url     = {https://arxiv.org/pdf/2406.20031}
+}</pre>
+    </details>
+  </section>
+</main>
+
+<footer>
+  <p>
+    <a href="https://github.com/Karim-53/pdll" target="_blank" rel="noopener">⭐ Star pdll on GitHub</a> ·
+    <a href="https://arxiv.org/abs/2406.20031" target="_blank" rel="noopener">Read the paper</a> ·
+    <a href="https://pypi.org/project/pdll/" target="_blank" rel="noopener"><code>pip install pdll</code></a>
+  </p>
+  <p class="muted small">Apache-2.0 · Runs on <a href="https://pyodide.org" target="_blank" rel="noopener">Pyodide</a> —
+     Python &amp; scikit-learn compiled to WebAssembly. No cookies, no tracking, no server.</p>
+</footer>
+
+<dialog id="snippet-modal">
+  <h3>Use your trained model</h3>
+  <p class="muted small">The download is a pickle bundle: the fitted model plus the exact preprocessing recipe
+     (category encodings and imputation values) used by this page.</p>
+  <pre id="snippet-code" class="cite"></pre>
+  <div class="modal-actions">
+    <button id="snippet-copy" class="btn ghost">copy</button>
+    <button id="snippet-close" class="btn primary">close</button>
+  </div>
+</dialog>
+
+<script src="js/app.js"></script>
+</body>
+</html>

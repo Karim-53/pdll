@@ -24,6 +24,9 @@ This library provides a drop-in, scikit-learn compatible `PairwiseDifferenceClas
 
 [<img src="https://github.com/user-attachments/assets/e15057cf-fef8-4061-8bb9-611adde0128b" width="70%">](https://youtu.be/5Yl6yFiNK3U?si=SXuRrO3mibD188xF "Learn more about PDL on youtube")
 
+### 🚀 Try it live
+**[karim-53.github.io/pdll](https://karim-53.github.io/pdll/)** — drop your own CSV/XLSX and benchmark PDL against scikit-learn baselines **directly in your browser** (WebAssembly; your data never leaves your machine). Trained models can be downloaded as pickles.
+
 ### 📖 Contents
 [Installation](#installation) · [Usage](#usage) · [How does it work?](#how-does-it-work) · [Evaluation](#evaluation) · [Reference](#reference)
 
