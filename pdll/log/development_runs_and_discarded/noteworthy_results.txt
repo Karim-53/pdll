@@ -1,0 +1,274 @@
+& C:/ProgramData/anaconda3/envs/PDL/python.exe c:/Users/betti/Documents/Daten-lokal/Studium/Bachelorarbeit/pdll/pdll/_pairwise_NLP_main.py
+
+Datapoint 86 & Datapoint 396
+Diff: 1
+Score of baseline essay: 8
+Score prediction: 9
+Datapoint 86 & Datapoint 227
+Diff: -2
+Score of baseline essay: 6
+Score prediction: 4
+Datapoint 86 & Datapoint 673
+Diff: 2
+Score of baseline essay: 4
+Score prediction: 6
+Datapoint 86 & Datapoint 702
+Diff: 0
+Score of baseline essay: 9
+Score prediction: 9
+Datapoint 86 & Datapoint 643
+Diff: 0
+Score of baseline essay: 10
+Score prediction: 10
+Avg score: 8
+
+
+Datapoint 343 & Datapoint 396
+Diff: 1
+Score of baseline essay: 8
+Score prediction: 9
+Datapoint 343 & Datapoint 227
+Diff: 1
+Score of baseline essay: 6
+Score prediction: 7
+Datapoint 343 & Datapoint 673
+Diff: 2
+Score of baseline essay: 4
+Score prediction: 6
+Datapoint 343 & Datapoint 702
+Diff: 0
+Score of baseline essay: 9
+Score prediction: 9
+Datapoint 343 & Datapoint 643
+Diff: 1
+Score of baseline essay: 10
+Score prediction: 11
+Avg score: 8
+
+
+Datapoint 35 & Datapoint 396
+Diff: 0
+Score of baseline essay: 8
+Score prediction: 8
+Datapoint 35 & Datapoint 227
+Diff: -1
+Score of baseline essay: 6
+Score prediction: 5
+Datapoint 35 & Datapoint 673
+Diff: 2
+Score of baseline essay: 4  
+Score prediction: 6
+Datapoint 35 & Datapoint 702
+Diff: -1
+Score of baseline essay: 9  
+Score prediction: 8
+Datapoint 35 & Datapoint 643
+Diff: 0
+Score of baseline essay: 10 
+Score prediction: 10        
+Avg score: 7
+
+
+Datapoint 64 & Datapoint 396
+Diff: 1
+Score of baseline essay: 8  
+Score prediction: 9
+Datapoint 64 & Datapoint 227
+Diff: 0
+Score of baseline essay: 6
+Score prediction: 6       
+Datapoint 64 & Datapoint 673
+Diff: 1
+Score of baseline essay: 4
+Score prediction: 5
+Datapoint 64 & Datapoint 702
+Diff: 1
+Score of baseline essay: 9
+Score prediction: 10
+Datapoint 64 & Datapoint 643
+Diff: 1
+Score of baseline essay: 10
+Score prediction: 11
+Avg score: 8
+
+
+Datapoint 255 & Datapoint 396
+Diff: 1
+Score of baseline essay: 8
+Score prediction: 9
+Datapoint 255 & Datapoint 227
+Diff: 0
+Score of baseline essay: 6
+Score prediction: 6
+Datapoint 255 & Datapoint 673
+Diff: 2
+Score of baseline essay: 4
+Score prediction: 6
+Datapoint 255 & Datapoint 702
+Diff: 0
+Score of baseline essay: 9
+Score prediction: 9
+Datapoint 255 & Datapoint 643
+Diff: 0
+Score of baseline essay: 10
+Score prediction: 10
+Avg score: 8
+
+
+                                                 essay  score  y_pred
+86   "Computers are used everywhere, for thousands ...      8       8
+343  "Dear @CAPS1 @CAPS2 I believe that there is mo...      9       8
+35   "Dear Readers of @LOCATION1 @CAPS1 has been bo...      8       7
+64   "I think that computers are a good thing to ha...      7       8
+255  "Dear @CAPS1, I am writing to you to let you k...      9       8
+Mean Squared Error: 0.80
+
+12.05.2025, 00:55
+
+
+
+
+
+& C:/ProgramData/anaconda3/envs/PDL/python.exe c:/Users/betti/Documents/Daten-lokal/Studium/Bachelorarbeit/pdll/pdll/_pairwise_NLP_main.py
+dll/_pairwise_NLP_main.py                                                                                                                                                                                                                    essay  score  y_pred
+86   "Computers are used everywhere, for thousands ...      8       7
+343  "Dear @CAPS1 @CAPS2 I believe that there is mo...      9       8
+35   "Dear Readers of @LOCATION1 @CAPS1 has been bo...      8       6
+64   "I think that computers are a good thing to ha...      7       4
+255  "Dear @CAPS1, I am writing to you to let you k...      9       8
+Mean Squared Error: 3.20
+
+12.05.2025, 01:17
+
+
+
+
+
+
+
+
+& C:/ProgramData/anaconda3/envs/PDL/python.exe c:/Users/betti/Documents/Daten-lokal/Studium/Bachelorarbeit/pdll/pdll/_pairwise_NLP_main.py
+Datapoint 86 & Datapoint 396
+Diff: 0
+Score of baseline essay: 8
+Score prediction: 8
+Datapoint 86 & Datapoint 227
+Diff: 1
+Score of baseline essay: 6
+Score prediction: 7
+Datapoint 86 & Datapoint 673
+Diff: 3
+Score of baseline essay: 4
+Score prediction: 7
+Datapoint 86 & Datapoint 702
+Diff: 0
+Score of baseline essay: 9
+Score prediction: 9
+Datapoint 86 & Datapoint 643
+Diff: 1
+Score of baseline essay: 10
+Score prediction: 11
+Avg score: 8
+
+
+Datapoint 343 & Datapoint 396
+Diff: 0
+Score of baseline essay: 8
+Score prediction: 8
+Datapoint 343 & Datapoint 227
+Diff: 1
+Score of baseline essay: 6
+Score prediction: 7
+Datapoint 343 & Datapoint 673
+Diff: 2
+Score of baseline essay: 4
+Score prediction: 6
+Datapoint 343 & Datapoint 702
+Diff: 0
+Score of baseline essay: 9
+Score prediction: 9
+Datapoint 343 & Datapoint 643
+Diff: 0
+Score of baseline essay: 10
+Score prediction: 10
+Avg score: 8
+
+
+Datapoint 35 & Datapoint 396
+Diff: 2
+Score of baseline essay: 8
+Score prediction: 10
+Datapoint 35 & Datapoint 227
+Diff: 1
+Score of baseline essay: 6
+Score prediction: 7
+Datapoint 35 & Datapoint 673
+Diff: 2
+Score of baseline essay: 4
+Score prediction: 6
+Datapoint 35 & Datapoint 702
+Diff: 1
+Score of baseline essay: 9
+Score prediction: 10
+Datapoint 35 & Datapoint 643
+Diff: 0
+Score of baseline essay: 10
+Score prediction: 10
+Avg score: 9
+
+
+Datapoint 64 & Datapoint 396
+Diff: 0
+Score of baseline essay: 8
+Score prediction: 8
+Datapoint 64 & Datapoint 227
+Diff: 0
+Score of baseline essay: 6
+Score prediction: 6
+Datapoint 64 & Datapoint 673
+Diff: -1
+Score of baseline essay: 4
+Score prediction: 3
+Datapoint 64 & Datapoint 702
+Diff: -3
+Score of baseline essay: 9
+Score prediction: 6
+Datapoint 64 & Datapoint 643
+Diff: 1
+Score of baseline essay: 10
+Score prediction: 11
+Avg score: 7
+
+
+Datapoint 255 & Datapoint 396
+Diff: 2
+Score of baseline essay: 8
+Score prediction: 10
+Datapoint 255 & Datapoint 227
+Diff: 1
+Score of baseline essay: 6
+Score prediction: 7
+Datapoint 255 & Datapoint 673
+Diff: 1
+Score of baseline essay: 4
+Score prediction: 5
+Datapoint 255 & Datapoint 702
+Diff: 0
+Score of baseline essay: 9
+Score prediction: 9
+Datapoint 255 & Datapoint 643
+Diff: 0
+Score of baseline essay: 10
+Score prediction: 10
+Avg score: 8
+
+
+                                                 essay  score  y_pred
+86   "Computers are used everywhere, for thousands ...      8       8
+343  "Dear @CAPS1 @CAPS2 I believe that there is mo...      9       8
+35   "Dear Readers of @LOCATION1 @CAPS1 has been bo...      8       9
+64   "I think that computers are a good thing to ha...      7       7
+255  "Dear @CAPS1, I am writing to you to let you k...      9       8
+Mean Squared Error: 0.60
+
+12.05.2025, 01:22

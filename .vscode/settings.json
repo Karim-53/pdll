@@ -1,0 +1,6 @@
+{
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/pdll/*",
+        "./pdll/pairwise_NLP_LLM"
+    ]
+}

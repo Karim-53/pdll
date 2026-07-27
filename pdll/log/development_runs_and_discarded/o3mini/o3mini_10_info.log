@@ -1,0 +1,2162 @@
+2025-06-22 04:35:29,395 - result - CRITICAL - LLM: o3-mini
+2025-06-22 04:35:29,395 - result - CRITICAL - Mode: Pairwise
+2025-06-22 04:35:29,395 - result - CRITICAL - Datapoints: 30; Anchors: 10
+
+2025-06-22 04:35:29,396 - result - INFO - Run through essay sets 1 to 8
+
+2025-06-22 04:35:29,396 - result - CRITICAL - ESSAY SET 1:
+
+2025-06-22 04:35:29,646 - result - INFO - score prediction started
+
+2025-06-22 04:35:29,647 - result - INFO - Datapoint 309 & Datapoint 251
+2025-06-22 04:35:36,176 - result - INFO - got score from new prediction
+2025-06-22 04:35:36,176 - result - INFO - Diff: 1
+2025-06-22 04:35:36,176 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:35:36,176 - result - INFO - Score prediction: 9
+2025-06-22 04:35:36,178 - result - INFO - Datapoint 309 & Datapoint 273
+2025-06-22 04:35:44,224 - result - INFO - got score from new prediction
+2025-06-22 04:35:44,224 - result - INFO - Diff: -1
+2025-06-22 04:35:44,224 - result - INFO - Score of baseline essay: 12
+2025-06-22 04:35:44,224 - result - INFO - Score prediction: 11
+2025-06-22 04:35:44,225 - result - INFO - Datapoint 309 & Datapoint 38
+2025-06-22 04:35:52,052 - result - INFO - got score from new prediction
+2025-06-22 04:35:52,053 - result - INFO - Diff: 2
+2025-06-22 04:35:52,053 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:35:52,053 - result - INFO - Score prediction: 10
+2025-06-22 04:35:52,053 - result - INFO - Datapoint 309 & Datapoint 69
+2025-06-22 04:36:03,547 - result - INFO - got score from new prediction
+2025-06-22 04:36:03,547 - result - INFO - Diff: 3
+2025-06-22 04:36:03,547 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:36:03,547 - result - INFO - Score prediction: 11
+2025-06-22 04:36:03,547 - result - INFO - Datapoint 309 & Datapoint 301
+2025-06-22 04:36:12,209 - result - INFO - got score from new prediction
+2025-06-22 04:36:12,209 - result - INFO - Diff: 2
+2025-06-22 04:36:12,209 - result - INFO - Score of baseline essay: 6
+2025-06-22 04:36:12,209 - result - INFO - Score prediction: 8
+2025-06-22 04:36:12,210 - result - INFO - Datapoint 309 & Datapoint 108
+2025-06-22 04:36:20,217 - result - INFO - got score from new prediction
+2025-06-22 04:36:20,217 - result - INFO - Diff: 2
+2025-06-22 04:36:20,217 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:36:20,217 - result - INFO - Score prediction: 10
+2025-06-22 04:36:20,217 - result - INFO - Datapoint 309 & Datapoint 135
+2025-06-22 04:36:27,004 - result - INFO - got score from new prediction
+2025-06-22 04:36:27,004 - result - INFO - Diff: 2
+2025-06-22 04:36:27,004 - result - INFO - Score of baseline essay: 9
+2025-06-22 04:36:27,005 - result - INFO - Score prediction: 11
+2025-06-22 04:36:27,005 - result - INFO - Datapoint 309 & Datapoint 250
+2025-06-22 04:36:37,650 - result - INFO - got score from new prediction
+2025-06-22 04:36:37,650 - result - INFO - Diff: 2
+2025-06-22 04:36:37,650 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:36:37,650 - result - INFO - Score prediction: 10
+2025-06-22 04:36:37,650 - result - INFO - Datapoint 309 & Datapoint 296
+2025-06-22 04:36:46,522 - result - INFO - got score from new prediction
+2025-06-22 04:36:46,522 - result - INFO - Diff: 3
+2025-06-22 04:36:46,522 - result - INFO - Score of baseline essay: 5
+2025-06-22 04:36:46,522 - result - INFO - Score prediction: 8
+2025-06-22 04:36:46,522 - result - INFO - Datapoint 309 & Datapoint 20
+2025-06-22 04:36:56,851 - result - INFO - got score from new prediction
+2025-06-22 04:36:56,851 - result - INFO - Diff: 3
+2025-06-22 04:36:56,851 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:36:56,851 - result - INFO - Score prediction: 11
+2025-06-22 04:36:56,851 - result - INFO - Avg score for essay 309: 10
+
+2025-06-22 04:36:56,851 - result - INFO - Datapoint 104 & Datapoint 251
+2025-06-22 04:37:05,636 - result - INFO - got score from new prediction
+2025-06-22 04:37:05,636 - result - INFO - Diff: -1
+2025-06-22 04:37:05,636 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:37:05,636 - result - INFO - Score prediction: 7
+2025-06-22 04:37:05,636 - result - INFO - Datapoint 104 & Datapoint 273
+2025-06-22 04:37:17,378 - result - INFO - got score from new prediction
+2025-06-22 04:37:17,378 - result - INFO - Diff: -2
+2025-06-22 04:37:17,378 - result - INFO - Score of baseline essay: 12
+2025-06-22 04:37:17,378 - result - INFO - Score prediction: 10
+2025-06-22 04:37:17,378 - result - INFO - Datapoint 104 & Datapoint 38
+2025-06-22 04:37:26,582 - result - INFO - got score from new prediction
+2025-06-22 04:37:26,582 - result - INFO - Diff: 1
+2025-06-22 04:37:26,582 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:37:26,582 - result - INFO - Score prediction: 9
+2025-06-22 04:37:26,582 - result - INFO - Datapoint 104 & Datapoint 69
+2025-06-22 04:37:40,057 - result - INFO - got score from new prediction
+2025-06-22 04:37:40,057 - result - INFO - Diff: 1
+2025-06-22 04:37:40,057 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:37:40,057 - result - INFO - Score prediction: 9
+2025-06-22 04:37:40,057 - result - INFO - Datapoint 104 & Datapoint 301
+2025-06-22 04:37:55,607 - result - INFO - got score from new prediction
+2025-06-22 04:37:55,607 - result - INFO - Diff: 2
+2025-06-22 04:37:55,607 - result - INFO - Score of baseline essay: 6
+2025-06-22 04:37:55,608 - result - INFO - Score prediction: 8
+2025-06-22 04:37:55,608 - result - INFO - Datapoint 104 & Datapoint 108
+2025-06-22 04:38:06,041 - result - INFO - got score from new prediction
+2025-06-22 04:38:06,041 - result - INFO - Diff: 1
+2025-06-22 04:38:06,041 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:38:06,041 - result - INFO - Score prediction: 9
+2025-06-22 04:38:06,041 - result - INFO - Datapoint 104 & Datapoint 135
+2025-06-22 04:38:29,009 - result - INFO - got score from new prediction
+2025-06-22 04:38:29,009 - result - INFO - Diff: -1
+2025-06-22 04:38:29,009 - result - INFO - Score of baseline essay: 9
+2025-06-22 04:38:29,009 - result - INFO - Score prediction: 8
+2025-06-22 04:38:29,009 - result - INFO - Datapoint 104 & Datapoint 250
+2025-06-22 04:38:41,331 - result - INFO - got score from new prediction
+2025-06-22 04:38:41,331 - result - INFO - Diff: -1
+2025-06-22 04:38:41,331 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:38:41,331 - result - INFO - Score prediction: 7
+2025-06-22 04:38:41,332 - result - INFO - Datapoint 104 & Datapoint 296
+2025-06-22 04:38:57,913 - result - INFO - got score from new prediction
+2025-06-22 04:38:57,913 - result - INFO - Diff: 2
+2025-06-22 04:38:57,913 - result - INFO - Score of baseline essay: 5
+2025-06-22 04:38:57,913 - result - INFO - Score prediction: 7
+2025-06-22 04:38:57,913 - result - INFO - Datapoint 104 & Datapoint 20
+2025-06-22 04:39:06,128 - result - INFO - got score from new prediction
+2025-06-22 04:39:06,128 - result - INFO - Diff: 1
+2025-06-22 04:39:06,128 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:39:06,128 - result - INFO - Score prediction: 9
+2025-06-22 04:39:06,128 - result - INFO - Avg score for essay 104: 8
+
+2025-06-22 04:39:06,128 - result - INFO - Datapoint 796 & Datapoint 251
+2025-06-22 04:39:24,659 - result - INFO - got score from new prediction
+2025-06-22 04:39:24,659 - result - INFO - Diff: -1
+2025-06-22 04:39:24,659 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:39:24,659 - result - INFO - Score prediction: 7
+2025-06-22 04:39:24,659 - result - INFO - Datapoint 796 & Datapoint 273
+2025-06-22 04:39:39,773 - result - INFO - got score from new prediction
+2025-06-22 04:39:39,773 - result - INFO - Diff: -3
+2025-06-22 04:39:39,773 - result - INFO - Score of baseline essay: 12
+2025-06-22 04:39:39,773 - result - INFO - Score prediction: 9
+2025-06-22 04:39:39,773 - result - INFO - Datapoint 796 & Datapoint 38
+2025-06-22 04:39:53,739 - result - INFO - got score from new prediction
+2025-06-22 04:39:53,739 - result - INFO - Diff: 0
+2025-06-22 04:39:53,739 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:39:53,739 - result - INFO - Score prediction: 8
+2025-06-22 04:39:53,739 - result - INFO - Datapoint 796 & Datapoint 69
+2025-06-22 04:40:07,267 - result - INFO - got score from new prediction
+2025-06-22 04:40:07,267 - result - INFO - Diff: 2
+2025-06-22 04:40:07,267 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:40:07,267 - result - INFO - Score prediction: 10
+2025-06-22 04:40:07,267 - result - INFO - Datapoint 796 & Datapoint 301
+2025-06-22 04:40:18,168 - result - INFO - got score from new prediction
+2025-06-22 04:40:18,168 - result - INFO - Diff: 2
+2025-06-22 04:40:18,168 - result - INFO - Score of baseline essay: 6
+2025-06-22 04:40:18,168 - result - INFO - Score prediction: 8
+2025-06-22 04:40:18,168 - result - INFO - Datapoint 796 & Datapoint 108
+2025-06-22 04:40:41,617 - result - INFO - got score from new prediction
+2025-06-22 04:40:41,617 - result - INFO - Diff: 2
+2025-06-22 04:40:41,617 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:40:41,617 - result - INFO - Score prediction: 10
+2025-06-22 04:40:41,617 - result - INFO - Datapoint 796 & Datapoint 135
+2025-06-22 04:40:51,176 - result - INFO - got score from new prediction
+2025-06-22 04:40:51,176 - result - INFO - Diff: 1
+2025-06-22 04:40:51,176 - result - INFO - Score of baseline essay: 9
+2025-06-22 04:40:51,176 - result - INFO - Score prediction: 10
+2025-06-22 04:40:51,176 - result - INFO - Datapoint 796 & Datapoint 250
+2025-06-22 04:41:04,792 - result - INFO - got score from new prediction
+2025-06-22 04:41:04,792 - result - INFO - Diff: -1
+2025-06-22 04:41:04,792 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:41:04,792 - result - INFO - Score prediction: 7
+2025-06-22 04:41:04,792 - result - INFO - Datapoint 796 & Datapoint 296
+2025-06-22 04:41:20,747 - result - INFO - got score from new prediction
+2025-06-22 04:41:20,747 - result - INFO - Diff: 1
+2025-06-22 04:41:20,747 - result - INFO - Score of baseline essay: 5
+2025-06-22 04:41:20,747 - result - INFO - Score prediction: 6
+2025-06-22 04:41:20,747 - result - INFO - Datapoint 796 & Datapoint 20
+2025-06-22 04:41:30,530 - result - INFO - got score from new prediction
+2025-06-22 04:41:30,530 - result - INFO - Diff: 2
+2025-06-22 04:41:30,530 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:41:30,530 - result - INFO - Score prediction: 10
+2025-06-22 04:41:30,530 - result - INFO - Avg score for essay 796: 8
+
+2025-06-22 04:41:30,530 - result - INFO - Datapoint 579 & Datapoint 251
+2025-06-22 04:41:55,937 - result - INFO - got score from new prediction
+2025-06-22 04:41:55,937 - result - INFO - Diff: -1
+2025-06-22 04:41:55,937 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:41:55,937 - result - INFO - Score prediction: 7
+2025-06-22 04:41:55,937 - result - INFO - Datapoint 579 & Datapoint 273
+2025-06-22 04:42:12,488 - result - INFO - got score from new prediction
+2025-06-22 04:42:12,488 - result - INFO - Diff: -2
+2025-06-22 04:42:12,488 - result - INFO - Score of baseline essay: 12
+2025-06-22 04:42:12,488 - result - INFO - Score prediction: 10
+2025-06-22 04:42:12,488 - result - INFO - Datapoint 579 & Datapoint 38
+2025-06-22 04:42:21,647 - result - INFO - got score from new prediction
+2025-06-22 04:42:21,647 - result - INFO - Diff: 1
+2025-06-22 04:42:21,647 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:42:21,647 - result - INFO - Score prediction: 9
+2025-06-22 04:42:21,647 - result - INFO - Datapoint 579 & Datapoint 69
+2025-06-22 04:42:35,703 - result - INFO - got score from new prediction
+2025-06-22 04:42:35,703 - result - INFO - Diff: 2
+2025-06-22 04:42:35,703 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:42:35,703 - result - INFO - Score prediction: 10
+2025-06-22 04:42:35,703 - result - INFO - Datapoint 579 & Datapoint 301
+2025-06-22 04:42:47,919 - result - INFO - got score from new prediction
+2025-06-22 04:42:47,919 - result - INFO - Diff: 2
+2025-06-22 04:42:47,919 - result - INFO - Score of baseline essay: 6
+2025-06-22 04:42:47,919 - result - INFO - Score prediction: 8
+2025-06-22 04:42:47,919 - result - INFO - Datapoint 579 & Datapoint 108
+2025-06-22 04:43:04,055 - result - INFO - got score from new prediction
+2025-06-22 04:43:04,055 - result - INFO - Diff: 2
+2025-06-22 04:43:04,055 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:43:04,055 - result - INFO - Score prediction: 10
+2025-06-22 04:43:04,055 - result - INFO - Datapoint 579 & Datapoint 135
+2025-06-22 04:43:13,101 - result - INFO - got score from new prediction
+2025-06-22 04:43:13,101 - result - INFO - Diff: 1
+2025-06-22 04:43:13,101 - result - INFO - Score of baseline essay: 9
+2025-06-22 04:43:13,101 - result - INFO - Score prediction: 10
+2025-06-22 04:43:13,101 - result - INFO - Datapoint 579 & Datapoint 250
+2025-06-22 04:43:22,781 - result - INFO - got score from new prediction
+2025-06-22 04:43:22,781 - result - INFO - Diff: 1
+2025-06-22 04:43:22,781 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:43:22,781 - result - INFO - Score prediction: 9
+2025-06-22 04:43:22,781 - result - INFO - Datapoint 579 & Datapoint 296
+2025-06-22 04:43:34,771 - result - INFO - got score from new prediction
+2025-06-22 04:43:34,771 - result - INFO - Diff: 2
+2025-06-22 04:43:34,771 - result - INFO - Score of baseline essay: 5
+2025-06-22 04:43:34,771 - result - INFO - Score prediction: 7
+2025-06-22 04:43:34,771 - result - INFO - Datapoint 579 & Datapoint 20
+2025-06-22 04:43:48,484 - result - INFO - got score from new prediction
+2025-06-22 04:43:48,484 - result - INFO - Diff: 2
+2025-06-22 04:43:48,484 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:43:48,484 - result - INFO - Score prediction: 10
+2025-06-22 04:43:48,484 - result - INFO - Avg score for essay 579: 9
+
+2025-06-22 04:43:48,484 - result - INFO - Datapoint 857 & Datapoint 251
+2025-06-22 04:43:58,075 - result - INFO - got score from new prediction
+2025-06-22 04:43:58,075 - result - INFO - Diff: 1
+2025-06-22 04:43:58,075 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:43:58,075 - result - INFO - Score prediction: 9
+2025-06-22 04:43:58,075 - result - INFO - Datapoint 857 & Datapoint 273
+2025-06-22 04:44:09,754 - result - INFO - got score from new prediction
+2025-06-22 04:44:09,754 - result - INFO - Diff: -2
+2025-06-22 04:44:09,755 - result - INFO - Score of baseline essay: 12
+2025-06-22 04:44:09,755 - result - INFO - Score prediction: 10
+2025-06-22 04:44:09,755 - result - INFO - Datapoint 857 & Datapoint 38
+2025-06-22 04:44:20,967 - result - INFO - got score from new prediction
+2025-06-22 04:44:20,967 - result - INFO - Diff: 2
+2025-06-22 04:44:20,967 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:44:20,967 - result - INFO - Score prediction: 10
+2025-06-22 04:44:20,967 - result - INFO - Datapoint 857 & Datapoint 69
+2025-06-22 04:44:35,664 - result - INFO - got score from new prediction
+2025-06-22 04:44:35,664 - result - INFO - Diff: 3
+2025-06-22 04:44:35,664 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:44:35,664 - result - INFO - Score prediction: 11
+2025-06-22 04:44:35,665 - result - INFO - Datapoint 857 & Datapoint 301
+2025-06-22 04:44:43,737 - result - INFO - got score from new prediction
+2025-06-22 04:44:43,737 - result - INFO - Diff: 2
+2025-06-22 04:44:43,737 - result - INFO - Score of baseline essay: 6
+2025-06-22 04:44:43,737 - result - INFO - Score prediction: 8
+2025-06-22 04:44:43,738 - result - INFO - Datapoint 857 & Datapoint 108
+2025-06-22 04:44:50,414 - result - INFO - got score from new prediction
+2025-06-22 04:44:50,414 - result - INFO - Diff: 3
+2025-06-22 04:44:50,414 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:44:50,414 - result - INFO - Score prediction: 11
+2025-06-22 04:44:50,414 - result - INFO - Datapoint 857 & Datapoint 135
+2025-06-22 04:44:59,885 - result - INFO - got score from new prediction
+2025-06-22 04:44:59,885 - result - INFO - Diff: 1
+2025-06-22 04:44:59,885 - result - INFO - Score of baseline essay: 9
+2025-06-22 04:44:59,885 - result - INFO - Score prediction: 10
+2025-06-22 04:44:59,885 - result - INFO - Datapoint 857 & Datapoint 250
+2025-06-22 04:45:11,854 - result - INFO - got score from new prediction
+2025-06-22 04:45:11,854 - result - INFO - Diff: 2
+2025-06-22 04:45:11,854 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:45:11,854 - result - INFO - Score prediction: 10
+2025-06-22 04:45:11,854 - result - INFO - Datapoint 857 & Datapoint 296
+2025-06-22 04:45:24,071 - result - INFO - got score from new prediction
+2025-06-22 04:45:24,071 - result - INFO - Diff: 2
+2025-06-22 04:45:24,071 - result - INFO - Score of baseline essay: 5
+2025-06-22 04:45:24,071 - result - INFO - Score prediction: 7
+2025-06-22 04:45:24,071 - result - INFO - Datapoint 857 & Datapoint 20
+2025-06-22 04:45:31,248 - result - INFO - got score from new prediction
+2025-06-22 04:45:31,248 - result - INFO - Diff: 2
+2025-06-22 04:45:31,248 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:45:31,248 - result - INFO - Score prediction: 10
+2025-06-22 04:45:31,248 - result - INFO - Avg score for essay 857: 10
+
+2025-06-22 04:45:31,248 - result - INFO - Datapoint 133 & Datapoint 251
+2025-06-22 04:45:40,742 - result - INFO - got score from new prediction
+2025-06-22 04:45:40,742 - result - INFO - Diff: -2
+2025-06-22 04:45:40,742 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:45:40,742 - result - INFO - Score prediction: 6
+2025-06-22 04:45:40,742 - result - INFO - Datapoint 133 & Datapoint 273
+2025-06-22 04:45:48,272 - result - INFO - got score from new prediction
+2025-06-22 04:45:48,272 - result - INFO - Diff: -2
+2025-06-22 04:45:48,272 - result - INFO - Score of baseline essay: 12
+2025-06-22 04:45:48,272 - result - INFO - Score prediction: 10
+2025-06-22 04:45:48,272 - result - INFO - Datapoint 133 & Datapoint 38
+2025-06-22 04:46:11,813 - result - INFO - got score from new prediction
+2025-06-22 04:46:11,813 - result - INFO - Diff: -1
+2025-06-22 04:46:11,813 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:46:11,813 - result - INFO - Score prediction: 7
+2025-06-22 04:46:11,813 - result - INFO - Datapoint 133 & Datapoint 69
+2025-06-22 04:46:26,780 - result - INFO - got score from new prediction
+2025-06-22 04:46:26,780 - result - INFO - Diff: 1
+2025-06-22 04:46:26,780 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:46:26,780 - result - INFO - Score prediction: 9
+2025-06-22 04:46:26,781 - result - INFO - Datapoint 133 & Datapoint 301
+2025-06-22 04:46:41,231 - result - INFO - got score from new prediction
+2025-06-22 04:46:41,231 - result - INFO - Diff: 2
+2025-06-22 04:46:41,231 - result - INFO - Score of baseline essay: 6
+2025-06-22 04:46:41,231 - result - INFO - Score prediction: 8
+2025-06-22 04:46:41,231 - result - INFO - Datapoint 133 & Datapoint 108
+2025-06-22 04:47:02,888 - result - INFO - got score from new prediction
+2025-06-22 04:47:02,888 - result - INFO - Diff: 2
+2025-06-22 04:47:02,888 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:47:02,888 - result - INFO - Score prediction: 10
+2025-06-22 04:47:02,888 - result - INFO - Datapoint 133 & Datapoint 135
+2025-06-22 04:47:20,834 - result - INFO - got score from new prediction
+2025-06-22 04:47:20,834 - result - INFO - Diff: -1
+2025-06-22 04:47:20,834 - result - INFO - Score of baseline essay: 9
+2025-06-22 04:47:20,834 - result - INFO - Score prediction: 8
+2025-06-22 04:47:20,834 - result - INFO - Datapoint 133 & Datapoint 250
+2025-06-22 04:47:30,235 - result - INFO - got score from new prediction
+2025-06-22 04:47:30,235 - result - INFO - Diff: -1
+2025-06-22 04:47:30,235 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:47:30,235 - result - INFO - Score prediction: 7
+2025-06-22 04:47:30,236 - result - INFO - Datapoint 133 & Datapoint 296
+2025-06-22 04:47:39,204 - result - INFO - got score from new prediction
+2025-06-22 04:47:39,204 - result - INFO - Diff: 1
+2025-06-22 04:47:39,204 - result - INFO - Score of baseline essay: 5
+2025-06-22 04:47:39,204 - result - INFO - Score prediction: 6
+2025-06-22 04:47:39,204 - result - INFO - Datapoint 133 & Datapoint 20
+2025-06-22 04:48:16,933 - result - INFO - got score from new prediction
+2025-06-22 04:48:16,933 - result - INFO - Diff: 4
+2025-06-22 04:48:16,933 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:48:16,933 - result - INFO - Score prediction: 12
+2025-06-22 04:48:16,933 - result - INFO - Avg score for essay 133: 8
+
+2025-06-22 04:48:16,933 - result - INFO - Datapoint 618 & Datapoint 251
+2025-06-22 04:48:39,197 - result - INFO - got score from new prediction
+2025-06-22 04:48:39,197 - result - INFO - Diff: 1
+2025-06-22 04:48:39,197 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:48:39,197 - result - INFO - Score prediction: 9
+2025-06-22 04:48:39,197 - result - INFO - Datapoint 618 & Datapoint 273
+2025-06-22 04:48:56,539 - result - INFO - got score from new prediction
+2025-06-22 04:48:56,539 - result - INFO - Diff: -2
+2025-06-22 04:48:56,539 - result - INFO - Score of baseline essay: 12
+2025-06-22 04:48:56,539 - result - INFO - Score prediction: 10
+2025-06-22 04:48:56,539 - result - INFO - Datapoint 618 & Datapoint 38
+2025-06-22 04:49:05,030 - result - INFO - got score from new prediction
+2025-06-22 04:49:05,030 - result - INFO - Diff: 2
+2025-06-22 04:49:05,030 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:49:05,030 - result - INFO - Score prediction: 10
+2025-06-22 04:49:05,031 - result - INFO - Datapoint 618 & Datapoint 69
+2025-06-22 04:49:16,147 - result - INFO - got score from new prediction
+2025-06-22 04:49:16,147 - result - INFO - Diff: 2
+2025-06-22 04:49:16,148 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:49:16,148 - result - INFO - Score prediction: 10
+2025-06-22 04:49:16,148 - result - INFO - Datapoint 618 & Datapoint 301
+2025-06-22 04:49:28,259 - result - INFO - got score from new prediction
+2025-06-22 04:49:28,259 - result - INFO - Diff: 2
+2025-06-22 04:49:28,259 - result - INFO - Score of baseline essay: 6
+2025-06-22 04:49:28,259 - result - INFO - Score prediction: 8
+2025-06-22 04:49:28,259 - result - INFO - Datapoint 618 & Datapoint 108
+2025-06-22 04:49:35,565 - result - INFO - got score from new prediction
+2025-06-22 04:49:35,565 - result - INFO - Diff: 2
+2025-06-22 04:49:35,565 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:49:35,565 - result - INFO - Score prediction: 10
+2025-06-22 04:49:35,565 - result - INFO - Datapoint 618 & Datapoint 135
+2025-06-22 04:49:48,139 - result - INFO - got score from new prediction
+2025-06-22 04:49:48,139 - result - INFO - Diff: 1
+2025-06-22 04:49:48,139 - result - INFO - Score of baseline essay: 9
+2025-06-22 04:49:48,139 - result - INFO - Score prediction: 10
+2025-06-22 04:49:48,139 - result - INFO - Datapoint 618 & Datapoint 250
+2025-06-22 04:50:02,494 - result - INFO - got score from new prediction
+2025-06-22 04:50:02,494 - result - INFO - Diff: 1
+2025-06-22 04:50:02,494 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:50:02,494 - result - INFO - Score prediction: 9
+2025-06-22 04:50:02,494 - result - INFO - Datapoint 618 & Datapoint 296
+2025-06-22 04:50:15,069 - result - INFO - got score from new prediction
+2025-06-22 04:50:15,069 - result - INFO - Diff: 3
+2025-06-22 04:50:15,069 - result - INFO - Score of baseline essay: 5
+2025-06-22 04:50:15,069 - result - INFO - Score prediction: 8
+2025-06-22 04:50:15,069 - result - INFO - Datapoint 618 & Datapoint 20
+2025-06-22 04:50:28,650 - result - INFO - got score from new prediction
+2025-06-22 04:50:28,650 - result - INFO - Diff: 2
+2025-06-22 04:50:28,650 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:50:28,650 - result - INFO - Score prediction: 10
+2025-06-22 04:50:28,650 - result - INFO - Avg score for essay 618: 9
+
+2025-06-22 04:50:28,650 - result - INFO - Datapoint 408 & Datapoint 251
+2025-06-22 04:50:44,902 - result - INFO - got score from new prediction
+2025-06-22 04:50:44,902 - result - INFO - Diff: -1
+2025-06-22 04:50:44,902 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:50:44,902 - result - INFO - Score prediction: 7
+2025-06-22 04:50:44,902 - result - INFO - Datapoint 408 & Datapoint 273
+2025-06-22 04:51:03,102 - result - INFO - got score from new prediction
+2025-06-22 04:51:03,102 - result - INFO - Diff: -2
+2025-06-22 04:51:03,102 - result - INFO - Score of baseline essay: 12
+2025-06-22 04:51:03,102 - result - INFO - Score prediction: 10
+2025-06-22 04:51:03,102 - result - INFO - Datapoint 408 & Datapoint 38
+2025-06-22 04:51:14,281 - result - INFO - got score from new prediction
+2025-06-22 04:51:14,281 - result - INFO - Diff: 1
+2025-06-22 04:51:14,281 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:51:14,281 - result - INFO - Score prediction: 9
+2025-06-22 04:51:14,281 - result - INFO - Datapoint 408 & Datapoint 69
+2025-06-22 04:51:27,922 - result - INFO - got score from new prediction
+2025-06-22 04:51:27,922 - result - INFO - Diff: 2
+2025-06-22 04:51:27,922 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:51:27,922 - result - INFO - Score prediction: 10
+2025-06-22 04:51:27,922 - result - INFO - Datapoint 408 & Datapoint 301
+2025-06-22 04:51:51,690 - result - INFO - got score from new prediction
+2025-06-22 04:51:51,690 - result - INFO - Diff: 2
+2025-06-22 04:51:51,690 - result - INFO - Score of baseline essay: 6
+2025-06-22 04:51:51,690 - result - INFO - Score prediction: 8
+2025-06-22 04:51:51,690 - result - INFO - Datapoint 408 & Datapoint 108
+2025-06-22 04:52:04,542 - result - INFO - got score from new prediction
+2025-06-22 04:52:04,542 - result - INFO - Diff: 2
+2025-06-22 04:52:04,542 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:52:04,542 - result - INFO - Score prediction: 10
+2025-06-22 04:52:04,542 - result - INFO - Datapoint 408 & Datapoint 135
+2025-06-22 04:52:16,314 - result - INFO - got score from new prediction
+2025-06-22 04:52:16,314 - result - INFO - Diff: 1
+2025-06-22 04:52:16,314 - result - INFO - Score of baseline essay: 9
+2025-06-22 04:52:16,314 - result - INFO - Score prediction: 10
+2025-06-22 04:52:16,314 - result - INFO - Datapoint 408 & Datapoint 250
+2025-06-22 04:52:28,092 - result - INFO - got score from new prediction
+2025-06-22 04:52:28,092 - result - INFO - Diff: 1
+2025-06-22 04:52:28,092 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:52:28,092 - result - INFO - Score prediction: 9
+2025-06-22 04:52:28,092 - result - INFO - Datapoint 408 & Datapoint 296
+2025-06-22 04:52:44,128 - result - INFO - got score from new prediction
+2025-06-22 04:52:44,128 - result - INFO - Diff: 2
+2025-06-22 04:52:44,128 - result - INFO - Score of baseline essay: 5
+2025-06-22 04:52:44,128 - result - INFO - Score prediction: 7
+2025-06-22 04:52:44,128 - result - INFO - Datapoint 408 & Datapoint 20
+2025-06-22 04:53:14,510 - result - INFO - got score from new prediction
+2025-06-22 04:53:14,510 - result - INFO - Diff: 1
+2025-06-22 04:53:14,510 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:53:14,510 - result - INFO - Score prediction: 9
+2025-06-22 04:53:14,510 - result - INFO - Avg score for essay 408: 9
+
+2025-06-22 04:53:14,510 - result - INFO - Datapoint 289 & Datapoint 251
+2025-06-22 04:53:48,634 - result - INFO - got score from new prediction
+2025-06-22 04:53:48,634 - result - INFO - Diff: -2
+2025-06-22 04:53:48,634 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:53:48,634 - result - INFO - Score prediction: 6
+2025-06-22 04:53:48,634 - result - INFO - Datapoint 289 & Datapoint 273
+2025-06-22 04:53:59,263 - result - INFO - got score from new prediction
+2025-06-22 04:53:59,263 - result - INFO - Diff: -2
+2025-06-22 04:53:59,263 - result - INFO - Score of baseline essay: 12
+2025-06-22 04:53:59,263 - result - INFO - Score prediction: 10
+2025-06-22 04:53:59,264 - result - INFO - Datapoint 289 & Datapoint 38
+2025-06-22 04:54:19,905 - result - INFO - got score from new prediction
+2025-06-22 04:54:19,905 - result - INFO - Diff: 1
+2025-06-22 04:54:19,905 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:54:19,905 - result - INFO - Score prediction: 9
+2025-06-22 04:54:19,905 - result - INFO - Datapoint 289 & Datapoint 69
+2025-06-22 04:54:34,554 - result - INFO - got score from new prediction
+2025-06-22 04:54:34,554 - result - INFO - Diff: 1
+2025-06-22 04:54:34,554 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:54:34,554 - result - INFO - Score prediction: 9
+2025-06-22 04:54:34,555 - result - INFO - Datapoint 289 & Datapoint 301
+2025-06-22 04:54:45,537 - result - INFO - got score from new prediction
+2025-06-22 04:54:45,537 - result - INFO - Diff: 1
+2025-06-22 04:54:45,537 - result - INFO - Score of baseline essay: 6
+2025-06-22 04:54:45,537 - result - INFO - Score prediction: 7
+2025-06-22 04:54:45,537 - result - INFO - Datapoint 289 & Datapoint 108
+2025-06-22 04:55:13,177 - result - INFO - got score from new prediction
+2025-06-22 04:55:13,177 - result - INFO - Diff: 2
+2025-06-22 04:55:13,177 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:55:13,177 - result - INFO - Score prediction: 10
+2025-06-22 04:55:13,177 - result - INFO - Datapoint 289 & Datapoint 135
+2025-06-22 04:55:34,875 - result - INFO - got score from new prediction
+2025-06-22 04:55:34,876 - result - INFO - Diff: 1
+2025-06-22 04:55:34,876 - result - INFO - Score of baseline essay: 9
+2025-06-22 04:55:34,876 - result - INFO - Score prediction: 10
+2025-06-22 04:55:34,876 - result - INFO - Datapoint 289 & Datapoint 250
+2025-06-22 04:55:51,644 - result - INFO - got score from new prediction
+2025-06-22 04:55:51,644 - result - INFO - Diff: -1
+2025-06-22 04:55:51,644 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:55:51,644 - result - INFO - Score prediction: 7
+2025-06-22 04:55:51,644 - result - INFO - Datapoint 289 & Datapoint 296
+2025-06-22 04:56:02,527 - result - INFO - got score from new prediction
+2025-06-22 04:56:02,527 - result - INFO - Diff: 1
+2025-06-22 04:56:02,527 - result - INFO - Score of baseline essay: 5
+2025-06-22 04:56:02,527 - result - INFO - Score prediction: 6
+2025-06-22 04:56:02,528 - result - INFO - Datapoint 289 & Datapoint 20
+2025-06-22 04:56:19,810 - result - INFO - got score from new prediction
+2025-06-22 04:56:19,810 - result - INFO - Diff: 1
+2025-06-22 04:56:19,810 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:56:19,810 - result - INFO - Score prediction: 9
+2025-06-22 04:56:19,810 - result - INFO - Avg score for essay 289: 8
+
+2025-06-22 04:56:19,810 - result - INFO - Datapoint 687 & Datapoint 251
+2025-06-22 04:56:36,782 - result - INFO - got score from new prediction
+2025-06-22 04:56:36,782 - result - INFO - Diff: 2
+2025-06-22 04:56:36,782 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:56:36,782 - result - INFO - Score prediction: 10
+2025-06-22 04:56:36,782 - result - INFO - Datapoint 687 & Datapoint 273
+2025-06-22 04:56:53,431 - result - INFO - got score from new prediction
+2025-06-22 04:56:53,431 - result - INFO - Diff: -1
+2025-06-22 04:56:53,431 - result - INFO - Score of baseline essay: 12
+2025-06-22 04:56:53,431 - result - INFO - Score prediction: 11
+2025-06-22 04:56:53,431 - result - INFO - Datapoint 687 & Datapoint 38
+2025-06-22 04:57:05,849 - result - INFO - got score from new prediction
+2025-06-22 04:57:05,849 - result - INFO - Diff: 2
+2025-06-22 04:57:05,849 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:57:05,849 - result - INFO - Score prediction: 10
+2025-06-22 04:57:05,850 - result - INFO - Datapoint 687 & Datapoint 69
+2025-06-22 04:57:15,310 - result - INFO - got score from new prediction
+2025-06-22 04:57:15,310 - result - INFO - Diff: 3
+2025-06-22 04:57:15,310 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:57:15,310 - result - INFO - Score prediction: 11
+2025-06-22 04:57:15,310 - result - INFO - Datapoint 687 & Datapoint 301
+2025-06-22 04:57:26,836 - result - INFO - got score from new prediction
+2025-06-22 04:57:26,836 - result - INFO - Diff: 3
+2025-06-22 04:57:26,836 - result - INFO - Score of baseline essay: 6
+2025-06-22 04:57:26,837 - result - INFO - Score prediction: 9
+2025-06-22 04:57:26,837 - result - INFO - Datapoint 687 & Datapoint 108
+2025-06-22 04:57:41,757 - result - INFO - got score from new prediction
+2025-06-22 04:57:41,757 - result - INFO - Diff: 3
+2025-06-22 04:57:41,757 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:57:41,757 - result - INFO - Score prediction: 11
+2025-06-22 04:57:41,757 - result - INFO - Datapoint 687 & Datapoint 135
+2025-06-22 04:57:51,115 - result - INFO - got score from new prediction
+2025-06-22 04:57:51,115 - result - INFO - Diff: 2
+2025-06-22 04:57:51,115 - result - INFO - Score of baseline essay: 9
+2025-06-22 04:57:51,115 - result - INFO - Score prediction: 11
+2025-06-22 04:57:51,115 - result - INFO - Datapoint 687 & Datapoint 250
+2025-06-22 04:58:06,787 - result - INFO - got score from new prediction
+2025-06-22 04:58:06,787 - result - INFO - Diff: 2
+2025-06-22 04:58:06,787 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:58:06,787 - result - INFO - Score prediction: 10
+2025-06-22 04:58:06,787 - result - INFO - Datapoint 687 & Datapoint 296
+2025-06-22 04:58:27,011 - result - INFO - got score from new prediction
+2025-06-22 04:58:27,011 - result - INFO - Diff: 3
+2025-06-22 04:58:27,011 - result - INFO - Score of baseline essay: 5
+2025-06-22 04:58:27,011 - result - INFO - Score prediction: 8
+2025-06-22 04:58:27,011 - result - INFO - Datapoint 687 & Datapoint 20
+2025-06-22 04:58:38,070 - result - INFO - got score from new prediction
+2025-06-22 04:58:38,070 - result - INFO - Diff: 2
+2025-06-22 04:58:38,070 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:58:38,070 - result - INFO - Score prediction: 10
+2025-06-22 04:58:38,070 - result - INFO - Avg score for essay 687: 10
+
+2025-06-22 04:58:38,070 - result - INFO - Datapoint 332 & Datapoint 251
+2025-06-22 04:58:49,127 - result - INFO - got score from new prediction
+2025-06-22 04:58:49,127 - result - INFO - Diff: -1
+2025-06-22 04:58:49,127 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:58:49,127 - result - INFO - Score prediction: 7
+2025-06-22 04:58:49,127 - result - INFO - Datapoint 332 & Datapoint 273
+2025-06-22 04:59:03,557 - result - INFO - got score from new prediction
+2025-06-22 04:59:03,557 - result - INFO - Diff: -2
+2025-06-22 04:59:03,557 - result - INFO - Score of baseline essay: 12
+2025-06-22 04:59:03,557 - result - INFO - Score prediction: 10
+2025-06-22 04:59:03,557 - result - INFO - Datapoint 332 & Datapoint 38
+2025-06-22 04:59:15,886 - result - INFO - got score from new prediction
+2025-06-22 04:59:15,886 - result - INFO - Diff: 1
+2025-06-22 04:59:15,886 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:59:15,886 - result - INFO - Score prediction: 9
+2025-06-22 04:59:15,886 - result - INFO - Datapoint 332 & Datapoint 69
+2025-06-22 04:59:29,535 - result - INFO - got score from new prediction
+2025-06-22 04:59:29,535 - result - INFO - Diff: 2
+2025-06-22 04:59:29,535 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:59:29,535 - result - INFO - Score prediction: 10
+2025-06-22 04:59:29,535 - result - INFO - Datapoint 332 & Datapoint 301
+2025-06-22 04:59:46,717 - result - INFO - got score from new prediction
+2025-06-22 04:59:46,717 - result - INFO - Diff: 1
+2025-06-22 04:59:46,717 - result - INFO - Score of baseline essay: 6
+2025-06-22 04:59:46,717 - result - INFO - Score prediction: 7
+2025-06-22 04:59:46,717 - result - INFO - Datapoint 332 & Datapoint 108
+2025-06-22 04:59:59,256 - result - INFO - got score from new prediction
+2025-06-22 04:59:59,257 - result - INFO - Diff: 2
+2025-06-22 04:59:59,257 - result - INFO - Score of baseline essay: 8
+2025-06-22 04:59:59,257 - result - INFO - Score prediction: 10
+2025-06-22 04:59:59,257 - result - INFO - Datapoint 332 & Datapoint 135
+2025-06-22 05:00:18,357 - result - INFO - got score from new prediction
+2025-06-22 05:00:18,357 - result - INFO - Diff: 1
+2025-06-22 05:00:18,357 - result - INFO - Score of baseline essay: 9
+2025-06-22 05:00:18,357 - result - INFO - Score prediction: 10
+2025-06-22 05:00:18,358 - result - INFO - Datapoint 332 & Datapoint 250
+2025-06-22 05:00:33,571 - result - INFO - got score from new prediction
+2025-06-22 05:00:33,571 - result - INFO - Diff: 1
+2025-06-22 05:00:33,571 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:00:33,571 - result - INFO - Score prediction: 9
+2025-06-22 05:00:33,572 - result - INFO - Datapoint 332 & Datapoint 296
+2025-06-22 05:00:48,965 - result - INFO - got score from new prediction
+2025-06-22 05:00:48,965 - result - INFO - Diff: 1
+2025-06-22 05:00:48,965 - result - INFO - Score of baseline essay: 5
+2025-06-22 05:00:48,965 - result - INFO - Score prediction: 6
+2025-06-22 05:00:48,965 - result - INFO - Datapoint 332 & Datapoint 20
+2025-06-22 05:01:03,577 - result - INFO - got score from new prediction
+2025-06-22 05:01:03,577 - result - INFO - Diff: 2
+2025-06-22 05:01:03,577 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:01:03,577 - result - INFO - Score prediction: 10
+2025-06-22 05:01:03,578 - result - INFO - Avg score for essay 332: 9
+
+2025-06-22 05:01:03,578 - result - INFO - Datapoint 196 & Datapoint 251
+2025-06-22 05:01:15,176 - result - INFO - got score from new prediction
+2025-06-22 05:01:15,177 - result - INFO - Diff: 2
+2025-06-22 05:01:15,177 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:01:15,177 - result - INFO - Score prediction: 10
+2025-06-22 05:01:15,177 - result - INFO - Datapoint 196 & Datapoint 273
+2025-06-22 05:01:36,925 - result - INFO - got score from new prediction
+2025-06-22 05:01:36,925 - result - INFO - Diff: 1
+2025-06-22 05:01:36,925 - result - INFO - Score of baseline essay: 12
+2025-06-22 05:01:36,926 - result - INFO - Score prediction: 13
+2025-06-22 05:01:36,926 - result - INFO - Datapoint 196 & Datapoint 38
+2025-06-22 05:01:46,891 - result - INFO - got score from new prediction
+2025-06-22 05:01:46,891 - result - INFO - Diff: 2
+2025-06-22 05:01:46,891 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:01:46,891 - result - INFO - Score prediction: 10
+2025-06-22 05:01:46,891 - result - INFO - Datapoint 196 & Datapoint 69
+2025-06-22 05:02:05,251 - result - INFO - got score from new prediction
+2025-06-22 05:02:05,251 - result - INFO - Diff: 3
+2025-06-22 05:02:05,251 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:02:05,251 - result - INFO - Score prediction: 11
+2025-06-22 05:02:05,251 - result - INFO - Datapoint 196 & Datapoint 301
+2025-06-22 05:02:16,940 - result - INFO - got score from new prediction
+2025-06-22 05:02:16,940 - result - INFO - Diff: 3
+2025-06-22 05:02:16,940 - result - INFO - Score of baseline essay: 6
+2025-06-22 05:02:16,940 - result - INFO - Score prediction: 9
+2025-06-22 05:02:16,940 - result - INFO - Datapoint 196 & Datapoint 108
+2025-06-22 05:02:26,846 - result - INFO - got score from new prediction
+2025-06-22 05:02:26,846 - result - INFO - Diff: 3
+2025-06-22 05:02:26,846 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:02:26,846 - result - INFO - Score prediction: 11
+2025-06-22 05:02:26,846 - result - INFO - Datapoint 196 & Datapoint 135
+2025-06-22 05:02:39,006 - result - INFO - got score from new prediction
+2025-06-22 05:02:39,006 - result - INFO - Diff: 2
+2025-06-22 05:02:39,006 - result - INFO - Score of baseline essay: 9
+2025-06-22 05:02:39,006 - result - INFO - Score prediction: 11
+2025-06-22 05:02:39,006 - result - INFO - Datapoint 196 & Datapoint 250
+2025-06-22 05:02:51,551 - result - INFO - got score from new prediction
+2025-06-22 05:02:51,551 - result - INFO - Diff: 2
+2025-06-22 05:02:51,551 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:02:51,551 - result - INFO - Score prediction: 10
+2025-06-22 05:02:51,551 - result - INFO - Datapoint 196 & Datapoint 296
+2025-06-22 05:03:06,914 - result - INFO - got score from new prediction
+2025-06-22 05:03:06,914 - result - INFO - Diff: 3
+2025-06-22 05:03:06,914 - result - INFO - Score of baseline essay: 5
+2025-06-22 05:03:06,914 - result - INFO - Score prediction: 8
+2025-06-22 05:03:06,914 - result - INFO - Datapoint 196 & Datapoint 20
+2025-06-22 05:03:18,193 - result - INFO - got score from new prediction
+2025-06-22 05:03:18,193 - result - INFO - Diff: 2
+2025-06-22 05:03:18,193 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:03:18,193 - result - INFO - Score prediction: 10
+2025-06-22 05:03:18,193 - result - INFO - Avg score for essay 196: 10
+
+2025-06-22 05:03:18,194 - result - INFO - Datapoint 100 & Datapoint 251
+2025-06-22 05:03:34,297 - result - INFO - got score from new prediction
+2025-06-22 05:03:34,297 - result - INFO - Diff: 1
+2025-06-22 05:03:34,297 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:03:34,297 - result - INFO - Score prediction: 9
+2025-06-22 05:03:34,297 - result - INFO - Datapoint 100 & Datapoint 273
+2025-06-22 05:03:42,810 - result - INFO - got score from new prediction
+2025-06-22 05:03:42,810 - result - INFO - Diff: -2
+2025-06-22 05:03:42,810 - result - INFO - Score of baseline essay: 12
+2025-06-22 05:03:42,810 - result - INFO - Score prediction: 10
+2025-06-22 05:03:42,810 - result - INFO - Datapoint 100 & Datapoint 38
+2025-06-22 05:03:54,354 - result - INFO - got score from new prediction
+2025-06-22 05:03:54,354 - result - INFO - Diff: 1
+2025-06-22 05:03:54,354 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:03:54,354 - result - INFO - Score prediction: 9
+2025-06-22 05:03:54,354 - result - INFO - Datapoint 100 & Datapoint 69
+2025-06-22 05:04:06,916 - result - INFO - got score from new prediction
+2025-06-22 05:04:06,916 - result - INFO - Diff: 2
+2025-06-22 05:04:06,916 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:04:06,916 - result - INFO - Score prediction: 10
+2025-06-22 05:04:06,916 - result - INFO - Datapoint 100 & Datapoint 301
+2025-06-22 05:04:23,656 - result - INFO - got score from new prediction
+2025-06-22 05:04:23,656 - result - INFO - Diff: 2
+2025-06-22 05:04:23,656 - result - INFO - Score of baseline essay: 6
+2025-06-22 05:04:23,656 - result - INFO - Score prediction: 8
+2025-06-22 05:04:23,656 - result - INFO - Datapoint 100 & Datapoint 108
+2025-06-22 05:04:33,731 - result - INFO - got score from new prediction
+2025-06-22 05:04:33,733 - result - INFO - Diff: 3
+2025-06-22 05:04:33,733 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:04:33,733 - result - INFO - Score prediction: 11
+2025-06-22 05:04:33,733 - result - INFO - Datapoint 100 & Datapoint 135
+2025-06-22 05:04:47,172 - result - INFO - got score from new prediction
+2025-06-22 05:04:47,172 - result - INFO - Diff: 1
+2025-06-22 05:04:47,172 - result - INFO - Score of baseline essay: 9
+2025-06-22 05:04:47,172 - result - INFO - Score prediction: 10
+2025-06-22 05:04:47,172 - result - INFO - Datapoint 100 & Datapoint 250
+2025-06-22 05:05:01,002 - result - INFO - got score from new prediction
+2025-06-22 05:05:01,002 - result - INFO - Diff: 1
+2025-06-22 05:05:01,002 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:05:01,002 - result - INFO - Score prediction: 9
+2025-06-22 05:05:01,002 - result - INFO - Datapoint 100 & Datapoint 296
+2025-06-22 05:05:12,287 - result - INFO - got score from new prediction
+2025-06-22 05:05:12,287 - result - INFO - Diff: 2
+2025-06-22 05:05:12,287 - result - INFO - Score of baseline essay: 5
+2025-06-22 05:05:12,287 - result - INFO - Score prediction: 7
+2025-06-22 05:05:12,288 - result - INFO - Datapoint 100 & Datapoint 20
+2025-06-22 05:05:23,442 - result - INFO - got score from new prediction
+2025-06-22 05:05:23,442 - result - INFO - Diff: 2
+2025-06-22 05:05:23,442 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:05:23,442 - result - INFO - Score prediction: 10
+2025-06-22 05:05:23,442 - result - INFO - Avg score for essay 100: 9
+
+2025-06-22 05:05:23,442 - result - INFO - Datapoint 993 & Datapoint 251
+2025-06-22 05:05:34,880 - result - INFO - got score from new prediction
+2025-06-22 05:05:34,880 - result - INFO - Diff: -1
+2025-06-22 05:05:34,880 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:05:34,880 - result - INFO - Score prediction: 7
+2025-06-22 05:05:34,881 - result - INFO - Datapoint 993 & Datapoint 273
+2025-06-22 05:05:51,055 - result - INFO - got score from new prediction
+2025-06-22 05:05:51,056 - result - INFO - Diff: -2
+2025-06-22 05:05:51,056 - result - INFO - Score of baseline essay: 12
+2025-06-22 05:05:51,056 - result - INFO - Score prediction: 10
+2025-06-22 05:05:51,056 - result - INFO - Datapoint 993 & Datapoint 38
+2025-06-22 05:06:16,409 - result - INFO - got score from new prediction
+2025-06-22 05:06:16,409 - result - INFO - Diff: 1
+2025-06-22 05:06:16,409 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:06:16,409 - result - INFO - Score prediction: 9
+2025-06-22 05:06:16,409 - result - INFO - Datapoint 993 & Datapoint 69
+2025-06-22 05:06:40,967 - result - INFO - got score from new prediction
+2025-06-22 05:06:40,967 - result - INFO - Diff: 2
+2025-06-22 05:06:40,967 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:06:40,967 - result - INFO - Score prediction: 10
+2025-06-22 05:06:40,967 - result - INFO - Datapoint 993 & Datapoint 301
+2025-06-22 05:06:57,862 - result - INFO - got score from new prediction
+2025-06-22 05:06:57,862 - result - INFO - Diff: 2
+2025-06-22 05:06:57,862 - result - INFO - Score of baseline essay: 6
+2025-06-22 05:06:57,862 - result - INFO - Score prediction: 8
+2025-06-22 05:06:57,862 - result - INFO - Datapoint 993 & Datapoint 108
+2025-06-22 05:07:07,174 - result - INFO - got score from new prediction
+2025-06-22 05:07:07,174 - result - INFO - Diff: 1
+2025-06-22 05:07:07,174 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:07:07,174 - result - INFO - Score prediction: 9
+2025-06-22 05:07:07,175 - result - INFO - Datapoint 993 & Datapoint 135
+2025-06-22 05:07:30,442 - result - INFO - got score from new prediction
+2025-06-22 05:07:30,442 - result - INFO - Diff: -1
+2025-06-22 05:07:30,442 - result - INFO - Score of baseline essay: 9
+2025-06-22 05:07:30,442 - result - INFO - Score prediction: 8
+2025-06-22 05:07:30,442 - result - INFO - Datapoint 993 & Datapoint 250
+2025-06-22 05:07:38,513 - result - INFO - got score from new prediction
+2025-06-22 05:07:38,513 - result - INFO - Diff: -1
+2025-06-22 05:07:38,513 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:07:38,513 - result - INFO - Score prediction: 7
+2025-06-22 05:07:38,513 - result - INFO - Datapoint 993 & Datapoint 296
+2025-06-22 05:07:47,583 - result - INFO - got score from new prediction
+2025-06-22 05:07:47,583 - result - INFO - Diff: 1
+2025-06-22 05:07:47,583 - result - INFO - Score of baseline essay: 5
+2025-06-22 05:07:47,583 - result - INFO - Score prediction: 6
+2025-06-22 05:07:47,584 - result - INFO - Datapoint 993 & Datapoint 20
+2025-06-22 05:08:01,955 - result - INFO - got score from new prediction
+2025-06-22 05:08:01,955 - result - INFO - Diff: 1
+2025-06-22 05:08:01,955 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:08:01,955 - result - INFO - Score prediction: 9
+2025-06-22 05:08:01,955 - result - INFO - Avg score for essay 993: 8
+
+2025-06-22 05:08:01,956 - result - INFO - Datapoint 704 & Datapoint 251
+2025-06-22 05:08:17,103 - result - INFO - got score from new prediction
+2025-06-22 05:08:17,104 - result - INFO - Diff: -1
+2025-06-22 05:08:17,104 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:08:17,104 - result - INFO - Score prediction: 7
+2025-06-22 05:08:17,104 - result - INFO - Datapoint 704 & Datapoint 273
+2025-06-22 05:08:27,063 - result - INFO - got score from new prediction
+2025-06-22 05:08:27,063 - result - INFO - Diff: -1
+2025-06-22 05:08:27,063 - result - INFO - Score of baseline essay: 12
+2025-06-22 05:08:27,063 - result - INFO - Score prediction: 11
+2025-06-22 05:08:27,063 - result - INFO - Datapoint 704 & Datapoint 38
+2025-06-22 05:08:41,265 - result - INFO - got score from new prediction
+2025-06-22 05:08:41,265 - result - INFO - Diff: 1
+2025-06-22 05:08:41,265 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:08:41,265 - result - INFO - Score prediction: 9
+2025-06-22 05:08:41,265 - result - INFO - Datapoint 704 & Datapoint 69
+2025-06-22 05:08:52,270 - result - INFO - got score from new prediction
+2025-06-22 05:08:52,270 - result - INFO - Diff: 2
+2025-06-22 05:08:52,270 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:08:52,270 - result - INFO - Score prediction: 10
+2025-06-22 05:08:52,270 - result - INFO - Datapoint 704 & Datapoint 301
+2025-06-22 05:09:05,089 - result - INFO - got score from new prediction
+2025-06-22 05:09:05,089 - result - INFO - Diff: 1
+2025-06-22 05:09:05,089 - result - INFO - Score of baseline essay: 6
+2025-06-22 05:09:05,089 - result - INFO - Score prediction: 7
+2025-06-22 05:09:05,089 - result - INFO - Datapoint 704 & Datapoint 108
+2025-06-22 05:09:22,024 - result - INFO - got score from new prediction
+2025-06-22 05:09:22,024 - result - INFO - Diff: 2
+2025-06-22 05:09:22,024 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:09:22,024 - result - INFO - Score prediction: 10
+2025-06-22 05:09:22,024 - result - INFO - Datapoint 704 & Datapoint 135
+2025-06-22 05:09:42,639 - result - INFO - got score from new prediction
+2025-06-22 05:09:42,639 - result - INFO - Diff: 2
+2025-06-22 05:09:42,639 - result - INFO - Score of baseline essay: 9
+2025-06-22 05:09:42,639 - result - INFO - Score prediction: 11
+2025-06-22 05:09:42,639 - result - INFO - Datapoint 704 & Datapoint 250
+2025-06-22 05:09:58,176 - result - INFO - got score from new prediction
+2025-06-22 05:09:58,176 - result - INFO - Diff: 2
+2025-06-22 05:09:58,176 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:09:58,176 - result - INFO - Score prediction: 10
+2025-06-22 05:09:58,176 - result - INFO - Datapoint 704 & Datapoint 296
+2025-06-22 05:10:17,377 - result - INFO - got score from new prediction
+2025-06-22 05:10:17,377 - result - INFO - Diff: 2
+2025-06-22 05:10:17,377 - result - INFO - Score of baseline essay: 5
+2025-06-22 05:10:17,377 - result - INFO - Score prediction: 7
+2025-06-22 05:10:17,377 - result - INFO - Datapoint 704 & Datapoint 20
+2025-06-22 05:10:28,680 - result - INFO - got score from new prediction
+2025-06-22 05:10:28,680 - result - INFO - Diff: 1
+2025-06-22 05:10:28,680 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:10:28,680 - result - INFO - Score prediction: 9
+2025-06-22 05:10:28,680 - result - INFO - Avg score for essay 704: 9
+
+2025-06-22 05:10:28,681 - result - INFO - Datapoint 747 & Datapoint 251
+2025-06-22 05:10:38,486 - result - INFO - got score from new prediction
+2025-06-22 05:10:38,486 - result - INFO - Diff: -1
+2025-06-22 05:10:38,486 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:10:38,486 - result - INFO - Score prediction: 7
+2025-06-22 05:10:38,486 - result - INFO - Datapoint 747 & Datapoint 273
+2025-06-22 05:10:47,381 - result - INFO - got score from new prediction
+2025-06-22 05:10:47,381 - result - INFO - Diff: -2
+2025-06-22 05:10:47,382 - result - INFO - Score of baseline essay: 12
+2025-06-22 05:10:47,382 - result - INFO - Score prediction: 10
+2025-06-22 05:10:47,382 - result - INFO - Datapoint 747 & Datapoint 38
+2025-06-22 05:10:59,419 - result - INFO - got score from new prediction
+2025-06-22 05:10:59,419 - result - INFO - Diff: 1
+2025-06-22 05:10:59,419 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:10:59,419 - result - INFO - Score prediction: 9
+2025-06-22 05:10:59,419 - result - INFO - Datapoint 747 & Datapoint 69
+2025-06-22 05:11:07,629 - result - INFO - got score from new prediction
+2025-06-22 05:11:07,630 - result - INFO - Diff: 2
+2025-06-22 05:11:07,630 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:11:07,630 - result - INFO - Score prediction: 10
+2025-06-22 05:11:07,630 - result - INFO - Datapoint 747 & Datapoint 301
+2025-06-22 05:11:21,816 - result - INFO - got score from new prediction
+2025-06-22 05:11:21,816 - result - INFO - Diff: 1
+2025-06-22 05:11:21,816 - result - INFO - Score of baseline essay: 6
+2025-06-22 05:11:21,816 - result - INFO - Score prediction: 7
+2025-06-22 05:11:21,816 - result - INFO - Datapoint 747 & Datapoint 108
+2025-06-22 05:11:27,273 - result - INFO - got score from new prediction
+2025-06-22 05:11:27,273 - result - INFO - Diff: 2
+2025-06-22 05:11:27,273 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:11:27,273 - result - INFO - Score prediction: 10
+2025-06-22 05:11:27,273 - result - INFO - Datapoint 747 & Datapoint 135
+2025-06-22 05:11:33,522 - result - INFO - got score from new prediction
+2025-06-22 05:11:33,522 - result - INFO - Diff: 1
+2025-06-22 05:11:33,522 - result - INFO - Score of baseline essay: 9
+2025-06-22 05:11:33,522 - result - INFO - Score prediction: 10
+2025-06-22 05:11:33,523 - result - INFO - Datapoint 747 & Datapoint 250
+2025-06-22 05:11:40,568 - result - INFO - got score from new prediction
+2025-06-22 05:11:40,568 - result - INFO - Diff: 1
+2025-06-22 05:11:40,568 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:11:40,568 - result - INFO - Score prediction: 9
+2025-06-22 05:11:40,568 - result - INFO - Datapoint 747 & Datapoint 296
+2025-06-22 05:11:48,659 - result - INFO - got score from new prediction
+2025-06-22 05:11:48,659 - result - INFO - Diff: 2
+2025-06-22 05:11:48,659 - result - INFO - Score of baseline essay: 5
+2025-06-22 05:11:48,659 - result - INFO - Score prediction: 7
+2025-06-22 05:11:48,659 - result - INFO - Datapoint 747 & Datapoint 20
+2025-06-22 05:11:54,904 - result - INFO - got score from new prediction
+2025-06-22 05:11:54,904 - result - INFO - Diff: 2
+2025-06-22 05:11:54,904 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:11:54,904 - result - INFO - Score prediction: 10
+2025-06-22 05:11:54,904 - result - INFO - Avg score for essay 747: 9
+
+2025-06-22 05:11:54,904 - result - INFO - Datapoint 940 & Datapoint 251
+2025-06-22 05:12:04,685 - result - INFO - got score from new prediction
+2025-06-22 05:12:04,685 - result - INFO - Diff: 1
+2025-06-22 05:12:04,685 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:12:04,685 - result - INFO - Score prediction: 9
+2025-06-22 05:12:04,685 - result - INFO - Datapoint 940 & Datapoint 273
+2025-06-22 05:12:12,305 - result - INFO - got score from new prediction
+2025-06-22 05:12:12,305 - result - INFO - Diff: -1
+2025-06-22 05:12:12,305 - result - INFO - Score of baseline essay: 12
+2025-06-22 05:12:12,305 - result - INFO - Score prediction: 11
+2025-06-22 05:12:12,305 - result - INFO - Datapoint 940 & Datapoint 38
+2025-06-22 05:12:19,298 - result - INFO - got score from new prediction
+2025-06-22 05:12:19,298 - result - INFO - Diff: 1
+2025-06-22 05:12:19,298 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:12:19,298 - result - INFO - Score prediction: 9
+2025-06-22 05:12:19,298 - result - INFO - Datapoint 940 & Datapoint 69
+2025-06-22 05:12:26,791 - result - INFO - got score from new prediction
+2025-06-22 05:12:26,791 - result - INFO - Diff: 1
+2025-06-22 05:12:26,791 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:12:26,791 - result - INFO - Score prediction: 9
+2025-06-22 05:12:26,791 - result - INFO - Datapoint 940 & Datapoint 301
+2025-06-22 05:12:34,589 - result - INFO - got score from new prediction
+2025-06-22 05:12:34,589 - result - INFO - Diff: 2
+2025-06-22 05:12:34,589 - result - INFO - Score of baseline essay: 6
+2025-06-22 05:12:34,589 - result - INFO - Score prediction: 8
+2025-06-22 05:12:34,589 - result - INFO - Datapoint 940 & Datapoint 108
+2025-06-22 05:12:44,369 - result - INFO - got score from new prediction
+2025-06-22 05:12:44,369 - result - INFO - Diff: 2
+2025-06-22 05:12:44,369 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:12:44,369 - result - INFO - Score prediction: 10
+2025-06-22 05:12:44,369 - result - INFO - Datapoint 940 & Datapoint 135
+2025-06-22 05:12:57,722 - result - INFO - got score from new prediction
+2025-06-22 05:12:57,722 - result - INFO - Diff: 2
+2025-06-22 05:12:57,722 - result - INFO - Score of baseline essay: 9
+2025-06-22 05:12:57,722 - result - INFO - Score prediction: 11
+2025-06-22 05:12:57,722 - result - INFO - Datapoint 940 & Datapoint 250
+2025-06-22 05:13:09,353 - result - INFO - got score from new prediction
+2025-06-22 05:13:09,353 - result - INFO - Diff: 1
+2025-06-22 05:13:09,353 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:13:09,353 - result - INFO - Score prediction: 9
+2025-06-22 05:13:09,353 - result - INFO - Datapoint 940 & Datapoint 296
+2025-06-22 05:13:18,091 - result - INFO - got score from new prediction
+2025-06-22 05:13:18,091 - result - INFO - Diff: 3
+2025-06-22 05:13:18,091 - result - INFO - Score of baseline essay: 5
+2025-06-22 05:13:18,091 - result - INFO - Score prediction: 8
+2025-06-22 05:13:18,091 - result - INFO - Datapoint 940 & Datapoint 20
+2025-06-22 05:13:26,303 - result - INFO - got score from new prediction
+2025-06-22 05:13:26,303 - result - INFO - Diff: 1
+2025-06-22 05:13:26,304 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:13:26,304 - result - INFO - Score prediction: 9
+2025-06-22 05:13:26,304 - result - INFO - Avg score for essay 940: 9
+
+2025-06-22 05:13:26,304 - result - INFO - Datapoint 352 & Datapoint 251
+2025-06-22 05:13:33,165 - result - INFO - got score from new prediction
+2025-06-22 05:13:33,165 - result - INFO - Diff: -1
+2025-06-22 05:13:33,165 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:13:33,165 - result - INFO - Score prediction: 7
+2025-06-22 05:13:33,165 - result - INFO - Datapoint 352 & Datapoint 273
+2025-06-22 05:13:40,494 - result - INFO - got score from new prediction
+2025-06-22 05:13:40,494 - result - INFO - Diff: -2
+2025-06-22 05:13:40,495 - result - INFO - Score of baseline essay: 12
+2025-06-22 05:13:40,495 - result - INFO - Score prediction: 10
+2025-06-22 05:13:40,495 - result - INFO - Datapoint 352 & Datapoint 38
+2025-06-22 05:13:50,620 - result - INFO - got score from new prediction
+2025-06-22 05:13:50,620 - result - INFO - Diff: 1
+2025-06-22 05:13:50,620 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:13:50,620 - result - INFO - Score prediction: 9
+2025-06-22 05:13:50,620 - result - INFO - Datapoint 352 & Datapoint 69
+2025-06-22 05:14:07,828 - result - INFO - got score from new prediction
+2025-06-22 05:14:07,828 - result - INFO - Diff: 2
+2025-06-22 05:14:07,828 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:14:07,828 - result - INFO - Score prediction: 10
+2025-06-22 05:14:07,829 - result - INFO - Datapoint 352 & Datapoint 301
+2025-06-22 05:14:13,107 - result - INFO - got score from new prediction
+2025-06-22 05:14:13,107 - result - INFO - Diff: 1
+2025-06-22 05:14:13,107 - result - INFO - Score of baseline essay: 6
+2025-06-22 05:14:13,108 - result - INFO - Score prediction: 7
+2025-06-22 05:14:13,108 - result - INFO - Datapoint 352 & Datapoint 108
+2025-06-22 05:14:22,178 - result - INFO - got score from new prediction
+2025-06-22 05:14:22,178 - result - INFO - Diff: 2
+2025-06-22 05:14:22,179 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:14:22,179 - result - INFO - Score prediction: 10
+2025-06-22 05:14:22,179 - result - INFO - Datapoint 352 & Datapoint 135
+2025-06-22 05:14:31,626 - result - INFO - got score from new prediction
+2025-06-22 05:14:31,627 - result - INFO - Diff: 1
+2025-06-22 05:14:31,627 - result - INFO - Score of baseline essay: 9
+2025-06-22 05:14:31,627 - result - INFO - Score prediction: 10
+2025-06-22 05:14:31,627 - result - INFO - Datapoint 352 & Datapoint 250
+2025-06-22 05:14:43,801 - result - INFO - got score from new prediction
+2025-06-22 05:14:43,801 - result - INFO - Diff: 1
+2025-06-22 05:14:43,802 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:14:43,802 - result - INFO - Score prediction: 9
+2025-06-22 05:14:43,802 - result - INFO - Datapoint 352 & Datapoint 296
+2025-06-22 05:14:52,676 - result - INFO - got score from new prediction
+2025-06-22 05:14:52,676 - result - INFO - Diff: 2
+2025-06-22 05:14:52,676 - result - INFO - Score of baseline essay: 5
+2025-06-22 05:14:52,676 - result - INFO - Score prediction: 7
+2025-06-22 05:14:52,677 - result - INFO - Datapoint 352 & Datapoint 20
+2025-06-22 05:15:03,612 - result - INFO - got score from new prediction
+2025-06-22 05:15:03,612 - result - INFO - Diff: 2
+2025-06-22 05:15:03,612 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:15:03,612 - result - INFO - Score prediction: 10
+2025-06-22 05:15:03,612 - result - INFO - Avg score for essay 352: 9
+
+2025-06-22 05:15:03,612 - result - INFO - Datapoint 778 & Datapoint 251
+2025-06-22 05:15:12,203 - result - INFO - got score from new prediction
+2025-06-22 05:15:12,204 - result - INFO - Diff: -4
+2025-06-22 05:15:12,204 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:15:12,204 - result - INFO - Score prediction: 4
+2025-06-22 05:15:12,204 - result - INFO - Datapoint 778 & Datapoint 273
+2025-06-22 05:15:21,999 - result - INFO - got score from new prediction
+2025-06-22 05:15:21,999 - result - INFO - Diff: -5
+2025-06-22 05:15:21,999 - result - INFO - Score of baseline essay: 12
+2025-06-22 05:15:21,999 - result - INFO - Score prediction: 7
+2025-06-22 05:15:21,999 - result - INFO - Datapoint 778 & Datapoint 38
+2025-06-22 05:15:40,932 - result - INFO - got score from new prediction
+2025-06-22 05:15:40,932 - result - INFO - Diff: -2
+2025-06-22 05:15:40,932 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:15:40,932 - result - INFO - Score prediction: 6
+2025-06-22 05:15:40,932 - result - INFO - Datapoint 778 & Datapoint 69
+2025-06-22 05:16:02,559 - result - INFO - got score from new prediction
+2025-06-22 05:16:02,559 - result - INFO - Diff: -2
+2025-06-22 05:16:02,559 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:16:02,559 - result - INFO - Score prediction: 6
+2025-06-22 05:16:02,559 - result - INFO - Datapoint 778 & Datapoint 301
+2025-06-22 05:16:18,470 - result - INFO - got score from new prediction
+2025-06-22 05:16:18,471 - result - INFO - Diff: -1
+2025-06-22 05:16:18,471 - result - INFO - Score of baseline essay: 6
+2025-06-22 05:16:18,471 - result - INFO - Score prediction: 5
+2025-06-22 05:16:18,471 - result - INFO - Datapoint 778 & Datapoint 108
+2025-06-22 05:16:30,719 - result - INFO - got score from new prediction
+2025-06-22 05:16:30,719 - result - INFO - Diff: -1
+2025-06-22 05:16:30,719 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:16:30,719 - result - INFO - Score prediction: 7
+2025-06-22 05:16:30,719 - result - INFO - Datapoint 778 & Datapoint 135
+2025-06-22 05:16:38,403 - result - INFO - got score from new prediction
+2025-06-22 05:16:38,403 - result - INFO - Diff: -4
+2025-06-22 05:16:38,404 - result - INFO - Score of baseline essay: 9
+2025-06-22 05:16:38,404 - result - INFO - Score prediction: 5
+2025-06-22 05:16:38,404 - result - INFO - Datapoint 778 & Datapoint 250
+2025-06-22 05:16:47,609 - result - INFO - got score from new prediction
+2025-06-22 05:16:47,609 - result - INFO - Diff: -2
+2025-06-22 05:16:47,609 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:16:47,609 - result - INFO - Score prediction: 6
+2025-06-22 05:16:47,609 - result - INFO - Datapoint 778 & Datapoint 296
+2025-06-22 05:17:08,103 - result - INFO - got score from new prediction
+2025-06-22 05:17:08,103 - result - INFO - Diff: -1
+2025-06-22 05:17:08,103 - result - INFO - Score of baseline essay: 5
+2025-06-22 05:17:08,103 - result - INFO - Score prediction: 4
+2025-06-22 05:17:08,103 - result - INFO - Datapoint 778 & Datapoint 20
+2025-06-22 05:17:24,423 - result - INFO - got score from new prediction
+2025-06-22 05:17:24,423 - result - INFO - Diff: -1
+2025-06-22 05:17:24,423 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:17:24,423 - result - INFO - Score prediction: 7
+2025-06-22 05:17:24,423 - result - INFO - Avg score for essay 778: 6
+
+2025-06-22 05:17:24,423 - result - INFO - Datapoint 304 & Datapoint 251
+2025-06-22 05:17:44,179 - result - INFO - got score from new prediction
+2025-06-22 05:17:44,179 - result - INFO - Diff: -2
+2025-06-22 05:17:44,179 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:17:44,179 - result - INFO - Score prediction: 6
+2025-06-22 05:17:44,179 - result - INFO - Datapoint 304 & Datapoint 273
+2025-06-22 05:17:53,343 - result - INFO - got score from new prediction
+2025-06-22 05:17:53,343 - result - INFO - Diff: -2
+2025-06-22 05:17:53,343 - result - INFO - Score of baseline essay: 12
+2025-06-22 05:17:53,343 - result - INFO - Score prediction: 10
+2025-06-22 05:17:53,343 - result - INFO - Datapoint 304 & Datapoint 38
+2025-06-22 05:18:04,983 - result - INFO - got score from new prediction
+2025-06-22 05:18:04,983 - result - INFO - Diff: 0
+2025-06-22 05:18:04,984 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:18:04,984 - result - INFO - Score prediction: 8
+2025-06-22 05:18:04,984 - result - INFO - Datapoint 304 & Datapoint 69
+2025-06-22 05:18:22,700 - result - INFO - got score from new prediction
+2025-06-22 05:18:22,700 - result - INFO - Diff: 1
+2025-06-22 05:18:22,700 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:18:22,700 - result - INFO - Score prediction: 9
+2025-06-22 05:18:22,700 - result - INFO - Datapoint 304 & Datapoint 301
+2025-06-22 05:18:37,799 - result - INFO - got score from new prediction
+2025-06-22 05:18:37,799 - result - INFO - Diff: 2
+2025-06-22 05:18:37,801 - result - INFO - Score of baseline essay: 6
+2025-06-22 05:18:37,801 - result - INFO - Score prediction: 8
+2025-06-22 05:18:37,801 - result - INFO - Datapoint 304 & Datapoint 108
+2025-06-22 05:18:49,675 - result - INFO - got score from new prediction
+2025-06-22 05:18:49,675 - result - INFO - Diff: 1
+2025-06-22 05:18:49,675 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:18:49,675 - result - INFO - Score prediction: 9
+2025-06-22 05:18:49,675 - result - INFO - Datapoint 304 & Datapoint 135
+2025-06-22 05:19:01,096 - result - INFO - got score from new prediction
+2025-06-22 05:19:01,096 - result - INFO - Diff: 1
+2025-06-22 05:19:01,096 - result - INFO - Score of baseline essay: 9
+2025-06-22 05:19:01,096 - result - INFO - Score prediction: 10
+2025-06-22 05:19:01,097 - result - INFO - Datapoint 304 & Datapoint 250
+2025-06-22 05:19:13,399 - result - INFO - got score from new prediction
+2025-06-22 05:19:13,399 - result - INFO - Diff: -1
+2025-06-22 05:19:13,399 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:19:13,399 - result - INFO - Score prediction: 7
+2025-06-22 05:19:13,399 - result - INFO - Datapoint 304 & Datapoint 296
+2025-06-22 05:19:29,720 - result - INFO - got score from new prediction
+2025-06-22 05:19:29,720 - result - INFO - Diff: 2
+2025-06-22 05:19:29,720 - result - INFO - Score of baseline essay: 5
+2025-06-22 05:19:29,720 - result - INFO - Score prediction: 7
+2025-06-22 05:19:29,721 - result - INFO - Datapoint 304 & Datapoint 20
+2025-06-22 05:19:42,498 - result - INFO - got score from new prediction
+2025-06-22 05:19:42,498 - result - INFO - Diff: 1
+2025-06-22 05:19:42,498 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:19:42,498 - result - INFO - Score prediction: 9
+2025-06-22 05:19:42,498 - result - INFO - Avg score for essay 304: 8
+
+2025-06-22 05:19:42,498 - result - INFO - Datapoint 474 & Datapoint 251
+2025-06-22 05:19:53,484 - result - INFO - got score from new prediction
+2025-06-22 05:19:53,484 - result - INFO - Diff: -2
+2025-06-22 05:19:53,484 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:19:53,484 - result - INFO - Score prediction: 6
+2025-06-22 05:19:53,484 - result - INFO - Datapoint 474 & Datapoint 273
+2025-06-22 05:20:01,602 - result - INFO - got score from new prediction
+2025-06-22 05:20:01,602 - result - INFO - Diff: -2
+2025-06-22 05:20:01,602 - result - INFO - Score of baseline essay: 12
+2025-06-22 05:20:01,602 - result - INFO - Score prediction: 10
+2025-06-22 05:20:01,602 - result - INFO - Datapoint 474 & Datapoint 38
+2025-06-22 05:20:16,715 - result - INFO - got score from new prediction
+2025-06-22 05:20:16,715 - result - INFO - Diff: 1
+2025-06-22 05:20:16,715 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:20:16,715 - result - INFO - Score prediction: 9
+2025-06-22 05:20:16,715 - result - INFO - Datapoint 474 & Datapoint 69
+2025-06-22 05:20:30,203 - result - INFO - got score from new prediction
+2025-06-22 05:20:30,203 - result - INFO - Diff: 1
+2025-06-22 05:20:30,203 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:20:30,203 - result - INFO - Score prediction: 9
+2025-06-22 05:20:30,203 - result - INFO - Datapoint 474 & Datapoint 301
+2025-06-22 05:20:42,643 - result - INFO - got score from new prediction
+2025-06-22 05:20:42,643 - result - INFO - Diff: 1
+2025-06-22 05:20:42,643 - result - INFO - Score of baseline essay: 6
+2025-06-22 05:20:42,643 - result - INFO - Score prediction: 7
+2025-06-22 05:20:42,643 - result - INFO - Datapoint 474 & Datapoint 108
+2025-06-22 05:20:54,926 - result - INFO - got score from new prediction
+2025-06-22 05:20:54,926 - result - INFO - Diff: 1
+2025-06-22 05:20:54,926 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:20:54,926 - result - INFO - Score prediction: 9
+2025-06-22 05:20:54,926 - result - INFO - Datapoint 474 & Datapoint 135
+2025-06-22 05:21:14,763 - result - INFO - got score from new prediction
+2025-06-22 05:21:14,763 - result - INFO - Diff: 0
+2025-06-22 05:21:14,763 - result - INFO - Score of baseline essay: 9
+2025-06-22 05:21:14,763 - result - INFO - Score prediction: 9
+2025-06-22 05:21:14,763 - result - INFO - Datapoint 474 & Datapoint 250
+2025-06-22 05:21:25,147 - result - INFO - got score from new prediction
+2025-06-22 05:21:25,147 - result - INFO - Diff: -1
+2025-06-22 05:21:25,147 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:21:25,148 - result - INFO - Score prediction: 7
+2025-06-22 05:21:25,148 - result - INFO - Datapoint 474 & Datapoint 296
+2025-06-22 05:21:40,836 - result - INFO - got score from new prediction
+2025-06-22 05:21:40,836 - result - INFO - Diff: 2
+2025-06-22 05:21:40,836 - result - INFO - Score of baseline essay: 5
+2025-06-22 05:21:40,836 - result - INFO - Score prediction: 7
+2025-06-22 05:21:40,836 - result - INFO - Datapoint 474 & Datapoint 20
+2025-06-22 05:21:50,180 - result - INFO - got score from new prediction
+2025-06-22 05:21:50,180 - result - INFO - Diff: 1
+2025-06-22 05:21:50,181 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:21:50,181 - result - INFO - Score prediction: 9
+2025-06-22 05:21:50,181 - result - INFO - Avg score for essay 474: 8
+
+2025-06-22 05:21:50,181 - result - INFO - Datapoint 172 & Datapoint 251
+2025-06-22 05:22:13,647 - result - INFO - got score from new prediction
+2025-06-22 05:22:13,647 - result - INFO - Diff: -2
+2025-06-22 05:22:13,647 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:22:13,647 - result - INFO - Score prediction: 6
+2025-06-22 05:22:13,647 - result - INFO - Datapoint 172 & Datapoint 273
+2025-06-22 05:22:24,642 - result - INFO - got score from new prediction
+2025-06-22 05:22:24,642 - result - INFO - Diff: -3
+2025-06-22 05:22:24,642 - result - INFO - Score of baseline essay: 12
+2025-06-22 05:22:24,642 - result - INFO - Score prediction: 9
+2025-06-22 05:22:24,642 - result - INFO - Datapoint 172 & Datapoint 38
+2025-06-22 05:22:32,223 - result - INFO - got score from new prediction
+2025-06-22 05:22:32,223 - result - INFO - Diff: -1
+2025-06-22 05:22:32,223 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:22:32,223 - result - INFO - Score prediction: 7
+2025-06-22 05:22:32,224 - result - INFO - Datapoint 172 & Datapoint 69
+2025-06-22 05:22:55,852 - result - INFO - got score from new prediction
+2025-06-22 05:22:55,852 - result - INFO - Diff: -1
+2025-06-22 05:22:55,852 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:22:55,852 - result - INFO - Score prediction: 7
+2025-06-22 05:22:55,852 - result - INFO - Datapoint 172 & Datapoint 301
+2025-06-22 05:23:05,251 - result - INFO - got score from new prediction
+2025-06-22 05:23:05,251 - result - INFO - Diff: 1
+2025-06-22 05:23:05,251 - result - INFO - Score of baseline essay: 6
+2025-06-22 05:23:05,251 - result - INFO - Score prediction: 7
+2025-06-22 05:23:05,251 - result - INFO - Datapoint 172 & Datapoint 108
+2025-06-22 05:23:22,115 - result - INFO - got score from new prediction
+2025-06-22 05:23:22,115 - result - INFO - Diff: 1
+2025-06-22 05:23:22,115 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:23:22,115 - result - INFO - Score prediction: 9
+2025-06-22 05:23:22,115 - result - INFO - Datapoint 172 & Datapoint 135
+2025-06-22 05:23:32,121 - result - INFO - got score from new prediction
+2025-06-22 05:23:32,121 - result - INFO - Diff: -1
+2025-06-22 05:23:32,121 - result - INFO - Score of baseline essay: 9
+2025-06-22 05:23:32,121 - result - INFO - Score prediction: 8
+2025-06-22 05:23:32,121 - result - INFO - Datapoint 172 & Datapoint 250
+2025-06-22 05:23:57,201 - result - INFO - got score from new prediction
+2025-06-22 05:23:57,201 - result - INFO - Diff: -1
+2025-06-22 05:23:57,201 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:23:57,201 - result - INFO - Score prediction: 7
+2025-06-22 05:23:57,201 - result - INFO - Datapoint 172 & Datapoint 296
+2025-06-22 05:24:08,954 - result - INFO - got score from new prediction
+2025-06-22 05:24:08,954 - result - INFO - Diff: 1
+2025-06-22 05:24:08,954 - result - INFO - Score of baseline essay: 5
+2025-06-22 05:24:08,954 - result - INFO - Score prediction: 6
+2025-06-22 05:24:08,954 - result - INFO - Datapoint 172 & Datapoint 20
+2025-06-22 05:24:39,332 - result - INFO - got score from new prediction
+2025-06-22 05:24:39,332 - result - INFO - Diff: 1
+2025-06-22 05:24:39,332 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:24:39,332 - result - INFO - Score prediction: 9
+2025-06-22 05:24:39,332 - result - INFO - Avg score for essay 172: 8
+
+2025-06-22 05:24:39,332 - result - INFO - Datapoint 450 & Datapoint 251
+2025-06-22 05:24:50,229 - result - INFO - got score from new prediction
+2025-06-22 05:24:50,229 - result - INFO - Diff: -1
+2025-06-22 05:24:50,229 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:24:50,229 - result - INFO - Score prediction: 7
+2025-06-22 05:24:50,229 - result - INFO - Datapoint 450 & Datapoint 273
+2025-06-22 05:25:04,078 - result - INFO - got score from new prediction
+2025-06-22 05:25:04,078 - result - INFO - Diff: -3
+2025-06-22 05:25:04,078 - result - INFO - Score of baseline essay: 12
+2025-06-22 05:25:04,078 - result - INFO - Score prediction: 9
+2025-06-22 05:25:04,078 - result - INFO - Datapoint 450 & Datapoint 38
+2025-06-22 05:25:12,684 - result - INFO - got score from new prediction
+2025-06-22 05:25:12,684 - result - INFO - Diff: 1
+2025-06-22 05:25:12,684 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:25:12,684 - result - INFO - Score prediction: 9
+2025-06-22 05:25:12,685 - result - INFO - Datapoint 450 & Datapoint 69
+2025-06-22 05:25:36,097 - result - INFO - got score from new prediction
+2025-06-22 05:25:36,097 - result - INFO - Diff: 2
+2025-06-22 05:25:36,097 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:25:36,097 - result - INFO - Score prediction: 10
+2025-06-22 05:25:36,097 - result - INFO - Datapoint 450 & Datapoint 301
+2025-06-22 05:25:56,311 - result - INFO - got score from new prediction
+2025-06-22 05:25:56,311 - result - INFO - Diff: 1
+2025-06-22 05:25:56,312 - result - INFO - Score of baseline essay: 6
+2025-06-22 05:25:56,312 - result - INFO - Score prediction: 7
+2025-06-22 05:25:56,312 - result - INFO - Datapoint 450 & Datapoint 108
+2025-06-22 05:26:11,432 - result - INFO - got score from new prediction
+2025-06-22 05:26:11,432 - result - INFO - Diff: 2
+2025-06-22 05:26:11,432 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:26:11,432 - result - INFO - Score prediction: 10
+2025-06-22 05:26:11,432 - result - INFO - Datapoint 450 & Datapoint 135
+2025-06-22 05:26:21,088 - result - INFO - got score from new prediction
+2025-06-22 05:26:21,088 - result - INFO - Diff: 1
+2025-06-22 05:26:21,088 - result - INFO - Score of baseline essay: 9
+2025-06-22 05:26:21,088 - result - INFO - Score prediction: 10
+2025-06-22 05:26:21,088 - result - INFO - Datapoint 450 & Datapoint 250
+2025-06-22 05:26:35,560 - result - INFO - got score from new prediction
+2025-06-22 05:26:35,560 - result - INFO - Diff: 2
+2025-06-22 05:26:35,560 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:26:35,560 - result - INFO - Score prediction: 10
+2025-06-22 05:26:35,560 - result - INFO - Datapoint 450 & Datapoint 296
+2025-06-22 05:26:48,085 - result - INFO - got score from new prediction
+2025-06-22 05:26:48,085 - result - INFO - Diff: 1
+2025-06-22 05:26:48,085 - result - INFO - Score of baseline essay: 5
+2025-06-22 05:26:48,085 - result - INFO - Score prediction: 6
+2025-06-22 05:26:48,085 - result - INFO - Datapoint 450 & Datapoint 20
+2025-06-22 05:27:05,398 - result - INFO - got score from new prediction
+2025-06-22 05:27:05,398 - result - INFO - Diff: 1
+2025-06-22 05:27:05,398 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:27:05,398 - result - INFO - Score prediction: 9
+2025-06-22 05:27:05,398 - result - INFO - Avg score for essay 450: 9
+
+2025-06-22 05:27:05,398 - result - INFO - Datapoint 63 & Datapoint 251
+2025-06-22 05:27:13,388 - result - INFO - got score from new prediction
+2025-06-22 05:27:13,388 - result - INFO - Diff: -2
+2025-06-22 05:27:13,388 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:27:13,388 - result - INFO - Score prediction: 6
+2025-06-22 05:27:13,388 - result - INFO - Datapoint 63 & Datapoint 273
+2025-06-22 05:27:25,468 - result - INFO - got score from new prediction
+2025-06-22 05:27:25,468 - result - INFO - Diff: -3
+2025-06-22 05:27:25,468 - result - INFO - Score of baseline essay: 12
+2025-06-22 05:27:25,468 - result - INFO - Score prediction: 9
+2025-06-22 05:27:25,468 - result - INFO - Datapoint 63 & Datapoint 38
+2025-06-22 05:27:34,711 - result - INFO - got score from new prediction
+2025-06-22 05:27:34,711 - result - INFO - Diff: -1
+2025-06-22 05:27:34,711 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:27:34,711 - result - INFO - Score prediction: 7
+2025-06-22 05:27:34,711 - result - INFO - Datapoint 63 & Datapoint 69
+2025-06-22 05:27:51,575 - result - INFO - got score from new prediction
+2025-06-22 05:27:51,575 - result - INFO - Diff: 1
+2025-06-22 05:27:51,575 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:27:51,575 - result - INFO - Score prediction: 9
+2025-06-22 05:27:51,575 - result - INFO - Datapoint 63 & Datapoint 301
+2025-06-22 05:28:05,951 - result - INFO - got score from new prediction
+2025-06-22 05:28:05,951 - result - INFO - Diff: 1
+2025-06-22 05:28:05,951 - result - INFO - Score of baseline essay: 6
+2025-06-22 05:28:05,951 - result - INFO - Score prediction: 7
+2025-06-22 05:28:05,951 - result - INFO - Datapoint 63 & Datapoint 108
+2025-06-22 05:28:15,781 - result - INFO - got score from new prediction
+2025-06-22 05:28:15,781 - result - INFO - Diff: 1
+2025-06-22 05:28:15,781 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:28:15,781 - result - INFO - Score prediction: 9
+2025-06-22 05:28:15,781 - result - INFO - Datapoint 63 & Datapoint 135
+2025-06-22 05:28:31,266 - result - INFO - got score from new prediction
+2025-06-22 05:28:31,266 - result - INFO - Diff: -1
+2025-06-22 05:28:31,266 - result - INFO - Score of baseline essay: 9
+2025-06-22 05:28:31,266 - result - INFO - Score prediction: 8
+2025-06-22 05:28:31,266 - result - INFO - Datapoint 63 & Datapoint 250
+2025-06-22 05:28:42,465 - result - INFO - got score from new prediction
+2025-06-22 05:28:42,465 - result - INFO - Diff: -1
+2025-06-22 05:28:42,465 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:28:42,466 - result - INFO - Score prediction: 7
+2025-06-22 05:28:42,466 - result - INFO - Datapoint 63 & Datapoint 296
+2025-06-22 05:28:51,679 - result - INFO - got score from new prediction
+2025-06-22 05:28:51,679 - result - INFO - Diff: 1
+2025-06-22 05:28:51,679 - result - INFO - Score of baseline essay: 5
+2025-06-22 05:28:51,679 - result - INFO - Score prediction: 6
+2025-06-22 05:28:51,679 - result - INFO - Datapoint 63 & Datapoint 20
+2025-06-22 05:29:05,595 - result - INFO - got score from new prediction
+2025-06-22 05:29:05,595 - result - INFO - Diff: 0
+2025-06-22 05:29:05,595 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:29:05,595 - result - INFO - Score prediction: 8
+2025-06-22 05:29:05,595 - result - INFO - Avg score for essay 63: 8
+
+2025-06-22 05:29:05,595 - result - INFO - Datapoint 37 & Datapoint 251
+2025-06-22 05:29:12,696 - result - INFO - got score from new prediction
+2025-06-22 05:29:12,696 - result - INFO - Diff: -1
+2025-06-22 05:29:12,696 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:29:12,696 - result - INFO - Score prediction: 7
+2025-06-22 05:29:12,696 - result - INFO - Datapoint 37 & Datapoint 273
+2025-06-22 05:29:23,590 - result - INFO - got score from new prediction
+2025-06-22 05:29:23,590 - result - INFO - Diff: -3
+2025-06-22 05:29:23,590 - result - INFO - Score of baseline essay: 12
+2025-06-22 05:29:23,590 - result - INFO - Score prediction: 9
+2025-06-22 05:29:23,590 - result - INFO - Datapoint 37 & Datapoint 38
+2025-06-22 05:29:39,240 - result - INFO - got score from new prediction
+2025-06-22 05:29:39,240 - result - INFO - Diff: -1
+2025-06-22 05:29:39,240 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:29:39,240 - result - INFO - Score prediction: 7
+2025-06-22 05:29:39,241 - result - INFO - Datapoint 37 & Datapoint 69
+2025-06-22 05:29:54,580 - result - INFO - got score from new prediction
+2025-06-22 05:29:54,580 - result - INFO - Diff: 0
+2025-06-22 05:29:54,580 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:29:54,580 - result - INFO - Score prediction: 8
+2025-06-22 05:29:54,580 - result - INFO - Datapoint 37 & Datapoint 301
+2025-06-22 05:30:04,823 - result - INFO - got score from new prediction
+2025-06-22 05:30:04,823 - result - INFO - Diff: 1
+2025-06-22 05:30:04,823 - result - INFO - Score of baseline essay: 6
+2025-06-22 05:30:04,823 - result - INFO - Score prediction: 7
+2025-06-22 05:30:04,823 - result - INFO - Datapoint 37 & Datapoint 108
+2025-06-22 05:30:23,355 - result - INFO - got score from new prediction
+2025-06-22 05:30:23,356 - result - INFO - Diff: 1
+2025-06-22 05:30:23,356 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:30:23,356 - result - INFO - Score prediction: 9
+2025-06-22 05:30:23,356 - result - INFO - Datapoint 37 & Datapoint 135
+2025-06-22 05:30:41,397 - result - INFO - got score from new prediction
+2025-06-22 05:30:41,397 - result - INFO - Diff: -1
+2025-06-22 05:30:41,397 - result - INFO - Score of baseline essay: 9
+2025-06-22 05:30:41,397 - result - INFO - Score prediction: 8
+2025-06-22 05:30:41,397 - result - INFO - Datapoint 37 & Datapoint 250
+2025-06-22 05:30:54,199 - result - INFO - got score from new prediction
+2025-06-22 05:30:54,199 - result - INFO - Diff: -2
+2025-06-22 05:30:54,199 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:30:54,199 - result - INFO - Score prediction: 6
+2025-06-22 05:30:54,199 - result - INFO - Datapoint 37 & Datapoint 296
+2025-06-22 05:31:03,550 - result - INFO - got score from new prediction
+2025-06-22 05:31:03,550 - result - INFO - Diff: 1
+2025-06-22 05:31:03,550 - result - INFO - Score of baseline essay: 5
+2025-06-22 05:31:03,550 - result - INFO - Score prediction: 6
+2025-06-22 05:31:03,550 - result - INFO - Datapoint 37 & Datapoint 20
+2025-06-22 05:31:24,001 - result - INFO - got score from new prediction
+2025-06-22 05:31:24,001 - result - INFO - Diff: -1
+2025-06-22 05:31:24,001 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:31:24,001 - result - INFO - Score prediction: 7
+2025-06-22 05:31:24,001 - result - INFO - Avg score for essay 37: 7
+
+2025-06-22 05:31:24,001 - result - INFO - Datapoint 1064 & Datapoint 251
+2025-06-22 05:31:31,892 - result - INFO - got score from new prediction
+2025-06-22 05:31:31,892 - result - INFO - Diff: 1
+2025-06-22 05:31:31,892 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:31:31,892 - result - INFO - Score prediction: 9
+2025-06-22 05:31:31,892 - result - INFO - Datapoint 1064 & Datapoint 273
+2025-06-22 05:31:44,006 - result - INFO - got score from new prediction
+2025-06-22 05:31:44,006 - result - INFO - Diff: -1
+2025-06-22 05:31:44,007 - result - INFO - Score of baseline essay: 12
+2025-06-22 05:31:44,007 - result - INFO - Score prediction: 11
+2025-06-22 05:31:44,007 - result - INFO - Datapoint 1064 & Datapoint 38
+2025-06-22 05:31:58,619 - result - INFO - got score from new prediction
+2025-06-22 05:31:58,619 - result - INFO - Diff: 1
+2025-06-22 05:31:58,619 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:31:58,619 - result - INFO - Score prediction: 9
+2025-06-22 05:31:58,619 - result - INFO - Datapoint 1064 & Datapoint 69
+2025-06-22 05:32:15,904 - result - INFO - got score from new prediction
+2025-06-22 05:32:15,904 - result - INFO - Diff: 3
+2025-06-22 05:32:15,904 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:32:15,904 - result - INFO - Score prediction: 11
+2025-06-22 05:32:15,905 - result - INFO - Datapoint 1064 & Datapoint 301
+2025-06-22 05:32:30,287 - result - INFO - got score from new prediction
+2025-06-22 05:32:30,287 - result - INFO - Diff: 3
+2025-06-22 05:32:30,287 - result - INFO - Score of baseline essay: 6
+2025-06-22 05:32:30,287 - result - INFO - Score prediction: 9
+2025-06-22 05:32:30,288 - result - INFO - Datapoint 1064 & Datapoint 108
+2025-06-22 05:32:52,976 - result - INFO - got score from new prediction
+2025-06-22 05:32:52,976 - result - INFO - Diff: 3
+2025-06-22 05:32:52,976 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:32:52,976 - result - INFO - Score prediction: 11
+2025-06-22 05:32:52,976 - result - INFO - Datapoint 1064 & Datapoint 135
+2025-06-22 05:33:02,254 - result - INFO - got score from new prediction
+2025-06-22 05:33:02,254 - result - INFO - Diff: 1
+2025-06-22 05:33:02,254 - result - INFO - Score of baseline essay: 9
+2025-06-22 05:33:02,256 - result - INFO - Score prediction: 10
+2025-06-22 05:33:02,256 - result - INFO - Datapoint 1064 & Datapoint 250
+2025-06-22 05:33:12,520 - result - INFO - got score from new prediction
+2025-06-22 05:33:12,520 - result - INFO - Diff: 2
+2025-06-22 05:33:12,520 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:33:12,520 - result - INFO - Score prediction: 10
+2025-06-22 05:33:12,520 - result - INFO - Datapoint 1064 & Datapoint 296
+2025-06-22 05:33:26,846 - result - INFO - got score from new prediction
+2025-06-22 05:33:26,846 - result - INFO - Diff: 3
+2025-06-22 05:33:26,846 - result - INFO - Score of baseline essay: 5
+2025-06-22 05:33:26,846 - result - INFO - Score prediction: 8
+2025-06-22 05:33:26,846 - result - INFO - Datapoint 1064 & Datapoint 20
+2025-06-22 05:33:46,463 - result - INFO - got score from new prediction
+2025-06-22 05:33:46,463 - result - INFO - Diff: 3
+2025-06-22 05:33:46,463 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:33:46,463 - result - INFO - Score prediction: 11
+2025-06-22 05:33:46,463 - result - INFO - Avg score for essay 1064: 10
+
+2025-06-22 05:33:46,463 - result - INFO - Datapoint 347 & Datapoint 251
+2025-06-22 05:33:58,811 - result - INFO - got score from new prediction
+2025-06-22 05:33:58,811 - result - INFO - Diff: 0
+2025-06-22 05:33:58,811 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:33:58,811 - result - INFO - Score prediction: 8
+2025-06-22 05:33:58,811 - result - INFO - Datapoint 347 & Datapoint 273
+2025-06-22 05:34:07,864 - result - INFO - got score from new prediction
+2025-06-22 05:34:07,864 - result - INFO - Diff: -2
+2025-06-22 05:34:07,864 - result - INFO - Score of baseline essay: 12
+2025-06-22 05:34:07,864 - result - INFO - Score prediction: 10
+2025-06-22 05:34:07,864 - result - INFO - Datapoint 347 & Datapoint 38
+2025-06-22 05:34:19,239 - result - INFO - got score from new prediction
+2025-06-22 05:34:19,239 - result - INFO - Diff: 1
+2025-06-22 05:34:19,239 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:34:19,239 - result - INFO - Score prediction: 9
+2025-06-22 05:34:19,239 - result - INFO - Datapoint 347 & Datapoint 69
+2025-06-22 05:34:31,046 - result - INFO - got score from new prediction
+2025-06-22 05:34:31,046 - result - INFO - Diff: 1
+2025-06-22 05:34:31,046 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:34:31,046 - result - INFO - Score prediction: 9
+2025-06-22 05:34:31,046 - result - INFO - Datapoint 347 & Datapoint 301
+2025-06-22 05:34:39,898 - result - INFO - got score from new prediction
+2025-06-22 05:34:39,898 - result - INFO - Diff: 2
+2025-06-22 05:34:39,898 - result - INFO - Score of baseline essay: 6
+2025-06-22 05:34:39,898 - result - INFO - Score prediction: 8
+2025-06-22 05:34:39,898 - result - INFO - Datapoint 347 & Datapoint 108
+2025-06-22 05:34:56,169 - result - INFO - got score from new prediction
+2025-06-22 05:34:56,169 - result - INFO - Diff: 2
+2025-06-22 05:34:56,169 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:34:56,169 - result - INFO - Score prediction: 10
+2025-06-22 05:34:56,169 - result - INFO - Datapoint 347 & Datapoint 135
+2025-06-22 05:35:09,337 - result - INFO - got score from new prediction
+2025-06-22 05:35:09,337 - result - INFO - Diff: 1
+2025-06-22 05:35:09,337 - result - INFO - Score of baseline essay: 9
+2025-06-22 05:35:09,337 - result - INFO - Score prediction: 10
+2025-06-22 05:35:09,337 - result - INFO - Datapoint 347 & Datapoint 250
+2025-06-22 05:35:24,958 - result - INFO - got score from new prediction
+2025-06-22 05:35:24,958 - result - INFO - Diff: 1
+2025-06-22 05:35:24,958 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:35:24,958 - result - INFO - Score prediction: 9
+2025-06-22 05:35:24,959 - result - INFO - Datapoint 347 & Datapoint 296
+2025-06-22 05:35:39,530 - result - INFO - got score from new prediction
+2025-06-22 05:35:39,530 - result - INFO - Diff: 2
+2025-06-22 05:35:39,530 - result - INFO - Score of baseline essay: 5
+2025-06-22 05:35:39,530 - result - INFO - Score prediction: 7
+2025-06-22 05:35:39,530 - result - INFO - Datapoint 347 & Datapoint 20
+2025-06-22 05:35:51,959 - result - INFO - got score from new prediction
+2025-06-22 05:35:51,959 - result - INFO - Diff: 1
+2025-06-22 05:35:51,959 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:35:51,959 - result - INFO - Score prediction: 9
+2025-06-22 05:35:51,959 - result - INFO - Avg score for essay 347: 9
+
+2025-06-22 05:35:51,959 - result - INFO - Datapoint 482 & Datapoint 251
+2025-06-22 05:36:01,842 - result - INFO - got score from new prediction
+2025-06-22 05:36:01,842 - result - INFO - Diff: -2
+2025-06-22 05:36:01,842 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:36:01,842 - result - INFO - Score prediction: 6
+2025-06-22 05:36:01,842 - result - INFO - Datapoint 482 & Datapoint 273
+2025-06-22 05:36:21,822 - result - INFO - got score from new prediction
+2025-06-22 05:36:21,822 - result - INFO - Diff: -4
+2025-06-22 05:36:21,822 - result - INFO - Score of baseline essay: 12
+2025-06-22 05:36:21,822 - result - INFO - Score prediction: 8
+2025-06-22 05:36:21,822 - result - INFO - Datapoint 482 & Datapoint 38
+2025-06-22 05:36:33,207 - result - INFO - got score from new prediction
+2025-06-22 05:36:33,207 - result - INFO - Diff: -2
+2025-06-22 05:36:33,207 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:36:33,207 - result - INFO - Score prediction: 6
+2025-06-22 05:36:33,207 - result - INFO - Datapoint 482 & Datapoint 69
+2025-06-22 05:36:45,034 - result - INFO - got score from new prediction
+2025-06-22 05:36:45,034 - result - INFO - Diff: -1
+2025-06-22 05:36:45,034 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:36:45,034 - result - INFO - Score prediction: 7
+2025-06-22 05:36:45,034 - result - INFO - Datapoint 482 & Datapoint 301
+2025-06-22 05:36:57,342 - result - INFO - got score from new prediction
+2025-06-22 05:36:57,342 - result - INFO - Diff: -1
+2025-06-22 05:36:57,342 - result - INFO - Score of baseline essay: 6
+2025-06-22 05:36:57,342 - result - INFO - Score prediction: 5
+2025-06-22 05:36:57,342 - result - INFO - Datapoint 482 & Datapoint 108
+2025-06-22 05:37:09,938 - result - INFO - got score from new prediction
+2025-06-22 05:37:09,938 - result - INFO - Diff: -1
+2025-06-22 05:37:09,938 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:37:09,938 - result - INFO - Score prediction: 7
+2025-06-22 05:37:09,939 - result - INFO - Datapoint 482 & Datapoint 135
+2025-06-22 05:37:25,325 - result - INFO - got score from new prediction
+2025-06-22 05:37:25,325 - result - INFO - Diff: -2
+2025-06-22 05:37:25,325 - result - INFO - Score of baseline essay: 9
+2025-06-22 05:37:25,325 - result - INFO - Score prediction: 7
+2025-06-22 05:37:25,325 - result - INFO - Datapoint 482 & Datapoint 250
+2025-06-22 05:37:36,267 - result - INFO - got score from new prediction
+2025-06-22 05:37:36,267 - result - INFO - Diff: -3
+2025-06-22 05:37:36,267 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:37:36,267 - result - INFO - Score prediction: 5
+2025-06-22 05:37:36,268 - result - INFO - Datapoint 482 & Datapoint 296
+2025-06-22 05:37:47,704 - result - INFO - got score from new prediction
+2025-06-22 05:37:47,704 - result - INFO - Diff: 1
+2025-06-22 05:37:47,704 - result - INFO - Score of baseline essay: 5
+2025-06-22 05:37:47,704 - result - INFO - Score prediction: 6
+2025-06-22 05:37:47,704 - result - INFO - Datapoint 482 & Datapoint 20
+2025-06-22 05:38:06,359 - result - INFO - got score from new prediction
+2025-06-22 05:38:06,359 - result - INFO - Diff: -2
+2025-06-22 05:38:06,359 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:38:06,359 - result - INFO - Score prediction: 6
+2025-06-22 05:38:06,359 - result - INFO - Avg score for essay 482: 6
+
+2025-06-22 05:38:06,359 - result - INFO - Datapoint 167 & Datapoint 251
+2025-06-22 05:38:17,566 - result - INFO - got score from new prediction
+2025-06-22 05:38:17,566 - result - INFO - Diff: -2
+2025-06-22 05:38:17,566 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:38:17,566 - result - INFO - Score prediction: 6
+2025-06-22 05:38:17,566 - result - INFO - Datapoint 167 & Datapoint 273
+2025-06-22 05:38:25,394 - result - INFO - got score from new prediction
+2025-06-22 05:38:25,394 - result - INFO - Diff: -2
+2025-06-22 05:38:25,395 - result - INFO - Score of baseline essay: 12
+2025-06-22 05:38:25,395 - result - INFO - Score prediction: 10
+2025-06-22 05:38:25,395 - result - INFO - Datapoint 167 & Datapoint 38
+2025-06-22 05:38:34,659 - result - INFO - got score from new prediction
+2025-06-22 05:38:34,659 - result - INFO - Diff: 0
+2025-06-22 05:38:34,660 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:38:34,660 - result - INFO - Score prediction: 8
+2025-06-22 05:38:34,660 - result - INFO - Datapoint 167 & Datapoint 69
+2025-06-22 05:38:42,680 - result - INFO - got score from new prediction
+2025-06-22 05:38:42,680 - result - INFO - Diff: 1
+2025-06-22 05:38:42,680 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:38:42,680 - result - INFO - Score prediction: 9
+2025-06-22 05:38:42,681 - result - INFO - Datapoint 167 & Datapoint 301
+2025-06-22 05:38:56,303 - result - INFO - got score from new prediction
+2025-06-22 05:38:56,303 - result - INFO - Diff: 1
+2025-06-22 05:38:56,303 - result - INFO - Score of baseline essay: 6
+2025-06-22 05:38:56,303 - result - INFO - Score prediction: 7
+2025-06-22 05:38:56,303 - result - INFO - Datapoint 167 & Datapoint 108
+2025-06-22 05:39:17,796 - result - INFO - got score from new prediction
+2025-06-22 05:39:17,796 - result - INFO - Diff: 2
+2025-06-22 05:39:17,796 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:39:17,796 - result - INFO - Score prediction: 10
+2025-06-22 05:39:17,796 - result - INFO - Datapoint 167 & Datapoint 135
+2025-06-22 05:39:39,919 - result - INFO - got score from new prediction
+2025-06-22 05:39:39,919 - result - INFO - Diff: -1
+2025-06-22 05:39:39,919 - result - INFO - Score of baseline essay: 9
+2025-06-22 05:39:39,919 - result - INFO - Score prediction: 8
+2025-06-22 05:39:39,919 - result - INFO - Datapoint 167 & Datapoint 250
+2025-06-22 05:39:52,863 - result - INFO - got score from new prediction
+2025-06-22 05:39:52,863 - result - INFO - Diff: -2
+2025-06-22 05:39:52,863 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:39:52,863 - result - INFO - Score prediction: 6
+2025-06-22 05:39:52,864 - result - INFO - Datapoint 167 & Datapoint 296
+2025-06-22 05:40:01,792 - result - INFO - got score from new prediction
+2025-06-22 05:40:01,792 - result - INFO - Diff: 1
+2025-06-22 05:40:01,793 - result - INFO - Score of baseline essay: 5
+2025-06-22 05:40:01,793 - result - INFO - Score prediction: 6
+2025-06-22 05:40:01,793 - result - INFO - Datapoint 167 & Datapoint 20
+2025-06-22 05:40:15,805 - result - INFO - got score from new prediction
+2025-06-22 05:40:15,805 - result - INFO - Diff: 1
+2025-06-22 05:40:15,806 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:40:15,806 - result - INFO - Score prediction: 9
+2025-06-22 05:40:15,806 - result - INFO - Avg score for essay 167: 8
+
+2025-06-22 05:40:15,806 - result - INFO - Datapoint 887 & Datapoint 251
+2025-06-22 05:40:26,695 - result - INFO - got score from new prediction
+2025-06-22 05:40:26,695 - result - INFO - Diff: -1
+2025-06-22 05:40:26,695 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:40:26,695 - result - INFO - Score prediction: 7
+2025-06-22 05:40:26,695 - result - INFO - Datapoint 887 & Datapoint 273
+2025-06-22 05:40:36,510 - result - INFO - got score from new prediction
+2025-06-22 05:40:36,510 - result - INFO - Diff: -2
+2025-06-22 05:40:36,510 - result - INFO - Score of baseline essay: 12
+2025-06-22 05:40:36,510 - result - INFO - Score prediction: 10
+2025-06-22 05:40:36,510 - result - INFO - Datapoint 887 & Datapoint 38
+2025-06-22 05:40:44,903 - result - INFO - got score from new prediction
+2025-06-22 05:40:44,903 - result - INFO - Diff: 2
+2025-06-22 05:40:44,903 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:40:44,903 - result - INFO - Score prediction: 10
+2025-06-22 05:40:44,903 - result - INFO - Datapoint 887 & Datapoint 69
+2025-06-22 05:40:53,990 - result - INFO - got score from new prediction
+2025-06-22 05:40:53,990 - result - INFO - Diff: 1
+2025-06-22 05:40:53,990 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:40:53,990 - result - INFO - Score prediction: 9
+2025-06-22 05:40:53,990 - result - INFO - Datapoint 887 & Datapoint 301
+2025-06-22 05:41:02,056 - result - INFO - got score from new prediction
+2025-06-22 05:41:02,056 - result - INFO - Diff: 2
+2025-06-22 05:41:02,056 - result - INFO - Score of baseline essay: 6
+2025-06-22 05:41:02,056 - result - INFO - Score prediction: 8
+2025-06-22 05:41:02,056 - result - INFO - Datapoint 887 & Datapoint 108
+2025-06-22 05:41:21,975 - result - INFO - got score from new prediction
+2025-06-22 05:41:21,975 - result - INFO - Diff: 2
+2025-06-22 05:41:21,975 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:41:21,975 - result - INFO - Score prediction: 10
+2025-06-22 05:41:21,975 - result - INFO - Datapoint 887 & Datapoint 135
+2025-06-22 05:41:32,512 - result - INFO - got score from new prediction
+2025-06-22 05:41:32,512 - result - INFO - Diff: 1
+2025-06-22 05:41:32,512 - result - INFO - Score of baseline essay: 9
+2025-06-22 05:41:32,512 - result - INFO - Score prediction: 10
+2025-06-22 05:41:32,513 - result - INFO - Datapoint 887 & Datapoint 250
+2025-06-22 05:41:41,146 - result - INFO - got score from new prediction
+2025-06-22 05:41:41,148 - result - INFO - Diff: 1
+2025-06-22 05:41:41,148 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:41:41,148 - result - INFO - Score prediction: 9
+2025-06-22 05:41:41,148 - result - INFO - Datapoint 887 & Datapoint 296
+2025-06-22 05:41:54,577 - result - INFO - got score from new prediction
+2025-06-22 05:41:54,577 - result - INFO - Diff: 2
+2025-06-22 05:41:54,577 - result - INFO - Score of baseline essay: 5
+2025-06-22 05:41:54,577 - result - INFO - Score prediction: 7
+2025-06-22 05:41:54,577 - result - INFO - Datapoint 887 & Datapoint 20
+2025-06-22 05:42:06,262 - result - INFO - got score from new prediction
+2025-06-22 05:42:06,262 - result - INFO - Diff: 2
+2025-06-22 05:42:06,262 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:42:06,262 - result - INFO - Score prediction: 10
+2025-06-22 05:42:06,262 - result - INFO - Avg score for essay 887: 9
+
+2025-06-22 05:42:06,267 - result - CRITICAL - 
+                                                  essay  score  y_pred  diff
+309   "I personally believe that computersdo benefit...      8      10     2
+104   "Dear @CAPS1 @CAPS2 @CAPS3, I believe that com...     10       8    -2
+796   I believe that computers benefit society. They...      8       8     0
+579   "Dear Newspaper, @CAPS1 you know, the majority...      8       9     1
+857   "To use computors, or not to. That is the ques...     10      10     0
+133   "Dear @CAPS1 @CAPS2, I am writing a letter to ...      8       8     0
+618   "In my opinion i think computers have a positi...      8       9     1
+408   "Computers and the @CAPS1 have changed the way...      9       9     0
+289   "Dear @LOCATION1 harold, More and more people ...      9       8    -1
+687   "@CAPS8 more and more technology is being inve...     11      10    -1
+332   "I belive that computer technology is a positi...      8       9     1
+196   "The effect computers have on humans is by far...     12      10    -2
+100   "@ORGANIZATION1, @CAPS1 technology continues t...      9       9     0
+993   "Dear local newspaper, I am sure you will agre...     10       8    -2
+704   "Dear local newspaper: I strongly feel that co...      9       9     0
+747   "Dear newspaper, I know that computers can pla...     10       9    -1
+940   "There are over @NUM1 students at @ORGANIZATIO...      9       9     0
+352   "Dear Local Newspaper, Computers are used ever...      8       9     1
+778   "Dear, @CAPS1 paper edattor we should stop bec...      6       6     0
+304   "Dear local newspaper, I think that computers ...      8       8     0
+474   "@CITY1 @CAPS1: I believe that computers (for ...      8       8     0
+172   "Dear @CAPS1 @CAPS2, I think that having a com...      9       8    -1
+450   "Dear Local Newspaper, @ORGANIZATION1's benefi...      7       9     2
+63    "Dear editor of the @ORGANIZATION1, In my opin...      8       8     0
+37    "Dear, Newspaper I would like to tell you abou...      8       7    -1
+1064  "Dear Newspaper, Computers have advance a lot ...     11      10    -1
+347   "Dear, @ORGANIZATION1 are a major part in ever...      8       9     1
+482   "Dear, Newspaper @CAPS1 my name is @CAPS2, @PE...      7       6    -1
+167   "Dear @LOCATION1, @CAPS1 everybody relizes, te...     10       8    -2
+887   "Dear Local Newspaper @CAPS1, I am against tha...      9       9     0
+
+
+2025-06-22 05:42:06,280 - result - INFO - QWK of Set: 0.56062
+2025-06-22 05:42:06,280 - result - INFO - MSE of Set: 0.00833
+
+2025-06-22 05:42:06,280 - result - CRITICAL - ESSAY SET 2:
+
+2025-06-22 05:42:06,528 - result - INFO - score prediction started
+
+2025-06-22 05:42:06,529 - result - INFO - Datapoint 959 & Datapoint 249
+2025-06-22 05:52:42,773 - result - INFO - got score from new prediction
+2025-06-22 05:52:42,773 - result - INFO - Diff: -2
+2025-06-22 05:52:42,773 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:52:42,773 - result - INFO - Score prediction: 6
+2025-06-22 05:52:42,773 - result - INFO - Datapoint 959 & Datapoint 108
+2025-06-22 05:53:02,323 - result - INFO - got score from new prediction
+2025-06-22 05:53:02,323 - result - INFO - Diff: -2
+2025-06-22 05:53:02,323 - result - INFO - Score of baseline essay: 7
+2025-06-22 05:53:02,323 - result - INFO - Score prediction: 5
+2025-06-22 05:53:02,323 - result - INFO - Datapoint 959 & Datapoint 85
+2025-06-22 05:53:19,877 - result - INFO - got score from new prediction
+2025-06-22 05:53:19,877 - result - INFO - Diff: -4
+2025-06-22 05:53:19,877 - result - INFO - Score of baseline essay: 7
+2025-06-22 05:53:19,877 - result - INFO - Score prediction: 3
+2025-06-22 05:53:19,877 - result - INFO - Datapoint 959 & Datapoint 140
+2025-06-22 05:53:39,236 - result - INFO - got score from new prediction
+2025-06-22 05:53:39,236 - result - INFO - Diff: -1
+2025-06-22 05:53:39,236 - result - INFO - Score of baseline essay: 6
+2025-06-22 05:53:39,236 - result - INFO - Score prediction: 5
+2025-06-22 05:53:39,236 - result - INFO - Datapoint 959 & Datapoint 310
+2025-06-22 05:53:58,088 - result - INFO - got score from new prediction
+2025-06-22 05:53:58,088 - result - INFO - Diff: -2
+2025-06-22 05:53:58,088 - result - INFO - Score of baseline essay: 6
+2025-06-22 05:53:58,088 - result - INFO - Score prediction: 4
+2025-06-22 05:53:58,088 - result - INFO - Datapoint 959 & Datapoint 255
+2025-06-22 05:54:27,408 - result - INFO - got score from new prediction
+2025-06-22 05:54:27,408 - result - INFO - Diff: 0
+2025-06-22 05:54:27,408 - result - INFO - Score of baseline essay: 6
+2025-06-22 05:54:27,408 - result - INFO - Score prediction: 6
+2025-06-22 05:54:27,408 - result - INFO - Datapoint 959 & Datapoint 171
+2025-06-22 05:54:44,112 - result - INFO - got score from new prediction
+2025-06-22 05:54:44,112 - result - INFO - Diff: 1
+2025-06-22 05:54:44,112 - result - INFO - Score of baseline essay: 6
+2025-06-22 05:54:44,112 - result - INFO - Score prediction: 7
+2025-06-22 05:54:44,112 - result - INFO - Datapoint 959 & Datapoint 342
+2025-06-22 05:55:00,576 - result - INFO - got score from new prediction
+2025-06-22 05:55:00,576 - result - INFO - Diff: 1
+2025-06-22 05:55:00,576 - result - INFO - Score of baseline essay: 6
+2025-06-22 05:55:00,576 - result - INFO - Score prediction: 7
+2025-06-22 05:55:00,576 - result - INFO - Datapoint 959 & Datapoint 178
+2025-06-22 05:55:20,759 - result - INFO - got score from new prediction
+2025-06-22 05:55:20,760 - result - INFO - Diff: -2
+2025-06-22 05:55:20,760 - result - INFO - Score of baseline essay: 7
+2025-06-22 05:55:20,760 - result - INFO - Score prediction: 5
+2025-06-22 05:55:20,760 - result - INFO - Datapoint 959 & Datapoint 20
+2025-06-22 05:55:37,450 - result - INFO - got score from new prediction
+2025-06-22 05:55:37,450 - result - INFO - Diff: -4
+2025-06-22 05:55:37,450 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:55:37,450 - result - INFO - Score prediction: 4
+2025-06-22 05:55:37,450 - result - INFO - Avg score for essay 959: 5
+
+2025-06-22 05:55:37,451 - result - INFO - Datapoint 40 & Datapoint 249
+2025-06-22 05:55:53,892 - result - INFO - got score from new prediction
+2025-06-22 05:55:53,892 - result - INFO - Diff: -2
+2025-06-22 05:55:53,892 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:55:53,892 - result - INFO - Score prediction: 6
+2025-06-22 05:55:53,894 - result - INFO - Datapoint 40 & Datapoint 108
+2025-06-22 05:56:19,568 - result - INFO - got score from new prediction
+2025-06-22 05:56:19,568 - result - INFO - Diff: -1
+2025-06-22 05:56:19,568 - result - INFO - Score of baseline essay: 7
+2025-06-22 05:56:19,568 - result - INFO - Score prediction: 6
+2025-06-22 05:56:19,569 - result - INFO - Datapoint 40 & Datapoint 85
+2025-06-22 05:56:36,792 - result - INFO - got score from new prediction
+2025-06-22 05:56:36,793 - result - INFO - Diff: -2
+2025-06-22 05:56:36,793 - result - INFO - Score of baseline essay: 7
+2025-06-22 05:56:36,793 - result - INFO - Score prediction: 5
+2025-06-22 05:56:36,793 - result - INFO - Datapoint 40 & Datapoint 140
+2025-06-22 05:56:55,403 - result - INFO - got score from new prediction
+2025-06-22 05:56:55,403 - result - INFO - Diff: 1
+2025-06-22 05:56:55,403 - result - INFO - Score of baseline essay: 6
+2025-06-22 05:56:55,403 - result - INFO - Score prediction: 7
+2025-06-22 05:56:55,403 - result - INFO - Datapoint 40 & Datapoint 310
+2025-06-22 05:57:23,424 - result - INFO - got score from new prediction
+2025-06-22 05:57:23,424 - result - INFO - Diff: 2
+2025-06-22 05:57:23,424 - result - INFO - Score of baseline essay: 6
+2025-06-22 05:57:23,424 - result - INFO - Score prediction: 8
+2025-06-22 05:57:23,424 - result - INFO - Datapoint 40 & Datapoint 255
+2025-06-22 05:57:44,801 - result - INFO - got score from new prediction
+2025-06-22 05:57:44,801 - result - INFO - Diff: 2
+2025-06-22 05:57:44,801 - result - INFO - Score of baseline essay: 6
+2025-06-22 05:57:44,801 - result - INFO - Score prediction: 8
+2025-06-22 05:57:44,801 - result - INFO - Datapoint 40 & Datapoint 171
+2025-06-22 05:58:10,714 - result - INFO - got score from new prediction
+2025-06-22 05:58:10,715 - result - INFO - Diff: 3
+2025-06-22 05:58:10,715 - result - INFO - Score of baseline essay: 6
+2025-06-22 05:58:10,715 - result - INFO - Score prediction: 9
+2025-06-22 05:58:10,715 - result - INFO - Datapoint 40 & Datapoint 342
+2025-06-22 05:58:32,577 - result - INFO - got score from new prediction
+2025-06-22 05:58:32,577 - result - INFO - Diff: 2
+2025-06-22 05:58:32,577 - result - INFO - Score of baseline essay: 6
+2025-06-22 05:58:32,577 - result - INFO - Score prediction: 8
+2025-06-22 05:58:32,577 - result - INFO - Datapoint 40 & Datapoint 178
+2025-06-22 05:59:00,017 - result - INFO - got score from new prediction
+2025-06-22 05:59:00,017 - result - INFO - Diff: -1
+2025-06-22 05:59:00,017 - result - INFO - Score of baseline essay: 7
+2025-06-22 05:59:00,017 - result - INFO - Score prediction: 6
+2025-06-22 05:59:00,017 - result - INFO - Datapoint 40 & Datapoint 20
+2025-06-22 05:59:21,848 - result - INFO - got score from new prediction
+2025-06-22 05:59:21,848 - result - INFO - Diff: -2
+2025-06-22 05:59:21,848 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:59:21,848 - result - INFO - Score prediction: 6
+2025-06-22 05:59:21,848 - result - INFO - Avg score for essay 40: 7
+
+2025-06-22 05:59:21,848 - result - INFO - Datapoint 1055 & Datapoint 249
+2025-06-22 05:59:38,762 - result - INFO - got score from new prediction
+2025-06-22 05:59:38,762 - result - INFO - Diff: -1
+2025-06-22 05:59:38,762 - result - INFO - Score of baseline essay: 8
+2025-06-22 05:59:38,762 - result - INFO - Score prediction: 7
+2025-06-22 05:59:38,763 - result - INFO - Datapoint 1055 & Datapoint 108
+2025-06-22 06:00:05,890 - result - INFO - got score from new prediction
+2025-06-22 06:00:05,890 - result - INFO - Diff: 0
+2025-06-22 06:00:05,890 - result - INFO - Score of baseline essay: 7
+2025-06-22 06:00:05,890 - result - INFO - Score prediction: 7
+2025-06-22 06:00:05,890 - result - INFO - Datapoint 1055 & Datapoint 85
+2025-06-22 06:00:24,140 - result - INFO - got score from new prediction
+2025-06-22 06:00:24,140 - result - INFO - Diff: -2
+2025-06-22 06:00:24,141 - result - INFO - Score of baseline essay: 7
+2025-06-22 06:00:24,141 - result - INFO - Score prediction: 5
+2025-06-22 06:00:24,141 - result - INFO - Datapoint 1055 & Datapoint 140
+2025-06-22 06:00:53,089 - result - INFO - got score from new prediction
+2025-06-22 06:00:53,089 - result - INFO - Diff: 2
+2025-06-22 06:00:53,089 - result - INFO - Score of baseline essay: 6
+2025-06-22 06:00:53,089 - result - INFO - Score prediction: 8
+2025-06-22 06:00:53,089 - result - INFO - Datapoint 1055 & Datapoint 310
+2025-06-22 06:01:19,205 - result - INFO - got score from new prediction
+2025-06-22 06:01:19,205 - result - INFO - Diff: 2
+2025-06-22 06:01:19,205 - result - INFO - Score of baseline essay: 6
+2025-06-22 06:01:19,205 - result - INFO - Score prediction: 8
+2025-06-22 06:01:19,205 - result - INFO - Datapoint 1055 & Datapoint 255
+2025-06-22 06:01:42,862 - result - INFO - got score from new prediction
+2025-06-22 06:01:42,862 - result - INFO - Diff: 2
+2025-06-22 06:01:42,862 - result - INFO - Score of baseline essay: 6
+2025-06-22 06:01:42,862 - result - INFO - Score prediction: 8
+2025-06-22 06:01:42,862 - result - INFO - Datapoint 1055 & Datapoint 171
+2025-06-22 06:02:04,478 - result - INFO - got score from new prediction
+2025-06-22 06:02:04,478 - result - INFO - Diff: 2
+2025-06-22 06:02:04,478 - result - INFO - Score of baseline essay: 6
+2025-06-22 06:02:04,478 - result - INFO - Score prediction: 8
+2025-06-22 06:02:04,478 - result - INFO - Datapoint 1055 & Datapoint 342
+2025-06-22 06:02:26,668 - result - INFO - got score from new prediction
+2025-06-22 06:02:26,669 - result - INFO - Diff: 2
+2025-06-22 06:02:26,669 - result - INFO - Score of baseline essay: 6
+2025-06-22 06:02:26,669 - result - INFO - Score prediction: 8
+2025-06-22 06:02:26,669 - result - INFO - Datapoint 1055 & Datapoint 178
+2025-06-22 06:02:41,293 - result - INFO - got score from new prediction
+2025-06-22 06:02:41,293 - result - INFO - Diff: -1
+2025-06-22 06:02:41,293 - result - INFO - Score of baseline essay: 7
+2025-06-22 06:02:41,293 - result - INFO - Score prediction: 6
+2025-06-22 06:02:41,293 - result - INFO - Datapoint 1055 & Datapoint 20
+2025-06-22 06:02:59,662 - result - INFO - got score from new prediction
+2025-06-22 06:02:59,662 - result - INFO - Diff: -2
+2025-06-22 06:02:59,662 - result - INFO - Score of baseline essay: 8
+2025-06-22 06:02:59,662 - result - INFO - Score prediction: 6
+2025-06-22 06:02:59,662 - result - INFO - Avg score for essay 1055: 7
+
+2025-06-22 06:02:59,662 - result - INFO - Datapoint 1008 & Datapoint 249
+2025-06-22 06:03:16,534 - result - INFO - got score from new prediction
+2025-06-22 06:03:16,535 - result - INFO - Diff: -1
+2025-06-22 06:03:16,535 - result - INFO - Score of baseline essay: 8
+2025-06-22 06:03:16,535 - result - INFO - Score prediction: 7
+2025-06-22 06:03:16,535 - result - INFO - Datapoint 1008 & Datapoint 108
+2025-06-22 06:03:37,546 - result - INFO - got score from new prediction
+2025-06-22 06:03:37,546 - result - INFO - Diff: 0
+2025-06-22 06:03:37,546 - result - INFO - Score of baseline essay: 7
+2025-06-22 06:03:37,546 - result - INFO - Score prediction: 7
+2025-06-22 06:03:37,546 - result - INFO - Datapoint 1008 & Datapoint 85
+2025-06-22 06:04:03,936 - result - INFO - got score from new prediction
+2025-06-22 06:04:03,936 - result - INFO - Diff: -2
+2025-06-22 06:04:03,936 - result - INFO - Score of baseline essay: 7
+2025-06-22 06:04:03,936 - result - INFO - Score prediction: 5
+2025-06-22 06:04:03,936 - result - INFO - Datapoint 1008 & Datapoint 140
+2025-06-22 06:04:23,862 - result - INFO - got score from new prediction
+2025-06-22 06:04:23,862 - result - INFO - Diff: 2
+2025-06-22 06:04:23,862 - result - INFO - Score of baseline essay: 6
+2025-06-22 06:04:23,863 - result - INFO - Score prediction: 8
+2025-06-22 06:04:23,863 - result - INFO - Datapoint 1008 & Datapoint 310
+2025-06-22 06:04:39,192 - result - INFO - got score from new prediction
+2025-06-22 06:04:39,192 - result - INFO - Diff: 2
+2025-06-22 06:04:39,192 - result - INFO - Score of baseline essay: 6
+2025-06-22 06:04:39,192 - result - INFO - Score prediction: 8
+2025-06-22 06:04:39,192 - result - INFO - Datapoint 1008 & Datapoint 255
+2025-06-22 06:05:00,490 - result - INFO - got score from new prediction
+2025-06-22 06:05:00,490 - result - INFO - Diff: 2
+2025-06-22 06:05:00,490 - result - INFO - Score of baseline essay: 6
+2025-06-22 06:05:00,490 - result - INFO - Score prediction: 8
+2025-06-22 06:05:00,490 - result - INFO - Datapoint 1008 & Datapoint 171
+2025-06-22 06:22:10,733 - result - INFO - got score from new prediction
+2025-06-22 06:22:10,733 - result - INFO - Diff: 2
+2025-06-22 06:22:10,733 - result - INFO - Score of baseline essay: 6
+2025-06-22 06:22:10,733 - result - INFO - Score prediction: 8
+2025-06-22 06:22:10,733 - result - INFO - Datapoint 1008 & Datapoint 342
+2025-06-22 06:22:25,245 - result - INFO - got score from new prediction
+2025-06-22 06:22:25,245 - result - INFO - Diff: 2
+2025-06-22 06:22:25,245 - result - INFO - Score of baseline essay: 6
+2025-06-22 06:22:25,245 - result - INFO - Score prediction: 8
+2025-06-22 06:22:25,245 - result - INFO - Datapoint 1008 & Datapoint 178
+2025-06-22 06:22:45,574 - result - INFO - got score from new prediction
+2025-06-22 06:22:45,574 - result - INFO - Diff: -1
+2025-06-22 06:22:45,574 - result - INFO - Score of baseline essay: 7
+2025-06-22 06:22:45,574 - result - INFO - Score prediction: 6
+2025-06-22 06:22:45,575 - result - INFO - Datapoint 1008 & Datapoint 20
+2025-06-22 06:23:09,497 - result - INFO - got score from new prediction
+2025-06-22 06:23:09,497 - result - INFO - Diff: -2
+2025-06-22 06:23:09,497 - result - INFO - Score of baseline essay: 8
+2025-06-22 06:23:09,497 - result - INFO - Score prediction: 6
+2025-06-22 06:23:09,497 - result - INFO - Avg score for essay 1008: 7
+
+2025-06-22 06:23:09,497 - result - INFO - Datapoint 383 & Datapoint 249
+2025-06-22 06:23:25,566 - result - INFO - got score from new prediction
+2025-06-22 06:23:25,566 - result - INFO - Diff: 2
+2025-06-22 06:23:25,566 - result - INFO - Score of baseline essay: 8
+2025-06-22 06:23:25,566 - result - INFO - Score prediction: 10
+2025-06-22 06:23:25,566 - result - INFO - Datapoint 383 & Datapoint 108
+2025-06-22 06:23:48,521 - result - INFO - got score from new prediction
+2025-06-22 06:23:48,521 - result - INFO - Diff: 2
+2025-06-22 06:23:48,521 - result - INFO - Score of baseline essay: 7
+2025-06-22 06:23:48,521 - result - INFO - Score prediction: 9
+2025-06-22 06:23:48,521 - result - INFO - Datapoint 383 & Datapoint 85
+2025-06-22 06:24:10,789 - result - INFO - got score from new prediction
+2025-06-22 06:24:10,789 - result - INFO - Diff: 0
+2025-06-22 06:24:10,789 - result - INFO - Score of baseline essay: 7
+2025-06-22 06:24:10,789 - result - INFO - Score prediction: 7
+2025-06-22 06:24:10,789 - result - INFO - Datapoint 383 & Datapoint 140
+2025-06-22 06:24:24,338 - result - INFO - got score from new prediction
+2025-06-22 06:24:24,338 - result - INFO - Diff: 2
+2025-06-22 06:24:24,338 - result - INFO - Score of baseline essay: 6
+2025-06-22 06:24:24,338 - result - INFO - Score prediction: 8
+2025-06-22 06:24:24,338 - result - INFO - Datapoint 383 & Datapoint 310
+2025-06-22 06:24:39,550 - result - INFO - got score from new prediction
+2025-06-22 06:24:39,550 - result - INFO - Diff: 3
+2025-06-22 06:24:39,550 - result - INFO - Score of baseline essay: 6
+2025-06-22 06:24:39,550 - result - INFO - Score prediction: 9
+2025-06-22 06:24:39,550 - result - INFO - Datapoint 383 & Datapoint 255
+2025-06-22 06:24:58,137 - result - INFO - got score from new prediction
+2025-06-22 06:24:58,137 - result - INFO - Diff: 3
+2025-06-22 06:24:58,137 - result - INFO - Score of baseline essay: 6
+2025-06-22 06:24:58,137 - result - INFO - Score prediction: 9
+2025-06-22 06:24:58,137 - result - INFO - Datapoint 383 & Datapoint 171
+2025-06-22 06:25:16,639 - result - INFO - got score from new prediction
+2025-06-22 06:25:16,639 - result - INFO - Diff: 4
+2025-06-22 06:25:16,639 - result - INFO - Score of baseline essay: 6
+2025-06-22 06:25:16,639 - result - INFO - Score prediction: 10
+2025-06-22 06:25:16,639 - result - INFO - Datapoint 383 & Datapoint 342
+2025-06-22 06:25:33,193 - result - INFO - got score from new prediction
+2025-06-22 06:25:33,193 - result - INFO - Diff: 4
+2025-06-22 06:25:33,193 - result - INFO - Score of baseline essay: 6
+2025-06-22 06:25:33,193 - result - INFO - Score prediction: 10
+2025-06-22 06:25:33,193 - result - INFO - Datapoint 383 & Datapoint 178
+2025-06-22 06:25:49,309 - result - INFO - got score from new prediction
+2025-06-22 06:25:49,309 - result - INFO - Diff: 2
+2025-06-22 06:25:49,309 - result - INFO - Score of baseline essay: 7
+2025-06-22 06:25:49,309 - result - INFO - Score prediction: 9
+2025-06-22 06:25:49,309 - result - INFO - Datapoint 383 & Datapoint 20
+2025-06-22 06:26:03,643 - result - INFO - got score from new prediction
+2025-06-22 06:26:03,643 - result - INFO - Diff: 1
+2025-06-22 06:26:03,643 - result - INFO - Score of baseline essay: 8
+2025-06-22 06:26:03,643 - result - INFO - Score prediction: 9
+2025-06-22 06:26:03,643 - result - INFO - Avg score for essay 383: 9
+
+2025-06-22 06:26:03,643 - result - INFO - Datapoint 248 & Datapoint 249
+2025-06-22 06:26:17,391 - result - INFO - got score from new prediction
+2025-06-22 06:26:17,391 - result - INFO - Diff: 1
+2025-06-22 06:26:17,392 - result - INFO - Score of baseline essay: 8
+2025-06-22 06:26:17,392 - result - INFO - Score prediction: 9
+2025-06-22 06:26:17,392 - result - INFO - Datapoint 248 & Datapoint 108
+2025-06-22 06:26:32,749 - result - INFO - got score from new prediction
+2025-06-22 06:26:32,749 - result - INFO - Diff: 2
+2025-06-22 06:26:32,749 - result - INFO - Score of baseline essay: 7
+2025-06-22 06:26:32,749 - result - INFO - Score prediction: 9
+2025-06-22 06:26:32,751 - result - INFO - Datapoint 248 & Datapoint 85
+2025-06-22 06:26:48,637 - result - INFO - got score from new prediction
+2025-06-22 06:26:48,637 - result - INFO - Diff: -2
+2025-06-22 06:26:48,637 - result - INFO - Score of baseline essay: 7
+2025-06-22 06:26:48,637 - result - INFO - Score prediction: 5
+2025-06-22 06:26:48,637 - result - INFO - Datapoint 248 & Datapoint 140
+2025-06-22 06:27:08,476 - result - INFO - got score from new prediction
+2025-06-22 06:27:08,476 - result - INFO - Diff: 1
+2025-06-22 06:27:08,476 - result - INFO - Score of baseline essay: 6
+2025-06-22 06:27:08,476 - result - INFO - Score prediction: 7
+2025-06-22 06:27:08,476 - result - INFO - Datapoint 248 & Datapoint 310
+2025-06-22 06:27:26,242 - result - INFO - got score from new prediction
+2025-06-22 06:27:26,242 - result - INFO - Diff: 3
+2025-06-22 06:27:26,242 - result - INFO - Score of baseline essay: 6
+2025-06-22 06:27:26,242 - result - INFO - Score prediction: 9
+2025-06-22 06:27:26,242 - result - INFO - Datapoint 248 & Datapoint 255
+2025-06-22 06:27:39,820 - result - INFO - got score from new prediction
+2025-06-22 06:27:39,820 - result - INFO - Diff: 3
+2025-06-22 06:27:39,820 - result - INFO - Score of baseline essay: 6
+2025-06-22 06:27:39,820 - result - INFO - Score prediction: 9
+2025-06-22 06:27:39,820 - result - INFO - Datapoint 248 & Datapoint 171
+2025-06-22 06:27:59,865 - result - INFO - got score from new prediction
+2025-06-22 06:27:59,865 - result - INFO - Diff: 3
+2025-06-22 06:27:59,865 - result - INFO - Score of baseline essay: 6
+2025-06-22 06:27:59,865 - result - INFO - Score prediction: 9
+2025-06-22 06:27:59,865 - result - INFO - Datapoint 248 & Datapoint 342
+2025-06-22 06:28:20,423 - result - INFO - got score from new prediction
+2025-06-22 06:28:20,423 - result - INFO - Diff: 2
+2025-06-22 06:28:20,423 - result - INFO - Score of baseline essay: 6
+2025-06-22 06:28:20,423 - result - INFO - Score prediction: 8
+2025-06-22 06:28:20,423 - result - INFO - Datapoint 248 & Datapoint 178
+2025-06-22 06:28:34,369 - result - INFO - got score from new prediction
+2025-06-22 06:28:34,369 - result - INFO - Diff: 2
+2025-06-22 06:28:34,369 - result - INFO - Score of baseline essay: 7
+2025-06-22 06:28:34,369 - result - INFO - Score prediction: 9
+2025-06-22 06:28:34,369 - result - INFO - Datapoint 248 & Datapoint 20
+2025-06-22 06:28:55,421 - result - INFO - got score from new prediction
+2025-06-22 06:28:55,421 - result - INFO - Diff: -1
+2025-06-22 06:28:55,421 - result - INFO - Score of baseline essay: 8
+2025-06-22 06:28:55,421 - result - INFO - Score prediction: 7
+2025-06-22 06:28:55,421 - result - INFO - Avg score for essay 248: 8
+
+2025-06-22 06:28:55,421 - result - INFO - Datapoint 234 & Datapoint 249
+2025-06-22 06:29:11,292 - result - INFO - got score from new prediction
+2025-06-22 06:29:11,292 - result - INFO - Diff: -2
+2025-06-22 06:29:11,292 - result - INFO - Score of baseline essay: 8
+2025-06-22 06:29:11,292 - result - INFO - Score prediction: 6
+2025-06-22 06:29:11,292 - result - INFO - Datapoint 234 & Datapoint 108
+2025-06-22 06:29:25,585 - result - INFO - got score from new prediction
+2025-06-22 06:29:25,585 - result - INFO - Diff: -1
+2025-06-22 06:29:25,585 - result - INFO - Score of baseline essay: 7
+2025-06-22 06:29:25,585 - result - INFO - Score prediction: 6
+2025-06-22 06:29:25,585 - result - INFO - Datapoint 234 & Datapoint 85
+2025-06-22 06:29:50,519 - result - INFO - got score from new prediction
+2025-06-22 06:29:50,519 - result - INFO - Diff: -2
+2025-06-22 06:29:50,519 - result - INFO - Score of baseline essay: 7
+2025-06-22 06:29:50,519 - result - INFO - Score prediction: 5
+2025-06-22 06:29:50,519 - result - INFO - Datapoint 234 & Datapoint 140
+2025-06-22 06:30:08,285 - result - INFO - got score from new prediction
+2025-06-22 06:30:08,286 - result - INFO - Diff: -1
+2025-06-22 06:30:08,286 - result - INFO - Score of baseline essay: 6
+2025-06-22 06:30:08,286 - result - INFO - Score prediction: 5
+2025-06-22 06:30:08,286 - result - INFO - Datapoint 234 & Datapoint 310
+2025-06-22 06:30:26,910 - result - INFO - got score from new prediction
+2025-06-22 06:30:26,910 - result - INFO - Diff: 1
+2025-06-22 06:30:26,910 - result - INFO - Score of baseline essay: 6
+2025-06-22 06:30:26,911 - result - INFO - Score prediction: 7
+2025-06-22 06:30:26,911 - result - INFO - Datapoint 234 & Datapoint 255
+2025-06-22 06:30:45,183 - result - INFO - got score from new prediction
+2025-06-22 06:30:45,183 - result - INFO - Diff: 1
+2025-06-22 06:30:45,183 - result - INFO - Score of baseline essay: 6
+2025-06-22 06:30:45,183 - result - INFO - Score prediction: 7
+2025-06-22 06:30:45,183 - result - INFO - Datapoint 234 & Datapoint 171
+2025-06-22 06:31:01,089 - result - INFO - got score from new prediction
+2025-06-22 06:31:01,089 - result - INFO - Diff: 1
+2025-06-22 06:31:01,089 - result - INFO - Score of baseline essay: 6
+2025-06-22 06:31:01,089 - result - INFO - Score prediction: 7
+2025-06-22 06:31:01,089 - result - INFO - Datapoint 234 & Datapoint 342
+2025-06-22 06:31:16,604 - result - INFO - got score from new prediction
+2025-06-22 06:31:16,604 - result - INFO - Diff: 1
+2025-06-22 06:31:16,604 - result - INFO - Score of baseline essay: 6
+2025-06-22 06:31:16,604 - result - INFO - Score prediction: 7
+2025-06-22 06:31:16,604 - result - INFO - Datapoint 234 & Datapoint 178
+2025-06-22 06:31:32,831 - result - INFO - got score from new prediction
+2025-06-22 06:31:32,831 - result - INFO - Diff: -2
+2025-06-22 06:31:32,831 - result - INFO - Score of baseline essay: 7
+2025-06-22 06:31:32,831 - result - INFO - Score prediction: 5
+2025-06-22 06:31:32,831 - result - INFO - Datapoint 234 & Datapoint 20
+2025-06-22 06:31:49,339 - result - INFO - got score from new prediction
+2025-06-22 06:31:49,339 - result - INFO - Diff: -3
+2025-06-22 06:31:49,339 - result - INFO - Score of baseline essay: 8
+2025-06-22 06:31:49,339 - result - INFO - Score prediction: 5
+2025-06-22 06:31:49,339 - result - INFO - Avg score for essay 234: 6
+
+2025-06-22 06:31:49,339 - result - INFO - Datapoint 572 & Datapoint 249
+2025-06-22 06:32:10,589 - result - INFO - got score from new prediction
+2025-06-22 06:32:10,589 - result - INFO - Diff: -2
+2025-06-22 06:32:10,589 - result - INFO - Score of baseline essay: 8
+2025-06-22 06:32:10,589 - result - INFO - Score prediction: 6
+2025-06-22 06:32:10,589 - result - INFO - Datapoint 572 & Datapoint 108
+2025-06-22 06:32:31,031 - result - INFO - got score from new prediction
+2025-06-22 06:32:31,031 - result - INFO - Diff: -3
+2025-06-22 06:32:31,031 - result - INFO - Score of baseline essay: 7
+2025-06-22 06:32:31,031 - result - INFO - Score prediction: 4
+2025-06-22 06:32:31,031 - result - INFO - Datapoint 572 & Datapoint 85
+2025-06-22 06:32:46,244 - result - INFO - got score from new prediction
+2025-06-22 06:32:46,244 - result - INFO - Diff: -5
+2025-06-22 06:32:46,244 - result - INFO - Score of baseline essay: 7
+2025-06-22 06:32:46,244 - result - INFO - Score prediction: 2
+2025-06-22 06:32:46,244 - result - INFO - Datapoint 572 & Datapoint 140
+2025-06-22 06:33:03,411 - result - INFO - got score from new prediction
+2025-06-22 06:33:03,411 - result - INFO - Diff: -2
+2025-06-22 06:33:03,411 - result - INFO - Score of baseline essay: 6
+2025-06-22 06:33:03,411 - result - INFO - Score prediction: 4
+2025-06-22 06:33:03,411 - result - INFO - Datapoint 572 & Datapoint 310
+2025-06-22 06:33:21,688 - result - INFO - got score from new prediction
+2025-06-22 06:33:21,688 - result - INFO - Diff: 0
+2025-06-22 06:33:21,688 - result - INFO - Score of baseline essay: 6
+2025-06-22 06:33:21,688 - result - INFO - Score prediction: 6
+2025-06-22 06:33:21,688 - result - INFO - Datapoint 572 & Datapoint 255
+2025-06-22 06:33:31,610 - result - INFO - got score from new prediction
+2025-06-22 06:33:31,610 - result - INFO - Diff: -2
+2025-06-22 06:33:31,610 - result - INFO - Score of baseline essay: 6
+2025-06-22 06:33:31,610 - result - INFO - Score prediction: 4
+2025-06-22 06:33:31,610 - result - INFO - Datapoint 572 & Datapoint 171
+2025-06-22 06:33:52,002 - result - INFO - got score from new prediction
+2025-06-22 06:33:52,002 - result - INFO - Diff: 0
+2025-06-22 06:33:52,004 - result - INFO - Score of baseline essay: 6
+2025-06-22 06:33:52,004 - result - INFO - Score prediction: 6
+2025-06-22 06:33:52,004 - result - INFO - Datapoint 572 & Datapoint 342
+2025-06-22 06:34:12,164 - result - INFO - got score from new prediction
+2025-06-22 06:34:12,164 - result - INFO - Diff: -2
+2025-06-22 06:34:12,164 - result - INFO - Score of baseline essay: 6
+2025-06-22 06:34:12,164 - result - INFO - Score prediction: 4
+2025-06-22 06:34:12,165 - result - INFO - Datapoint 572 & Datapoint 178
+2025-06-22 06:34:38,312 - result - INFO - got score from new prediction
+2025-06-22 06:34:38,312 - result - INFO - Diff: -3
+2025-06-22 06:34:38,312 - result - INFO - Score of baseline essay: 7
+2025-06-22 06:34:38,312 - result - INFO - Score prediction: 4
+2025-06-22 06:34:38,312 - result - INFO - Datapoint 572 & Datapoint 20
+2025-06-22 06:34:59,586 - result - INFO - got score from new prediction
+2025-06-22 06:34:59,586 - result - INFO - Diff: -3
+2025-06-22 06:34:59,586 - result - INFO - Score of baseline essay: 8
+2025-06-22 06:34:59,586 - result - INFO - Score prediction: 5
+2025-06-22 06:34:59,586 - result - INFO - Avg score for essay 572: 4
+
+2025-06-22 06:34:59,586 - result - INFO - Datapoint 585 & Datapoint 249
+2025-06-22 06:35:14,307 - result - INFO - got score from new prediction
+2025-06-22 06:35:14,308 - result - INFO - Diff: 1
+2025-06-22 06:35:14,308 - result - INFO - Score of baseline essay: 8
+2025-06-22 06:35:14,308 - result - INFO - Score prediction: 9
+2025-06-22 06:35:14,308 - result - INFO - Datapoint 585 & Datapoint 108
+2025-06-22 06:35:32,141 - result - INFO - got score from new prediction
+2025-06-22 06:35:32,142 - result - INFO - Diff: 1
+2025-06-22 06:35:32,142 - result - INFO - Score of baseline essay: 7
+2025-06-22 06:35:32,142 - result - INFO - Score prediction: 8
+2025-06-22 06:35:32,142 - result - INFO - Datapoint 585 & Datapoint 85
+2025-06-22 06:35:53,752 - result - INFO - got score from new prediction
+2025-06-22 06:35:53,752 - result - INFO - Diff: -1
+2025-06-22 06:35:53,752 - result - INFO - Score of baseline essay: 7
+2025-06-22 06:35:53,752 - result - INFO - Score prediction: 6
+2025-06-22 06:35:53,752 - result - INFO - Datapoint 585 & Datapoint 140
+2025-06-22 06:36:11,644 - result - INFO - got score from new prediction
+2025-06-22 06:36:11,644 - result - INFO - Diff: 1
+2025-06-22 06:36:11,644 - result - INFO - Score of baseline essay: 6
+2025-06-22 06:36:11,644 - result - INFO - Score prediction: 7
+2025-06-22 06:36:11,644 - result - INFO - Datapoint 585 & Datapoint 310
+2025-06-22 06:36:30,503 - result - INFO - got score from new prediction
+2025-06-22 06:36:30,503 - result - INFO - Diff: 3
+2025-06-22 06:36:30,503 - result - INFO - Score of baseline essay: 6
+2025-06-22 06:36:30,503 - result - INFO - Score prediction: 9
+2025-06-22 06:36:30,503 - result - INFO - Datapoint 585 & Datapoint 255
+2025-06-22 06:36:43,182 - result - INFO - got score from new prediction
+2025-06-22 06:36:43,182 - result - INFO - Diff: 2
+2025-06-22 06:36:43,182 - result - INFO - Score of baseline essay: 6
+2025-06-22 06:36:43,183 - result - INFO - Score prediction: 8
+2025-06-22 06:36:43,183 - result - INFO - Datapoint 585 & Datapoint 171
+2025-06-22 06:36:58,188 - result - INFO - got score from new prediction
+2025-06-22 06:36:58,188 - result - INFO - Diff: 2
+2025-06-22 06:36:58,188 - result - INFO - Score of baseline essay: 6
+2025-06-22 06:36:58,188 - result - INFO - Score prediction: 8
+2025-06-22 06:36:58,188 - result - INFO - Datapoint 585 & Datapoint 342
+2025-06-22 06:37:12,857 - result - INFO - got score from new prediction
+2025-06-22 06:37:12,857 - result - INFO - Diff: 2
+2025-06-22 06:37:12,857 - result - INFO - Score of baseline essay: 6
+2025-06-22 06:37:12,857 - result - INFO - Score prediction: 8
+2025-06-22 06:37:12,857 - result - INFO - Datapoint 585 & Datapoint 178
+2025-06-22 06:37:26,953 - result - INFO - got score from new prediction
+2025-06-22 06:37:26,953 - result - INFO - Diff: 1
+2025-06-22 06:37:26,953 - result - INFO - Score of baseline essay: 7
+2025-06-22 06:37:26,953 - result - INFO - Score prediction: 8
+2025-06-22 06:37:26,953 - result - INFO - Datapoint 585 & Datapoint 20
+2025-06-22 06:37:42,535 - result - INFO - got score from new prediction
+2025-06-22 06:37:42,535 - result - INFO - Diff: 0
+2025-06-22 06:37:42,536 - result - INFO - Score of baseline essay: 8
+2025-06-22 06:37:42,536 - result - INFO - Score prediction: 8
+2025-06-22 06:37:42,536 - result - INFO - Avg score for essay 585: 8
+
+2025-06-22 06:37:42,536 - result - INFO - Datapoint 972 & Datapoint 249
+2025-06-22 06:37:56,993 - result - INFO - got score from new prediction
+2025-06-22 06:37:56,993 - result - INFO - Diff: -2
+2025-06-22 06:37:56,994 - result - INFO - Score of baseline essay: 8
+2025-06-22 06:37:56,994 - result - INFO - Score prediction: 6
+2025-06-22 06:37:56,994 - result - INFO - Datapoint 972 & Datapoint 108
+2025-06-22 06:38:15,590 - result - INFO - got score from new prediction
+2025-06-22 06:38:15,590 - result - INFO - Diff: -2
+2025-06-22 06:38:15,590 - result - INFO - Score of baseline essay: 7
+2025-06-22 06:38:15,590 - result - INFO - Score prediction: 5
+2025-06-22 06:38:15,590 - result - INFO - Datapoint 972 & Datapoint 85
+2025-06-22 06:38:37,121 - result - INFO - got score from new prediction
+2025-06-22 06:38:37,121 - result - INFO - Diff: -3
+2025-06-22 06:38:37,121 - result - INFO - Score of baseline essay: 7
+2025-06-22 06:38:37,121 - result - INFO - Score prediction: 4
+2025-06-22 06:38:37,121 - result - INFO - Datapoint 972 & Datapoint 140
+2025-06-22 06:38:56,663 - result - INFO - got score from new prediction
+2025-06-22 06:38:56,663 - result - INFO - Diff: 1
+2025-06-22 06:38:56,663 - result - INFO - Score of baseline essay: 6
+2025-06-22 06:38:56,663 - result - INFO - Score prediction: 7
+2025-06-22 06:38:56,663 - result - INFO - Datapoint 972 & Datapoint 310
+2025-06-22 06:39:21,348 - result - INFO - got score from new prediction
+2025-06-22 06:39:21,348 - result - INFO - Diff: 1
+2025-06-22 06:39:21,348 - result - INFO - Score of baseline essay: 6
+2025-06-22 06:39:21,348 - result - INFO - Score prediction: 7
+2025-06-22 06:39:21,348 - result - INFO - Datapoint 972 & Datapoint 255
+2025-06-22 06:39:38,266 - result - INFO - got score from new prediction
+2025-06-22 06:39:38,266 - result - INFO - Diff: 2
+2025-06-22 06:39:38,266 - result - INFO - Score of baseline essay: 6
+2025-06-22 06:39:38,266 - result - INFO - Score prediction: 8
+2025-06-22 06:39:38,266 - result - INFO - Datapoint 972 & Datapoint 171
+2025-06-22 06:39:57,625 - result - INFO - got score from new prediction
+2025-06-22 06:39:57,625 - result - INFO - Diff: 2
+2025-06-22 06:39:57,625 - result - INFO - Score of baseline essay: 6
+2025-06-22 06:39:57,625 - result - INFO - Score prediction: 8
+2025-06-22 06:39:57,625 - result - INFO - Datapoint 972 & Datapoint 342
+2025-06-22 06:40:21,138 - result - INFO - got score from new prediction
+2025-06-22 06:40:21,138 - result - INFO - Diff: 0
+2025-06-22 06:40:21,138 - result - INFO - Score of baseline essay: 6
+2025-06-22 06:40:21,138 - result - INFO - Score prediction: 6
+2025-06-22 06:40:21,139 - result - INFO - Datapoint 972 & Datapoint 178
+2025-06-22 06:40:35,518 - result - INFO - got score from new prediction
+2025-06-22 06:40:35,518 - result - INFO - Diff: -1
+2025-06-22 06:40:35,518 - result - INFO - Score of baseline essay: 7
+2025-06-22 06:40:35,518 - result - INFO - Score prediction: 6
+2025-06-22 06:40:35,518 - result - INFO - Datapoint 972 & Datapoint 20
+2025-06-22 06:40:55,399 - result - INFO - got score from new prediction
+2025-06-22 06:40:55,399 - result - INFO - Diff: -4
+2025-06-22 06:40:55,399 - result - INFO - Score of baseline essay: 8
+2025-06-22 06:40:55,399 - result - INFO - Score prediction: 4
+2025-06-22 06:40:55,399 - result - INFO - Avg score for essay 972: 6
+
+2025-06-22 06:40:55,399 - result - INFO - Datapoint 796 & Datapoint 249
+2025-06-22 06:41:16,676 - result - INFO - got score from new prediction
+2025-06-22 06:41:16,676 - result - INFO - Diff: -2
+2025-06-22 06:41:16,676 - result - INFO - Score of baseline essay: 8
+2025-06-22 06:41:16,676 - result - INFO - Score prediction: 6
+2025-06-22 06:41:16,676 - result - INFO - Datapoint 796 & Datapoint 108
+2025-06-22 06:41:31,816 - result - INFO - got score from new prediction
+2025-06-22 06:41:31,816 - result - INFO - Diff: -3
+2025-06-22 06:41:31,816 - result - INFO - Score of baseline essay: 7
+2025-06-22 06:41:31,816 - result - INFO - Score prediction: 4
+2025-06-22 06:41:31,816 - result - INFO - Datapoint 796 & Datapoint 85
+2025-06-22 06:41:55,505 - result - INFO - got score from new prediction
+2025-06-22 06:41:55,506 - result - INFO - Diff: -4
+2025-06-22 06:41:55,506 - result - INFO - Score of baseline essay: 7
+2025-06-22 06:41:55,506 - result - INFO - Score prediction: 3
+2025-06-22 06:41:55,506 - result - INFO - Datapoint 796 & Datapoint 140
+2025-06-22 06:42:13,300 - result - INFO - got score from new prediction
+2025-06-22 06:42:13,300 - result - INFO - Diff: -2
+2025-06-22 06:42:13,300 - result - INFO - Score of baseline essay: 6
+2025-06-22 06:42:13,300 - result - INFO - Score prediction: 4
+2025-06-22 06:42:13,300 - result - INFO - Datapoint 796 & Datapoint 310
+2025-06-22 06:42:34,668 - result - INFO - got score from new prediction
+2025-06-22 06:42:34,668 - result - INFO - Diff: 1
+2025-06-22 06:42:34,668 - result - INFO - Score of baseline essay: 6
+2025-06-22 06:42:34,669 - result - INFO - Score prediction: 7
+2025-06-22 06:42:34,669 - result - INFO - Datapoint 796 & Datapoint 255
+2025-06-22 06:42:53,150 - result - INFO - got score from new prediction
+2025-06-22 06:42:53,150 - result - INFO - Diff: -1
+2025-06-22 06:42:53,150 - result - INFO - Score of baseline essay: 6
+2025-06-22 06:42:53,150 - result - INFO - Score prediction: 5
+2025-06-22 06:42:53,150 - result - INFO - Datapoint 796 & Datapoint 171

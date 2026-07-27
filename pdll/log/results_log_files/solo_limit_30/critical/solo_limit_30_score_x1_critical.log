@@ -1,0 +1,1926 @@
+2025-06-23 06:01:58,437 - result - CRITICAL - LLM: gpt-4o-mini
+2025-06-23 06:01:58,437 - result - CRITICAL - Mode: Solo
+2025-06-23 06:01:58,437 - result - CRITICAL - Datapoints: 30
+
+2025-06-23 06:01:58,437 - result - CRITICAL - ESSAY SET 1:
+
+2025-06-23 06:01:58,963 - result - CRITICAL - 
+                                                  essay  score  y_pred  diff
+309   "I personally believe that computersdo benefit...      8       6    -2
+104   "Dear @CAPS1 @CAPS2 @CAPS3, I believe that com...     10       4    -6
+796   I believe that computers benefit society. They...      8       4    -4
+579   "Dear Newspaper, @CAPS1 you know, the majority...      8       5    -3
+857   "To use computors, or not to. That is the ques...     10       4    -6
+133   "Dear @CAPS1 @CAPS2, I am writing a letter to ...      8       4    -4
+618   "In my opinion i think computers have a positi...      8       5    -3
+408   "Computers and the @CAPS1 have changed the way...      9       3    -6
+289   "Dear @LOCATION1 harold, More and more people ...      9       4    -5
+687   "@CAPS8 more and more technology is being inve...     11       4    -7
+332   "I belive that computer technology is a positi...      8       4    -4
+196   "The effect computers have on humans is by far...     12       8    -4
+100   "@ORGANIZATION1, @CAPS1 technology continues t...      9       4    -5
+993   "Dear local newspaper, I am sure you will agre...     10       3    -7
+704   "Dear local newspaper: I strongly feel that co...      9       5    -4
+747   "Dear newspaper, I know that computers can pla...     10       3    -7
+940   "There are over @NUM1 students at @ORGANIZATIO...      9       4    -5
+352   "Dear Local Newspaper, Computers are used ever...      8       5    -3
+778   "Dear, @CAPS1 paper edattor we should stop bec...      6       2    -4
+304   "Dear local newspaper, I think that computers ...      8       3    -5
+474   "@CITY1 @CAPS1: I believe that computers (for ...      8       3    -5
+172   "Dear @CAPS1 @CAPS2, I think that having a com...      9       3    -6
+450   "Dear Local Newspaper, @ORGANIZATION1's benefi...      7       4    -3
+63    "Dear editor of the @ORGANIZATION1, In my opin...      8       3    -5
+37    "Dear, Newspaper I would like to tell you abou...      8       3    -5
+1064  "Dear Newspaper, Computers have advance a lot ...     11       4    -7
+347   "Dear, @ORGANIZATION1 are a major part in ever...      8       4    -4
+482   "Dear, Newspaper @CAPS1 my name is @CAPS2, @PE...      7       3    -4
+167   "Dear @LOCATION1, @CAPS1 everybody relizes, te...     10       3    -7
+887   "Dear Local Newspaper @CAPS1, I am against tha...      9       4    -5
+
+
+2025-06-23 06:01:58,964 - result - CRITICAL - ESSAY SET 2:
+
+2025-06-23 06:01:59,481 - result - CRITICAL - 
+                                                  essay  score  y_pred  diff
+959   I believe books are writen for a reason and th...      6       2    -4
+40    "I am a citizen of the @LOCATION1 and I believ...      8       2    -6
+1055  "I think there should be no books taken off th...      7       2    -5
+1008  "Yes I do believe that any book found offensiv...      6       2    -4
+383   "What are we hiding from? Is personal expressi...      8       3    -5
+248   "When it comes to the decision of certain mate...      8       3    -5
+234   "Should certain materials, such as books, musi...      6       2    -4
+572   "Libraries have so many books, and books that ...      5       2    -3
+585   "There are many books, music, movies, and mage...      8       3    -5
+972   "If you take offense to certian things, you sh...      7       2    -5
+796   I find it intresting that people think that it...      4       2    -2
+1074  There should not be sensorship on the books in...      4       2    -2
+36    "Comics, romance, adventure books, and mystery...      8       3    -5
+634   "My name is @CAPS1 and my views on censorship ...      6       2    -4
+787   "@CAPS1 is the freedom of speech to be able to...      7       2    -5
+397   "Okay, to me, people are way to moral in the m...      6       2    -4
+410   "Library Censorship     Everyone has their fav...      8       4    -4
+103   "While their are many books written out thier ...      6       2    -4
+377   "I belive if the books, music, movies, magazin...      6       2    -4
+267   "Every parent wants to protect their child's i...      8       4    -4
+1007  "Everyone has an opinion. Don't you agree? Tha...      7       4    -3
+304   "This writing is socially unacceptable! There ...      8       2    -6
+673   "Yes, I believe that certian materials should ...      8       3    -5
+912   "First, libraries are a good source of informa...      7       3    -4
+854   "Have you ever watched a movie that had some s...      6       3    -3
+1073  "Dear Newspaper @CAPS1     @CAPS2 my name is @...      7       3    -4
+424   "Some books in libraries offended some people....      3       1    -2
+681   "Most people have been debating on whether or ...      5       2    -3
+632   "Do I belive that ceratin materials should be ...      4       1    -3
+1071  "Need help with Censorship in @ORGANIZATION1  ...      6       2    -4
+
+
+2025-06-23 06:01:59,483 - result - CRITICAL - ESSAY SET 3:
+
+2025-06-23 06:02:00,000 - result - CRITICAL - 
+                                                  essay  score  y_pred  diff
+839   "Each new feature of the setting in the essay ...      3       1    -2
+848   "Do not Exceed posted speed limit, never accep...      2       1    -1
+108   "In the essay “Do not Exceed Posted Speed Limi...      3       1    -2
+461   "The features of the setting affect the cyclis...      3       1    -2
+255   The features of the setting affect the cyclist...      1       1     0
+15    "Setting can affect anyone and everyone, in th...      1       1     0
+149   "The riders condition was rough, from flat lan...      1       1     0
+778   When the cyclist went to ask about the road th...      1       1     0
+574   "The features of the barren desert path make t...      3       2    -1
+133   "The setting that were affecting the cyclist w...      1       1     0
+38    "The settings have a huge affect on the cyclis...      3       1    -2
+1013  "The features of the setting effected the cycl...      1       1     0
+143   "As he began his journey, he had full confiden...      2       1    -1
+871   "The features of the setting affect the cyclis...      2       1    -1
+196   "In the essay “Do Not @CAPS1 Posted Speed Limi...      3       1    -2
+37    The setting of the essay efects the cyclist be...      1       1     0
+172   "Many features of the cyclist’s surroundings e...      1       1     0
+928   "The feature of the setting affect the cyclist...      1       1     0
+63    "In the story “Do Not Exceed Posted Speed Limi...      3       1    -2
+203   "In the essay “Rough Road Ahead: Do Not Exceed...      2       1    -1
+909   The features of the setting affected the cycli...      1       1     0
+44    "The features of the setting effected the cycl...      2       1    -1
+787   "There were many features in the setting that ...      2       1    -1
+694   "The cyclist in the story is at first confiden...      3       2    -1
+695   "The features of the setting affect the cyclis...      2       1    -1
+511   "At first when he gets the directions from the...      3       1    -2
+267   "The desert and the hills had a huge effect on...      1       1     0
+727   "The features of the setting do affect the cyc...      0       1     1
+671   "In the short story Rough Road ahead: Do Not E...      3       1    -2
+42    In this I will tell you how the cyclist was be...      2       1    -1
+
+
+2025-06-23 06:02:00,001 - result - CRITICAL - ESSAY SET 4:
+
+2025-06-23 06:02:00,537 - result - CRITICAL - 
+                                                  essay  score  y_pred  diff
+289   The author concludes the story with this parag...      1       1     0
+686   "The  author includes that sentence of the end...      1       1     0
+162   I believe he used this as the ending to ensure...      0       1     1
+659   "The story  “Winter Hibiscus"" by Minfong Ho. ...      2       1    -1
+736   "In this story theauther deicides to end the s...      1       1     0
+483   "The author concludes the story with the afore...      2       2     0
+992   "In the story “Winter Hibiscus” by Minfong Ho,...      1       1     0
+172   I know the reason why the author concludes the...      1       1     0
+63    "The author concludes the story with this para...      1       1     0
+477   "The author concludes with this sentence for e...      2       1    -1
+383   "“When they came back, Saeng vowed silently to...      3       2    -1
+104   This is a powerful sentence that demonstrates ...      2       2     0
+103   "The author ends the story with this paragraph...      3       1    -2
+143   "After reading “Winter Hibiscus, I can tell th...      1       1     0
+38    The author concludes the story with this parag...      0       1     1
+796   "The author concluded the story with the parag...      0       1     1
+918   "The author concludes story with that paragrap...      3       1    -2
+133   "Saeng and her mother have to be determined to...      2       1    -1
+481   "She concludes that paragraph with the story b...      0       1     1
+42    The auther cncludes the story with this paragr...      1       1     0
+203   "The author concludes the story like that to s...      2       1    -1
+466   "The response that the author concludes the st...      0       1     1
+313   "The author concludes the story with they para...      2       1    -1
+147   "The author concludes with this paragraph to s...      2       2     0
+474   "I believe that the author chose to conclude t...      3       1    -2
+330   "The author most likely concludes the story wi...      1       1     0
+749   What l think the author was talking abount sno...      0       1     1
+1001  "The author concludes the story with this para...      2       2     0
+929   "I think the author ends the story like this b...      1       1     0
+960   "In the story “winter Hibiscus” the author Min...      3       1    -2
+
+
+2025-06-23 06:02:00,539 - result - CRITICAL - ESSAY SET 5:
+
+2025-06-23 06:02:01,052 - result - CRITICAL - 
+                                                  essay  score  y_pred  diff
+592   "In the memoir ""Narciso @CAPS1"" by the Bluep...      2       1    -1
+336   "In the story ""Narciso Rodriguez"" written by...      2       1    -1
+699   "In the memoir, ""@PERSON1"" from Home: The @C...      1       1     0
+108   The mood the other Created was how happy narci...      2       1    -1
+430   "The mood created by the author in the memoir ...      2       2     0
+508   "The mood that the author creates in the memoi...      2       2     0
+253   The title of the story is Narciso Rodriguez. T...      1       1     0
+698   "The authors mood of the memoir is that @CAPS1...      3       2    -1
+104   "The Originally from cuba arrived in the Unite...      1       1     0
+114   "The mood in this memoir is gratefulness. This...      4       2    -2
+733   "In the memoir, ""Narciso Rodriguez from Home:...      2       2     0
+851   "Narciso Rodriguez creates a mood of happiness...      4       2    -2
+909   The mood created by the author in the memoir w...      1       1     0
+1005  "Home: The Blueprints to Our Lives is a wonder...      3       2    -1
+201   "the mood created in the memoir were all diffe...      1       1     0
+40    "In this memoir of the author creates a clear ...      3       2    -1
+665   "In this memoir the mood varies. In paragraphs...      3       2    -1
+196   "The author of this memoir creates a warm, lov...      4       3    -1
+279   The author created many different moods in thi...      2       1    -1
+597   "I beleive the mood that sets off in the beggi...      3       1    -2
+370   "The authors mood in the memoir @PERSON1 is th...      3       2    -1
+804   The mood in the memoir is happy and thankful. ...      2       2     0
+305   "In the memoir. from ""Home The Blueprints of ...      3       2    -1
+461   "The mood created in the memoir, ""Narciso Rod...      4       2    -2
+100   "In the memoir, the author created a mood. The...      3       2    -1
+650   "The mood created in the memoir is I think com...      3       2    -1
+789   "The mood created by the author in the memoir ...      2       1    -1
+755   "The mood created by Narciso Rodriguez in the ...      2       1    -1
+36    I think the author's mood was kind of like @CA...      2       1    -1
+923   "The mood in the memoir is very uplifting. The...      2       2     0
+
+
+2025-06-23 06:02:01,053 - result - CRITICAL - ESSAY SET 6:
+
+2025-06-23 06:02:01,580 - result - CRITICAL - 
+                                                  essay  score  y_pred  diff
+959   "When attempting to allow dirigibles to dock o...      3       3     0
+40    "In attempting to allow dirigibles to dock on ...      3       3     0
+1055  "Some of the obstacles facing the builders was...      2       2     0
+1008  "They get good idea to make that building, but...      0       0     0
+383   "Most of the obsticles the builders of the Emp...      2       1    -1
+248   "The obstacles the builders of the @ORGANIZATI...      4       2    -2
+234   "In the excerp ""The Mooring Mast"", by @ORGAN...      3       2    -1
+572   "The builders of the Empire State building fac...      3       3     0
+585   "One problem that the builders has was that th...      3       2    -1
+972   "In ""The Mooring Mast"" by Marcia Amidon @CAP...      2       2     0
+796   The builders faced many obstacles in trying to...      2       3     1
+1074  "Based on the excerpt ""The Mooring mast"" by ...      1       1     0
+36    "The builders of the Empire State Building's m...      3       3     0
+634   "Based on the excerpt, the obstacles the build...      4       3    -1
+787   "Besides The facts That docking dirigibles on ...      3       2    -1
+397   "During the Building of the Mast, the builders...      3       2    -1
+410   "In the excerpt ""THE MOORING MAST"" by Marcia...      3       2    -1
+103   "On @DATE1, The Empire State Building was anno...      3       2    -1
+377   "There were many obstacles that the builders o...      4       3    -1
+267   "In the excerpt ""The Mooring Mast"" by Marcia...      2       2     0
+1007  "The builders faced multiple obsticles in atte...      3       3     0
+304   "The builders of the Empire State Building fac...      3       2    -1
+673   "The architects of the Empire State Building f...      4       3    -1
+912   "When building the Empire State Building, the ...      3       2    -1
+854   "In The Mooring Mast by Marcia Amidon Lüsted, ...      2       2     0
+1073  "The weight was an obstacle they faced. ""A th...      4       2    -2
+424   "In the excerpt ""The Mooring Mast"" by Marcia...      1       2     1
+681   "There were many obstacles the builders of the...      3       2    -1
+632   "The Empire State Building was built with grea...      2       1    -1
+1071  "The builders of the Empire State building fac...      4       3    -1
+
+
+2025-06-23 06:02:01,581 - result - CRITICAL - ESSAY SET 7:
+
+2025-06-23 06:02:02,079 - result - CRITICAL - 
+                                                 essay  score  y_pred  diff
+935  "I was patient one time, really patient but ki...     16      14    -2
+372  "A time that I was patient is when I had my tw...     13      12    -1
+142  "It was @CAPS1 @CAPS2 I was up watching tv wai...     17       6   -11
+273  "Sometimes its hard to be patient, especilly w...     14       8    -6
+44   "You being patient is important. People should...     18       9    -9
+201  "One day me, my mom, my dad, my sister, my bot...     15       5   -10
+352  A time I was pacent was I was wating in line f...      8       6    -2
+340  Patience perso is someone that deal with diffi...     11       6    -5
+808  "Patience, @CAPS6 essential part of our world....     14       8    -6
+15   "@NUM1 years ago on my birthday the only thing...     18       6   -12
+167  "There are lots of times that I have been pati...     16       9    -7
+297  "“@CAPS1 on @CAPS2, where are you ,” @PERSON1 ...     21       6   -15
+93   "One important skill you need in the life is p...     17      14    -3
+821  "A day that I was patient was, one day I was r...     18      10    -8
+183  "Have you ever been patient before? Well l hav...     24      14   -10
+37   When I was going to the doctor I had to be pat...     13       7    -6
+38   "I was patient when I was on my way to @LOCATI...     16       6   -10
+875  "Why wasn’t my uncle there yet? Come on! I was...     23       6   -17
+518  "One day I woke up and looked outside it was s...     17      12    -5
+414  "Being patient means that your understanding a...     21      11   -10
+179  Being patience is a good thing because if you ...      9       8    -1
+774  "A time when I was patient was when I was at m...     17      12    -5
+421  A time when I was patient was when I was at th...     16       2   -14
+862  "I am writing about a time when someone I knew...     17      12    -5
+579  A time I was patient was when I had to be pati...     10       5    -5
+512  "When ll was going to @LOCATION1 with my famil...     18      12    -6
+647  "Have you ever been patience ? I believe we sh...     11       9    -2
+652  "Once, I was @NUM1 old and I was so eager abou...     12      11    -1
+780  "Being patient is one of the many things child...     24      13   -11
+873  "Every year me and my entire family take a tri...     16      20     4
+
+
+2025-06-23 06:02:02,081 - result - CRITICAL - ESSAY SET 8:
+
+2025-06-23 06:02:02,605 - result - CRITICAL - 
+                                                 essay  score  y_pred  diff
+135  Have u ever been hit by a basketball in the fa...     31      11   -20
+151  "Someone once told me that laughter is the key...     33      26    -7
+330  " My @CAPS1 year of high school started off le...     40      37    -3
+19   "Iv always loved laughter in my life, I don't ...     27      22    -5
+405  "            Just One @CAPS1 @CAPS2 @CAPS3 A @...     36      32    -4
+15   "@DATE1 was the start of a new age, i had just...     28      12   -16
+110  " I have been waiting a whole year for @TIME1 ...     34      24   -10
+329  " One day I decided to go over to my friend @P...     40      37    -3
+68   "Laughter can create this type of bond that's ...     35      34    -1
+222  "       Laughter In A Relationship The most im...     36      24   -12
+187  "    Laughter is an important part of any rela...     41      40    -1
+95   "Laughter: A @CAPS1 @CAPS2 @CAPS3 of the varie...     35      30    -5
+207  " The human brain is a piece of work. Its the ...     45      24   -21
+266  "     Every one laughs, i love to laugh in fac...     36      28    -8
+365  " Its my sophomore year and some of my friends...     40      25   -15
+336  " One of the most oddest things in life is how...     42      29   -13
+126  "One time I was sick, and I told my mom ""I ne...     28      18   -10
+103  "  Laughter is the only expression in my opini...     36      22   -14
+44   "                          A funny Story  Many...     30      16   -14
+274  "Have @CAPS1 ever had that one friend who was ...     40      38    -2
+85   " It was the first day of the ninth grade, tha...     42      30   -12
+428  " It all started when my eighth grade class ha...     34      15   -19
+13   "                              Laughter       ...     31      25    -6
+239  "  Middle school was a challenging environment...     40      42     2
+334  " I believe laughter brings many different peo...     36      35    -1
+182  DUE you think that being part of sameting funi...     15       1   -14
+100  " When I had turned fifteen I was so anxious t...     36      26   -10
+156  " What makes you laugh? Laughter is a really g...     37      22   -15
+20   One day me and my friend taylor got the idea o...     24      12   -12
+77   " For a year and two months I'd devoted my lif...     40      42     2
+
+
+2025-06-23 06:02:02,606 - result - CRITICAL - LLM: gpt-4o-mini
+2025-06-23 06:02:02,606 - result - CRITICAL - Mode: Solo
+2025-06-23 06:02:02,606 - result - CRITICAL - Datapoints: 30
+
+2025-06-23 06:02:02,606 - result - CRITICAL - Evaluation:
+2025-06-23 06:02:02,606 - result - CRITICAL - MSE of Set 1: 0.17523
+2025-06-23 06:02:02,606 - result - CRITICAL - MSE of Set 2: 0.17367
+2025-06-23 06:02:02,606 - result - CRITICAL - MSE of Set 3: 0.15926
+2025-06-23 06:02:02,606 - result - CRITICAL - MSE of Set 4: 0.10370
+2025-06-23 06:02:02,606 - result - CRITICAL - MSE of Set 5: 0.06667
+2025-06-23 06:02:02,606 - result - CRITICAL - MSE of Set 6: 0.05208
+2025-06-23 06:02:02,606 - result - CRITICAL - MSE of Set 7: 0.07404
+2025-06-23 06:02:02,606 - result - CRITICAL - MSE of Set 8: 0.03375
+2025-06-23 06:02:02,606 - result - CRITICAL - Average MSE: 0.10480
+
+2025-06-23 06:02:02,607 - result - CRITICAL - QWK of Set 1: 0.03942
+2025-06-23 06:02:02,607 - result - CRITICAL - QWK of Set 2: 0.07722
+2025-06-23 06:02:02,607 - result - CRITICAL - QWK of Set 3: 0.09283
+2025-06-23 06:02:02,607 - result - CRITICAL - QWK of Set 4: 0.21495
+2025-06-23 06:02:02,607 - result - CRITICAL - QWK of Set 5: 0.40299
+2025-06-23 06:02:02,607 - result - CRITICAL - QWK of Set 6: 0.53416
+2025-06-23 06:02:02,607 - result - CRITICAL - QWK of Set 7: 0.11842
+2025-06-23 06:02:02,607 - result - CRITICAL - QWK of Set 8: 0.39234
+2025-06-23 06:02:02,607 - result - CRITICAL - Average QWK: 0.23404
+
+2025-06-23 06:02:02,607 - result - CRITICAL - -----------------------------------------------------------------
+
+
+
+2025-06-23 06:02:02,607 - result - CRITICAL - LLM: gpt-4.1-mini
+2025-06-23 06:02:02,607 - result - CRITICAL - Mode: Solo
+2025-06-23 06:02:02,607 - result - CRITICAL - Datapoints: 30
+
+2025-06-23 06:02:02,607 - result - CRITICAL - ESSAY SET 1:
+
+2025-06-23 06:02:03,132 - result - CRITICAL - 
+                                                  essay  score  y_pred  diff
+309   "I personally believe that computersdo benefit...      8       4    -4
+104   "Dear @CAPS1 @CAPS2 @CAPS3, I believe that com...     10       3    -7
+796   I believe that computers benefit society. They...      8       3    -5
+579   "Dear Newspaper, @CAPS1 you know, the majority...      8       4    -4
+857   "To use computors, or not to. That is the ques...     10       4    -6
+133   "Dear @CAPS1 @CAPS2, I am writing a letter to ...      8       4    -4
+618   "In my opinion i think computers have a positi...      8       4    -4
+408   "Computers and the @CAPS1 have changed the way...      9       4    -5
+289   "Dear @LOCATION1 harold, More and more people ...      9       3    -6
+687   "@CAPS8 more and more technology is being inve...     11       4    -7
+332   "I belive that computer technology is a positi...      8       4    -4
+196   "The effect computers have on humans is by far...     12       5    -7
+100   "@ORGANIZATION1, @CAPS1 technology continues t...      9       3    -6
+993   "Dear local newspaper, I am sure you will agre...     10       3    -7
+704   "Dear local newspaper: I strongly feel that co...      9       4    -5
+747   "Dear newspaper, I know that computers can pla...     10       4    -6
+940   "There are over @NUM1 students at @ORGANIZATIO...      9       4    -5
+352   "Dear Local Newspaper, Computers are used ever...      8       4    -4
+778   "Dear, @CAPS1 paper edattor we should stop bec...      6       1    -5
+304   "Dear local newspaper, I think that computers ...      8       3    -5
+474   "@CITY1 @CAPS1: I believe that computers (for ...      8       3    -5
+172   "Dear @CAPS1 @CAPS2, I think that having a com...      9       2    -7
+450   "Dear Local Newspaper, @ORGANIZATION1's benefi...      7       3    -4
+63    "Dear editor of the @ORGANIZATION1, In my opin...      8       3    -5
+37    "Dear, Newspaper I would like to tell you abou...      8       3    -5
+1064  "Dear Newspaper, Computers have advance a lot ...     11       4    -7
+347   "Dear, @ORGANIZATION1 are a major part in ever...      8       4    -4
+482   "Dear, Newspaper @CAPS1 my name is @CAPS2, @PE...      7       2    -5
+167   "Dear @LOCATION1, @CAPS1 everybody relizes, te...     10       3    -7
+887   "Dear Local Newspaper @CAPS1, I am against tha...      9       4    -5
+
+
+2025-06-23 06:02:03,133 - result - CRITICAL - ESSAY SET 2:
+
+2025-06-23 06:02:03,644 - result - CRITICAL - 
+                                                  essay  score  y_pred  diff
+959   I believe books are writen for a reason and th...      6       3    -3
+40    "I am a citizen of the @LOCATION1 and I believ...      8       3    -5
+1055  "I think there should be no books taken off th...      7       3    -4
+1008  "Yes I do believe that any book found offensiv...      6       2    -4
+383   "What are we hiding from? Is personal expressi...      8       4    -4
+248   "When it comes to the decision of certain mate...      8       4    -4
+234   "Should certain materials, such as books, musi...      6       2    -4
+572   "Libraries have so many books, and books that ...      5       2    -3
+585   "There are many books, music, movies, and mage...      8       4    -4
+972   "If you take offense to certian things, you sh...      7       2    -5
+796   I find it intresting that people think that it...      4       2    -2
+1074  There should not be sensorship on the books in...      4       2    -2
+36    "Comics, romance, adventure books, and mystery...      8       3    -5
+634   "My name is @CAPS1 and my views on censorship ...      6       3    -3
+787   "@CAPS1 is the freedom of speech to be able to...      7       2    -5
+397   "Okay, to me, people are way to moral in the m...      6       2    -4
+410   "Library Censorship     Everyone has their fav...      8       4    -4
+103   "While their are many books written out thier ...      6       2    -4
+377   "I belive if the books, music, movies, magazin...      6       0    -6
+267   "Every parent wants to protect their child's i...      8       4    -4
+1007  "Everyone has an opinion. Don't you agree? Tha...      7       4    -3
+304   "This writing is socially unacceptable! There ...      8       2    -6
+673   "Yes, I believe that certian materials should ...      8       3    -5
+912   "First, libraries are a good source of informa...      7       3    -4
+854   "Have you ever watched a movie that had some s...      6       2    -4
+1073  "Dear Newspaper @CAPS1     @CAPS2 my name is @...      7       3    -4
+424   "Some books in libraries offended some people....      3       2    -1
+681   "Most people have been debating on whether or ...      5       3    -2
+632   "Do I belive that ceratin materials should be ...      4       1    -3
+1071  "Need help with Censorship in @ORGANIZATION1  ...      6       2    -4
+
+
+2025-06-23 06:02:03,645 - result - CRITICAL - ESSAY SET 3:
+
+2025-06-23 06:02:04,159 - result - CRITICAL - 
+                                                  essay  score  y_pred  diff
+839   "Each new feature of the setting in the essay ...      3       2    -1
+848   "Do not Exceed posted speed limit, never accep...      2       1    -1
+108   "In the essay “Do not Exceed Posted Speed Limi...      3       2    -1
+461   "The features of the setting affect the cyclis...      3       2    -1
+255   The features of the setting affect the cyclist...      1       1     0
+15    "Setting can affect anyone and everyone, in th...      1       1     0
+149   "The riders condition was rough, from flat lan...      1       1     0
+778   When the cyclist went to ask about the road th...      1       1     0
+574   "The features of the barren desert path make t...      3       3     0
+133   "The setting that were affecting the cyclist w...      1       1     0
+38    "The settings have a huge affect on the cyclis...      3       1    -2
+1013  "The features of the setting effected the cycl...      1       1     0
+143   "As he began his journey, he had full confiden...      2       2     0
+871   "The features of the setting affect the cyclis...      2       1    -1
+196   "In the essay “Do Not @CAPS1 Posted Speed Limi...      3       2    -1
+37    The setting of the essay efects the cyclist be...      1       1     0
+172   "Many features of the cyclist’s surroundings e...      1       1     0
+928   "The feature of the setting affect the cyclist...      1       1     0
+63    "In the story “Do Not Exceed Posted Speed Limi...      3       2    -1
+203   "In the essay “Rough Road Ahead: Do Not Exceed...      2       2     0
+909   The features of the setting affected the cycli...      1       1     0
+44    "The features of the setting effected the cycl...      2       1    -1
+787   "There were many features in the setting that ...      2       2     0
+694   "The cyclist in the story is at first confiden...      3       2    -1
+695   "The features of the setting affect the cyclis...      2       1    -1
+511   "At first when he gets the directions from the...      3       2    -1
+267   "The desert and the hills had a huge effect on...      1       2     1
+727   "The features of the setting do affect the cyc...      0       1     1
+671   "In the short story Rough Road ahead: Do Not E...      3       1    -2
+42    In this I will tell you how the cyclist was be...      2       1    -1
+
+
+2025-06-23 06:02:04,160 - result - CRITICAL - ESSAY SET 4:
+
+2025-06-23 06:02:04,662 - result - CRITICAL - 
+                                                  essay  score  y_pred  diff
+289   The author concludes the story with this parag...      1       1     0
+686   "The  author includes that sentence of the end...      1       1     0
+162   I believe he used this as the ending to ensure...      0       1     1
+659   "The story  “Winter Hibiscus"" by Minfong Ho. ...      2       2     0
+736   "In this story theauther deicides to end the s...      1       1     0
+483   "The author concludes the story with the afore...      2       2     0
+992   "In the story “Winter Hibiscus” by Minfong Ho,...      1       1     0
+172   I know the reason why the author concludes the...      1       1     0
+63    "The author concludes the story with this para...      1       1     0
+477   "The author concludes with this sentence for e...      2       2     0
+383   "“When they came back, Saeng vowed silently to...      3       2    -1
+104   This is a powerful sentence that demonstrates ...      2       2     0
+103   "The author ends the story with this paragraph...      3       1    -2
+143   "After reading “Winter Hibiscus, I can tell th...      1       1     0
+38    The author concludes the story with this parag...      0       1     1
+796   "The author concluded the story with the parag...      0       1     1
+918   "The author concludes story with that paragrap...      3       2    -1
+133   "Saeng and her mother have to be determined to...      2       1    -1
+481   "She concludes that paragraph with the story b...      0       1     1
+42    The auther cncludes the story with this paragr...      1       1     0
+203   "The author concludes the story like that to s...      2       1    -1
+466   "The response that the author concludes the st...      0       0     0
+313   "The author concludes the story with they para...      2       2     0
+147   "The author concludes with this paragraph to s...      2       2     0
+474   "I believe that the author chose to conclude t...      3       2    -1
+330   "The author most likely concludes the story wi...      1       1     0
+749   What l think the author was talking abount sno...      0       0     0
+1001  "The author concludes the story with this para...      2       2     0
+929   "I think the author ends the story like this b...      1       1     0
+960   "In the story “winter Hibiscus” the author Min...      3       1    -2
+
+
+2025-06-23 06:02:04,664 - result - CRITICAL - ESSAY SET 5:
+
+2025-06-23 06:02:05,161 - result - CRITICAL - 
+                                                  essay  score  y_pred  diff
+592   "In the memoir ""Narciso @CAPS1"" by the Bluep...      2       2     0
+336   "In the story ""Narciso Rodriguez"" written by...      2       1    -1
+699   "In the memoir, ""@PERSON1"" from Home: The @C...      1       1     0
+108   The mood the other Created was how happy narci...      2       1    -1
+430   "The mood created by the author in the memoir ...      2       2     0
+508   "The mood that the author creates in the memoi...      2       2     0
+253   The title of the story is Narciso Rodriguez. T...      1       1     0
+698   "The authors mood of the memoir is that @CAPS1...      3       3     0
+104   "The Originally from cuba arrived in the Unite...      1       1     0
+114   "The mood in this memoir is gratefulness. This...      4       3    -1
+733   "In the memoir, ""Narciso Rodriguez from Home:...      2       2     0
+851   "Narciso Rodriguez creates a mood of happiness...      4       3    -1
+909   The mood created by the author in the memoir w...      1       1     0
+1005  "Home: The Blueprints to Our Lives is a wonder...      3       2    -1
+201   "the mood created in the memoir were all diffe...      1       2     1
+40    "In this memoir of the author creates a clear ...      3       3     0
+665   "In this memoir the mood varies. In paragraphs...      3       2    -1
+196   "The author of this memoir creates a warm, lov...      4       3    -1
+279   The author created many different moods in thi...      2       1    -1
+597   "I beleive the mood that sets off in the beggi...      3       2    -1
+370   "The authors mood in the memoir @PERSON1 is th...      3       2    -1
+804   The mood in the memoir is happy and thankful. ...      2       2     0
+305   "In the memoir. from ""Home The Blueprints of ...      3       3     0
+461   "The mood created in the memoir, ""Narciso Rod...      4       3    -1
+100   "In the memoir, the author created a mood. The...      3       2    -1
+650   "The mood created in the memoir is I think com...      3       3     0
+789   "The mood created by the author in the memoir ...      2       1    -1
+755   "The mood created by Narciso Rodriguez in the ...      2       2     0
+36    I think the author's mood was kind of like @CA...      2       1    -1
+923   "The mood in the memoir is very uplifting. The...      2       3     1
+
+
+2025-06-23 06:02:05,162 - result - CRITICAL - ESSAY SET 6:
+
+2025-06-23 06:02:05,653 - result - CRITICAL - 
+                                                  essay  score  y_pred  diff
+959   "When attempting to allow dirigibles to dock o...      3       4     1
+40    "In attempting to allow dirigibles to dock on ...      3       3     0
+1055  "Some of the obstacles facing the builders was...      2       2     0
+1008  "They get good idea to make that building, but...      0       0     0
+383   "Most of the obsticles the builders of the Emp...      2       2     0
+248   "The obstacles the builders of the @ORGANIZATI...      4       3    -1
+234   "In the excerp ""The Mooring Mast"", by @ORGAN...      3       2    -1
+572   "The builders of the Empire State building fac...      3       3     0
+585   "One problem that the builders has was that th...      3       3     0
+972   "In ""The Mooring Mast"" by Marcia Amidon @CAP...      2       2     0
+796   The builders faced many obstacles in trying to...      2       3     1
+1074  "Based on the excerpt ""The Mooring mast"" by ...      1       2     1
+36    "The builders of the Empire State Building's m...      3       3     0
+634   "Based on the excerpt, the obstacles the build...      4       3    -1
+787   "Besides The facts That docking dirigibles on ...      3       3     0
+397   "During the Building of the Mast, the builders...      3       3     0
+410   "In the excerpt ""THE MOORING MAST"" by Marcia...      3       3     0
+103   "On @DATE1, The Empire State Building was anno...      3       2    -1
+377   "There were many obstacles that the builders o...      4       3    -1
+267   "In the excerpt ""The Mooring Mast"" by Marcia...      2       2     0
+1007  "The builders faced multiple obsticles in atte...      3       3     0
+304   "The builders of the Empire State Building fac...      3       3     0
+673   "The architects of the Empire State Building f...      4       3    -1
+912   "When building the Empire State Building, the ...      3       3     0
+854   "In The Mooring Mast by Marcia Amidon Lüsted, ...      2       2     0
+1073  "The weight was an obstacle they faced. ""A th...      4       3    -1
+424   "In the excerpt ""The Mooring Mast"" by Marcia...      1       2     1
+681   "There were many obstacles the builders of the...      3       3     0
+632   "The Empire State Building was built with grea...      2       3     1
+1071  "The builders of the Empire State building fac...      4       3    -1
+
+
+2025-06-23 06:02:05,655 - result - CRITICAL - ESSAY SET 7:
+
+2025-06-23 06:02:06,138 - result - CRITICAL - 
+                                                 essay  score  y_pred  diff
+935  "I was patient one time, really patient but ki...     16      10    -6
+372  "A time that I was patient is when I had my tw...     13      14     1
+142  "It was @CAPS1 @CAPS2 I was up watching tv wai...     17       7   -10
+273  "Sometimes its hard to be patient, especilly w...     14       7    -7
+44   "You being patient is important. People should...     18      14    -4
+201  "One day me, my mom, my dad, my sister, my bot...     15       7    -8
+352  A time I was pacent was I was wating in line f...      8       4    -4
+340  Patience perso is someone that deal with diffi...     11       7    -4
+808  "Patience, @CAPS6 essential part of our world....     14      10    -4
+15   "@NUM1 years ago on my birthday the only thing...     18       6   -12
+167  "There are lots of times that I have been pati...     16      10    -6
+297  "“@CAPS1 on @CAPS2, where are you ,” @PERSON1 ...     21      10   -11
+93   "One important skill you need in the life is p...     17      18     1
+821  "A day that I was patient was, one day I was r...     18      14    -4
+183  "Have you ever been patient before? Well l hav...     24      14   -10
+37   When I was going to the doctor I had to be pat...     13       7    -6
+38   "I was patient when I was on my way to @LOCATI...     16       7    -9
+875  "Why wasn’t my uncle there yet? Come on! I was...     23      10   -13
+518  "One day I woke up and looked outside it was s...     17      18     1
+414  "Being patient means that your understanding a...     21      20    -1
+179  Being patience is a good thing because if you ...      9       5    -4
+774  "A time when I was patient was when I was at m...     17      10    -7
+421  A time when I was patient was when I was at th...     16       3   -13
+862  "I am writing about a time when someone I knew...     17      20     3
+579  A time I was patient was when I had to be pati...     10       3    -7
+512  "When ll was going to @LOCATION1 with my famil...     18      14    -4
+647  "Have you ever been patience ? I believe we sh...     11      10    -1
+652  "Once, I was @NUM1 old and I was so eager abou...     12      18     6
+780  "Being patient is one of the many things child...     24      18    -6
+873  "Every year me and my entire family take a tri...     16      14    -2
+
+
+2025-06-23 06:02:06,139 - result - CRITICAL - ESSAY SET 8:
+
+2025-06-23 06:02:06,640 - result - CRITICAL - 
+                                                 essay  score  y_pred  diff
+135  Have u ever been hit by a basketball in the fa...     31      18   -13
+151  "Someone once told me that laughter is the key...     33      26    -7
+330  " My @CAPS1 year of high school started off le...     40      44     4
+19   "Iv always loved laughter in my life, I don't ...     27      26    -1
+405  "            Just One @CAPS1 @CAPS2 @CAPS3 A @...     36      38     2
+15   "@DATE1 was the start of a new age, i had just...     28      18   -10
+110  " I have been waiting a whole year for @TIME1 ...     34      30    -4
+329  " One day I decided to go over to my friend @P...     40      38    -2
+68   "Laughter can create this type of bond that's ...     35      38     3
+222  "       Laughter In A Relationship The most im...     36      38     2
+187  "    Laughter is an important part of any rela...     41      44     3
+95   "Laughter: A @CAPS1 @CAPS2 @CAPS3 of the varie...     35      44     9
+207  " The human brain is a piece of work. Its the ...     45      38    -7
+266  "     Every one laughs, i love to laugh in fac...     36      38     2
+365  " Its my sophomore year and some of my friends...     40      38    -2
+336  " One of the most oddest things in life is how...     42      38    -4
+126  "One time I was sick, and I told my mom ""I ne...     28      10   -18
+103  "  Laughter is the only expression in my opini...     36      18   -18
+44   "                          A funny Story  Many...     30      26    -4
+274  "Have @CAPS1 ever had that one friend who was ...     40      44     4
+85   " It was the first day of the ninth grade, tha...     42      44     2
+428  " It all started when my eighth grade class ha...     34      38     4
+13   "                              Laughter       ...     31      18   -13
+239  "  Middle school was a challenging environment...     40      38    -2
+334  " I believe laughter brings many different peo...     36      44     8
+182  DUE you think that being part of sameting funi...     15       6    -9
+100  " When I had turned fifteen I was so anxious t...     36      44     8
+156  " What makes you laugh? Laughter is a really g...     37      38     1
+20   One day me and my friend taylor got the idea o...     24      18    -6
+77   " For a year and two months I'd devoted my lif...     40      38    -2
+
+
+2025-06-23 06:02:06,642 - result - CRITICAL - LLM: gpt-4.1-mini
+2025-06-23 06:02:06,642 - result - CRITICAL - Mode: Solo
+2025-06-23 06:02:06,642 - result - CRITICAL - Datapoints: 30
+
+2025-06-23 06:02:06,642 - result - CRITICAL - Evaluation:
+2025-06-23 06:02:06,642 - result - CRITICAL - MSE of Set 1: 0.20602
+2025-06-23 06:02:06,642 - result - CRITICAL - MSE of Set 2: 0.15967
+2025-06-23 06:02:06,642 - result - CRITICAL - MSE of Set 3: 0.08148
+2025-06-23 06:02:06,642 - result - CRITICAL - MSE of Set 4: 0.06296
+2025-06-23 06:02:06,642 - result - CRITICAL - MSE of Set 5: 0.03333
+2025-06-23 06:02:06,642 - result - CRITICAL - MSE of Set 6: 0.02708
+2025-06-23 06:02:06,642 - result - CRITICAL - MSE of Set 7: 0.05204
+2025-06-23 06:02:06,642 - result - CRITICAL - MSE of Set 8: 0.01535
+2025-06-23 06:02:06,642 - result - CRITICAL - Average MSE: 0.07974
+
+2025-06-23 06:02:06,642 - result - CRITICAL - QWK of Set 1: 0.03478
+2025-06-23 06:02:06,642 - result - CRITICAL - QWK of Set 2: 0.09177
+2025-06-23 06:02:06,642 - result - CRITICAL - QWK of Set 3: 0.45813
+2025-06-23 06:02:06,642 - result - CRITICAL - QWK of Set 4: 0.57571
+2025-06-23 06:02:06,642 - result - CRITICAL - QWK of Set 5: 0.66667
+2025-06-23 06:02:06,642 - result - CRITICAL - QWK of Set 6: 0.69861
+2025-06-23 06:02:06,642 - result - CRITICAL - QWK of Set 7: 0.29535
+2025-06-23 06:02:06,642 - result - CRITICAL - QWK of Set 8: 0.73291
+2025-06-23 06:02:06,642 - result - CRITICAL - Average QWK: 0.44424
+
+2025-06-23 06:02:06,642 - result - CRITICAL - -----------------------------------------------------------------
+
+
+
+2025-06-23 06:02:06,642 - result - CRITICAL - LLM: gpt-4.1-nano
+2025-06-23 06:02:06,642 - result - CRITICAL - Mode: Solo
+2025-06-23 06:02:06,642 - result - CRITICAL - Datapoints: 30
+
+2025-06-23 06:02:06,642 - result - CRITICAL - ESSAY SET 1:
+
+2025-06-23 06:02:07,127 - result - CRITICAL - 
+                                                  essay  score  y_pred  diff
+309   "I personally believe that computersdo benefit...      8       4    -4
+104   "Dear @CAPS1 @CAPS2 @CAPS3, I believe that com...     10       3    -7
+796   I believe that computers benefit society. They...      8       4    -4
+579   "Dear Newspaper, @CAPS1 you know, the majority...      8       4    -4
+857   "To use computors, or not to. That is the ques...     10       4    -6
+133   "Dear @CAPS1 @CAPS2, I am writing a letter to ...      8       4    -4
+618   "In my opinion i think computers have a positi...      8       4    -4
+408   "Computers and the @CAPS1 have changed the way...      9       4    -5
+289   "Dear @LOCATION1 harold, More and more people ...      9       2    -7
+687   "@CAPS8 more and more technology is being inve...     11       3    -8
+332   "I belive that computer technology is a positi...      8       4    -4
+196   "The effect computers have on humans is by far...     12       4    -8
+100   "@ORGANIZATION1, @CAPS1 technology continues t...      9       3    -6
+993   "Dear local newspaper, I am sure you will agre...     10       3    -7
+704   "Dear local newspaper: I strongly feel that co...      9       4    -5
+747   "Dear newspaper, I know that computers can pla...     10       3    -7
+940   "There are over @NUM1 students at @ORGANIZATIO...      9       4    -5
+352   "Dear Local Newspaper, Computers are used ever...      8       3    -5
+778   "Dear, @CAPS1 paper edattor we should stop bec...      6       2    -4
+304   "Dear local newspaper, I think that computers ...      8       4    -4
+474   "@CITY1 @CAPS1: I believe that computers (for ...      8       4    -4
+172   "Dear @CAPS1 @CAPS2, I think that having a com...      9       2    -7
+450   "Dear Local Newspaper, @ORGANIZATION1's benefi...      7       4    -3
+63    "Dear editor of the @ORGANIZATION1, In my opin...      8       2    -6
+37    "Dear, Newspaper I would like to tell you abou...      8       3    -5
+1064  "Dear Newspaper, Computers have advance a lot ...     11       4    -7
+347   "Dear, @ORGANIZATION1 are a major part in ever...      8       4    -4
+482   "Dear, Newspaper @CAPS1 my name is @CAPS2, @PE...      7       2    -5
+167   "Dear @LOCATION1, @CAPS1 everybody relizes, te...     10       2    -8
+887   "Dear Local Newspaper @CAPS1, I am against tha...      9       3    -6
+
+
+2025-06-23 06:02:07,128 - result - CRITICAL - ESSAY SET 2:
+
+2025-06-23 06:02:07,592 - result - CRITICAL - 
+                                                  essay  score  y_pred  diff
+959   I believe books are writen for a reason and th...      6      27    21
+40    "I am a citizen of the @LOCATION1 and I believ...      8      37    29
+1055  "I think there should be no books taken off th...      7      41    34
+1008  "Yes I do believe that any book found offensiv...      6      37    31
+383   "What are we hiding from? Is personal expressi...      8      52    44
+248   "When it comes to the decision of certain mate...      8      55    47
+234   "Should certain materials, such as books, musi...      6       2    -4
+572   "Libraries have so many books, and books that ...      5      27    22
+585   "There are many books, music, movies, and mage...      8      56    48
+972   "If you take offense to certian things, you sh...      7      31    24
+796   I find it intresting that people think that it...      4       2    -2
+1074  There should not be sensorship on the books in...      4       2    -2
+36    "Comics, romance, adventure books, and mystery...      8      52    44
+634   "My name is @CAPS1 and my views on censorship ...      6      37    31
+787   "@CAPS1 is the freedom of speech to be able to...      7      27    20
+397   "Okay, to me, people are way to moral in the m...      6      37    31
+410   "Library Censorship     Everyone has their fav...      8       2    -6
+103   "While their are many books written out thier ...      6      27    21
+377   "I belive if the books, music, movies, magazin...      6      41    35
+267   "Every parent wants to protect their child's i...      8      53    45
+1007  "Everyone has an opinion. Don't you agree? Tha...      7      41    34
+304   "This writing is socially unacceptable! There ...      8      24    16
+673   "Yes, I believe that certian materials should ...      8      37    29
+912   "First, libraries are a good source of informa...      7      41    34
+854   "Have you ever watched a movie that had some s...      6      31    25
+1073  "Dear Newspaper @CAPS1     @CAPS2 my name is @...      7      31    24
+424   "Some books in libraries offended some people....      3       1    -2
+681   "Most people have been debating on whether or ...      5      27    22
+632   "Do I belive that ceratin materials should be ...      4      27    23
+1071  "Need help with Censorship in @ORGANIZATION1  ...      6      27    21
+
+
+2025-06-23 06:02:07,594 - result - CRITICAL - ESSAY SET 3:
+
+2025-06-23 06:02:08,066 - result - CRITICAL - 
+                                                  essay  score  y_pred  diff
+839   "Each new feature of the setting in the essay ...      3       1    -2
+848   "Do not Exceed posted speed limit, never accep...      2       0    -2
+108   "In the essay “Do not Exceed Posted Speed Limi...      3       1    -2
+461   "The features of the setting affect the cyclis...      3       1    -2
+255   The features of the setting affect the cyclist...      1       1     0
+15    "Setting can affect anyone and everyone, in th...      1       1     0
+149   "The riders condition was rough, from flat lan...      1       1     0
+778   When the cyclist went to ask about the road th...      1       1     0
+574   "The features of the barren desert path make t...      3       1    -2
+133   "The setting that were affecting the cyclist w...      1       1     0
+38    "The settings have a huge affect on the cyclis...      3       1    -2
+1013  "The features of the setting effected the cycl...      1       0    -1
+143   "As he began his journey, he had full confiden...      2       1    -1
+871   "The features of the setting affect the cyclis...      2       1    -1
+196   "In the essay “Do Not @CAPS1 Posted Speed Limi...      3       0    -3
+37    The setting of the essay efects the cyclist be...      1       0    -1
+172   "Many features of the cyclist’s surroundings e...      1       1     0
+928   "The feature of the setting affect the cyclist...      1       1     0
+63    "In the story “Do Not Exceed Posted Speed Limi...      3       1    -2
+203   "In the essay “Rough Road Ahead: Do Not Exceed...      2       1    -1
+909   The features of the setting affected the cycli...      1       1     0
+44    "The features of the setting effected the cycl...      2       1    -1
+787   "There were many features in the setting that ...      2       2     0
+694   "The cyclist in the story is at first confiden...      3       1    -2
+695   "The features of the setting affect the cyclis...      2       1    -1
+511   "At first when he gets the directions from the...      3       1    -2
+267   "The desert and the hills had a huge effect on...      1       1     0
+727   "The features of the setting do affect the cyc...      0       0     0
+671   "In the short story Rough Road ahead: Do Not E...      3       1    -2
+42    In this I will tell you how the cyclist was be...      2       1    -1
+
+
+2025-06-23 06:02:08,067 - result - CRITICAL - ESSAY SET 4:
+
+2025-06-23 06:02:08,554 - result - CRITICAL - 
+                                                  essay  score  y_pred  diff
+289   The author concludes the story with this parag...      1       1     0
+686   "The  author includes that sentence of the end...      1       1     0
+162   I believe he used this as the ending to ensure...      0       1     1
+659   "The story  “Winter Hibiscus"" by Minfong Ho. ...      2       2     0
+736   "In this story theauther deicides to end the s...      1       1     0
+483   "The author concludes the story with the afore...      2       2     0
+992   "In the story “Winter Hibiscus” by Minfong Ho,...      1       1     0
+172   I know the reason why the author concludes the...      1       0    -1
+63    "The author concludes the story with this para...      1       1     0
+477   "The author concludes with this sentence for e...      2       1    -1
+383   "“When they came back, Saeng vowed silently to...      3       2    -1
+104   This is a powerful sentence that demonstrates ...      2       1    -1
+103   "The author ends the story with this paragraph...      3       1    -2
+143   "After reading “Winter Hibiscus, I can tell th...      1       1     0
+38    The author concludes the story with this parag...      0       1     1
+796   "The author concluded the story with the parag...      0       1     1
+918   "The author concludes story with that paragrap...      3       2    -1
+133   "Saeng and her mother have to be determined to...      2       1    -1
+481   "She concludes that paragraph with the story b...      0       0     0
+42    The auther cncludes the story with this paragr...      1       0    -1
+203   "The author concludes the story like that to s...      2       1    -1
+466   "The response that the author concludes the st...      0       0     0
+313   "The author concludes the story with they para...      2       1    -1
+147   "The author concludes with this paragraph to s...      2       2     0
+474   "I believe that the author chose to conclude t...      3       1    -2
+330   "The author most likely concludes the story wi...      1       1     0
+749   What l think the author was talking abount sno...      0       0     0
+1001  "The author concludes the story with this para...      2       1    -1
+929   "I think the author ends the story like this b...      1       0    -1
+960   "In the story “winter Hibiscus” the author Min...      3       2    -1
+
+
+2025-06-23 06:02:08,556 - result - CRITICAL - ESSAY SET 5:
+
+2025-06-23 06:02:09,021 - result - CRITICAL - 
+                                                  essay  score  y_pred  diff
+592   "In the memoir ""Narciso @CAPS1"" by the Bluep...      2       2     0
+336   "In the story ""Narciso Rodriguez"" written by...      2       1    -1
+699   "In the memoir, ""@PERSON1"" from Home: The @C...      1       1     0
+108   The mood the other Created was how happy narci...      2       1    -1
+430   "The mood created by the author in the memoir ...      2       2     0
+508   "The mood that the author creates in the memoi...      2       2     0
+253   The title of the story is Narciso Rodriguez. T...      1       1     0
+698   "The authors mood of the memoir is that @CAPS1...      3       2    -1
+104   "The Originally from cuba arrived in the Unite...      1       0    -1
+114   "The mood in this memoir is gratefulness. This...      4       2    -2
+733   "In the memoir, ""Narciso Rodriguez from Home:...      2       2     0
+851   "Narciso Rodriguez creates a mood of happiness...      4       2    -2
+909   The mood created by the author in the memoir w...      1       2     1
+1005  "Home: The Blueprints to Our Lives is a wonder...      3       1    -2
+201   "the mood created in the memoir were all diffe...      1       2     1
+40    "In this memoir of the author creates a clear ...      3       2    -1
+665   "In this memoir the mood varies. In paragraphs...      3       2    -1
+196   "The author of this memoir creates a warm, lov...      4       2    -2
+279   The author created many different moods in thi...      2       2     0
+597   "I beleive the mood that sets off in the beggi...      3       1    -2
+370   "The authors mood in the memoir @PERSON1 is th...      3       2    -1
+804   The mood in the memoir is happy and thankful. ...      2       2     0
+305   "In the memoir. from ""Home The Blueprints of ...      3       2    -1
+461   "The mood created in the memoir, ""Narciso Rod...      4       2    -2
+100   "In the memoir, the author created a mood. The...      3       2    -1
+650   "The mood created in the memoir is I think com...      3       2    -1
+789   "The mood created by the author in the memoir ...      2       1    -1
+755   "The mood created by Narciso Rodriguez in the ...      2       1    -1
+36    I think the author's mood was kind of like @CA...      2       2     0
+923   "The mood in the memoir is very uplifting. The...      2       2     0
+
+
+2025-06-23 06:02:09,024 - result - CRITICAL - ESSAY SET 6:
+
+2025-06-23 06:02:09,507 - result - CRITICAL - 
+                                                  essay  score  y_pred  diff
+959   "When attempting to allow dirigibles to dock o...      3       2    -1
+40    "In attempting to allow dirigibles to dock on ...      3       2    -1
+1055  "Some of the obstacles facing the builders was...      2       0    -2
+1008  "They get good idea to make that building, but...      0       0     0
+383   "Most of the obsticles the builders of the Emp...      2       1    -1
+248   "The obstacles the builders of the @ORGANIZATI...      4       2    -2
+234   "In the excerp ""The Mooring Mast"", by @ORGAN...      3       2    -1
+572   "The builders of the Empire State building fac...      3       2    -1
+585   "One problem that the builders has was that th...      3       1    -2
+972   "In ""The Mooring Mast"" by Marcia Amidon @CAP...      2       2     0
+796   The builders faced many obstacles in trying to...      2       2     0
+1074  "Based on the excerpt ""The Mooring mast"" by ...      1       1     0
+36    "The builders of the Empire State Building's m...      3       2    -1
+634   "Based on the excerpt, the obstacles the build...      4       2    -2
+787   "Besides The facts That docking dirigibles on ...      3       1    -2
+397   "During the Building of the Mast, the builders...      3       1    -2
+410   "In the excerpt ""THE MOORING MAST"" by Marcia...      3       2    -1
+103   "On @DATE1, The Empire State Building was anno...      3       2    -1
+377   "There were many obstacles that the builders o...      4       2    -2
+267   "In the excerpt ""The Mooring Mast"" by Marcia...      2       2     0
+1007  "The builders faced multiple obsticles in atte...      3       2    -1
+304   "The builders of the Empire State Building fac...      3       2    -1
+673   "The architects of the Empire State Building f...      4       2    -2
+912   "When building the Empire State Building, the ...      3       2    -1
+854   "In The Mooring Mast by Marcia Amidon Lüsted, ...      2       2     0
+1073  "The weight was an obstacle they faced. ""A th...      4       2    -2
+424   "In the excerpt ""The Mooring Mast"" by Marcia...      1       1     0
+681   "There were many obstacles the builders of the...      3       2    -1
+632   "The Empire State Building was built with grea...      2       1    -1
+1071  "The builders of the Empire State building fac...      4       2    -2
+
+
+2025-06-23 06:02:09,508 - result - CRITICAL - ESSAY SET 7:
+
+2025-06-23 06:02:09,986 - result - CRITICAL - 
+                                                 essay  score  y_pred  diff
+935  "I was patient one time, really patient but ki...     16       8    -8
+372  "A time that I was patient is when I had my tw...     13       8    -5
+142  "It was @CAPS1 @CAPS2 I was up watching tv wai...     17       8    -9
+273  "Sometimes its hard to be patient, especilly w...     14       8    -6
+44   "You being patient is important. People should...     18      11    -7
+201  "One day me, my mom, my dad, my sister, my bot...     15       4   -11
+352  A time I was pacent was I was wating in line f...      8       7    -1
+340  Patience perso is someone that deal with diffi...     11       8    -3
+808  "Patience, @CAPS6 essential part of our world....     14      11    -3
+15   "@NUM1 years ago on my birthday the only thing...     18       8   -10
+167  "There are lots of times that I have been pati...     16       8    -8
+297  "“@CAPS1 on @CAPS2, where are you ,” @PERSON1 ...     21       8   -13
+93   "One important skill you need in the life is p...     17       8    -9
+821  "A day that I was patient was, one day I was r...     18       8   -10
+183  "Have you ever been patient before? Well l hav...     24       8   -16
+37   When I was going to the doctor I had to be pat...     13       8    -5
+38   "I was patient when I was on my way to @LOCATI...     16       8    -8
+875  "Why wasn’t my uncle there yet? Come on! I was...     23       7   -16
+518  "One day I woke up and looked outside it was s...     17       8    -9
+414  "Being patient means that your understanding a...     21      12    -9
+179  Being patience is a good thing because if you ...      9       8    -1
+774  "A time when I was patient was when I was at m...     17       7   -10
+421  A time when I was patient was when I was at th...     16       4   -12
+862  "I am writing about a time when someone I knew...     17      16    -1
+579  A time I was patient was when I had to be pati...     10       7    -3
+512  "When ll was going to @LOCATION1 with my famil...     18       8   -10
+647  "Have you ever been patience ? I believe we sh...     11       8    -3
+652  "Once, I was @NUM1 old and I was so eager abou...     12       7    -5
+780  "Being patient is one of the many things child...     24      11   -13
+873  "Every year me and my entire family take a tri...     16       8    -8
+
+
+2025-06-23 06:02:09,988 - result - CRITICAL - ESSAY SET 8:
+
+2025-06-23 06:02:10,451 - result - CRITICAL - 
+                                                 essay  score  y_pred  diff
+135  Have u ever been hit by a basketball in the fa...     31      27    -4
+151  "Someone once told me that laughter is the key...     33      27    -6
+330  " My @CAPS1 year of high school started off le...     40      37    -3
+19   "Iv always loved laughter in my life, I don't ...     27      27     0
+405  "            Just One @CAPS1 @CAPS2 @CAPS3 A @...     36      27    -9
+15   "@DATE1 was the start of a new age, i had just...     28      27    -1
+110  " I have been waiting a whole year for @TIME1 ...     34      27    -7
+329  " One day I decided to go over to my friend @P...     40      37    -3
+68   "Laughter can create this type of bond that's ...     35      37     2
+222  "       Laughter In A Relationship The most im...     36      27    -9
+187  "    Laughter is an important part of any rela...     41      37    -4
+95   "Laughter: A @CAPS1 @CAPS2 @CAPS3 of the varie...     35      37     2
+207  " The human brain is a piece of work. Its the ...     45      27   -18
+266  "     Every one laughs, i love to laugh in fac...     36      27    -9
+365  " Its my sophomore year and some of my friends...     40      27   -13
+336  " One of the most oddest things in life is how...     42      27   -15
+126  "One time I was sick, and I told my mom ""I ne...     28      27    -1
+103  "  Laughter is the only expression in my opini...     36      27    -9
+44   "                          A funny Story  Many...     30      27    -3
+274  "Have @CAPS1 ever had that one friend who was ...     40      27   -13
+85   " It was the first day of the ninth grade, tha...     42      37    -5
+428  " It all started when my eighth grade class ha...     34      27    -7
+13   "                              Laughter       ...     31      27    -4
+239  "  Middle school was a challenging environment...     40      37    -3
+334  " I believe laughter brings many different peo...     36      37     1
+182  DUE you think that being part of sameting funi...     15      27    12
+100  " When I had turned fifteen I was so anxious t...     36      27    -9
+156  " What makes you laugh? Laughter is a really g...     37      33    -4
+20   One day me and my friend taylor got the idea o...     24      27     3
+77   " For a year and two months I'd devoted my lif...     40      33    -7
+
+
+2025-06-23 06:02:10,453 - result - CRITICAL - LLM: gpt-4.1-nano
+2025-06-23 06:02:10,453 - result - CRITICAL - Mode: Solo
+2025-06-23 06:02:10,453 - result - CRITICAL - Datapoints: 30
+
+2025-06-23 06:02:10,453 - result - CRITICAL - Evaluation:
+2025-06-23 06:02:10,453 - result - CRITICAL - MSE of Set 1: 0.21968
+2025-06-23 06:02:10,453 - result - CRITICAL - MSE of Set 2: 8.32833
+2025-06-23 06:02:10,453 - result - CRITICAL - MSE of Set 3: 0.21111
+2025-06-23 06:02:10,453 - result - CRITICAL - MSE of Set 4: 0.08519
+2025-06-23 06:02:10,453 - result - CRITICAL - MSE of Set 5: 0.07917
+2025-06-23 06:02:10,453 - result - CRITICAL - MSE of Set 6: 0.11042
+2025-06-23 06:02:10,453 - result - CRITICAL - MSE of Set 7: 0.08496
+2025-06-23 06:02:10,453 - result - CRITICAL - MSE of Set 8: 0.01633
+2025-06-23 06:02:10,453 - result - CRITICAL - Average MSE: 1.14190
+
+2025-06-23 06:02:10,453 - result - CRITICAL - QWK of Set 1: 0.00710
+2025-06-23 06:02:10,453 - result - CRITICAL - QWK of Set 2: 0.20705
+2025-06-23 06:02:10,453 - result - CRITICAL - QWK of Set 3: 0.08360
+2025-06-23 06:02:10,453 - result - CRITICAL - QWK of Set 4: 0.51064
+2025-06-23 06:02:10,453 - result - CRITICAL - QWK of Set 5: 0.24000
+2025-06-23 06:02:10,453 - result - CRITICAL - QWK of Set 6: 0.29459
+2025-06-23 06:02:10,453 - result - CRITICAL - QWK of Set 7: 0.05527
+2025-06-23 06:02:10,453 - result - CRITICAL - QWK of Set 8: 0.28937
+2025-06-23 06:02:10,453 - result - CRITICAL - Average QWK: 0.21095
+
+2025-06-23 06:02:10,453 - result - CRITICAL - -----------------------------------------------------------------
+
+
+
+2025-06-23 06:02:10,453 - result - CRITICAL - LLM: o4-mini
+2025-06-23 06:02:10,453 - result - CRITICAL - Mode: Solo
+2025-06-23 06:02:10,453 - result - CRITICAL - Datapoints: 30
+
+2025-06-23 06:02:10,453 - result - CRITICAL - ESSAY SET 1:
+
+2025-06-23 06:02:10,901 - result - CRITICAL - 
+                                                  essay  score  y_pred  diff
+309   "I personally believe that computersdo benefit...      8       8     0
+104   "Dear @CAPS1 @CAPS2 @CAPS3, I believe that com...     10       4    -6
+796   I believe that computers benefit society. They...      8       3    -5
+579   "Dear Newspaper, @CAPS1 you know, the majority...      8       6    -2
+857   "To use computors, or not to. That is the ques...     10       4    -6
+133   "Dear @CAPS1 @CAPS2, I am writing a letter to ...      8       6    -2
+618   "In my opinion i think computers have a positi...      8       8     0
+408   "Computers and the @CAPS1 have changed the way...      9       6    -3
+289   "Dear @LOCATION1 harold, More and more people ...      9       3    -6
+687   "@CAPS8 more and more technology is being inve...     11       8    -3
+332   "I belive that computer technology is a positi...      8       3    -5
+196   "The effect computers have on humans is by far...     12       4    -8
+100   "@ORGANIZATION1, @CAPS1 technology continues t...      9       3    -6
+993   "Dear local newspaper, I am sure you will agre...     10       5    -5
+704   "Dear local newspaper: I strongly feel that co...      9       8    -1
+747   "Dear newspaper, I know that computers can pla...     10       3    -7
+940   "There are over @NUM1 students at @ORGANIZATIO...      9       8    -1
+352   "Dear Local Newspaper, Computers are used ever...      8       3    -5
+778   "Dear, @CAPS1 paper edattor we should stop bec...      6       1    -5
+304   "Dear local newspaper, I think that computers ...      8       6    -2
+474   "@CITY1 @CAPS1: I believe that computers (for ...      8       2    -6
+172   "Dear @CAPS1 @CAPS2, I think that having a com...      9       4    -5
+450   "Dear Local Newspaper, @ORGANIZATION1's benefi...      7       3    -4
+63    "Dear editor of the @ORGANIZATION1, In my opin...      8       5    -3
+37    "Dear, Newspaper I would like to tell you abou...      8       6    -2
+1064  "Dear Newspaper, Computers have advance a lot ...     11       4    -7
+347   "Dear, @ORGANIZATION1 are a major part in ever...      8       6    -2
+482   "Dear, Newspaper @CAPS1 my name is @CAPS2, @PE...      7       4    -3
+167   "Dear @LOCATION1, @CAPS1 everybody relizes, te...     10       2    -8
+887   "Dear Local Newspaper @CAPS1, I am against tha...      9       6    -3
+
+
+2025-06-23 06:02:10,902 - result - CRITICAL - ESSAY SET 2:
+
+2025-06-23 06:02:11,357 - result - CRITICAL - 
+                                                  essay  score  y_pred  diff
+959   I believe books are writen for a reason and th...      6       3    -3
+40    "I am a citizen of the @LOCATION1 and I believ...      8       2    -6
+1055  "I think there should be no books taken off th...      7       3    -4
+1008  "Yes I do believe that any book found offensiv...      6       2    -4
+383   "What are we hiding from? Is personal expressi...      8       3    -5
+248   "When it comes to the decision of certain mate...      8       3    -5
+234   "Should certain materials, such as books, musi...      6       2    -4
+572   "Libraries have so many books, and books that ...      5       2    -3
+585   "There are many books, music, movies, and mage...      8       4    -4
+972   "If you take offense to certian things, you sh...      7       2    -5
+796   I find it intresting that people think that it...      4       3    -1
+1074  There should not be sensorship on the books in...      4       2    -2
+36    "Comics, romance, adventure books, and mystery...      8       3    -5
+634   "My name is @CAPS1 and my views on censorship ...      6       3    -3
+787   "@CAPS1 is the freedom of speech to be able to...      7       2    -5
+397   "Okay, to me, people are way to moral in the m...      6       2    -4
+410   "Library Censorship     Everyone has their fav...      8       3    -5
+103   "While their are many books written out thier ...      6       2    -4
+377   "I belive if the books, music, movies, magazin...      6       2    -4
+267   "Every parent wants to protect their child's i...      8       4    -4
+1007  "Everyone has an opinion. Don't you agree? Tha...      7       4    -3
+304   "This writing is socially unacceptable! There ...      8       2    -6
+673   "Yes, I believe that certian materials should ...      8       3    -5
+912   "First, libraries are a good source of informa...      7       3    -4
+854   "Have you ever watched a movie that had some s...      6       3    -3
+1073  "Dear Newspaper @CAPS1     @CAPS2 my name is @...      7       2    -5
+424   "Some books in libraries offended some people....      3       2    -1
+681   "Most people have been debating on whether or ...      5       3    -2
+632   "Do I belive that ceratin materials should be ...      4       1    -3
+1071  "Need help with Censorship in @ORGANIZATION1  ...      6       2    -4
+
+
+2025-06-23 06:02:11,358 - result - CRITICAL - ESSAY SET 3:
+
+2025-06-23 06:02:11,808 - result - CRITICAL - 
+                                                  essay  score  y_pred  diff
+839   "Each new feature of the setting in the essay ...      3       2    -1
+848   "Do not Exceed posted speed limit, never accep...      2       1    -1
+108   "In the essay “Do not Exceed Posted Speed Limi...      3       2    -1
+461   "The features of the setting affect the cyclis...      3       2    -1
+255   The features of the setting affect the cyclist...      1       2     1
+15    "Setting can affect anyone and everyone, in th...      1       2     1
+149   "The riders condition was rough, from flat lan...      1       2     1
+778   When the cyclist went to ask about the road th...      1       1     0
+574   "The features of the barren desert path make t...      3       3     0
+133   "The setting that were affecting the cyclist w...      1       2     1
+38    "The settings have a huge affect on the cyclis...      3       2    -1
+1013  "The features of the setting effected the cycl...      1       1     0
+143   "As he began his journey, he had full confiden...      2       2     0
+871   "The features of the setting affect the cyclis...      2       2     0
+196   "In the essay “Do Not @CAPS1 Posted Speed Limi...      3       2    -1
+37    The setting of the essay efects the cyclist be...      1       1     0
+172   "Many features of the cyclist’s surroundings e...      1       1     0
+928   "The feature of the setting affect the cyclist...      1       2     1
+63    "In the story “Do Not Exceed Posted Speed Limi...      3       2    -1
+203   "In the essay “Rough Road Ahead: Do Not Exceed...      2       2     0
+909   The features of the setting affected the cycli...      1       2     1
+44    "The features of the setting effected the cycl...      2       1    -1
+787   "There were many features in the setting that ...      2       2     0
+694   "The cyclist in the story is at first confiden...      3       2    -1
+695   "The features of the setting affect the cyclis...      2       2     0
+511   "At first when he gets the directions from the...      3       2    -1
+267   "The desert and the hills had a huge effect on...      1       2     1
+727   "The features of the setting do affect the cyc...      0       1     1
+671   "In the short story Rough Road ahead: Do Not E...      3       1    -2
+42    In this I will tell you how the cyclist was be...      2       2     0
+
+
+2025-06-23 06:02:11,809 - result - CRITICAL - ESSAY SET 4:
+
+2025-06-23 06:02:12,268 - result - CRITICAL - 
+                                                  essay  score  y_pred  diff
+289   The author concludes the story with this parag...      1       2     1
+686   "The  author includes that sentence of the end...      1       1     0
+162   I believe he used this as the ending to ensure...      0       1     1
+659   "The story  “Winter Hibiscus"" by Minfong Ho. ...      2       3     1
+736   "In this story theauther deicides to end the s...      1       1     0
+483   "The author concludes the story with the afore...      2       2     0
+992   "In the story “Winter Hibiscus” by Minfong Ho,...      1       2     1
+172   I know the reason why the author concludes the...      1       2     1
+63    "The author concludes the story with this para...      1       2     1
+477   "The author concludes with this sentence for e...      2       1    -1
+383   "“When they came back, Saeng vowed silently to...      3       3     0
+104   This is a powerful sentence that demonstrates ...      2       2     0
+103   "The author ends the story with this paragraph...      3       2    -1
+143   "After reading “Winter Hibiscus, I can tell th...      1       2     1
+38    The author concludes the story with this parag...      0       1     1
+796   "The author concluded the story with the parag...      0       1     1
+918   "The author concludes story with that paragrap...      3       2    -1
+133   "Saeng and her mother have to be determined to...      2       1    -1
+481   "She concludes that paragraph with the story b...      0       1     1
+42    The auther cncludes the story with this paragr...      1       1     0
+203   "The author concludes the story like that to s...      2       1    -1
+466   "The response that the author concludes the st...      0       1     1
+313   "The author concludes the story with they para...      2       2     0
+147   "The author concludes with this paragraph to s...      2       2     0
+474   "I believe that the author chose to conclude t...      3       2    -1
+330   "The author most likely concludes the story wi...      1       2     1
+749   What l think the author was talking abount sno...      0       1     1
+1001  "The author concludes the story with this para...      2       2     0
+929   "I think the author ends the story like this b...      1       2     1
+960   "In the story “winter Hibiscus” the author Min...      3       2    -1
+
+
+2025-06-23 06:02:12,269 - result - CRITICAL - ESSAY SET 5:
+
+2025-06-23 06:02:12,731 - result - CRITICAL - 
+                                                  essay  score  y_pred  diff
+592   "In the memoir ""Narciso @CAPS1"" by the Bluep...      2       2     0
+336   "In the story ""Narciso Rodriguez"" written by...      2       2     0
+699   "In the memoir, ""@PERSON1"" from Home: The @C...      1       1     0
+108   The mood the other Created was how happy narci...      2       2     0
+430   "The mood created by the author in the memoir ...      2       2     0
+508   "The mood that the author creates in the memoi...      2       3     1
+253   The title of the story is Narciso Rodriguez. T...      1       1     0
+698   "The authors mood of the memoir is that @CAPS1...      3       4     1
+104   "The Originally from cuba arrived in the Unite...      1       1     0
+114   "The mood in this memoir is gratefulness. This...      4       4     0
+733   "In the memoir, ""Narciso Rodriguez from Home:...      2       3     1
+851   "Narciso Rodriguez creates a mood of happiness...      4       3    -1
+909   The mood created by the author in the memoir w...      1       1     0
+1005  "Home: The Blueprints to Our Lives is a wonder...      3       3     0
+201   "the mood created in the memoir were all diffe...      1       2     1
+40    "In this memoir of the author creates a clear ...      3       3     0
+665   "In this memoir the mood varies. In paragraphs...      3       2    -1
+196   "The author of this memoir creates a warm, lov...      4       4     0
+279   The author created many different moods in thi...      2       1    -1
+597   "I beleive the mood that sets off in the beggi...      3       2    -1
+370   "The authors mood in the memoir @PERSON1 is th...      3       2    -1
+804   The mood in the memoir is happy and thankful. ...      2       3     1
+305   "In the memoir. from ""Home The Blueprints of ...      3       4     1
+461   "The mood created in the memoir, ""Narciso Rod...      4       4     0
+100   "In the memoir, the author created a mood. The...      3       3     0
+650   "The mood created in the memoir is I think com...      3       3     0
+789   "The mood created by the author in the memoir ...      2       2     0
+755   "The mood created by Narciso Rodriguez in the ...      2       3     1
+36    I think the author's mood was kind of like @CA...      2       1    -1
+923   "The mood in the memoir is very uplifting. The...      2       3     1
+
+
+2025-06-23 06:02:12,732 - result - CRITICAL - ESSAY SET 6:
+
+2025-06-23 06:02:13,212 - result - CRITICAL - 
+                                                  essay  score  y_pred  diff
+959   "When attempting to allow dirigibles to dock o...      3       4     1
+40    "In attempting to allow dirigibles to dock on ...      3       4     1
+1055  "Some of the obstacles facing the builders was...      2       2     0
+1008  "They get good idea to make that building, but...      0       1     1
+383   "Most of the obsticles the builders of the Emp...      2       2     0
+248   "The obstacles the builders of the @ORGANIZATI...      4       3    -1
+234   "In the excerp ""The Mooring Mast"", by @ORGAN...      3       3     0
+572   "The builders of the Empire State building fac...      3       3     0
+585   "One problem that the builders has was that th...      3       3     0
+972   "In ""The Mooring Mast"" by Marcia Amidon @CAP...      2       1    -1
+796   The builders faced many obstacles in trying to...      2       4     2
+1074  "Based on the excerpt ""The Mooring mast"" by ...      1       2     1
+36    "The builders of the Empire State Building's m...      3       4     1
+634   "Based on the excerpt, the obstacles the build...      4       3    -1
+787   "Besides The facts That docking dirigibles on ...      3       4     1
+397   "During the Building of the Mast, the builders...      3       3     0
+410   "In the excerpt ""THE MOORING MAST"" by Marcia...      3       2    -1
+103   "On @DATE1, The Empire State Building was anno...      3       3     0
+377   "There were many obstacles that the builders o...      4       4     0
+267   "In the excerpt ""The Mooring Mast"" by Marcia...      2       2     0
+1007  "The builders faced multiple obsticles in atte...      3       4     1
+304   "The builders of the Empire State Building fac...      3       4     1
+673   "The architects of the Empire State Building f...      4       4     0
+912   "When building the Empire State Building, the ...      3       3     0
+854   "In The Mooring Mast by Marcia Amidon Lüsted, ...      2       2     0
+1073  "The weight was an obstacle they faced. ""A th...      4       4     0
+424   "In the excerpt ""The Mooring Mast"" by Marcia...      1       2     1
+681   "There were many obstacles the builders of the...      3       3     0
+632   "The Empire State Building was built with grea...      2       2     0
+1071  "The builders of the Empire State building fac...      4       3    -1
+
+
+2025-06-23 06:02:13,214 - result - CRITICAL - ESSAY SET 7:
+
+2025-06-23 06:02:13,664 - result - CRITICAL - 
+                                                 essay  score  y_pred  diff
+935  "I was patient one time, really patient but ki...     16      12    -4
+372  "A time that I was patient is when I had my tw...     13      12    -1
+142  "It was @CAPS1 @CAPS2 I was up watching tv wai...     17      10    -7
+273  "Sometimes its hard to be patient, especilly w...     14      10    -4
+44   "You being patient is important. People should...     18      16    -2
+201  "One day me, my mom, my dad, my sister, my bot...     15      10    -5
+352  A time I was pacent was I was wating in line f...      8      10     2
+340  Patience perso is someone that deal with diffi...     11      10    -1
+808  "Patience, @CAPS6 essential part of our world....     14      10    -4
+15   "@NUM1 years ago on my birthday the only thing...     18      12    -6
+167  "There are lots of times that I have been pati...     16      10    -6
+297  "“@CAPS1 on @CAPS2, where are you ,” @PERSON1 ...     21      12    -9
+93   "One important skill you need in the life is p...     17      12    -5
+821  "A day that I was patient was, one day I was r...     18      14    -4
+183  "Have you ever been patient before? Well l hav...     24       9   -15
+37   When I was going to the doctor I had to be pat...     13      10    -3
+38   "I was patient when I was on my way to @LOCATI...     16       8    -8
+875  "Why wasn’t my uncle there yet? Come on! I was...     23      14    -9
+518  "One day I woke up and looked outside it was s...     17      16    -1
+414  "Being patient means that your understanding a...     21       8   -13
+179  Being patience is a good thing because if you ...      9      10     1
+774  "A time when I was patient was when I was at m...     17      14    -3
+421  A time when I was patient was when I was at th...     16      10    -6
+862  "I am writing about a time when someone I knew...     17      20     3
+579  A time I was patient was when I had to be pati...     10      10     0
+512  "When ll was going to @LOCATION1 with my famil...     18      16    -2
+647  "Have you ever been patience ? I believe we sh...     11      10    -1
+652  "Once, I was @NUM1 old and I was so eager abou...     12      16     4
+780  "Being patient is one of the many things child...     24      16    -8
+873  "Every year me and my entire family take a tri...     16      12    -4
+
+
+2025-06-23 06:02:13,666 - result - CRITICAL - ESSAY SET 8:
+
+2025-06-23 06:02:14,130 - result - CRITICAL - 
+                                                 essay  score  y_pred  diff
+135  Have u ever been hit by a basketball in the fa...     31      16   -15
+151  "Someone once told me that laughter is the key...     33      20   -13
+330  " My @CAPS1 year of high school started off le...     40      34    -6
+19   "Iv always loved laughter in my life, I don't ...     27      24    -3
+405  "            Just One @CAPS1 @CAPS2 @CAPS3 A @...     36      32    -4
+15   "@DATE1 was the start of a new age, i had just...     28      16   -12
+110  " I have been waiting a whole year for @TIME1 ...     34      22   -12
+329  " One day I decided to go over to my friend @P...     40      34    -6
+68   "Laughter can create this type of bond that's ...     35      24   -11
+222  "       Laughter In A Relationship The most im...     36      24   -12
+187  "    Laughter is an important part of any rela...     41      40    -1
+95   "Laughter: A @CAPS1 @CAPS2 @CAPS3 of the varie...     35      35     0
+207  " The human brain is a piece of work. Its the ...     45      24   -21
+266  "     Every one laughs, i love to laugh in fac...     36      24   -12
+365  " Its my sophomore year and some of my friends...     40      32    -8
+336  " One of the most oddest things in life is how...     42      24   -18
+126  "One time I was sick, and I told my mom ""I ne...     28      20    -8
+103  "  Laughter is the only expression in my opini...     36      20   -16
+44   "                          A funny Story  Many...     30      28    -2
+274  "Have @CAPS1 ever had that one friend who was ...     40      30   -10
+85   " It was the first day of the ninth grade, tha...     42      40    -2
+428  " It all started when my eighth grade class ha...     34      30    -4
+13   "                              Laughter       ...     31      20   -11
+239  "  Middle school was a challenging environment...     40      32    -8
+334  " I believe laughter brings many different peo...     36      34    -2
+182  DUE you think that being part of sameting funi...     15      12    -3
+100  " When I had turned fifteen I was so anxious t...     36      30    -6
+156  " What makes you laugh? Laughter is a really g...     37      38     1
+20   One day me and my friend taylor got the idea o...     24      18    -6
+77   " For a year and two months I'd devoted my lif...     40      30   -10
+
+
+2025-06-23 06:02:14,131 - result - CRITICAL - LLM: o4-mini
+2025-06-23 06:02:14,131 - result - CRITICAL - Mode: Solo
+2025-06-23 06:02:14,131 - result - CRITICAL - Datapoints: 30
+
+2025-06-23 06:02:14,131 - result - CRITICAL - Evaluation:
+2025-06-23 06:02:14,131 - result - CRITICAL - MSE of Set 1: 0.14792
+2025-06-23 06:02:14,131 - result - CRITICAL - MSE of Set 2: 0.16533
+2025-06-23 06:02:14,131 - result - CRITICAL - MSE of Set 3: 0.08148
+2025-06-23 06:02:14,131 - result - CRITICAL - MSE of Set 4: 0.07778
+2025-06-23 06:02:14,131 - result - CRITICAL - MSE of Set 5: 0.02917
+2025-06-23 06:02:14,131 - result - CRITICAL - MSE of Set 6: 0.03750
+2025-06-23 06:02:14,131 - result - CRITICAL - MSE of Set 7: 0.03819
+2025-06-23 06:02:14,131 - result - CRITICAL - MSE of Set 8: 0.02623
+2025-06-23 06:02:14,131 - result - CRITICAL - Average MSE: 0.07545
+
+2025-06-23 06:02:14,131 - result - CRITICAL - QWK of Set 1: 0.02482
+2025-06-23 06:02:14,131 - result - CRITICAL - QWK of Set 2: 0.05211
+2025-06-23 06:02:14,131 - result - CRITICAL - QWK of Set 3: 0.32515
+2025-06-23 06:02:14,131 - result - CRITICAL - QWK of Set 4: 0.49600
+2025-06-23 06:02:14,131 - result - CRITICAL - QWK of Set 5: 0.74453
+2025-06-23 06:02:14,131 - result - CRITICAL - QWK of Set 6: 0.67233
+2025-06-23 06:02:14,132 - result - CRITICAL - QWK of Set 7: 0.17564
+2025-06-23 06:02:14,132 - result - CRITICAL - QWK of Set 8: 0.37973
+2025-06-23 06:02:14,132 - result - CRITICAL - Average QWK: 0.35879
+
+2025-06-23 06:02:14,132 - result - CRITICAL - -----------------------------------------------------------------
+
+
+
+2025-06-23 06:02:14,132 - result - CRITICAL - LLM: gpt-4o
+2025-06-23 06:02:14,132 - result - CRITICAL - Mode: Solo
+2025-06-23 06:02:14,132 - result - CRITICAL - Datapoints: 30
+
+2025-06-23 06:02:14,132 - result - CRITICAL - ESSAY SET 1:
+
+2025-06-23 06:02:14,624 - result - CRITICAL - 
+                                                  essay  score  y_pred  diff
+309   "I personally believe that computersdo benefit...      8       4    -4
+104   "Dear @CAPS1 @CAPS2 @CAPS3, I believe that com...     10       2    -8
+796   I believe that computers benefit society. They...      8       3    -5
+579   "Dear Newspaper, @CAPS1 you know, the majority...      8       4    -4
+857   "To use computors, or not to. That is the ques...     10       4    -6
+133   "Dear @CAPS1 @CAPS2, I am writing a letter to ...      8       2    -6
+618   "In my opinion i think computers have a positi...      8       4    -4
+408   "Computers and the @CAPS1 have changed the way...      9       2    -7
+289   "Dear @LOCATION1 harold, More and more people ...      9       3    -6
+687   "@CAPS8 more and more technology is being inve...     11       3    -8
+332   "I belive that computer technology is a positi...      8       3    -5
+196   "The effect computers have on humans is by far...     12       3    -9
+100   "@ORGANIZATION1, @CAPS1 technology continues t...      9       3    -6
+993   "Dear local newspaper, I am sure you will agre...     10       3    -7
+704   "Dear local newspaper: I strongly feel that co...      9       3    -6
+747   "Dear newspaper, I know that computers can pla...     10       3    -7
+940   "There are over @NUM1 students at @ORGANIZATIO...      9       4    -5
+352   "Dear Local Newspaper, Computers are used ever...      8       3    -5
+778   "Dear, @CAPS1 paper edattor we should stop bec...      6       2    -4
+304   "Dear local newspaper, I think that computers ...      8       3    -5
+474   "@CITY1 @CAPS1: I believe that computers (for ...      8       3    -5
+172   "Dear @CAPS1 @CAPS2, I think that having a com...      9       2    -7
+450   "Dear Local Newspaper, @ORGANIZATION1's benefi...      7       3    -4
+63    "Dear editor of the @ORGANIZATION1, In my opin...      8       2    -6
+37    "Dear, Newspaper I would like to tell you abou...      8       3    -5
+1064  "Dear Newspaper, Computers have advance a lot ...     11       3    -8
+347   "Dear, @ORGANIZATION1 are a major part in ever...      8       3    -5
+482   "Dear, Newspaper @CAPS1 my name is @CAPS2, @PE...      7       1    -6
+167   "Dear @LOCATION1, @CAPS1 everybody relizes, te...     10       2    -8
+887   "Dear Local Newspaper @CAPS1, I am against tha...      9       3    -6
+
+
+2025-06-23 06:02:14,626 - result - CRITICAL - ESSAY SET 2:
+
+2025-06-23 06:02:15,079 - result - CRITICAL - 
+                                                  essay  score  y_pred  diff
+959   I believe books are writen for a reason and th...      6       2    -4
+40    "I am a citizen of the @LOCATION1 and I believ...      8       2    -6
+1055  "I think there should be no books taken off th...      7       2    -5
+1008  "Yes I do believe that any book found offensiv...      6       2    -4
+383   "What are we hiding from? Is personal expressi...      8       3    -5
+248   "When it comes to the decision of certain mate...      8       3    -5
+234   "Should certain materials, such as books, musi...      6       2    -4
+572   "Libraries have so many books, and books that ...      5       2    -3
+585   "There are many books, music, movies, and mage...      8       3    -5
+972   "If you take offense to certian things, you sh...      7       2    -5
+796   I find it intresting that people think that it...      4       2    -2
+1074  There should not be sensorship on the books in...      4       2    -2
+36    "Comics, romance, adventure books, and mystery...      8       3    -5
+634   "My name is @CAPS1 and my views on censorship ...      6       2    -4
+787   "@CAPS1 is the freedom of speech to be able to...      7       2    -5
+397   "Okay, to me, people are way to moral in the m...      6       2    -4
+410   "Library Censorship     Everyone has their fav...      8       3    -5
+103   "While their are many books written out thier ...      6       2    -4
+377   "I belive if the books, music, movies, magazin...      6       2    -4
+267   "Every parent wants to protect their child's i...      8       3    -5
+1007  "Everyone has an opinion. Don't you agree? Tha...      7       3    -4
+304   "This writing is socially unacceptable! There ...      8       2    -6
+673   "Yes, I believe that certian materials should ...      8       2    -6
+912   "First, libraries are a good source of informa...      7       3    -4
+854   "Have you ever watched a movie that had some s...      6       2    -4
+1073  "Dear Newspaper @CAPS1     @CAPS2 my name is @...      7       2    -5
+424   "Some books in libraries offended some people....      3       2    -1
+681   "Most people have been debating on whether or ...      5       2    -3
+632   "Do I belive that ceratin materials should be ...      4       1    -3
+1071  "Need help with Censorship in @ORGANIZATION1  ...      6       2    -4
+
+
+2025-06-23 06:02:15,082 - result - CRITICAL - ESSAY SET 3:
+
+2025-06-23 06:02:15,557 - result - CRITICAL - 
+                                                  essay  score  y_pred  diff
+839   "Each new feature of the setting in the essay ...      3       2    -1
+848   "Do not Exceed posted speed limit, never accep...      2       1    -1
+108   "In the essay “Do not Exceed Posted Speed Limi...      3       2    -1
+461   "The features of the setting affect the cyclis...      3       2    -1
+255   The features of the setting affect the cyclist...      1       1     0
+15    "Setting can affect anyone and everyone, in th...      1       1     0
+149   "The riders condition was rough, from flat lan...      1       1     0
+778   When the cyclist went to ask about the road th...      1       1     0
+574   "The features of the barren desert path make t...      3       2    -1
+133   "The setting that were affecting the cyclist w...      1       1     0
+38    "The settings have a huge affect on the cyclis...      3       1    -2
+1013  "The features of the setting effected the cycl...      1       1     0
+143   "As he began his journey, he had full confiden...      2       2     0
+871   "The features of the setting affect the cyclis...      2       1    -1
+196   "In the essay “Do Not @CAPS1 Posted Speed Limi...      3       1    -2
+37    The setting of the essay efects the cyclist be...      1       1     0
+172   "Many features of the cyclist’s surroundings e...      1       1     0
+928   "The feature of the setting affect the cyclist...      1       1     0
+63    "In the story “Do Not Exceed Posted Speed Limi...      3       2    -1
+203   "In the essay “Rough Road Ahead: Do Not Exceed...      2       1    -1
+909   The features of the setting affected the cycli...      1       1     0
+44    "The features of the setting effected the cycl...      2       1    -1
+787   "There were many features in the setting that ...      2       2     0
+694   "The cyclist in the story is at first confiden...      3       2    -1
+695   "The features of the setting affect the cyclis...      2       1    -1
+511   "At first when he gets the directions from the...      3       2    -1
+267   "The desert and the hills had a huge effect on...      1       2     1
+727   "The features of the setting do affect the cyc...      0       0     0
+671   "In the short story Rough Road ahead: Do Not E...      3       1    -2
+42    In this I will tell you how the cyclist was be...      2       1    -1
+
+
+2025-06-23 06:02:15,560 - result - CRITICAL - ESSAY SET 4:
+
+2025-06-23 06:02:16,051 - result - CRITICAL - 
+                                                  essay  score  y_pred  diff
+289   The author concludes the story with this parag...      1       1     0
+686   "The  author includes that sentence of the end...      1       1     0
+162   I believe he used this as the ending to ensure...      0       1     1
+659   "The story  “Winter Hibiscus"" by Minfong Ho. ...      2       2     0
+736   "In this story theauther deicides to end the s...      1       1     0
+483   "The author concludes the story with the afore...      2       2     0
+992   "In the story “Winter Hibiscus” by Minfong Ho,...      1       2     1
+172   I know the reason why the author concludes the...      1       1     0
+63    "The author concludes the story with this para...      1       1     0
+477   "The author concludes with this sentence for e...      2       2     0
+383   "“When they came back, Saeng vowed silently to...      3       2    -1
+104   This is a powerful sentence that demonstrates ...      2       2     0
+103   "The author ends the story with this paragraph...      3       2    -1
+143   "After reading “Winter Hibiscus, I can tell th...      1       1     0
+38    The author concludes the story with this parag...      0       1     1
+796   "The author concluded the story with the parag...      0       1     1
+918   "The author concludes story with that paragrap...      3       2    -1
+133   "Saeng and her mother have to be determined to...      2       1    -1
+481   "She concludes that paragraph with the story b...      0       1     1
+42    The auther cncludes the story with this paragr...      1       1     0
+203   "The author concludes the story like that to s...      2       1    -1
+466   "The response that the author concludes the st...      0       1     1
+313   "The author concludes the story with they para...      2       2     0
+147   "The author concludes with this paragraph to s...      2       2     0
+474   "I believe that the author chose to conclude t...      3       2    -1
+330   "The author most likely concludes the story wi...      1       2     1
+749   What l think the author was talking abount sno...      0       0     0
+1001  "The author concludes the story with this para...      2       2     0
+929   "I think the author ends the story like this b...      1       1     0
+960   "In the story “winter Hibiscus” the author Min...      3       1    -2
+
+
+2025-06-23 06:02:16,053 - result - CRITICAL - ESSAY SET 5:
+
+2025-06-23 06:02:16,500 - result - CRITICAL - 
+                                                  essay  score  y_pred  diff
+592   "In the memoir ""Narciso @CAPS1"" by the Bluep...      2       2     0
+336   "In the story ""Narciso Rodriguez"" written by...      2       1    -1
+699   "In the memoir, ""@PERSON1"" from Home: The @C...      1       1     0
+108   The mood the other Created was how happy narci...      2       1    -1
+430   "The mood created by the author in the memoir ...      2       2     0
+508   "The mood that the author creates in the memoi...      2       2     0
+253   The title of the story is Narciso Rodriguez. T...      1       1     0
+698   "The authors mood of the memoir is that @CAPS1...      3       2    -1
+104   "The Originally from cuba arrived in the Unite...      1       1     0
+114   "The mood in this memoir is gratefulness. This...      4       3    -1
+733   "In the memoir, ""Narciso Rodriguez from Home:...      2       2     0
+851   "Narciso Rodriguez creates a mood of happiness...      4       3    -1
+909   The mood created by the author in the memoir w...      1       2     1
+1005  "Home: The Blueprints to Our Lives is a wonder...      3       2    -1
+201   "the mood created in the memoir were all diffe...      1       2     1
+40    "In this memoir of the author creates a clear ...      3       3     0
+665   "In this memoir the mood varies. In paragraphs...      3       2    -1
+196   "The author of this memoir creates a warm, lov...      4       3    -1
+279   The author created many different moods in thi...      2       1    -1
+597   "I beleive the mood that sets off in the beggi...      3       2    -1
+370   "The authors mood in the memoir @PERSON1 is th...      3       2    -1
+804   The mood in the memoir is happy and thankful. ...      2       2     0
+305   "In the memoir. from ""Home The Blueprints of ...      3       2    -1
+461   "The mood created in the memoir, ""Narciso Rod...      4       2    -2
+100   "In the memoir, the author created a mood. The...      3       2    -1
+650   "The mood created in the memoir is I think com...      3       2    -1
+789   "The mood created by the author in the memoir ...      2       2     0
+755   "The mood created by Narciso Rodriguez in the ...      2       2     0
+36    I think the author's mood was kind of like @CA...      2       1    -1
+923   "The mood in the memoir is very uplifting. The...      2       2     0
+
+
+2025-06-23 06:02:16,501 - result - CRITICAL - ESSAY SET 6:
+
+2025-06-23 06:02:16,944 - result - CRITICAL - 
+                                                  essay  score  y_pred  diff
+959   "When attempting to allow dirigibles to dock o...      3       3     0
+40    "In attempting to allow dirigibles to dock on ...      3       3     0
+1055  "Some of the obstacles facing the builders was...      2       2     0
+1008  "They get good idea to make that building, but...      0       1     1
+383   "Most of the obsticles the builders of the Emp...      2       2     0
+248   "The obstacles the builders of the @ORGANIZATI...      4       2    -2
+234   "In the excerp ""The Mooring Mast"", by @ORGAN...      3       2    -1
+572   "The builders of the Empire State building fac...      3       3     0
+585   "One problem that the builders has was that th...      3       2    -1
+972   "In ""The Mooring Mast"" by Marcia Amidon @CAP...      2       2     0
+796   The builders faced many obstacles in trying to...      2       3     1
+1074  "Based on the excerpt ""The Mooring mast"" by ...      1       1     0
+36    "The builders of the Empire State Building's m...      3       2    -1
+634   "Based on the excerpt, the obstacles the build...      4       3    -1
+787   "Besides The facts That docking dirigibles on ...      3       2    -1
+397   "During the Building of the Mast, the builders...      3       2    -1
+410   "In the excerpt ""THE MOORING MAST"" by Marcia...      3       2    -1
+103   "On @DATE1, The Empire State Building was anno...      3       2    -1
+377   "There were many obstacles that the builders o...      4       3    -1
+267   "In the excerpt ""The Mooring Mast"" by Marcia...      2       2     0
+1007  "The builders faced multiple obsticles in atte...      3       3     0
+304   "The builders of the Empire State Building fac...      3       2    -1
+673   "The architects of the Empire State Building f...      4       3    -1
+912   "When building the Empire State Building, the ...      3       2    -1
+854   "In The Mooring Mast by Marcia Amidon Lüsted, ...      2       2     0
+1073  "The weight was an obstacle they faced. ""A th...      4       3    -1
+424   "In the excerpt ""The Mooring Mast"" by Marcia...      1       1     0
+681   "There were many obstacles the builders of the...      3       2    -1
+632   "The Empire State Building was built with grea...      2       2     0
+1071  "The builders of the Empire State building fac...      4       2    -2
+
+
+2025-06-23 06:02:16,946 - result - CRITICAL - ESSAY SET 7:
+
+2025-06-23 06:02:17,396 - result - CRITICAL - 
+                                                 essay  score  y_pred  diff
+935  "I was patient one time, really patient but ki...     16       4   -12
+372  "A time that I was patient is when I had my tw...     13       9    -4
+142  "It was @CAPS1 @CAPS2 I was up watching tv wai...     17       4   -13
+273  "Sometimes its hard to be patient, especilly w...     14       7    -7
+44   "You being patient is important. People should...     18       7   -11
+201  "One day me, my mom, my dad, my sister, my bot...     15       4   -11
+352  A time I was pacent was I was wating in line f...      8       4    -4
+340  Patience perso is someone that deal with diffi...     11       2    -9
+808  "Patience, @CAPS6 essential part of our world....     14       1   -13
+15   "@NUM1 years ago on my birthday the only thing...     18       9    -9
+167  "There are lots of times that I have been pati...     16       8    -8
+297  "“@CAPS1 on @CAPS2, where are you ,” @PERSON1 ...     21       4   -17
+93   "One important skill you need in the life is p...     17      10    -7
+821  "A day that I was patient was, one day I was r...     18       8   -10
+183  "Have you ever been patient before? Well l hav...     24       8   -16
+37   When I was going to the doctor I had to be pat...     13       5    -8
+38   "I was patient when I was on my way to @LOCATI...     16       4   -12
+875  "Why wasn’t my uncle there yet? Come on! I was...     23       3   -20
+518  "One day I woke up and looked outside it was s...     17       9    -8
+414  "Being patient means that your understanding a...     21      12    -9
+179  Being patience is a good thing because if you ...      9       1    -8
+774  "A time when I was patient was when I was at m...     17       5   -12
+421  A time when I was patient was when I was at th...     16       0   -16
+862  "I am writing about a time when someone I knew...     17       9    -8
+579  A time I was patient was when I had to be pati...     10       2    -8
+512  "When ll was going to @LOCATION1 with my famil...     18      12    -6
+647  "Have you ever been patience ? I believe we sh...     11       3    -8
+652  "Once, I was @NUM1 old and I was so eager abou...     12       9    -3
+780  "Being patient is one of the many things child...     24       9   -15
+873  "Every year me and my entire family take a tri...     16       4   -12
+
+
+2025-06-23 06:02:17,399 - result - CRITICAL - ESSAY SET 8:
+
+2025-06-23 06:02:17,841 - result - CRITICAL - 
+                                                 essay  score  y_pred  diff
+135  Have u ever been hit by a basketball in the fa...     31       8   -23
+151  "Someone once told me that laughter is the key...     33      12   -21
+330  " My @CAPS1 year of high school started off le...     40      17   -23
+19   "Iv always loved laughter in my life, I don't ...     27       9   -18
+405  "            Just One @CAPS1 @CAPS2 @CAPS3 A @...     36      17   -19
+15   "@DATE1 was the start of a new age, i had just...     28       2   -26
+110  " I have been waiting a whole year for @TIME1 ...     34       1   -33
+329  " One day I decided to go over to my friend @P...     40      20   -20
+68   "Laughter can create this type of bond that's ...     35      17   -18
+222  "       Laughter In A Relationship The most im...     36      17   -19
+187  "    Laughter is an important part of any rela...     41      24   -17
+95   "Laughter: A @CAPS1 @CAPS2 @CAPS3 of the varie...     35      12   -23
+207  " The human brain is a piece of work. Its the ...     45      17   -28
+266  "     Every one laughs, i love to laugh in fac...     36      12   -24
+365  " Its my sophomore year and some of my friends...     40      12   -28
+336  " One of the most oddest things in life is how...     42      12   -30
+126  "One time I was sick, and I told my mom ""I ne...     28       5   -23
+103  "  Laughter is the only expression in my opini...     36       1   -35
+44   "                          A funny Story  Many...     30      18   -12
+274  "Have @CAPS1 ever had that one friend who was ...     40      17   -23
+85   " It was the first day of the ninth grade, tha...     42      42     0
+428  " It all started when my eighth grade class ha...     34      12   -22
+13   "                              Laughter       ...     31      12   -19
+239  "  Middle school was a challenging environment...     40      17   -23
+334  " I believe laughter brings many different peo...     36      18   -18
+182  DUE you think that being part of sameting funi...     15       1   -14
+100  " When I had turned fifteen I was so anxious t...     36      17   -19
+156  " What makes you laugh? Laughter is a really g...     37      15   -22
+20   One day me and my friend taylor got the idea o...     24       5   -19
+77   " For a year and two months I'd devoted my lif...     40      15   -25
+
+
+2025-06-23 06:02:17,842 - result - CRITICAL - LLM: gpt-4o
+2025-06-23 06:02:17,843 - result - CRITICAL - Mode: Solo
+2025-06-23 06:02:17,843 - result - CRITICAL - Datapoints: 30
+
+2025-06-23 06:02:17,843 - result - CRITICAL - Evaluation:
+2025-06-23 06:02:17,843 - result - CRITICAL - MSE of Set 1: 0.25486
+2025-06-23 06:02:17,843 - result - CRITICAL - MSE of Set 2: 0.19000
+2025-06-23 06:02:17,843 - result - CRITICAL - MSE of Set 3: 0.09630
+2025-06-23 06:02:17,843 - result - CRITICAL - MSE of Set 4: 0.06296
+2025-06-23 06:02:17,843 - result - CRITICAL - MSE of Set 5: 0.04375
+2025-06-23 06:02:17,843 - result - CRITICAL - MSE of Set 6: 0.05000
+2025-06-23 06:02:17,843 - result - CRITICAL - MSE of Set 7: 0.13141
+2025-06-23 06:02:17,843 - result - CRITICAL - MSE of Set 8: 0.13933
+2025-06-23 06:02:17,843 - result - CRITICAL - Average MSE: 0.12108
+
+2025-06-23 06:02:17,843 - result - CRITICAL - QWK of Set 1: 0.01036
+2025-06-23 06:02:17,843 - result - CRITICAL - QWK of Set 2: 0.04352
+2025-06-23 06:02:17,843 - result - CRITICAL - QWK of Set 3: 0.40639
+2025-06-23 06:02:17,843 - result - CRITICAL - QWK of Set 4: 0.55959
+2025-06-23 06:02:17,843 - result - CRITICAL - QWK of Set 5: 0.51613
+2025-06-23 06:02:17,843 - result - CRITICAL - QWK of Set 6: 0.49153
+2025-06-23 06:02:17,843 - result - CRITICAL - QWK of Set 7: 0.08713
+2025-06-23 06:02:17,843 - result - CRITICAL - QWK of Set 8: 0.11625
+2025-06-23 06:02:17,843 - result - CRITICAL - Average QWK: 0.27886
+
+2025-06-23 06:02:17,843 - result - CRITICAL - -----------------------------------------------------------------
+
+
+
+2025-06-23 06:02:17,843 - result - CRITICAL - LLM: gpt-4.1
+2025-06-23 06:02:17,843 - result - CRITICAL - Mode: Solo
+2025-06-23 06:02:17,843 - result - CRITICAL - Datapoints: 30
+
+2025-06-23 06:02:17,843 - result - CRITICAL - ESSAY SET 1:
+
+2025-06-23 06:02:18,282 - result - CRITICAL - 
+                                                  essay  score  y_pred  diff
+309   "I personally believe that computersdo benefit...      8       9     1
+104   "Dear @CAPS1 @CAPS2 @CAPS3, I believe that com...     10       5    -5
+796   I believe that computers benefit society. They...      8       7    -1
+579   "Dear Newspaper, @CAPS1 you know, the majority...      8       8     0
+857   "To use computors, or not to. That is the ques...     10       9    -1
+133   "Dear @CAPS1 @CAPS2, I am writing a letter to ...      8       6    -2
+618   "In my opinion i think computers have a positi...      8       8     0
+408   "Computers and the @CAPS1 have changed the way...      9       7    -2
+289   "Dear @LOCATION1 harold, More and more people ...      9       4    -5
+687   "@CAPS8 more and more technology is being inve...     11       8    -3
+332   "I belive that computer technology is a positi...      8       7    -1
+196   "The effect computers have on humans is by far...     12       9    -3
+100   "@ORGANIZATION1, @CAPS1 technology continues t...      9       6    -3
+993   "Dear local newspaper, I am sure you will agre...     10       6    -4
+704   "Dear local newspaper: I strongly feel that co...      9       8    -1
+747   "Dear newspaper, I know that computers can pla...     10       7    -3
+940   "There are over @NUM1 students at @ORGANIZATIO...      9       8    -1
+352   "Dear Local Newspaper, Computers are used ever...      8       8     0
+778   "Dear, @CAPS1 paper edattor we should stop bec...      6       3    -3
+304   "Dear local newspaper, I think that computers ...      8       7    -1
+474   "@CITY1 @CAPS1: I believe that computers (for ...      8       6    -2
+172   "Dear @CAPS1 @CAPS2, I think that having a com...      9       3    -6
+450   "Dear Local Newspaper, @ORGANIZATION1's benefi...      7       7     0
+63    "Dear editor of the @ORGANIZATION1, In my opin...      8       5    -3
+37    "Dear, Newspaper I would like to tell you abou...      8       4    -4
+1064  "Dear Newspaper, Computers have advance a lot ...     11       8    -3
+347   "Dear, @ORGANIZATION1 are a major part in ever...      8       7    -1
+482   "Dear, Newspaper @CAPS1 my name is @CAPS2, @PE...      7       3    -4
+167   "Dear @LOCATION1, @CAPS1 everybody relizes, te...     10       6    -4
+887   "Dear Local Newspaper @CAPS1, I am against tha...      9       7    -2
+
+
+2025-06-23 06:02:18,284 - result - CRITICAL - ESSAY SET 2:
+
+2025-06-23 06:02:18,746 - result - CRITICAL - 
+                                                  essay  score  y_pred  diff
+959   I believe books are writen for a reason and th...      6       2    -4
+40    "I am a citizen of the @LOCATION1 and I believ...      8       3    -5
+1055  "I think there should be no books taken off th...      7       3    -4
+1008  "Yes I do believe that any book found offensiv...      6       2    -4
+383   "What are we hiding from? Is personal expressi...      8       4    -4
+248   "When it comes to the decision of certain mate...      8       4    -4
+234   "Should certain materials, such as books, musi...      6       2    -4
+572   "Libraries have so many books, and books that ...      5       2    -3
+585   "There are many books, music, movies, and mage...      8       4    -4
+972   "If you take offense to certian things, you sh...      7       2    -5
+796   I find it intresting that people think that it...      4       2    -2
+1074  There should not be sensorship on the books in...      4       2    -2
+36    "Comics, romance, adventure books, and mystery...      8       3    -5
+634   "My name is @CAPS1 and my views on censorship ...      6       2    -4
+787   "@CAPS1 is the freedom of speech to be able to...      7       2    -5
+397   "Okay, to me, people are way to moral in the m...      6       2    -4
+410   "Library Censorship     Everyone has their fav...      8       4    -4
+103   "While their are many books written out thier ...      6       2    -4
+377   "I belive if the books, music, movies, magazin...      6       2    -4
+267   "Every parent wants to protect their child's i...      8       4    -4
+1007  "Everyone has an opinion. Don't you agree? Tha...      7       4    -3
+304   "This writing is socially unacceptable! There ...      8       2    -6
+673   "Yes, I believe that certian materials should ...      8       3    -5
+912   "First, libraries are a good source of informa...      7       3    -4
+854   "Have you ever watched a movie that had some s...      6       2    -4
+1073  "Dear Newspaper @CAPS1     @CAPS2 my name is @...      7       3    -4
+424   "Some books in libraries offended some people....      3       2    -1
+681   "Most people have been debating on whether or ...      5       2    -3
+632   "Do I belive that ceratin materials should be ...      4       2    -2
+1071  "Need help with Censorship in @ORGANIZATION1  ...      6       2    -4
+
+
+2025-06-23 06:02:18,747 - result - CRITICAL - ESSAY SET 3:
+
+2025-06-23 06:02:19,225 - result - CRITICAL - 
+                                                  essay  score  y_pred  diff
+839   "Each new feature of the setting in the essay ...      3       2    -1
+848   "Do not Exceed posted speed limit, never accep...      2       1    -1
+108   "In the essay “Do not Exceed Posted Speed Limi...      3       2    -1
+461   "The features of the setting affect the cyclis...      3       2    -1
+255   The features of the setting affect the cyclist...      1       1     0
+15    "Setting can affect anyone and everyone, in th...      1       1     0
+149   "The riders condition was rough, from flat lan...      1       1     0
+778   When the cyclist went to ask about the road th...      1       1     0
+574   "The features of the barren desert path make t...      3       3     0
+133   "The setting that were affecting the cyclist w...      1       1     0
+38    "The settings have a huge affect on the cyclis...      3       1    -2
+1013  "The features of the setting effected the cycl...      1       1     0
+143   "As he began his journey, he had full confiden...      2       1    -1
+871   "The features of the setting affect the cyclis...      2       1    -1
+196   "In the essay “Do Not @CAPS1 Posted Speed Limi...      3       2    -1
+37    The setting of the essay efects the cyclist be...      1       1     0
+172   "Many features of the cyclist’s surroundings e...      1       1     0
+928   "The feature of the setting affect the cyclist...      1       1     0
+63    "In the story “Do Not Exceed Posted Speed Limi...      3       2    -1
+203   "In the essay “Rough Road Ahead: Do Not Exceed...      2       2     0
+909   The features of the setting affected the cycli...      1       1     0
+44    "The features of the setting effected the cycl...      2       1    -1
+787   "There were many features in the setting that ...      2       2     0
+694   "The cyclist in the story is at first confiden...      3       2    -1
+695   "The features of the setting affect the cyclis...      2       1    -1
+511   "At first when he gets the directions from the...      3       2    -1
+267   "The desert and the hills had a huge effect on...      1       1     0
+727   "The features of the setting do affect the cyc...      0       0     0
+671   "In the short story Rough Road ahead: Do Not E...      3       1    -2
+42    In this I will tell you how the cyclist was be...      2       1    -1
+
+
+2025-06-23 06:02:19,227 - result - CRITICAL - ESSAY SET 4:
+
+2025-06-23 06:02:19,671 - result - CRITICAL - 
+                                                  essay  score  y_pred  diff
+289   The author concludes the story with this parag...      1       1     0
+686   "The  author includes that sentence of the end...      1       1     0
+162   I believe he used this as the ending to ensure...      0       1     1
+659   "The story  “Winter Hibiscus"" by Minfong Ho. ...      2       2     0
+736   "In this story theauther deicides to end the s...      1       1     0
+483   "The author concludes the story with the afore...      2       2     0
+992   "In the story “Winter Hibiscus” by Minfong Ho,...      1       1     0
+172   I know the reason why the author concludes the...      1       1     0
+63    "The author concludes the story with this para...      1       1     0
+477   "The author concludes with this sentence for e...      2       1    -1
+383   "“When they came back, Saeng vowed silently to...      3       2    -1
+104   This is a powerful sentence that demonstrates ...      2       2     0
+103   "The author ends the story with this paragraph...      3       2    -1
+143   "After reading “Winter Hibiscus, I can tell th...      1       1     0
+38    The author concludes the story with this parag...      0       1     1
+796   "The author concluded the story with the parag...      0       1     1
+918   "The author concludes story with that paragrap...      3       2    -1
+133   "Saeng and her mother have to be determined to...      2       1    -1
+481   "She concludes that paragraph with the story b...      0       1     1
+42    The auther cncludes the story with this paragr...      1       1     0
+203   "The author concludes the story like that to s...      2       1    -1
+466   "The response that the author concludes the st...      0       1     1
+313   "The author concludes the story with they para...      2       2     0
+147   "The author concludes with this paragraph to s...      2       2     0
+474   "I believe that the author chose to conclude t...      3       2    -1
+330   "The author most likely concludes the story wi...      1       1     0
+749   What l think the author was talking abount sno...      0       0     0
+1001  "The author concludes the story with this para...      2       1    -1
+929   "I think the author ends the story like this b...      1       1     0
+960   "In the story “winter Hibiscus” the author Min...      3       2    -1
+
+
+2025-06-23 06:02:19,672 - result - CRITICAL - ESSAY SET 5:
+
+2025-06-23 06:02:20,124 - result - CRITICAL - 
+                                                  essay  score  y_pred  diff
+592   "In the memoir ""Narciso @CAPS1"" by the Bluep...      2       2     0
+336   "In the story ""Narciso Rodriguez"" written by...      2       1    -1
+699   "In the memoir, ""@PERSON1"" from Home: The @C...      1       1     0
+108   The mood the other Created was how happy narci...      2       1    -1
+430   "The mood created by the author in the memoir ...      2       2     0
+508   "The mood that the author creates in the memoi...      2       2     0
+253   The title of the story is Narciso Rodriguez. T...      1       1     0
+698   "The authors mood of the memoir is that @CAPS1...      3       3     0
+104   "The Originally from cuba arrived in the Unite...      1       1     0
+114   "The mood in this memoir is gratefulness. This...      4       3    -1
+733   "In the memoir, ""Narciso Rodriguez from Home:...      2       2     0
+851   "Narciso Rodriguez creates a mood of happiness...      4       3    -1
+909   The mood created by the author in the memoir w...      1       1     0
+1005  "Home: The Blueprints to Our Lives is a wonder...      3       2    -1
+201   "the mood created in the memoir were all diffe...      1       1     0
+40    "In this memoir of the author creates a clear ...      3       3     0
+665   "In this memoir the mood varies. In paragraphs...      3       2    -1
+196   "The author of this memoir creates a warm, lov...      4       4     0
+279   The author created many different moods in thi...      2       1    -1
+597   "I beleive the mood that sets off in the beggi...      3       2    -1
+370   "The authors mood in the memoir @PERSON1 is th...      3       3     0
+804   The mood in the memoir is happy and thankful. ...      2       2     0
+305   "In the memoir. from ""Home The Blueprints of ...      3       3     0
+461   "The mood created in the memoir, ""Narciso Rod...      4       3    -1
+100   "In the memoir, the author created a mood. The...      3       2    -1
+650   "The mood created in the memoir is I think com...      3       3     0
+789   "The mood created by the author in the memoir ...      2       2     0
+755   "The mood created by Narciso Rodriguez in the ...      2       2     0
+36    I think the author's mood was kind of like @CA...      2       1    -1
+923   "The mood in the memoir is very uplifting. The...      2       2     0
+
+
+2025-06-23 06:02:20,125 - result - CRITICAL - ESSAY SET 6:
+
+2025-06-23 06:02:20,610 - result - CRITICAL - 
+                                                  essay  score  y_pred  diff
+959   "When attempting to allow dirigibles to dock o...      3       4     1
+40    "In attempting to allow dirigibles to dock on ...      3       3     0
+1055  "Some of the obstacles facing the builders was...      2       2     0
+1008  "They get good idea to make that building, but...      0       1     1
+383   "Most of the obsticles the builders of the Emp...      2       2     0
+248   "The obstacles the builders of the @ORGANIZATI...      4       3    -1
+234   "In the excerp ""The Mooring Mast"", by @ORGAN...      3       2    -1
+572   "The builders of the Empire State building fac...      3       3     0
+585   "One problem that the builders has was that th...      3       2    -1
+972   "In ""The Mooring Mast"" by Marcia Amidon @CAP...      2       2     0
+796   The builders faced many obstacles in trying to...      2       3     1
+1074  "Based on the excerpt ""The Mooring mast"" by ...      1       1     0
+36    "The builders of the Empire State Building's m...      3       4     1
+634   "Based on the excerpt, the obstacles the build...      4       4     0
+787   "Besides The facts That docking dirigibles on ...      3       3     0
+397   "During the Building of the Mast, the builders...      3       2    -1
+410   "In the excerpt ""THE MOORING MAST"" by Marcia...      3       2    -1
+103   "On @DATE1, The Empire State Building was anno...      3       3     0
+377   "There were many obstacles that the builders o...      4       4     0
+267   "In the excerpt ""The Mooring Mast"" by Marcia...      2       2     0
+1007  "The builders faced multiple obsticles in atte...      3       4     1
+304   "The builders of the Empire State Building fac...      3       3     0
+673   "The architects of the Empire State Building f...      4       4     0
+912   "When building the Empire State Building, the ...      3       2    -1
+854   "In The Mooring Mast by Marcia Amidon Lüsted, ...      2       2     0
+1073  "The weight was an obstacle they faced. ""A th...      4       3    -1
+424   "In the excerpt ""The Mooring Mast"" by Marcia...      1       2     1
+681   "There were many obstacles the builders of the...      3       3     0
+632   "The Empire State Building was built with grea...      2       2     0
+1071  "The builders of the Empire State building fac...      4       3    -1
+
+
+2025-06-23 06:02:20,611 - result - CRITICAL - ESSAY SET 7:
+
+2025-06-23 06:02:21,049 - result - CRITICAL - 
+                                                 essay  score  y_pred  diff
+935  "I was patient one time, really patient but ki...     16      10    -6
+372  "A time that I was patient is when I had my tw...     13      10    -3
+142  "It was @CAPS1 @CAPS2 I was up watching tv wai...     17       7   -10
+273  "Sometimes its hard to be patient, especilly w...     14       7    -7
+44   "You being patient is important. People should...     18      12    -6
+201  "One day me, my mom, my dad, my sister, my bot...     15       6    -9
+352  A time I was pacent was I was wating in line f...      8       4    -4
+340  Patience perso is someone that deal with diffi...     11       4    -7
+808  "Patience, @CAPS6 essential part of our world....     14       8    -6
+15   "@NUM1 years ago on my birthday the only thing...     18      10    -8
+167  "There are lots of times that I have been pati...     16      10    -6
+297  "“@CAPS1 on @CAPS2, where are you ,” @PERSON1 ...     21      10   -11
+93   "One important skill you need in the life is p...     17      10    -7
+821  "A day that I was patient was, one day I was r...     18      13    -5
+183  "Have you ever been patient before? Well l hav...     24      13   -11
+37   When I was going to the doctor I had to be pat...     13       7    -6
+38   "I was patient when I was on my way to @LOCATI...     16       6   -10
+875  "Why wasn’t my uncle there yet? Come on! I was...     23       7   -16
+518  "One day I woke up and looked outside it was s...     17      13    -4
+414  "Being patient means that your understanding a...     21      15    -6
+179  Being patience is a good thing because if you ...      9       4    -5
+774  "A time when I was patient was when I was at m...     17      10    -7
+421  A time when I was patient was when I was at th...     16       2   -14
+862  "I am writing about a time when someone I knew...     17      14    -3
+579  A time I was patient was when I had to be pati...     10       4    -6
+512  "When ll was going to @LOCATION1 with my famil...     18      10    -8
+647  "Have you ever been patience ? I believe we sh...     11       7    -4
+652  "Once, I was @NUM1 old and I was so eager abou...     12      10    -2
+780  "Being patient is one of the many things child...     24      15    -9
+873  "Every year me and my entire family take a tri...     16      12    -4
+
+
+2025-06-23 06:02:21,050 - result - CRITICAL - ESSAY SET 8:
+
+2025-06-23 06:02:21,501 - result - CRITICAL - 
+                                                 essay  score  y_pred  diff
+135  Have u ever been hit by a basketball in the fa...     31      18   -13
+151  "Someone once told me that laughter is the key...     33      22   -11
+330  " My @CAPS1 year of high school started off le...     40      22   -18
+19   "Iv always loved laughter in my life, I don't ...     27      14   -13
+405  "            Just One @CAPS1 @CAPS2 @CAPS3 A @...     36      16   -20
+15   "@DATE1 was the start of a new age, i had just...     28      11   -17
+110  " I have been waiting a whole year for @TIME1 ...     34      16   -18
+329  " One day I decided to go over to my friend @P...     40      19   -21
+68   "Laughter can create this type of bond that's ...     35      22   -13
+222  "       Laughter In A Relationship The most im...     36      19   -17
+187  "    Laughter is an important part of any rela...     41      22   -19
+95   "Laughter: A @CAPS1 @CAPS2 @CAPS3 of the varie...     35      16   -19
+207  " The human brain is a piece of work. Its the ...     45      18   -27
+266  "     Every one laughs, i love to laugh in fac...     36      16   -20
+365  " Its my sophomore year and some of my friends...     40      19   -21
+336  " One of the most oddest things in life is how...     42      22   -20
+126  "One time I was sick, and I told my mom ""I ne...     28       8   -20
+103  "  Laughter is the only expression in my opini...     36      15   -21
+44   "                          A funny Story  Many...     30      16   -14
+274  "Have @CAPS1 ever had that one friend who was ...     40      22   -18
+85   " It was the first day of the ninth grade, tha...     42      22   -20
+428  " It all started when my eighth grade class ha...     34      18   -16
+13   "                              Laughter       ...     31      13   -18
+239  "  Middle school was a challenging environment...     40      22   -18
+334  " I believe laughter brings many different peo...     36      22   -14
+182  DUE you think that being part of sameting funi...     15       7    -8
+100  " When I had turned fifteen I was so anxious t...     36      36     0
+156  " What makes you laugh? Laughter is a really g...     37      20   -17
+20   One day me and my friend taylor got the idea o...     24       8   -16
+77   " For a year and two months I'd devoted my lif...     40      36    -4
+
+
+2025-06-23 06:02:21,502 - result - CRITICAL - LLM: gpt-4.1
+2025-06-23 06:02:21,502 - result - CRITICAL - Mode: Solo
+2025-06-23 06:02:21,502 - result - CRITICAL - Datapoints: 30
+
+2025-06-23 06:02:21,502 - result - CRITICAL - Evaluation:
+2025-06-23 06:02:21,502 - result - CRITICAL - MSE of Set 1: 0.05486
+2025-06-23 06:02:21,502 - result - CRITICAL - MSE of Set 2: 0.15767
+2025-06-23 06:02:21,503 - result - CRITICAL - MSE of Set 3: 0.07778
+2025-06-23 06:02:21,503 - result - CRITICAL - MSE of Set 4: 0.05185
+2025-06-23 06:02:21,503 - result - CRITICAL - MSE of Set 5: 0.02292
+2025-06-23 06:02:21,503 - result - CRITICAL - MSE of Set 6: 0.02917
+2025-06-23 06:02:21,503 - result - CRITICAL - MSE of Set 7: 0.06548
+2025-06-23 06:02:21,503 - result - CRITICAL - MSE of Set 8: 0.08216
+2025-06-23 06:02:21,503 - result - CRITICAL - Average MSE: 0.06773
+
+2025-06-23 06:02:21,503 - result - CRITICAL - QWK of Set 1: 0.18407
+2025-06-23 06:02:21,503 - result - CRITICAL - QWK of Set 2: 0.08933
+2025-06-23 06:02:21,503 - result - CRITICAL - QWK of Set 3: 0.53333
+2025-06-23 06:02:21,503 - result - CRITICAL - QWK of Set 4: 0.63351
+2025-06-23 06:02:21,503 - result - CRITICAL - QWK of Set 5: 0.78088
+2025-06-23 06:02:21,503 - result - CRITICAL - QWK of Set 6: 0.72368
+2025-06-23 06:02:21,503 - result - CRITICAL - QWK of Set 7: 0.23123
+2025-06-23 06:02:21,503 - result - CRITICAL - QWK of Set 8: 0.16430
+2025-06-23 06:02:21,503 - result - CRITICAL - Average QWK: 0.41754
+
+2025-06-23 06:02:21,503 - result - CRITICAL - -----------------------------------------------------------------
+
+
+

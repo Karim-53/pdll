@@ -1,0 +1,42 @@
+2025-06-22 04:35:29,395 - result - CRITICAL - LLM: o3-mini
+2025-06-22 04:35:29,395 - result - CRITICAL - Mode: Pairwise
+2025-06-22 04:35:29,395 - result - CRITICAL - Datapoints: 30; Anchors: 10
+
+2025-06-22 04:35:29,396 - result - CRITICAL - ESSAY SET 1:
+
+2025-06-22 05:42:06,267 - result - CRITICAL - 
+                                                  essay  score  y_pred  diff
+309   "I personally believe that computersdo benefit...      8      10     2
+104   "Dear @CAPS1 @CAPS2 @CAPS3, I believe that com...     10       8    -2
+796   I believe that computers benefit society. They...      8       8     0
+579   "Dear Newspaper, @CAPS1 you know, the majority...      8       9     1
+857   "To use computors, or not to. That is the ques...     10      10     0
+133   "Dear @CAPS1 @CAPS2, I am writing a letter to ...      8       8     0
+618   "In my opinion i think computers have a positi...      8       9     1
+408   "Computers and the @CAPS1 have changed the way...      9       9     0
+289   "Dear @LOCATION1 harold, More and more people ...      9       8    -1
+687   "@CAPS8 more and more technology is being inve...     11      10    -1
+332   "I belive that computer technology is a positi...      8       9     1
+196   "The effect computers have on humans is by far...     12      10    -2
+100   "@ORGANIZATION1, @CAPS1 technology continues t...      9       9     0
+993   "Dear local newspaper, I am sure you will agre...     10       8    -2
+704   "Dear local newspaper: I strongly feel that co...      9       9     0
+747   "Dear newspaper, I know that computers can pla...     10       9    -1
+940   "There are over @NUM1 students at @ORGANIZATIO...      9       9     0
+352   "Dear Local Newspaper, Computers are used ever...      8       9     1
+778   "Dear, @CAPS1 paper edattor we should stop bec...      6       6     0
+304   "Dear local newspaper, I think that computers ...      8       8     0
+474   "@CITY1 @CAPS1: I believe that computers (for ...      8       8     0
+172   "Dear @CAPS1 @CAPS2, I think that having a com...      9       8    -1
+450   "Dear Local Newspaper, @ORGANIZATION1's benefi...      7       9     2
+63    "Dear editor of the @ORGANIZATION1, In my opin...      8       8     0
+37    "Dear, Newspaper I would like to tell you abou...      8       7    -1
+1064  "Dear Newspaper, Computers have advance a lot ...     11      10    -1
+347   "Dear, @ORGANIZATION1 are a major part in ever...      8       9     1
+482   "Dear, Newspaper @CAPS1 my name is @CAPS2, @PE...      7       6    -1
+167   "Dear @LOCATION1, @CAPS1 everybody relizes, te...     10       8    -2
+887   "Dear Local Newspaper @CAPS1, I am against tha...      9       9     0
+
+
+2025-06-22 05:42:06,280 - result - CRITICAL - ESSAY SET 2:
+

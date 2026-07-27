@@ -1,0 +1,141 @@
+Essay Set #4 
+Type of essay: Source Dependent Responses 
+Grade level: 10 
+Training set size: 1,772 essays 
+Final evaluation set size: 589 essays 
+Average length of essays: 150 words 
+Scoring: 1st Reader Score, 2nd Reader Score, Resolved CR Score 
+Rubric range: 0-3 
+Resolved CR score range: 0-3 
+
+Source Essay 
+Winter Hibiscus by Minfong Ho 
+Saeng, a teenage girl, and her family have moved to the United States from Vietnam. As Saeng walks 
+home after failing her driver’s test, she sees a familiar plant. Later, she goes to a florist shop to see if the 
+plant can be purchased. 
+It was like walking into another world. A hot, moist world exploding with greenery. Huge flat leaves, 
+delicate wisps of tendrils, ferns and fronds and vines of all shades and shapes grew in seemingly random 
+profusion. 
+“Over there, in the corner, the hibiscus. Is that what you mean?” The florist pointed at a leafy potted 
+plant by the corner.  
+There, in a shaft of the wan afternoon sunlight, was a single blood-red blossom, its five petals splayed 
+back to reveal a long stamen tipped with yellow pollen. Saeng felt a shock of recognition so intense, it 
+was almost visceral.1 
+“Saebba,” Saeng whispered. 
+A saebba hedge, tall and lush, had surrounded their garden, its lush green leaves dotted with vermilion 
+flowers. And sometimes after a monsoon rain, a blossom or two would have blown into the well, so that 
+when she drew the well water, she would find a red blossom floating in the bucket. 
+Slowly, Saeng walked down the narrow aisle toward the hibiscus. Orchids, lanna bushes, oleanders, 
+elephant ear begonias, and bougainvillea vines surrounded her. Plants that she had not even realized 
+she had known but had forgotten drew her back into her childhood world. 
+When she got to the hibiscus, she reached out and touched a petal gently. It felt smooth and cool, with a 
+hint of velvet toward the center—just as she had known it would feel. 
+And beside it was yet another old friend, a small shrub with waxy leaves and dainty flowers with 
+purplish petals and white centers. “Madagascar periwinkle,” its tag announced. How strange to see it in 
+a pot, Saeng thought. Back home it just grew wild, jutting out from the cracks in brick walls or between 
+tiled roofs. 
+And that rich, sweet scent—that was familiar, too. Saeng scanned the greenery around her and found a 
+tall, gangly plant with exquisite little white blossoms on it.  “Dok Malik,” she said, savoring the feel of the 
+word on her tongue, even as she silently noted the English name on its tag, “jasmine.” 
+One of the blossoms had fallen off, and carefully Saeng picked it up and smelled it. She closed her eyes 
+and breathed in, deeply. The familiar fragrance filled her lungs, and Saeng could almost feel the light 
+strands of her grandmother’s long gray hair, freshly washed, as she combed it out with the fine-toothed 
+buffalo-horn comb. And when the sun had dried it, Saeng would help the gnarled old fingers knot the 
+hair into a bun, then slip a dok Malik bud into it. 
+Saeng looked at the white bud in her hand now, small and fragile. Gently, she closed her palm around it 
+and held it tight. That, at least, she could hold on to. But where was the fine-toothed comb? The 
+hibiscus hedge? The well? Her gentle grandmother?  
+A wave of loss so deep and strong that it stung Saeng’s eyes now swept over her. A blink, a channel 
+switch, a boat ride into the night, and it was all gone. Irretrievably, irrevocably gone. 
+And in the warm moist shelter of the greenhouse, Saeng broke down and wept. 
+It was already dusk when Saeng reached home. The wind was blowing harder, tearing off the last 
+remnants of green in the chicory weeds that were growing out of the cracks in the sidewalk. As if 
+oblivious to the cold, her mother was still out in the vegetable garden, digging up the last of the onions 
+with a rusty trowel. She did not see Saeng until the girl had quietly knelt down next to her. 
+Her smile of welcome warmed Saeng. “Ghup ma laio le? You’re back?” she said cheerfully. “Goodness, 
+it’s past five. What took you so long? How did it go? Did you—?” Then she noticed the potted plant that 
+Saeng was holding, its leaves quivering in the wind. 
+Mrs. Panouvong uttered a small cry of surprise and delight. “Dok faeng-noi!” she said. “Where did you 
+get it?” 
+“I bought it,” Saeng answered, dreading her mother’s next question. 
+“How much?” 
+For answer Saeng handed her mother some coins. 
+“That’s all?” Mrs. Panouvong said, appalled, “Oh, but I forgot! You and the 
+Lambert boy ate Bee-Maags . . . .” 
+“No, we didn’t, Mother,” Saeng said. 
+“Then what else—?” 
+“Nothing else. I paid over nineteen dollars for it.” 
+“You what?” Her mother stared at her incredulously. “But how could you? All the seeds for this 
+vegetable garden didn’t cost that much! You know how much we—” She paused, as she noticed the 
+tearstains on her daughter’s cheeks and her puffy eyes. 
+“What happened?” she asked, more gently. 
+“I—I failed the test,” Saeng said. 
+For a long moment Mrs. Panouvong said nothing. Saeng did not dare look her mother in the eye. 
+Instead, she stared at the hibiscus plant and nervously tore off a leaf, shredding it to bits. 
+Her mother reached out and brushed the fragments of green off Saeng’s hands. “It’s a beautiful plant, 
+this dok faeng-noi,” she finally said. “I’m glad you got it.” 
+“It’s—it’s not a real one,” Saeng mumbled. 
+“I mean, not like the kind we had at—at—” She found that she was still too shaky to say the words at 
+home, lest she burst into tears again. “Not like the kind we had before,” she said. 
+“I know,” her mother said quietly. “I’ve seen this kind blooming along the lake. Its flowers aren’t as 
+pretty, but it’s strong enough to make it through the cold months here, this winter hibiscus. That’s what 
+matters.” 
+She tipped the pot and deftly eased the ball of soil out, balancing the rest of the plant in her other hand. 
+“Look how root-bound it is, poor thing,” she said. “Let’s plant it, right now.” 
+She went over to the corner of the vegetable patch and started to dig a hole in the ground. The soil was 
+cold and hard, and she had trouble thrusting the shovel into it. Wisps of her gray hair trailed out in the 
+breeze, and her slight frown deepened the wrinkles around her eyes. There was a frail, wiry beauty to 
+her that touched Saeng deeply. 
+“Here, let me help, Mother,” she offered, getting up and taking the shovel away from her. 
+Mrs. Panouvong made no resistance. “I’ll bring in the hot peppers and bitter melons, then, and start 
+dinner. How would you like an omelet with slices of the bitter melon?” 
+“I’d love it,” Saeng said. 
+Left alone in the garden, Saeng dug out a hole and carefully lowered the “winter hibiscus” into it. She 
+could hear the sounds of cooking from the kitchen now, the beating of eggs against a bowl, the sizzle of 
+hot oil in the pan. The pungent smell of bitter melon wafted out, and Saeng’s mouth watered. It was a 
+cultivated taste, she had discovered—none of her classmates or friends, not even Mrs. Lambert, liked 
+it—this sharp, bitter melon that left a golden aftertaste on the tongue. But she had grown up eating it 
+and, she admitted to herself, much preferred it to a Big Mac. 
+The “winter hibiscus” was in the ground now, and Saeng tamped down the soil around it. Overhead, a 
+flock of Canada geese flew by, their faint honks clear and—yes—familiar to Saeng now. Almost 
+reluctantly, she realized that many of the things that she had thought of as strange before had become, 
+through the quiet repetition of season upon season, almost familiar to her now. Like the geese. She 
+lifted her head and watched as their distinctive V was etched against the evening sky, slowly fading into 
+the distance. 
+When they come back, Saeng vowed silently to herself, in the spring, when the snows melt and the 
+geese return and this hibiscus is budding, then I will take that test again. 
+“Winter Hibiscus” by Minfong Ho, copyright © 1993 by Minfong Ho, from Join In, Multiethnic Short 
+Stories, by Donald R. Gallo, ed. 
+
+Prompt 
+Read the last paragraph of the story. 
+"When they come back, Saeng vowed silently to herself, in the spring, when the snows melt and the 
+geese return and this hibiscus is budding, then I will take that test again."  
+Write a response that explains why the author concludes the story with this paragraph. In your 
+response, include details and examples from the story that support your ideas. 
+
+Rubric Guidelines 
+
+Score 3: The response demonstrates an understanding of the complexities of the text. 
+ Addresses the demands of the question 
+ Uses expressed and implied information from the text 
+ Clarifies and extends understanding beyond the literal 
+
+Score 2: The response demonstrates a partial or literal understanding of the text. 
+ Addresses the demands of the question, although may not develop all parts equally 
+ Uses some expressed or implied information from the text to demonstrate understanding 
+ May not fully connect the support to a conclusion or assertion made about the text(s) 
+
+Score 1: The response shows evidence of a minimal understanding of the text. 
+ May show evidence that some meaning has been derived from the text 
+ May indicate a misreading of the text or the question 
+ May lack information or explanation to support an understanding of the text in relation to the 
+question 
+
+Score 0: The response is completely irrelevant or incorrect, or there is no response. 
+
+Adjudication Rules 
+ If Reader-1 Score and Reader-2 Score are exact or adjacent, adjudication by a third reader is not 
+required.  
+ If Reader-1 Score and Reader-2 Score are not adjacent or exact, then adjudication by a third 
+reader is required.  

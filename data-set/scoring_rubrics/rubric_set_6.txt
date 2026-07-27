@@ -1,0 +1,150 @@
+Essay Set #6 
+Type of essay: Source Dependent Responses 
+Grade level: 10 
+Training set size: 1,800 essays 
+Final evaluation set size: 600 essays 
+Average length of essays: 150 words 
+Scoring: Final, Score1, Score2  
+Final score range: 0-4 
+Rubric range: 0-4 
+
+Source Essay 
+The Mooring Mast 
+by Marcia Amidon Lüsted 
+When the Empire State Building was conceived, it was planned as the world’s tallest building, taller even 
+than the new Chrysler Building that was being constructed at Forty-second Street and Lexington Avenue 
+in New York. At seventy-seven stories, it was the tallest building before the Empire State began 
+construction, and Al Smith was determined to outstrip it in height. 
+The architect building the Chrysler Building, however, had a trick up his sleeve. He secretly constructed a 
+185-foot spire inside the building, and then shocked the public and the media by hoisting it up to the top 
+of the Chrysler Building, bringing it to a height of 1,046 feet, 46 feet taller than the originally announced 
+height of the Empire State Building. 
+Al Smith realized that he was close to losing the title of world’s tallest building, and on December 11, 
+1929, he announced that the Empire State would now reach the height of 1,250 feet. He would add a 
+top or a hat to the building that would be even more distinctive than any other building in the city. John 
+Tauranac describes the plan: 
+[The top of the Empire State Building] would be more than ornamental, more than a spire or 
+dome or a pyramid put there to add a desired few feet to the height of the building or to mask 
+something as mundane as a water tank. Their top, they said, would serve a higher calling. The 
+Empire State Building would be equipped for an age of transportation that was then only the 
+dream of aviation pioneers. 
+This dream of the aviation pioneers was travel by dirigible, or zeppelin, and the Empire State Building 
+was going to have a mooring mast at its top for docking these new airships, which would accommodate 
+passengers on already existing transatlantic routes and new routes that were yet to come. 
+The Age of Dirigibles 
+By the 1920s, dirigibles were being hailed as the transportation of the future. Also known today as 
+blimps, dirigibles were actually enormous steel-framed balloons, with envelopes of cotton fabric filled 
+with hydrogen and helium to make them lighter than air. Unlike a balloon, a dirigible could be 
+maneuvered by the use of propellers and rudders, and passengers could ride in the gondola, or enclosed 
+compartment, under the balloon. 
+Dirigibles had a top speed of eighty miles per hour, and they could cruise at seventy miles per hour for 
+thousands of miles without needing refueling. Some were as long as one thousand feet, the same length 
+as four blocks in New York City. The one obstacle to their expanded use in New York City was the lack of 
+a suitable landing area. Al Smith saw an opportunity for his Empire State Building: A mooring mast 
+added to the top of the building would allow dirigibles to anchor there for several hours for refueling or 
+service, and to let passengers off and on. Dirigibles were docked by means of an electric winch, which 
+hauled in a line from the front of the ship and then tied it to a mast. The body of the dirigible could 
+swing in the breeze, and yet passengers could safely get on and off the dirigible by walking down a 
+gangplank to an open observation platform. 
+The architects and engineers of the Empire State Building consulted with experts, taking tours of the 
+equipment and mooring operations at the U.S. Naval Air Station in Lakehurst, New Jersey. The navy was 
+the leader in the research and development of dirigibles in the United States. The navy even offered its 
+dirigible, the Los Angeles, to be used in testing the mast. The architects also met with the president of a 
+recently formed airship transport company that planned to offer dirigible service across the Pacific 
+Ocean. 
+When asked about the mooring mast, Al Smith commented: 
+[It’s] on the level, all right. No kidding. We’re working on the thing now. One set of engineers 
+here in New York is trying to dope out a practical, workable arrangement and the Government 
+people in Washington are figuring on some safe way of mooring airships to this mast. 
+Designing the Mast 
+The architects could not simply drop a mooring mast on top of the Empire State Building’s flat roof. A 
+thousand-foot dirigible moored at the top of the building, held by a single cable tether, would add stress 
+to the building’s frame. The stress of the dirigible’s load and the wind pressure would have to be 
+transmitted all the way to the building’s foundation, which was nearly eleven hundred feet below. The 
+steel frame of the Empire State Building would have to be modified and strengthened to accommodate 
+this new situation. Over sixty thousand dollars’ worth of modifications had to be made to the building’s 
+framework. 
+Rather than building a utilitarian mast without any ornamentation, the architects designed a shiny glass 
+and chrome-nickel stainless steel tower that would be illuminated from inside, with a stepped-back 
+design that imitated the overall shape of the building itself. The rocket-shaped mast would have four 
+wings at its corners, of shiny aluminum, and would rise to a conical roof that would house the mooring 
+arm. The winches and control machinery for the dirigible mooring would be housed in the base of the 
+shaft itself, which also housed elevators and stairs to bring passengers down to the eighty-sixth floor, 
+where baggage and ticket areas would be located. 
+The building would now be 102 floors, with a glassed-in observation area on the 101st floor and an open 
+observation platform on the 102nd floor. This observation area was to double as the boarding area for 
+dirigible passengers. 
+Once the architects had designed the mooring mast and made changes to the existing plans for the 
+building’s skeleton, construction proceeded as planned. When the building had been framed to the 85th 
+floor, the roof had to be completed before the framing for the mooring mast could take place. The mast 
+also had a skeleton of steel and was clad in stainless steel with glass windows. Two months after the 
+workers celebrated framing the entire building, they were back to raise an American flag again—this 
+time at the top of the frame for the mooring mast. 
+The Fate of the Mast 
+The mooring mast of the Empire State Building was destined to never fulfill its purpose, for reasons that 
+should have been apparent before it was ever constructed. The greatest reason was one of safety: Most 
+dirigibles from outside of the United States used hydrogen rather than helium, and hydrogen is highly 
+flammable. When the German dirigible Hindenburg was destroyed by fire in Lakehurst, New Jersey, on 
+May 6, 1937, the owners of the Empire State Building realized how much worse that accident could have 
+been if it had taken place above a densely populated area such as downtown New York. 
+The greatest obstacle to the successful use of the mooring mast was nature itself. The winds on top of 
+the building were constantly shifting due to violent air currents. Even if the dirigible were tethered to 
+the mooring mast, the back of the ship would swivel around and around the mooring mast. Dirigibles 
+moored in open landing fields could be weighted down in the back with lead weights, but using these at 
+the Empire State Building, where they would be dangling high above pedestrians on the street, was 
+neither practical nor safe. 
+The other practical reason why dirigibles could not moor at the Empire State Building was an existing 
+law against airships flying too low over urban areas. This law would make it illegal for a ship to ever tie 
+up to the building or even approach the area, although two dirigibles did attempt to reach the building 
+before the entire idea was dropped. In December 1930, the U.S. Navy dirigible Los Angeles approached 
+the mooring mast but could not get close enough to tie up because of forceful winds. Fearing that the 
+wind would blow the dirigible onto the sharp spires of other buildings in the area, which would puncture 
+the dirigible’s shell, the captain could not even take his hands off the control levers.  
+Two weeks later, another dirigible, the Goodyear blimp Columbia, attempted a publicity stunt where it 
+would tie up and deliver a bundle of newspapers to the Empire State Building. Because the complete 
+dirigible mooring equipment had never been installed, a worker atop the mooring mast would have to 
+catch the bundle of papers on a rope dangling from the blimp. The papers were delivered in this fashion, 
+but after this stunt the idea of using the mooring mast was shelved. In February 1931, Irving Clavan of 
+the building’s architectural office said, “The as yet unsolved problems of mooring air ships to a fixed 
+mast at such a height made it desirable to postpone to a later date the final installation of the landing 
+gear.” 
+By the late 1930s, the idea of using the mooring mast for dirigibles and their passengers had quietly 
+disappeared. Dirigibles, instead of becoming the transportation of the future, had given way to 
+airplanes. The rooms in the Empire State Building that had been set aside for the ticketing and baggage 
+of dirigible passengers were made over into the world’s highest soda fountain and tea garden for use by 
+the sightseers who flocked to the observation decks. The highest open observation deck, intended for 
+disembarking passengers, has never been open to the public. 
+“The Mooring Mast” by Marcia Amidon Lüsted, from The Empire State Building. Copyright © 2004 by 
+Gale, a part of Cengage Learning, Inc. 
+
+Prompt 
+Based on the excerpt, describe the obstacles the builders of the Empire State Building faced in 
+attempting to allow dirigibles to dock there. Support your answer with relevant and specific information 
+from the excerpt. 
+
+Rubric Guidelines 
+
+Score Point 4: The response is a clear, complete, and accurate description of the obstacles the builders 
+of the Empire State Building faced in attempting to allow dirigibles to dock there. The response includes 
+relevant and specific information from the excerpt. 
+
+Score Point 3: The response is a mostly clear, complete, and accurate description of the obstacles the 
+builders of the Empire State Building faced in attempting to allow dirigibles to dock there. The response 
+includes relevant but often general information from the excerpt. 
+
+Score Point 2: The response is a partial description of the obstacles the builders of the Empire State 
+Building faced in attempting to allow dirigibles to dock there. The response includes limited information 
+from the excerpt and may include misinterpretations. 
+
+Score Point 1: The response is a minimal description of the obstacles the builders of the Empire State 
+Building faced in attempting to allow dirigibles to dock there. The response includes little or no 
+information from the excerpt and may include misinterpretations.  
+OR  
+The response relates minimally to the task. 
+
+Score Point 0: The response is totally incorrect or irrelevant, or contains insufficient evidence to 
+demonstrate comprehension. 
+
+Adjudication Rules 
+ For the specific set of data, if there was a difference between scorer 1 and scorer 2, the FINAL 
+SCORE was always the higher of the two. 

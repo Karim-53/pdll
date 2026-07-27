@@ -1,0 +1,2131 @@
+2025-06-21 18:45:17,780 - result - CRITICAL - LLM: gpt-4o-mini
+2025-06-21 18:45:17,780 - result - CRITICAL - Mode: Solo
+2025-06-21 18:45:17,780 - result - CRITICAL - Datapoints: 50
+
+2025-06-21 18:45:17,816 - result - INFO - Run through essay sets 1 to 8
+
+2025-06-21 18:45:17,816 - result - CRITICAL - ESSAY SET 1:
+
+2025-06-21 18:45:18,271 - result - INFO - score prediction started
+
+2025-06-21 18:45:18,271 - result - INFO - Datapoint 309
+2025-06-21 18:45:19,663 - result - INFO - got score from new prediction
+2025-06-21 18:45:19,663 - result - INFO - Score prediction: 12.0
+
+2025-06-21 18:45:19,663 - result - INFO - Datapoint 104
+2025-06-21 18:45:20,439 - result - INFO - got score from new prediction
+2025-06-21 18:45:20,439 - result - INFO - Score prediction: 8.0
+
+2025-06-21 18:45:20,441 - result - INFO - Datapoint 796
+2025-06-21 18:45:21,228 - result - INFO - got score from new prediction
+2025-06-21 18:45:21,229 - result - INFO - Score prediction: 8.0
+
+2025-06-21 18:45:21,229 - result - INFO - Datapoint 579
+2025-06-21 18:45:22,080 - result - INFO - got score from new prediction
+2025-06-21 18:45:22,080 - result - INFO - Score prediction: 10.0
+
+2025-06-21 18:45:22,080 - result - INFO - Datapoint 857
+2025-06-21 18:45:22,870 - result - INFO - got score from new prediction
+2025-06-21 18:45:22,870 - result - INFO - Score prediction: 8.0
+
+2025-06-21 18:45:22,871 - result - INFO - Datapoint 133
+2025-06-21 18:45:23,778 - result - INFO - got score from new prediction
+2025-06-21 18:45:23,778 - result - INFO - Score prediction: 8.0
+
+2025-06-21 18:45:23,778 - result - INFO - Datapoint 618
+2025-06-21 18:45:24,593 - result - INFO - got score from new prediction
+2025-06-21 18:45:24,593 - result - INFO - Score prediction: 10.0
+
+2025-06-21 18:45:24,594 - result - INFO - Datapoint 408
+2025-06-21 18:45:25,395 - result - INFO - got score from new prediction
+2025-06-21 18:45:25,395 - result - INFO - Score prediction: 7.0
+
+2025-06-21 18:45:25,395 - result - INFO - Datapoint 289
+2025-06-21 18:45:26,130 - result - INFO - got score from new prediction
+2025-06-21 18:45:26,130 - result - INFO - Score prediction: 8.0
+
+2025-06-21 18:45:26,131 - result - INFO - Datapoint 687
+2025-06-21 18:45:26,979 - result - INFO - got score from new prediction
+2025-06-21 18:45:26,979 - result - INFO - Score prediction: 8.0
+
+2025-06-21 18:45:26,979 - result - INFO - Datapoint 332
+2025-06-21 18:45:27,845 - result - INFO - got score from new prediction
+2025-06-21 18:45:27,846 - result - INFO - Score prediction: 8.0
+
+2025-06-21 18:45:27,846 - result - INFO - Datapoint 196
+2025-06-21 18:45:28,598 - result - INFO - got score from new prediction
+2025-06-21 18:45:28,598 - result - INFO - Score prediction: 16.0
+
+2025-06-21 18:45:28,599 - result - INFO - Datapoint 100
+2025-06-21 18:45:31,099 - result - INFO - got score from new prediction
+2025-06-21 18:45:31,099 - result - INFO - Score prediction: 8.0
+
+2025-06-21 18:45:31,100 - result - INFO - Datapoint 993
+2025-06-21 18:45:31,873 - result - INFO - got score from new prediction
+2025-06-21 18:45:31,873 - result - INFO - Score prediction: 6.0
+
+2025-06-21 18:45:31,873 - result - INFO - Datapoint 704
+2025-06-21 18:45:32,759 - result - INFO - got score from new prediction
+2025-06-21 18:45:32,759 - result - INFO - Score prediction: 10.0
+
+2025-06-21 18:45:32,759 - result - INFO - Datapoint 747
+2025-06-21 18:45:33,543 - result - INFO - got score from new prediction
+2025-06-21 18:45:33,543 - result - INFO - Score prediction: 7.6
+
+2025-06-21 18:45:33,543 - result - INFO - Datapoint 940
+2025-06-21 18:45:34,401 - result - INFO - got score from new prediction
+2025-06-21 18:45:34,401 - result - INFO - Score prediction: 8.0
+
+2025-06-21 18:45:34,401 - result - INFO - Datapoint 352
+2025-06-21 18:45:35,190 - result - INFO - got score from new prediction
+2025-06-21 18:45:35,190 - result - INFO - Score prediction: 10.0
+
+2025-06-21 18:45:35,190 - result - INFO - Datapoint 778
+2025-06-21 18:45:36,020 - result - INFO - got score from new prediction
+2025-06-21 18:45:36,020 - result - INFO - Score prediction: 4.0
+
+2025-06-21 18:45:36,020 - result - INFO - Datapoint 304
+2025-06-21 18:45:36,807 - result - INFO - got score from new prediction
+2025-06-21 18:45:36,807 - result - INFO - Score prediction: 7.5
+
+2025-06-21 18:45:36,807 - result - INFO - Datapoint 474
+2025-06-21 18:45:37,856 - result - INFO - got score from new prediction
+2025-06-21 18:45:37,856 - result - INFO - Score prediction: 6.0
+
+2025-06-21 18:45:37,857 - result - INFO - Datapoint 172
+2025-06-21 18:45:38,680 - result - INFO - got score from new prediction
+2025-06-21 18:45:38,680 - result - INFO - Score prediction: 6.0
+
+2025-06-21 18:45:38,680 - result - INFO - Datapoint 450
+2025-06-21 18:45:39,434 - result - INFO - got score from new prediction
+2025-06-21 18:45:39,434 - result - INFO - Score prediction: 8.0
+
+2025-06-21 18:45:39,434 - result - INFO - Datapoint 63
+2025-06-21 18:45:40,193 - result - INFO - got score from new prediction
+2025-06-21 18:45:40,193 - result - INFO - Score prediction: 6.0
+
+2025-06-21 18:45:40,193 - result - INFO - Datapoint 37
+2025-06-21 18:45:40,971 - result - INFO - got score from new prediction
+2025-06-21 18:45:40,971 - result - INFO - Score prediction: 6.0
+
+2025-06-21 18:45:40,971 - result - INFO - Datapoint 1064
+2025-06-21 18:45:41,773 - result - INFO - got score from new prediction
+2025-06-21 18:45:41,774 - result - INFO - Score prediction: 8.0
+
+2025-06-21 18:45:41,774 - result - INFO - Datapoint 347
+2025-06-21 18:45:42,661 - result - INFO - got score from new prediction
+2025-06-21 18:45:42,661 - result - INFO - Score prediction: 8.0
+
+2025-06-21 18:45:42,661 - result - INFO - Datapoint 482
+2025-06-21 18:45:43,424 - result - INFO - got score from new prediction
+2025-06-21 18:45:43,424 - result - INFO - Score prediction: 6.72
+
+2025-06-21 18:45:43,424 - result - INFO - Datapoint 167
+2025-06-21 18:45:44,223 - result - INFO - got score from new prediction
+2025-06-21 18:45:44,223 - result - INFO - Score prediction: 6.0
+
+2025-06-21 18:45:44,224 - result - INFO - Datapoint 887
+2025-06-21 18:45:45,002 - result - INFO - got score from new prediction
+2025-06-21 18:45:45,002 - result - INFO - Score prediction: 8.0
+
+2025-06-21 18:45:45,002 - result - INFO - Datapoint 597
+2025-06-21 18:45:45,882 - result - INFO - got score from new prediction
+2025-06-21 18:45:45,882 - result - INFO - Score prediction: 6.8
+
+2025-06-21 18:45:45,883 - result - INFO - Datapoint 291
+2025-06-21 18:45:48,728 - result - INFO - got score from new prediction
+2025-06-21 18:45:48,728 - result - INFO - Score prediction: 14.8
+
+2025-06-21 18:45:48,728 - result - INFO - Datapoint 1023
+2025-06-21 18:45:49,560 - result - INFO - got score from new prediction
+2025-06-21 18:45:49,560 - result - INFO - Score prediction: 7.3
+
+2025-06-21 18:45:49,560 - result - INFO - Datapoint 452
+2025-06-21 18:45:50,455 - result - INFO - got score from new prediction
+2025-06-21 18:45:50,455 - result - INFO - Score prediction: 9.5
+
+2025-06-21 18:45:50,455 - result - INFO - Datapoint 677
+2025-06-21 18:45:51,243 - result - INFO - got score from new prediction
+2025-06-21 18:45:51,243 - result - INFO - Score prediction: 4.0
+
+2025-06-21 18:45:51,243 - result - INFO - Datapoint 976
+2025-06-21 18:45:52,028 - result - INFO - got score from new prediction
+2025-06-21 18:45:52,028 - result - INFO - Score prediction: 8.0
+
+2025-06-21 18:45:52,028 - result - INFO - Datapoint 779
+2025-06-21 18:45:52,820 - result - INFO - got score from new prediction
+2025-06-21 18:45:52,820 - result - INFO - Score prediction: 8.0
+
+2025-06-21 18:45:52,820 - result - INFO - Datapoint 1026
+2025-06-21 18:45:53,599 - result - INFO - got score from new prediction
+2025-06-21 18:45:53,599 - result - INFO - Score prediction: 8.16
+
+2025-06-21 18:45:53,599 - result - INFO - Datapoint 932
+2025-06-21 18:45:54,504 - result - INFO - got score from new prediction
+2025-06-21 18:45:54,504 - result - INFO - Score prediction: 6.0
+
+2025-06-21 18:45:54,504 - result - INFO - Datapoint 882
+2025-06-21 18:45:55,306 - result - INFO - got score from new prediction
+2025-06-21 18:45:55,306 - result - INFO - Score prediction: 7.0
+
+2025-06-21 18:45:55,306 - result - INFO - Datapoint 267
+2025-06-21 18:45:56,126 - result - INFO - got score from new prediction
+2025-06-21 18:45:56,126 - result - INFO - Score prediction: 10.0
+
+2025-06-21 18:45:56,126 - result - INFO - Datapoint 191
+2025-06-21 18:45:56,893 - result - INFO - got score from new prediction
+2025-06-21 18:45:56,893 - result - INFO - Score prediction: 8.0
+
+2025-06-21 18:45:56,893 - result - INFO - Datapoint 305
+2025-06-21 18:45:57,736 - result - INFO - got score from new prediction
+2025-06-21 18:45:57,736 - result - INFO - Score prediction: 4.0
+
+2025-06-21 18:45:57,736 - result - INFO - Datapoint 979
+2025-06-21 18:45:58,506 - result - INFO - got score from new prediction
+2025-06-21 18:45:58,506 - result - INFO - Score prediction: 6.0
+
+2025-06-21 18:45:58,506 - result - INFO - Datapoint 531
+2025-06-21 18:45:59,301 - result - INFO - got score from new prediction
+2025-06-21 18:45:59,301 - result - INFO - Score prediction: 7.0
+
+2025-06-21 18:45:59,302 - result - INFO - Datapoint 641
+2025-06-21 18:46:00,192 - result - INFO - got score from new prediction
+2025-06-21 18:46:00,192 - result - INFO - Score prediction: 4.0
+
+2025-06-21 18:46:00,192 - result - INFO - Datapoint 38
+2025-06-21 18:46:00,957 - result - INFO - got score from new prediction
+2025-06-21 18:46:00,957 - result - INFO - Score prediction: 6.0
+
+2025-06-21 18:46:00,957 - result - INFO - Datapoint 990
+2025-06-21 18:46:02,095 - result - INFO - got score from new prediction
+2025-06-21 18:46:02,095 - result - INFO - Score prediction: 8.0
+
+2025-06-21 18:46:02,095 - result - INFO - Datapoint 317
+2025-06-21 18:46:02,840 - result - INFO - got score from new prediction
+2025-06-21 18:46:02,840 - result - INFO - Score prediction: 8.0
+
+2025-06-21 18:46:02,840 - result - INFO - Datapoint 585
+2025-06-21 18:46:03,611 - result - INFO - got score from new prediction
+2025-06-21 18:46:03,611 - result - INFO - Score prediction: 6.0
+
+2025-06-21 18:46:03,611 - result - INFO - predicted scores solo
+2025-06-21 18:46:03,615 - result - CRITICAL - 
+                                                  essay  score  y_pred  diff
+309   "I personally believe that computersdo benefit...      8      12     4
+104   "Dear @CAPS1 @CAPS2 @CAPS3, I believe that com...     10       8    -2
+796   I believe that computers benefit society. They...      8       8     0
+579   "Dear Newspaper, @CAPS1 you know, the majority...      8      10     2
+857   "To use computors, or not to. That is the ques...     10       8    -2
+133   "Dear @CAPS1 @CAPS2, I am writing a letter to ...      8       8     0
+618   "In my opinion i think computers have a positi...      8      10     2
+408   "Computers and the @CAPS1 have changed the way...      9       7    -2
+289   "Dear @LOCATION1 harold, More and more people ...      9       8    -1
+687   "@CAPS8 more and more technology is being inve...     11       8    -3
+332   "I belive that computer technology is a positi...      8       8     0
+196   "The effect computers have on humans is by far...     12      16     4
+100   "@ORGANIZATION1, @CAPS1 technology continues t...      9       8    -1
+993   "Dear local newspaper, I am sure you will agre...     10       6    -4
+704   "Dear local newspaper: I strongly feel that co...      9      10     1
+747   "Dear newspaper, I know that computers can pla...     10       7    -3
+940   "There are over @NUM1 students at @ORGANIZATIO...      9       8    -1
+352   "Dear Local Newspaper, Computers are used ever...      8      10     2
+778   "Dear, @CAPS1 paper edattor we should stop bec...      6       4    -2
+304   "Dear local newspaper, I think that computers ...      8       7    -1
+474   "@CITY1 @CAPS1: I believe that computers (for ...      8       6    -2
+172   "Dear @CAPS1 @CAPS2, I think that having a com...      9       6    -3
+450   "Dear Local Newspaper, @ORGANIZATION1's benefi...      7       8     1
+63    "Dear editor of the @ORGANIZATION1, In my opin...      8       6    -2
+37    "Dear, Newspaper I would like to tell you abou...      8       6    -2
+1064  "Dear Newspaper, Computers have advance a lot ...     11       8    -3
+347   "Dear, @ORGANIZATION1 are a major part in ever...      8       8     0
+482   "Dear, Newspaper @CAPS1 my name is @CAPS2, @PE...      7       6    -1
+167   "Dear @LOCATION1, @CAPS1 everybody relizes, te...     10       6    -4
+887   "Dear Local Newspaper @CAPS1, I am against tha...      9       8    -1
+597   "Dear Local @CAPS1 @CAPS2 you know long of tim...     10       6    -4
+291   "Dear local newspaper, I'm sure you love kicki...     10      14     4
+1023  "Dear Local @CAPS1: I'm sitting at the couch t...     11       7    -4
+452   "Now-a-days the technological industries are t...     10       9    -1
+677   "I think that computers are because you can ha...      8       4    -4
+976   "Dear Newspaper, Computers have a huge effect ...     11       8    -3
+779   "I believe that computers have a negitive effe...      8       8     0
+1026  "Dear @ORGANIZATION1, @CAPS1 reading your pape...      8       8     0
+932   "Dear, newspaper writer I think the computer h...      8       6    -2
+882   "Dear newspaper, @CAPS1't you love to go in yo...      8       7    -1
+267   "Dear editors, I was planning on taking a trip...     10      10     0
+191   "Dear Local newspaper, @CAPS1 are big aguments...      9       8    -1
+305   "I blive that computers have a lot of effects ...      6       4    -2
+979   "Dear @CAPS1 I would like to inform the public...      6       6     0
+531   "@ORGANIZATION1, @CAPS1 studies have been cond...      9       7    -2
+641   "Dear Newspaper, I am writing to you @DATE1 be...      8       4    -4
+38    "Computers and the @CAPS1 were a technological...     10       6    -4
+990   "Dear Local Newspaper, @CAPS1 you think comput...      8       8     0
+317   "Dear @ORGANIZATION1, @DATE1, everywhere you l...     11       8    -3
+585   "Dear @CAPS1 @CAPS2, @CAPS3 recently has been ...      8       6    -2
+
+
+2025-06-21 18:46:03,617 - result - INFO - QWK of Set: 0.28318
+2025-06-21 18:46:03,618 - result - INFO - MSE of Set: 0.03903
+
+2025-06-21 18:46:03,618 - result - CRITICAL - ESSAY SET 2:
+
+2025-06-21 18:46:04,077 - result - INFO - score prediction started
+
+2025-06-21 18:46:04,078 - result - INFO - Datapoint 959
+2025-06-21 18:46:05,059 - result - INFO - got score from new prediction
+2025-06-21 18:46:05,059 - result - INFO - Score prediction: 5.0
+
+2025-06-21 18:46:05,060 - result - INFO - Datapoint 40
+2025-06-21 18:46:06,419 - result - INFO - got score from new prediction
+2025-06-21 18:46:06,419 - result - INFO - Score prediction: 5.0
+
+2025-06-21 18:46:06,420 - result - INFO - Datapoint 1055
+2025-06-21 18:46:07,399 - result - INFO - got score from new prediction
+2025-06-21 18:46:07,399 - result - INFO - Score prediction: 5.0
+
+2025-06-21 18:46:07,399 - result - INFO - Datapoint 1008
+2025-06-21 18:46:08,246 - result - INFO - got score from new prediction
+2025-06-21 18:46:08,247 - result - INFO - Score prediction: 4.0
+
+2025-06-21 18:46:08,247 - result - INFO - Datapoint 383
+2025-06-21 18:46:09,097 - result - INFO - got score from new prediction
+2025-06-21 18:46:09,097 - result - INFO - Score prediction: 6.5
+
+2025-06-21 18:46:09,097 - result - INFO - Datapoint 248
+2025-06-21 18:46:09,869 - result - INFO - got score from new prediction
+2025-06-21 18:46:09,869 - result - INFO - Score prediction: 6.24
+
+2025-06-21 18:46:09,869 - result - INFO - Datapoint 234
+2025-06-21 18:46:10,650 - result - INFO - got score from new prediction
+2025-06-21 18:46:10,650 - result - INFO - Score prediction: 5.0
+
+2025-06-21 18:46:10,650 - result - INFO - Datapoint 572
+2025-06-21 18:46:11,547 - result - INFO - got score from new prediction
+2025-06-21 18:46:11,547 - result - INFO - Score prediction: 4.0
+
+2025-06-21 18:46:11,548 - result - INFO - Datapoint 585
+2025-06-21 18:46:12,374 - result - INFO - got score from new prediction
+2025-06-21 18:46:12,375 - result - INFO - Score prediction: 6.5
+
+2025-06-21 18:46:12,375 - result - INFO - Datapoint 972
+2025-06-21 18:46:13,175 - result - INFO - got score from new prediction
+2025-06-21 18:46:13,175 - result - INFO - Score prediction: 5.5
+
+2025-06-21 18:46:13,175 - result - INFO - Datapoint 796
+2025-06-21 18:46:14,054 - result - INFO - got score from new prediction
+2025-06-21 18:46:14,054 - result - INFO - Score prediction: 4.0
+
+2025-06-21 18:46:14,054 - result - INFO - Datapoint 1074
+2025-06-21 18:46:14,797 - result - INFO - got score from new prediction
+2025-06-21 18:46:14,797 - result - INFO - Score prediction: 4.0
+
+2025-06-21 18:46:14,797 - result - INFO - Datapoint 36
+2025-06-21 18:46:15,708 - result - INFO - got score from new prediction
+2025-06-21 18:46:15,708 - result - INFO - Score prediction: 6.52
+
+2025-06-21 18:46:15,708 - result - INFO - Datapoint 634
+2025-06-21 18:46:16,461 - result - INFO - got score from new prediction
+2025-06-21 18:46:16,461 - result - INFO - Score prediction: 5.5
+
+2025-06-21 18:46:16,462 - result - INFO - Datapoint 787
+2025-06-21 18:46:17,356 - result - INFO - got score from new prediction
+2025-06-21 18:46:17,356 - result - INFO - Score prediction: 4.0
+
+2025-06-21 18:46:17,356 - result - INFO - Datapoint 397
+2025-06-21 18:46:18,243 - result - INFO - got score from new prediction
+2025-06-21 18:46:18,243 - result - INFO - Score prediction: 5.0
+
+2025-06-21 18:46:18,243 - result - INFO - Datapoint 410
+2025-06-21 18:46:18,991 - result - INFO - got score from new prediction
+2025-06-21 18:46:18,991 - result - INFO - Score prediction: 8.68
+
+2025-06-21 18:46:18,991 - result - INFO - Datapoint 103
+2025-06-21 18:46:19,795 - result - INFO - got score from new prediction
+2025-06-21 18:46:19,795 - result - INFO - Score prediction: 4.0
+
+2025-06-21 18:46:19,795 - result - INFO - Datapoint 377
+2025-06-21 18:46:20,651 - result - INFO - got score from new prediction
+2025-06-21 18:46:20,651 - result - INFO - Score prediction: 5.0
+
+2025-06-21 18:46:20,651 - result - INFO - Datapoint 267
+2025-06-21 18:46:21,485 - result - INFO - got score from new prediction
+2025-06-21 18:46:21,485 - result - INFO - Score prediction: 8.0
+
+2025-06-21 18:46:21,485 - result - INFO - Datapoint 1007
+2025-06-21 18:46:22,291 - result - INFO - got score from new prediction
+2025-06-21 18:46:22,291 - result - INFO - Score prediction: 8.4
+
+2025-06-21 18:46:22,291 - result - INFO - Datapoint 304
+2025-06-21 18:46:23,109 - result - INFO - got score from new prediction
+2025-06-21 18:46:23,109 - result - INFO - Score prediction: 4.0
+
+2025-06-21 18:46:23,109 - result - INFO - Datapoint 673
+2025-06-21 18:46:26,880 - result - INFO - got score from new prediction
+2025-06-21 18:46:26,880 - result - INFO - Score prediction: 6.96
+
+2025-06-21 18:46:26,880 - result - INFO - Datapoint 912
+2025-06-21 18:46:27,680 - result - INFO - got score from new prediction
+2025-06-21 18:46:27,680 - result - INFO - Score prediction: 7.0
+
+2025-06-21 18:46:27,680 - result - INFO - Datapoint 854
+2025-06-21 18:46:28,461 - result - INFO - got score from new prediction
+2025-06-21 18:46:28,461 - result - INFO - Score prediction: 6.4
+
+2025-06-21 18:46:28,461 - result - INFO - Datapoint 1073
+2025-06-21 18:46:29,237 - result - INFO - got score from new prediction
+2025-06-21 18:46:29,237 - result - INFO - Score prediction: 6.4
+
+2025-06-21 18:46:29,237 - result - INFO - Datapoint 424
+2025-06-21 18:46:30,014 - result - INFO - got score from new prediction
+2025-06-21 18:46:30,014 - result - INFO - Score prediction: 2.4
+
+2025-06-21 18:46:30,014 - result - INFO - Datapoint 681
+2025-06-21 18:46:31,280 - result - INFO - got score from new prediction
+2025-06-21 18:46:31,280 - result - INFO - Score prediction: 5.0
+
+2025-06-21 18:46:31,280 - result - INFO - Datapoint 632
+2025-06-21 18:46:32,176 - result - INFO - got score from new prediction
+2025-06-21 18:46:32,176 - result - INFO - Score prediction: 2.0
+
+2025-06-21 18:46:32,176 - result - INFO - Datapoint 1071
+2025-06-21 18:46:32,961 - result - INFO - got score from new prediction
+2025-06-21 18:46:32,961 - result - INFO - Score prediction: 4.0
+
+2025-06-21 18:46:32,962 - result - INFO - Datapoint 518
+2025-06-21 18:46:33,751 - result - INFO - got score from new prediction
+2025-06-21 18:46:33,751 - result - INFO - Score prediction: 5.0
+
+2025-06-21 18:46:33,752 - result - INFO - Datapoint 172
+2025-06-21 18:46:34,562 - result - INFO - got score from new prediction
+2025-06-21 18:46:34,563 - result - INFO - Score prediction: 6.4
+
+2025-06-21 18:46:34,563 - result - INFO - Datapoint 444
+2025-06-21 18:46:35,333 - result - INFO - got score from new prediction
+2025-06-21 18:46:35,333 - result - INFO - Score prediction: 4.0
+
+2025-06-21 18:46:35,333 - result - INFO - Datapoint 536
+2025-06-21 18:46:36,138 - result - INFO - got score from new prediction
+2025-06-21 18:46:36,138 - result - INFO - Score prediction: 5.5
+
+2025-06-21 18:46:36,138 - result - INFO - Datapoint 1012
+2025-06-21 18:46:37,133 - result - INFO - got score from new prediction
+2025-06-21 18:46:37,133 - result - INFO - Score prediction: 5.0
+
+2025-06-21 18:46:37,133 - result - INFO - Datapoint 731
+2025-06-21 18:46:37,996 - result - INFO - got score from new prediction
+2025-06-21 18:46:37,996 - result - INFO - Score prediction: 5.0
+
+2025-06-21 18:46:37,996 - result - INFO - Datapoint 143
+2025-06-21 18:46:38,833 - result - INFO - got score from new prediction
+2025-06-21 18:46:38,833 - result - INFO - Score prediction: 2.4
+
+2025-06-21 18:46:38,833 - result - INFO - Datapoint 1017
+2025-06-21 18:46:39,735 - result - INFO - got score from new prediction
+2025-06-21 18:46:39,736 - result - INFO - Score prediction: 5.3
+
+2025-06-21 18:46:39,736 - result - INFO - Datapoint 37
+2025-06-21 18:46:40,584 - result - INFO - got score from new prediction
+2025-06-21 18:46:40,584 - result - INFO - Score prediction: 4.0
+
+2025-06-21 18:46:40,584 - result - INFO - Datapoint 387
+2025-06-21 18:46:41,507 - result - INFO - got score from new prediction
+2025-06-21 18:46:41,507 - result - INFO - Score prediction: 4.0
+
+2025-06-21 18:46:41,507 - result - INFO - Datapoint 336
+2025-06-21 18:46:42,328 - result - INFO - got score from new prediction
+2025-06-21 18:46:42,328 - result - INFO - Score prediction: 6.52
+
+2025-06-21 18:46:42,329 - result - INFO - Datapoint 935
+2025-06-21 18:46:43,166 - result - INFO - got score from new prediction
+2025-06-21 18:46:43,166 - result - INFO - Score prediction: 3.5
+
+2025-06-21 18:46:43,166 - result - INFO - Datapoint 77
+2025-06-21 18:46:44,004 - result - INFO - got score from new prediction
+2025-06-21 18:46:44,004 - result - INFO - Score prediction: 6.5
+
+2025-06-21 18:46:44,004 - result - INFO - Datapoint 834
+2025-06-21 18:46:44,794 - result - INFO - got score from new prediction
+2025-06-21 18:46:44,794 - result - INFO - Score prediction: 6.0
+
+2025-06-21 18:46:44,794 - result - INFO - Datapoint 954
+2025-06-21 18:46:45,744 - result - INFO - got score from new prediction
+2025-06-21 18:46:45,744 - result - INFO - Score prediction: 6.16
+
+2025-06-21 18:46:45,744 - result - INFO - Datapoint 841
+2025-06-21 18:46:46,559 - result - INFO - got score from new prediction
+2025-06-21 18:46:46,559 - result - INFO - Score prediction: 6.0
+
+2025-06-21 18:46:46,559 - result - INFO - Datapoint 611
+2025-06-21 18:46:47,342 - result - INFO - got score from new prediction
+2025-06-21 18:46:47,342 - result - INFO - Score prediction: 9.0
+
+2025-06-21 18:46:47,342 - result - INFO - Datapoint 848
+2025-06-21 18:46:48,146 - result - INFO - got score from new prediction
+2025-06-21 18:46:48,146 - result - INFO - Score prediction: 4.8
+
+2025-06-21 18:46:48,146 - result - INFO - Datapoint 42
+2025-06-21 18:46:48,937 - result - INFO - got score from new prediction
+2025-06-21 18:46:48,937 - result - INFO - Score prediction: 7.0
+
+2025-06-21 18:46:48,937 - result - INFO - Datapoint 89
+2025-06-21 18:46:49,729 - result - INFO - got score from new prediction
+2025-06-21 18:46:49,729 - result - INFO - Score prediction: 7.0
+
+2025-06-21 18:46:49,731 - result - INFO - predicted scores solo
+2025-06-21 18:46:49,733 - result - CRITICAL - 
+                                                  essay  score  y_pred  diff
+959   I believe books are writen for a reason and th...      6       5    -1
+40    "I am a citizen of the @LOCATION1 and I believ...      8       5    -3
+1055  "I think there should be no books taken off th...      7       5    -2
+1008  "Yes I do believe that any book found offensiv...      6       4    -2
+383   "What are we hiding from? Is personal expressi...      8       6    -2
+248   "When it comes to the decision of certain mate...      8       6    -2
+234   "Should certain materials, such as books, musi...      6       5    -1
+572   "Libraries have so many books, and books that ...      5       4    -1
+585   "There are many books, music, movies, and mage...      8       6    -2
+972   "If you take offense to certian things, you sh...      7       5    -2
+796   I find it intresting that people think that it...      4       4     0
+1074  There should not be sensorship on the books in...      4       4     0
+36    "Comics, romance, adventure books, and mystery...      8       6    -2
+634   "My name is @CAPS1 and my views on censorship ...      6       5    -1
+787   "@CAPS1 is the freedom of speech to be able to...      7       4    -3
+397   "Okay, to me, people are way to moral in the m...      6       5    -1
+410   "Library Censorship     Everyone has their fav...      8       8     0
+103   "While their are many books written out thier ...      6       4    -2
+377   "I belive if the books, music, movies, magazin...      6       5    -1
+267   "Every parent wants to protect their child's i...      8       8     0
+1007  "Everyone has an opinion. Don't you agree? Tha...      7       8     1
+304   "This writing is socially unacceptable! There ...      8       4    -4
+673   "Yes, I believe that certian materials should ...      8       6    -2
+912   "First, libraries are a good source of informa...      7       7     0
+854   "Have you ever watched a movie that had some s...      6       6     0
+1073  "Dear Newspaper @CAPS1     @CAPS2 my name is @...      7       6    -1
+424   "Some books in libraries offended some people....      3       2    -1
+681   "Most people have been debating on whether or ...      5       5     0
+632   "Do I belive that ceratin materials should be ...      4       2    -2
+1071  "Need help with Censorship in @ORGANIZATION1  ...      6       4    -2
+518   "Censorship in Libraries     The library prese...      8       5    -3
+172   "Should books, magazines, music, and movies be...      6       6     0
+444   Their are some books that should not be remove...      5       4    -1
+536   "To begin with, a woman might read a book abou...      6       5    -1
+1012  "When you have children would you want to shie...      8       5    -3
+731   "I actually do believe that they should be abl...      6       5    -1
+143   I dont think there should be any censorship go...      4       2    -2
+1017  "When someone goes to the library, there is mu...      8       5    -3
+37    "To start, if any materials in the library suc...      6       4    -2
+387   "The way that the books, musics ,ect. are made...      4       4     0
+336   "My view opposes the open distribution of cert...      8       6    -2
+935   "'Everyone has @CAPS1 @CAPS2'     @CAPS3 is tr...      8       3    -5
+77    "All of us have rights, all of us have the sam...      6       6     0
+834   "Libraries are for children, and adults of all...      8       6    -2
+954   "When you go into a library have you ever seen...      7       6    -1
+841   "No because all people like to read different ...      7       6    -1
+611   "The ideas conveyed by literature, music, and ...      8       9     1
+848   "Censorship in the libraries. Do you think tha...      6       4    -2
+42    "Dear @CAPS1,      @CAPS2 name is @PERSON1. I ...      8       7    -1
+89    "I belive that certain materials such as books...      8       7    -1
+
+
+2025-06-21 18:46:49,734 - result - INFO - QWK of Set: 0.44504
+2025-06-21 18:46:49,734 - result - INFO - MSE of Set: 0.03340
+
+2025-06-21 18:46:49,735 - result - CRITICAL - ESSAY SET 3:
+
+2025-06-21 18:46:50,231 - result - INFO - score prediction started
+
+2025-06-21 18:46:50,231 - result - INFO - Datapoint 839
+2025-06-21 18:46:51,190 - result - INFO - got score from new prediction
+2025-06-21 18:46:51,190 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:46:51,190 - result - INFO - Datapoint 848
+2025-06-21 18:46:52,007 - result - INFO - got score from new prediction
+2025-06-21 18:46:52,007 - result - INFO - Score prediction: 2.0
+
+2025-06-21 18:46:52,008 - result - INFO - Datapoint 108
+2025-06-21 18:46:52,780 - result - INFO - got score from new prediction
+2025-06-21 18:46:52,780 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:46:52,780 - result - INFO - Datapoint 461
+2025-06-21 18:46:53,625 - result - INFO - got score from new prediction
+2025-06-21 18:46:53,625 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:46:53,626 - result - INFO - Datapoint 255
+2025-06-21 18:46:54,499 - result - INFO - got score from new prediction
+2025-06-21 18:46:54,499 - result - INFO - Score prediction: 2.0
+
+2025-06-21 18:46:54,499 - result - INFO - Datapoint 15
+2025-06-21 18:46:55,635 - result - INFO - got score from new prediction
+2025-06-21 18:46:55,635 - result - INFO - Score prediction: 2.0
+
+2025-06-21 18:46:55,635 - result - INFO - Datapoint 149
+2025-06-21 18:46:56,406 - result - INFO - got score from new prediction
+2025-06-21 18:46:56,406 - result - INFO - Score prediction: 2.0
+
+2025-06-21 18:46:56,406 - result - INFO - Datapoint 778
+2025-06-21 18:46:57,281 - result - INFO - got score from new prediction
+2025-06-21 18:46:57,281 - result - INFO - Score prediction: 2.0
+
+2025-06-21 18:46:57,281 - result - INFO - Datapoint 574
+2025-06-21 18:46:58,043 - result - INFO - got score from new prediction
+2025-06-21 18:46:58,043 - result - INFO - Score prediction: 4.0
+
+2025-06-21 18:46:58,043 - result - INFO - Datapoint 133
+2025-06-21 18:46:58,891 - result - INFO - got score from new prediction
+2025-06-21 18:46:58,891 - result - INFO - Score prediction: 2.0
+
+2025-06-21 18:46:58,891 - result - INFO - Datapoint 38
+2025-06-21 18:46:59,737 - result - INFO - got score from new prediction
+2025-06-21 18:46:59,737 - result - INFO - Score prediction: 2.5
+
+2025-06-21 18:46:59,737 - result - INFO - Datapoint 1013
+2025-06-21 18:47:00,493 - result - INFO - got score from new prediction
+2025-06-21 18:47:00,493 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:47:00,493 - result - INFO - Datapoint 143
+2025-06-21 18:47:01,268 - result - INFO - got score from new prediction
+2025-06-21 18:47:01,268 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:47:01,268 - result - INFO - Datapoint 871
+2025-06-21 18:47:02,080 - result - INFO - got score from new prediction
+2025-06-21 18:47:02,080 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:47:02,080 - result - INFO - Datapoint 196
+2025-06-21 18:47:02,847 - result - INFO - got score from new prediction
+2025-06-21 18:47:02,847 - result - INFO - Score prediction: 3.5
+
+2025-06-21 18:47:02,847 - result - INFO - Datapoint 37
+2025-06-21 18:47:03,645 - result - INFO - got score from new prediction
+2025-06-21 18:47:03,645 - result - INFO - Score prediction: 2.0
+
+2025-06-21 18:47:03,646 - result - INFO - Datapoint 172
+2025-06-21 18:47:04,560 - result - INFO - got score from new prediction
+2025-06-21 18:47:04,560 - result - INFO - Score prediction: 2.0
+
+2025-06-21 18:47:04,560 - result - INFO - Datapoint 928
+2025-06-21 18:47:05,507 - result - INFO - got score from new prediction
+2025-06-21 18:47:05,507 - result - INFO - Score prediction: 2.0
+
+2025-06-21 18:47:05,507 - result - INFO - Datapoint 63
+2025-06-21 18:47:06,288 - result - INFO - got score from new prediction
+2025-06-21 18:47:06,288 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:47:06,288 - result - INFO - Datapoint 203
+2025-06-21 18:47:07,110 - result - INFO - got score from new prediction
+2025-06-21 18:47:07,110 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:47:07,110 - result - INFO - Datapoint 909
+2025-06-21 18:47:07,878 - result - INFO - got score from new prediction
+2025-06-21 18:47:07,878 - result - INFO - Score prediction: 2.0
+
+2025-06-21 18:47:07,878 - result - INFO - Datapoint 44
+2025-06-21 18:47:08,652 - result - INFO - got score from new prediction
+2025-06-21 18:47:08,652 - result - INFO - Score prediction: 2.0
+
+2025-06-21 18:47:08,652 - result - INFO - Datapoint 787
+2025-06-21 18:47:09,483 - result - INFO - got score from new prediction
+2025-06-21 18:47:09,483 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:47:09,483 - result - INFO - Datapoint 694
+2025-06-21 18:47:10,269 - result - INFO - got score from new prediction
+2025-06-21 18:47:10,269 - result - INFO - Score prediction: 4.0
+
+2025-06-21 18:47:10,269 - result - INFO - Datapoint 695
+2025-06-21 18:47:11,034 - result - INFO - got score from new prediction
+2025-06-21 18:47:11,035 - result - INFO - Score prediction: 2.0
+
+2025-06-21 18:47:11,035 - result - INFO - Datapoint 511
+2025-06-21 18:47:11,922 - result - INFO - got score from new prediction
+2025-06-21 18:47:11,922 - result - INFO - Score prediction: 3.3
+
+2025-06-21 18:47:11,922 - result - INFO - Datapoint 267
+2025-06-21 18:47:12,698 - result - INFO - got score from new prediction
+2025-06-21 18:47:12,698 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:47:12,699 - result - INFO - Datapoint 727
+2025-06-21 18:47:13,440 - result - INFO - got score from new prediction
+2025-06-21 18:47:13,440 - result - INFO - Score prediction: 2.0
+
+2025-06-21 18:47:13,440 - result - INFO - Datapoint 671
+2025-06-21 18:47:14,244 - result - INFO - got score from new prediction
+2025-06-21 18:47:14,244 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:47:14,244 - result - INFO - Datapoint 42
+2025-06-21 18:47:15,145 - result - INFO - got score from new prediction
+2025-06-21 18:47:15,145 - result - INFO - Score prediction: 2.0
+
+2025-06-21 18:47:15,145 - result - INFO - Datapoint 532
+2025-06-21 18:47:16,025 - result - INFO - got score from new prediction
+2025-06-21 18:47:16,025 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:47:16,025 - result - INFO - Datapoint 188
+2025-06-21 18:47:16,839 - result - INFO - got score from new prediction
+2025-06-21 18:47:16,839 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:47:16,839 - result - INFO - Datapoint 366
+2025-06-21 18:47:17,629 - result - INFO - got score from new prediction
+2025-06-21 18:47:17,629 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:47:17,629 - result - INFO - Datapoint 903
+2025-06-21 18:47:18,463 - result - INFO - got score from new prediction
+2025-06-21 18:47:18,463 - result - INFO - Score prediction: 2.0
+
+2025-06-21 18:47:18,463 - result - INFO - Datapoint 1020
+2025-06-21 18:47:19,308 - result - INFO - got score from new prediction
+2025-06-21 18:47:19,308 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:47:19,308 - result - INFO - Datapoint 187
+2025-06-21 18:47:20,095 - result - INFO - got score from new prediction
+2025-06-21 18:47:20,095 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:47:20,095 - result - INFO - Datapoint 207
+2025-06-21 18:47:20,902 - result - INFO - got score from new prediction
+2025-06-21 18:47:20,902 - result - INFO - Score prediction: 2.0
+
+2025-06-21 18:47:20,902 - result - INFO - Datapoint 1030
+2025-06-21 18:47:21,672 - result - INFO - got score from new prediction
+2025-06-21 18:47:21,672 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:47:21,672 - result - INFO - Datapoint 1027
+2025-06-21 18:47:22,474 - result - INFO - got score from new prediction
+2025-06-21 18:47:22,474 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:47:22,474 - result - INFO - Datapoint 380
+2025-06-21 18:47:23,279 - result - INFO - got score from new prediction
+2025-06-21 18:47:23,279 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:47:23,279 - result - INFO - Datapoint 352
+2025-06-21 18:47:24,054 - result - INFO - got score from new prediction
+2025-06-21 18:47:24,054 - result - INFO - Score prediction: 2.0
+
+2025-06-21 18:47:24,054 - result - INFO - Datapoint 103
+2025-06-21 18:47:24,883 - result - INFO - got score from new prediction
+2025-06-21 18:47:24,883 - result - INFO - Score prediction: 2.0
+
+2025-06-21 18:47:24,884 - result - INFO - Datapoint 933
+2025-06-21 18:47:28,125 - result - INFO - got score from new prediction
+2025-06-21 18:47:28,125 - result - INFO - Score prediction: 2.0
+
+2025-06-21 18:47:28,125 - result - INFO - Datapoint 981
+2025-06-21 18:47:28,905 - result - INFO - got score from new prediction
+2025-06-21 18:47:28,906 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:47:28,906 - result - INFO - Datapoint 656
+2025-06-21 18:47:29,668 - result - INFO - got score from new prediction
+2025-06-21 18:47:29,668 - result - INFO - Score prediction: 2.0
+
+2025-06-21 18:47:29,668 - result - INFO - Datapoint 919
+2025-06-21 18:47:30,459 - result - INFO - got score from new prediction
+2025-06-21 18:47:30,459 - result - INFO - Score prediction: 2.0
+
+2025-06-21 18:47:30,459 - result - INFO - Datapoint 450
+2025-06-21 18:47:31,468 - result - INFO - got score from new prediction
+2025-06-21 18:47:31,468 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:47:31,469 - result - INFO - Datapoint 300
+2025-06-21 18:47:32,211 - result - INFO - got score from new prediction
+2025-06-21 18:47:32,211 - result - INFO - Score prediction: 2.0
+
+2025-06-21 18:47:32,211 - result - INFO - Datapoint 297
+2025-06-21 18:47:33,153 - result - INFO - got score from new prediction
+2025-06-21 18:47:33,153 - result - INFO - Score prediction: 4.4
+
+2025-06-21 18:47:33,153 - result - INFO - Datapoint 579
+2025-06-21 18:47:33,882 - result - INFO - got score from new prediction
+2025-06-21 18:47:33,882 - result - INFO - Score prediction: 2.0
+
+2025-06-21 18:47:33,882 - result - INFO - predicted scores solo
+2025-06-21 18:47:33,885 - result - CRITICAL - 
+                                                  essay  score  y_pred  diff
+839   "Each new feature of the setting in the essay ...      3       3     0
+848   "Do not Exceed posted speed limit, never accep...      2       2     0
+108   "In the essay “Do not Exceed Posted Speed Limi...      3       3     0
+461   "The features of the setting affect the cyclis...      3       3     0
+255   The features of the setting affect the cyclist...      1       2     1
+15    "Setting can affect anyone and everyone, in th...      1       2     1
+149   "The riders condition was rough, from flat lan...      1       2     1
+778   When the cyclist went to ask about the road th...      1       2     1
+574   "The features of the barren desert path make t...      3       4     1
+133   "The setting that were affecting the cyclist w...      1       2     1
+38    "The settings have a huge affect on the cyclis...      3       2    -1
+1013  "The features of the setting effected the cycl...      1       3     2
+143   "As he began his journey, he had full confiden...      2       3     1
+871   "The features of the setting affect the cyclis...      2       3     1
+196   "In the essay “Do Not @CAPS1 Posted Speed Limi...      3       3     0
+37    The setting of the essay efects the cyclist be...      1       2     1
+172   "Many features of the cyclist’s surroundings e...      1       2     1
+928   "The feature of the setting affect the cyclist...      1       2     1
+63    "In the story “Do Not Exceed Posted Speed Limi...      3       3     0
+203   "In the essay “Rough Road Ahead: Do Not Exceed...      2       3     1
+909   The features of the setting affected the cycli...      1       2     1
+44    "The features of the setting effected the cycl...      2       2     0
+787   "There were many features in the setting that ...      2       3     1
+694   "The cyclist in the story is at first confiden...      3       4     1
+695   "The features of the setting affect the cyclis...      2       2     0
+511   "At first when he gets the directions from the...      3       3     0
+267   "The desert and the hills had a huge effect on...      1       3     2
+727   "The features of the setting do affect the cyc...      0       2     2
+671   "In the short story Rough Road ahead: Do Not E...      3       3     0
+42    In this I will tell you how the cyclist was be...      2       2     0
+532   "The dessert environment had huge effects on t...      2       3     1
+188   "The setting in the essay “Rough Road ahead; D...      2       3     1
+366   "In 'Rough @CAPS1 Ahead' the features of the s...      2       3     1
+903   "In the essay “Rough Road Ahead, Do Not Exceed...      1       2     1
+1020  "In the essay by Joe Kurmaskie many obstacles ...      2       3     1
+187   "Poor directions heat, and lack of water affec...      3       3     0
+207   The features of the setting is that it is hot ...      2       2     0
+1030  "In the essay, “Rough Road A head Do Not Excee...      3       3     0
+1027  "Different features of the settings affect the...      1       3     2
+380   "If I had a choice to ride a bike in Californi...      1       3     2
+352   The features of the setting affect the cyclist...      1       2     1
+103   "The features in the setting of this story aff...      1       2     1
+933   "The features of the setting affect the cyclis...      2       2     0
+981   "The features of the setting affected the cycl...      1       3     2
+656   The features of the setting affected the cycli...      1       2     1
+919   The setting affects the rider because it is ve...      1       2     1
+450   "The features of the setting including vast em...      3       3     0
+300   "THE FEATURES OF THE SETTING AFFECT THE CYCLIS...      3       2    -1
+297   "The setting of the cyclist clearly influences...      3       4     1
+579   The features of the setting affect the cyclist...      1       2     1
+
+
+2025-06-21 18:47:33,885 - result - INFO - QWK of Set: 0.36678
+2025-06-21 18:47:33,886 - result - INFO - MSE of Set: 0.11556
+
+2025-06-21 18:47:33,886 - result - CRITICAL - ESSAY SET 4:
+
+2025-06-21 18:47:34,361 - result - INFO - score prediction started
+
+2025-06-21 18:47:34,361 - result - INFO - Datapoint 289
+2025-06-21 18:47:35,327 - result - INFO - got score from new prediction
+2025-06-21 18:47:35,327 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:47:35,327 - result - INFO - Datapoint 686
+2025-06-21 18:47:36,167 - result - INFO - got score from new prediction
+2025-06-21 18:47:36,167 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:47:36,167 - result - INFO - Datapoint 162
+2025-06-21 18:47:36,943 - result - INFO - got score from new prediction
+2025-06-21 18:47:36,943 - result - INFO - Score prediction: 2.0
+
+2025-06-21 18:47:36,943 - result - INFO - Datapoint 659
+2025-06-21 18:47:38,281 - result - INFO - got score from new prediction
+2025-06-21 18:47:38,281 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:47:38,281 - result - INFO - Datapoint 736
+2025-06-21 18:47:39,024 - result - INFO - got score from new prediction
+2025-06-21 18:47:39,024 - result - INFO - Score prediction: 2.0
+
+2025-06-21 18:47:39,025 - result - INFO - Datapoint 483
+2025-06-21 18:47:39,793 - result - INFO - got score from new prediction
+2025-06-21 18:47:39,793 - result - INFO - Score prediction: 4.0
+
+2025-06-21 18:47:39,793 - result - INFO - Datapoint 992
+2025-06-21 18:47:40,571 - result - INFO - got score from new prediction
+2025-06-21 18:47:40,571 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:47:40,571 - result - INFO - Datapoint 172
+2025-06-21 18:47:41,329 - result - INFO - got score from new prediction
+2025-06-21 18:47:41,329 - result - INFO - Score prediction: 2.0
+
+2025-06-21 18:47:41,329 - result - INFO - Datapoint 63
+2025-06-21 18:47:42,240 - result - INFO - got score from new prediction
+2025-06-21 18:47:42,240 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:47:42,240 - result - INFO - Datapoint 477
+2025-06-21 18:47:43,047 - result - INFO - got score from new prediction
+2025-06-21 18:47:43,047 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:47:43,048 - result - INFO - Datapoint 383
+2025-06-21 18:47:43,855 - result - INFO - got score from new prediction
+2025-06-21 18:47:43,855 - result - INFO - Score prediction: 4.0
+
+2025-06-21 18:47:43,855 - result - INFO - Datapoint 104
+2025-06-21 18:47:44,625 - result - INFO - got score from new prediction
+2025-06-21 18:47:44,625 - result - INFO - Score prediction: 5.0
+
+2025-06-21 18:47:44,625 - result - INFO - Datapoint 103
+2025-06-21 18:47:45,383 - result - INFO - got score from new prediction
+2025-06-21 18:47:45,383 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:47:45,383 - result - INFO - Datapoint 143
+2025-06-21 18:47:46,137 - result - INFO - got score from new prediction
+2025-06-21 18:47:46,137 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:47:46,138 - result - INFO - Datapoint 38
+2025-06-21 18:47:46,892 - result - INFO - got score from new prediction
+2025-06-21 18:47:46,892 - result - INFO - Score prediction: 2.0
+
+2025-06-21 18:47:46,892 - result - INFO - Datapoint 796
+2025-06-21 18:47:47,668 - result - INFO - got score from new prediction
+2025-06-21 18:47:47,668 - result - INFO - Score prediction: 2.0
+
+2025-06-21 18:47:47,668 - result - INFO - Datapoint 918
+2025-06-21 18:47:48,388 - result - INFO - got score from new prediction
+2025-06-21 18:47:48,388 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:47:48,388 - result - INFO - Datapoint 133
+2025-06-21 18:47:49,395 - result - INFO - got score from new prediction
+2025-06-21 18:47:49,395 - result - INFO - Score prediction: 2.6
+
+2025-06-21 18:47:49,395 - result - INFO - Datapoint 481
+2025-06-21 18:47:50,337 - result - INFO - got score from new prediction
+2025-06-21 18:47:50,337 - result - INFO - Score prediction: 2.0
+
+2025-06-21 18:47:50,338 - result - INFO - Datapoint 42
+2025-06-21 18:47:51,162 - result - INFO - got score from new prediction
+2025-06-21 18:47:51,162 - result - INFO - Score prediction: 2.0
+
+2025-06-21 18:47:51,162 - result - INFO - Datapoint 203
+2025-06-21 18:47:51,980 - result - INFO - got score from new prediction
+2025-06-21 18:47:51,980 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:47:51,981 - result - INFO - Datapoint 466
+2025-06-21 18:47:52,747 - result - INFO - got score from new prediction
+2025-06-21 18:47:52,747 - result - INFO - Score prediction: 2.0
+
+2025-06-21 18:47:52,747 - result - INFO - Datapoint 313
+2025-06-21 18:47:53,596 - result - INFO - got score from new prediction
+2025-06-21 18:47:53,596 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:47:53,596 - result - INFO - Datapoint 147
+2025-06-21 18:47:54,355 - result - INFO - got score from new prediction
+2025-06-21 18:47:54,355 - result - INFO - Score prediction: 4.0
+
+2025-06-21 18:47:54,355 - result - INFO - Datapoint 474
+2025-06-21 18:47:55,152 - result - INFO - got score from new prediction
+2025-06-21 18:47:55,152 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:47:55,152 - result - INFO - Datapoint 330
+2025-06-21 18:47:56,007 - result - INFO - got score from new prediction
+2025-06-21 18:47:56,007 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:47:56,008 - result - INFO - Datapoint 749
+2025-06-21 18:47:56,748 - result - INFO - got score from new prediction
+2025-06-21 18:47:56,748 - result - INFO - Score prediction: 2.0
+
+2025-06-21 18:47:56,748 - result - INFO - Datapoint 1001
+2025-06-21 18:47:57,495 - result - INFO - got score from new prediction
+2025-06-21 18:47:57,495 - result - INFO - Score prediction: 4.0
+
+2025-06-21 18:47:57,495 - result - INFO - Datapoint 929
+2025-06-21 18:47:58,296 - result - INFO - got score from new prediction
+2025-06-21 18:47:58,296 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:47:58,296 - result - INFO - Datapoint 960
+2025-06-21 18:47:59,136 - result - INFO - got score from new prediction
+2025-06-21 18:47:59,136 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:47:59,137 - result - INFO - Datapoint 189
+2025-06-21 18:48:02,701 - result - INFO - got score from new prediction
+2025-06-21 18:48:02,701 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:48:02,701 - result - INFO - Datapoint 37
+2025-06-21 18:48:03,534 - result - INFO - got score from new prediction
+2025-06-21 18:48:03,534 - result - INFO - Score prediction: 2.0
+
+2025-06-21 18:48:03,534 - result - INFO - Datapoint 353
+2025-06-21 18:48:04,289 - result - INFO - got score from new prediction
+2025-06-21 18:48:04,289 - result - INFO - Score prediction: 2.0
+
+2025-06-21 18:48:04,289 - result - INFO - Datapoint 945
+2025-06-21 18:48:05,045 - result - INFO - got score from new prediction
+2025-06-21 18:48:05,045 - result - INFO - Score prediction: 3.5
+
+2025-06-21 18:48:05,045 - result - INFO - Datapoint 866
+2025-06-21 18:48:06,001 - result - INFO - got score from new prediction
+2025-06-21 18:48:06,001 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:48:06,001 - result - INFO - Datapoint 15
+2025-06-21 18:48:06,929 - result - INFO - got score from new prediction
+2025-06-21 18:48:06,930 - result - INFO - Score prediction: 2.0
+
+2025-06-21 18:48:06,930 - result - INFO - Datapoint 671
+2025-06-21 18:48:07,877 - result - INFO - got score from new prediction
+2025-06-21 18:48:07,877 - result - INFO - Score prediction: 4.0
+
+2025-06-21 18:48:07,877 - result - INFO - Datapoint 711
+2025-06-21 18:48:08,710 - result - INFO - got score from new prediction
+2025-06-21 18:48:08,710 - result - INFO - Score prediction: 2.0
+
+2025-06-21 18:48:08,710 - result - INFO - Datapoint 926
+2025-06-21 18:48:09,500 - result - INFO - got score from new prediction
+2025-06-21 18:48:09,500 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:48:09,500 - result - INFO - Datapoint 338
+2025-06-21 18:48:10,253 - result - INFO - got score from new prediction
+2025-06-21 18:48:10,254 - result - INFO - Score prediction: 2.0
+
+2025-06-21 18:48:10,254 - result - INFO - Datapoint 301
+2025-06-21 18:48:11,028 - result - INFO - got score from new prediction
+2025-06-21 18:48:11,028 - result - INFO - Score prediction: 2.0
+
+2025-06-21 18:48:11,028 - result - INFO - Datapoint 968
+2025-06-21 18:48:11,851 - result - INFO - got score from new prediction
+2025-06-21 18:48:11,851 - result - INFO - Score prediction: 3.5
+
+2025-06-21 18:48:11,851 - result - INFO - Datapoint 209
+2025-06-21 18:48:12,672 - result - INFO - got score from new prediction
+2025-06-21 18:48:12,672 - result - INFO - Score prediction: 2.0
+
+2025-06-21 18:48:12,672 - result - INFO - Datapoint 314
+2025-06-21 18:48:13,491 - result - INFO - got score from new prediction
+2025-06-21 18:48:13,491 - result - INFO - Score prediction: 2.0
+
+2025-06-21 18:48:13,491 - result - INFO - Datapoint 593
+2025-06-21 18:48:14,274 - result - INFO - got score from new prediction
+2025-06-21 18:48:14,274 - result - INFO - Score prediction: 4.0
+
+2025-06-21 18:48:14,274 - result - INFO - Datapoint 861
+2025-06-21 18:48:15,133 - result - INFO - got score from new prediction
+2025-06-21 18:48:15,133 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:48:15,133 - result - INFO - Datapoint 901
+2025-06-21 18:48:15,884 - result - INFO - got score from new prediction
+2025-06-21 18:48:15,884 - result - INFO - Score prediction: 2.0
+
+2025-06-21 18:48:15,884 - result - INFO - Datapoint 810
+2025-06-21 18:48:16,729 - result - INFO - got score from new prediction
+2025-06-21 18:48:16,729 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:48:16,729 - result - INFO - Datapoint 302
+2025-06-21 18:48:17,494 - result - INFO - got score from new prediction
+2025-06-21 18:48:17,495 - result - INFO - Score prediction: 4.0
+
+2025-06-21 18:48:17,495 - result - INFO - Datapoint 266
+2025-06-21 18:48:18,400 - result - INFO - got score from new prediction
+2025-06-21 18:48:18,400 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:48:18,400 - result - INFO - predicted scores solo
+2025-06-21 18:48:18,402 - result - CRITICAL - 
+                                                  essay  score  y_pred  diff
+289   The author concludes the story with this parag...      1       3     2
+686   "The  author includes that sentence of the end...      1       3     2
+162   I believe he used this as the ending to ensure...      0       2     2
+659   "The story  “Winter Hibiscus"" by Minfong Ho. ...      2       3     1
+736   "In this story theauther deicides to end the s...      1       2     1
+483   "The author concludes the story with the afore...      2       4     2
+992   "In the story “Winter Hibiscus” by Minfong Ho,...      1       3     2
+172   I know the reason why the author concludes the...      1       2     1
+63    "The author concludes the story with this para...      1       3     2
+477   "The author concludes with this sentence for e...      2       3     1
+383   "“When they came back, Saeng vowed silently to...      3       4     1
+104   This is a powerful sentence that demonstrates ...      2       5     3
+103   "The author ends the story with this paragraph...      3       3     0
+143   "After reading “Winter Hibiscus, I can tell th...      1       3     2
+38    The author concludes the story with this parag...      0       2     2
+796   "The author concluded the story with the parag...      0       2     2
+918   "The author concludes story with that paragrap...      3       3     0
+133   "Saeng and her mother have to be determined to...      2       2     0
+481   "She concludes that paragraph with the story b...      0       2     2
+42    The auther cncludes the story with this paragr...      1       2     1
+203   "The author concludes the story like that to s...      2       3     1
+466   "The response that the author concludes the st...      0       2     2
+313   "The author concludes the story with they para...      2       3     1
+147   "The author concludes with this paragraph to s...      2       4     2
+474   "I believe that the author chose to conclude t...      3       3     0
+330   "The author most likely concludes the story wi...      1       3     2
+749   What l think the author was talking abount sno...      0       2     2
+1001  "The author concludes the story with this para...      2       4     2
+929   "I think the author ends the story like this b...      1       3     2
+960   "In the story “winter Hibiscus” the author Min...      3       3     0
+189   "The story “Winter Hibiscus” is about a young ...      1       3     2
+37    "The author concludes this story in the paragr...      1       2     1
+353   "The author uses this conclusion for a reason....      1       2     1
+945   "The author concludes the story with this para...      2       3     1
+866   "The author concluded this because she thinks ...      1       3     2
+15    In this story Saeng shows her mother how pasio...      0       2     2
+671   "The author concludes the story with the parag...      3       4     1
+711   "The author concludes this story with this par...      2       2     0
+926   "I think that the author concludes the story w...      2       3     1
+338   "I think  the author concluded the story like ...      0       2     2
+301   "In the story “Winter Hibiscus” by @CAPS1 Ho. ...      2       2     0
+968   "At the end of the story, winter Hibiscus, the...      2       3     1
+209   "The author views the hibiscus plant as a new ...      1       2     1
+314   "Authors use many techniques to improve their ...      0       2     2
+593   "The author concludes the story with this para...      2       4     2
+861   "The author concludes the story with that para...      1       3     2
+901   I think the author used this paragraph for the...      1       2     1
+810   "I beleive the author ends the story with this...      2       3     1
+302   "The author concludes the story with that para...      3       4     1
+266   "This paragraph represents an action that Saen...      3       3     0
+
+
+2025-06-21 18:48:18,403 - result - INFO - QWK of Set: 0.27527
+2025-06-21 18:48:18,403 - result - INFO - MSE of Set: 0.26444
+
+2025-06-21 18:48:18,403 - result - CRITICAL - ESSAY SET 5:
+
+2025-06-21 18:48:18,887 - result - INFO - score prediction started
+
+2025-06-21 18:48:18,887 - result - INFO - Datapoint 592
+2025-06-21 18:48:19,796 - result - INFO - got score from new prediction
+2025-06-21 18:48:19,796 - result - INFO - Score prediction: 2.5
+
+2025-06-21 18:48:19,796 - result - INFO - Datapoint 336
+2025-06-21 18:48:20,589 - result - INFO - got score from new prediction
+2025-06-21 18:48:20,589 - result - INFO - Score prediction: 2.0
+
+2025-06-21 18:48:20,589 - result - INFO - Datapoint 699
+2025-06-21 18:48:21,431 - result - INFO - got score from new prediction
+2025-06-21 18:48:21,431 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:48:21,431 - result - INFO - Datapoint 108
+2025-06-21 18:48:22,190 - result - INFO - got score from new prediction
+2025-06-21 18:48:22,190 - result - INFO - Score prediction: 2.0
+
+2025-06-21 18:48:22,190 - result - INFO - Datapoint 430
+2025-06-21 18:48:22,960 - result - INFO - got score from new prediction
+2025-06-21 18:48:22,960 - result - INFO - Score prediction: 4.5
+
+2025-06-21 18:48:22,960 - result - INFO - Datapoint 508
+2025-06-21 18:48:23,738 - result - INFO - got score from new prediction
+2025-06-21 18:48:23,738 - result - INFO - Score prediction: 5.0
+
+2025-06-21 18:48:23,738 - result - INFO - Datapoint 253
+2025-06-21 18:48:24,556 - result - INFO - got score from new prediction
+2025-06-21 18:48:24,556 - result - INFO - Score prediction: 2.0
+
+2025-06-21 18:48:24,556 - result - INFO - Datapoint 698
+2025-06-21 18:48:25,758 - result - INFO - got score from new prediction
+2025-06-21 18:48:25,758 - result - INFO - Score prediction: 5.0
+
+2025-06-21 18:48:25,759 - result - INFO - Datapoint 104
+2025-06-21 18:48:26,581 - result - INFO - got score from new prediction
+2025-06-21 18:48:26,581 - result - INFO - Score prediction: 2.0
+
+2025-06-21 18:48:26,581 - result - INFO - Datapoint 114
+2025-06-21 18:48:27,376 - result - INFO - got score from new prediction
+2025-06-21 18:48:27,376 - result - INFO - Score prediction: 5.0
+
+2025-06-21 18:48:27,376 - result - INFO - Datapoint 733
+2025-06-21 18:48:31,082 - result - INFO - got score from new prediction
+2025-06-21 18:48:31,082 - result - INFO - Score prediction: 5.0
+
+2025-06-21 18:48:31,082 - result - INFO - Datapoint 851
+2025-06-21 18:48:31,938 - result - INFO - got score from new prediction
+2025-06-21 18:48:31,938 - result - INFO - Score prediction: 5.0
+
+2025-06-21 18:48:31,938 - result - INFO - Datapoint 909
+2025-06-21 18:48:32,716 - result - INFO - got score from new prediction
+2025-06-21 18:48:32,716 - result - INFO - Score prediction: 2.0
+
+2025-06-21 18:48:32,716 - result - INFO - Datapoint 1005
+2025-06-21 18:48:35,082 - result - INFO - got score from new prediction
+2025-06-21 18:48:35,082 - result - INFO - Score prediction: 4.0
+
+2025-06-21 18:48:35,082 - result - INFO - Datapoint 201
+2025-06-21 18:48:35,922 - result - INFO - got score from new prediction
+2025-06-21 18:48:35,922 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:48:35,922 - result - INFO - Datapoint 40
+2025-06-21 18:48:36,750 - result - INFO - got score from new prediction
+2025-06-21 18:48:36,750 - result - INFO - Score prediction: 5.0
+
+2025-06-21 18:48:36,750 - result - INFO - Datapoint 665
+2025-06-21 18:48:37,557 - result - INFO - got score from new prediction
+2025-06-21 18:48:37,557 - result - INFO - Score prediction: 4.0
+
+2025-06-21 18:48:37,557 - result - INFO - Datapoint 196
+2025-06-21 18:48:38,344 - result - INFO - got score from new prediction
+2025-06-21 18:48:38,344 - result - INFO - Score prediction: 6.0
+
+2025-06-21 18:48:38,344 - result - INFO - Datapoint 279
+2025-06-21 18:48:39,088 - result - INFO - got score from new prediction
+2025-06-21 18:48:39,088 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:48:39,088 - result - INFO - Datapoint 597
+2025-06-21 18:48:39,966 - result - INFO - got score from new prediction
+2025-06-21 18:48:39,967 - result - INFO - Score prediction: 3.5
+
+2025-06-21 18:48:39,967 - result - INFO - Datapoint 370
+2025-06-21 18:48:40,836 - result - INFO - got score from new prediction
+2025-06-21 18:48:40,837 - result - INFO - Score prediction: 4.0
+
+2025-06-21 18:48:40,837 - result - INFO - Datapoint 804
+2025-06-21 18:48:41,664 - result - INFO - got score from new prediction
+2025-06-21 18:48:41,664 - result - INFO - Score prediction: 4.0
+
+2025-06-21 18:48:41,665 - result - INFO - Datapoint 305
+2025-06-21 18:48:42,451 - result - INFO - got score from new prediction
+2025-06-21 18:48:42,451 - result - INFO - Score prediction: 5.0
+
+2025-06-21 18:48:42,451 - result - INFO - Datapoint 461
+2025-06-21 18:48:43,320 - result - INFO - got score from new prediction
+2025-06-21 18:48:43,320 - result - INFO - Score prediction: 5.4
+
+2025-06-21 18:48:43,321 - result - INFO - Datapoint 100
+2025-06-21 18:48:44,059 - result - INFO - got score from new prediction
+2025-06-21 18:48:44,059 - result - INFO - Score prediction: 5.0
+
+2025-06-21 18:48:44,059 - result - INFO - Datapoint 650
+2025-06-21 18:48:44,873 - result - INFO - got score from new prediction
+2025-06-21 18:48:44,873 - result - INFO - Score prediction: 5.0
+
+2025-06-21 18:48:44,873 - result - INFO - Datapoint 789
+2025-06-21 18:48:45,820 - result - INFO - got score from new prediction
+2025-06-21 18:48:45,820 - result - INFO - Score prediction: 3.5
+
+2025-06-21 18:48:45,820 - result - INFO - Datapoint 755
+2025-06-21 18:48:46,577 - result - INFO - got score from new prediction
+2025-06-21 18:48:46,577 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:48:46,578 - result - INFO - Datapoint 36
+2025-06-21 18:48:47,477 - result - INFO - got score from new prediction
+2025-06-21 18:48:47,477 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:48:47,477 - result - INFO - Datapoint 923
+2025-06-21 18:48:48,220 - result - INFO - got score from new prediction
+2025-06-21 18:48:48,220 - result - INFO - Score prediction: 4.0
+
+2025-06-21 18:48:48,220 - result - INFO - Datapoint 1011
+2025-06-21 18:48:48,992 - result - INFO - got score from new prediction
+2025-06-21 18:48:48,993 - result - INFO - Score prediction: 5.0
+
+2025-06-21 18:48:48,993 - result - INFO - Datapoint 384
+2025-06-21 18:48:49,742 - result - INFO - got score from new prediction
+2025-06-21 18:48:49,742 - result - INFO - Score prediction: 3.5
+
+2025-06-21 18:48:49,742 - result - INFO - Datapoint 1051
+2025-06-21 18:48:50,474 - result - INFO - got score from new prediction
+2025-06-21 18:48:50,474 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:48:50,474 - result - INFO - Datapoint 940
+2025-06-21 18:48:51,380 - result - INFO - got score from new prediction
+2025-06-21 18:48:51,380 - result - INFO - Score prediction: 4.0
+
+2025-06-21 18:48:51,380 - result - INFO - Datapoint 398
+2025-06-21 18:48:52,109 - result - INFO - got score from new prediction
+2025-06-21 18:48:52,109 - result - INFO - Score prediction: 5.0
+
+2025-06-21 18:48:52,109 - result - INFO - Datapoint 826
+2025-06-21 18:48:52,886 - result - INFO - got score from new prediction
+2025-06-21 18:48:52,886 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:48:52,886 - result - INFO - Datapoint 991
+2025-06-21 18:48:54,282 - result - INFO - got score from new prediction
+2025-06-21 18:48:54,282 - result - INFO - Score prediction: 4.0
+
+2025-06-21 18:48:54,283 - result - INFO - Datapoint 77
+2025-06-21 18:48:55,028 - result - INFO - got score from new prediction
+2025-06-21 18:48:55,028 - result - INFO - Score prediction: 5.0
+
+2025-06-21 18:48:55,028 - result - INFO - Datapoint 133
+2025-06-21 18:48:55,845 - result - INFO - got score from new prediction
+2025-06-21 18:48:55,845 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:48:55,845 - result - INFO - Datapoint 37
+2025-06-21 18:48:56,699 - result - INFO - got score from new prediction
+2025-06-21 18:48:56,699 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:48:56,699 - result - INFO - Datapoint 397
+2025-06-21 18:48:57,464 - result - INFO - got score from new prediction
+2025-06-21 18:48:57,464 - result - INFO - Score prediction: 5.0
+
+2025-06-21 18:48:57,465 - result - INFO - Datapoint 974
+2025-06-21 18:48:58,258 - result - INFO - got score from new prediction
+2025-06-21 18:48:58,258 - result - INFO - Score prediction: 4.0
+
+2025-06-21 18:48:58,258 - result - INFO - Datapoint 667
+2025-06-21 18:48:59,089 - result - INFO - got score from new prediction
+2025-06-21 18:48:59,089 - result - INFO - Score prediction: 5.0
+
+2025-06-21 18:48:59,089 - result - INFO - Datapoint 1020
+2025-06-21 18:48:59,869 - result - INFO - got score from new prediction
+2025-06-21 18:48:59,869 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:48:59,869 - result - INFO - Datapoint 425
+2025-06-21 18:49:00,617 - result - INFO - got score from new prediction
+2025-06-21 18:49:00,617 - result - INFO - Score prediction: 5.5
+
+2025-06-21 18:49:00,617 - result - INFO - Datapoint 371
+2025-06-21 18:49:01,397 - result - INFO - got score from new prediction
+2025-06-21 18:49:01,397 - result - INFO - Score prediction: 4.0
+
+2025-06-21 18:49:01,397 - result - INFO - Datapoint 527
+2025-06-21 18:49:02,162 - result - INFO - got score from new prediction
+2025-06-21 18:49:02,162 - result - INFO - Score prediction: 5.0
+
+2025-06-21 18:49:02,162 - result - INFO - Datapoint 1074
+2025-06-21 18:49:02,900 - result - INFO - got score from new prediction
+2025-06-21 18:49:02,900 - result - INFO - Score prediction: 5.0
+
+2025-06-21 18:49:02,900 - result - INFO - Datapoint 872
+2025-06-21 18:49:03,698 - result - INFO - got score from new prediction
+2025-06-21 18:49:03,698 - result - INFO - Score prediction: 4.0
+
+2025-06-21 18:49:03,698 - result - INFO - Datapoint 289
+2025-06-21 18:49:04,807 - result - INFO - got score from new prediction
+2025-06-21 18:49:04,807 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:49:04,808 - result - INFO - predicted scores solo
+2025-06-21 18:49:04,810 - result - CRITICAL - 
+                                                  essay  score  y_pred  diff
+592   "In the memoir ""Narciso @CAPS1"" by the Bluep...      2       2     0
+336   "In the story ""Narciso Rodriguez"" written by...      2       2     0
+699   "In the memoir, ""@PERSON1"" from Home: The @C...      1       3     2
+108   The mood the other Created was how happy narci...      2       2     0
+430   "The mood created by the author in the memoir ...      2       4     2
+508   "The mood that the author creates in the memoi...      2       5     3
+253   The title of the story is Narciso Rodriguez. T...      1       2     1
+698   "The authors mood of the memoir is that @CAPS1...      3       5     2
+104   "The Originally from cuba arrived in the Unite...      1       2     1
+114   "The mood in this memoir is gratefulness. This...      4       5     1
+733   "In the memoir, ""Narciso Rodriguez from Home:...      2       5     3
+851   "Narciso Rodriguez creates a mood of happiness...      4       5     1
+909   The mood created by the author in the memoir w...      1       2     1
+1005  "Home: The Blueprints to Our Lives is a wonder...      3       4     1
+201   "the mood created in the memoir were all diffe...      1       3     2
+40    "In this memoir of the author creates a clear ...      3       5     2
+665   "In this memoir the mood varies. In paragraphs...      3       4     1
+196   "The author of this memoir creates a warm, lov...      4       6     2
+279   The author created many different moods in thi...      2       3     1
+597   "I beleive the mood that sets off in the beggi...      3       3     0
+370   "The authors mood in the memoir @PERSON1 is th...      3       4     1
+804   The mood in the memoir is happy and thankful. ...      2       4     2
+305   "In the memoir. from ""Home The Blueprints of ...      3       5     2
+461   "The mood created in the memoir, ""Narciso Rod...      4       5     1
+100   "In the memoir, the author created a mood. The...      3       5     2
+650   "The mood created in the memoir is I think com...      3       5     2
+789   "The mood created by the author in the memoir ...      2       3     1
+755   "The mood created by Narciso Rodriguez in the ...      2       3     1
+36    I think the author's mood was kind of like @CA...      2       3     1
+923   "The mood in the memoir is very uplifting. The...      2       4     2
+1011  "I think that there is a warm mood in the memo...      2       5     3
+384   "No matter what nationality you are you can ge...      2       3     1
+1051  "Narciso Rodriguez tried to create a warm feel...      2       3     1
+940   "In this paragraph I'm going to tell you the m...      2       4     2
+398   "The mood Narciso Rodriguez is trying to portr...      2       5     3
+826   The mood created by the auther sounds like he'...      2       3     1
+991   "the mood that the author created is happiness...      3       4     1
+77    "The mood created in this story was happiness ...      2       5     3
+133   The mood created by the auther in the memoir i...      2       3     1
+37    "The mood created by the authar was warmthness...      3       3     0
+397   "This @CAPS1 shows a lot of different types of...      4       5     1
+974   "The mood of the memoir I believe to be gratef...      2       4     2
+667   "In the memoir Narciso Rodriguez from Home: Th...      3       5     2
+1020  "The mood created by the author is your family...      2       3     1
+425   "In this memoir, the author creates a very cal...      3       5     2
+371   "In this memoir, there are moods created by th...      3       4     1
+527   "In this memoir, the mood created by the autho...      3       5     2
+1074  "The mood created by the author in the memoir ...      2       5     3
+872   "The mood that is created by the author is joy...      2       4     2
+289   The mood of the memoir is very appreciative. T...      1       3     2
+
+
+2025-06-21 18:49:04,811 - result - INFO - QWK of Set: 0.28488
+2025-06-21 18:49:04,812 - result - INFO - MSE of Set: 0.18375
+
+2025-06-21 18:49:04,812 - result - CRITICAL - ESSAY SET 6:
+
+2025-06-21 18:49:05,293 - result - INFO - score prediction started
+
+2025-06-21 18:49:05,293 - result - INFO - Datapoint 959
+2025-06-21 18:49:07,786 - result - INFO - got score from new prediction
+2025-06-21 18:49:07,786 - result - INFO - Score prediction: 6.0
+
+2025-06-21 18:49:07,786 - result - INFO - Datapoint 40
+2025-06-21 18:49:08,703 - result - INFO - got score from new prediction
+2025-06-21 18:49:08,703 - result - INFO - Score prediction: 7.0
+
+2025-06-21 18:49:08,703 - result - INFO - Datapoint 1055
+2025-06-21 18:49:09,522 - result - INFO - got score from new prediction
+2025-06-21 18:49:09,522 - result - INFO - Score prediction: 5.0
+
+2025-06-21 18:49:09,522 - result - INFO - Datapoint 1008
+2025-06-21 18:49:10,284 - result - INFO - got score from new prediction
+2025-06-21 18:49:10,285 - result - INFO - Score prediction: 0.0
+
+2025-06-21 18:49:10,285 - result - INFO - Datapoint 383
+2025-06-21 18:49:11,069 - result - INFO - got score from new prediction
+2025-06-21 18:49:11,069 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:49:11,069 - result - INFO - Datapoint 248
+2025-06-21 18:49:11,825 - result - INFO - got score from new prediction
+2025-06-21 18:49:11,825 - result - INFO - Score prediction: 5.5
+
+2025-06-21 18:49:11,825 - result - INFO - Datapoint 234
+2025-06-21 18:49:12,627 - result - INFO - got score from new prediction
+2025-06-21 18:49:12,627 - result - INFO - Score prediction: 5.0
+
+2025-06-21 18:49:12,627 - result - INFO - Datapoint 572
+2025-06-21 18:49:13,471 - result - INFO - got score from new prediction
+2025-06-21 18:49:13,471 - result - INFO - Score prediction: 6.0
+
+2025-06-21 18:49:13,471 - result - INFO - Datapoint 585
+2025-06-21 18:49:14,396 - result - INFO - got score from new prediction
+2025-06-21 18:49:14,396 - result - INFO - Score prediction: 4.0
+
+2025-06-21 18:49:14,397 - result - INFO - Datapoint 972
+2025-06-21 18:49:15,215 - result - INFO - got score from new prediction
+2025-06-21 18:49:15,215 - result - INFO - Score prediction: 4.0
+
+2025-06-21 18:49:15,215 - result - INFO - Datapoint 796
+2025-06-21 18:49:15,975 - result - INFO - got score from new prediction
+2025-06-21 18:49:15,975 - result - INFO - Score prediction: 6.0
+
+2025-06-21 18:49:15,975 - result - INFO - Datapoint 1074
+2025-06-21 18:49:16,850 - result - INFO - got score from new prediction
+2025-06-21 18:49:16,850 - result - INFO - Score prediction: 2.5
+
+2025-06-21 18:49:16,851 - result - INFO - Datapoint 36
+2025-06-21 18:49:17,662 - result - INFO - got score from new prediction
+2025-06-21 18:49:17,662 - result - INFO - Score prediction: 7.5
+
+2025-06-21 18:49:17,662 - result - INFO - Datapoint 634
+2025-06-21 18:49:18,474 - result - INFO - got score from new prediction
+2025-06-21 18:49:18,474 - result - INFO - Score prediction: 6.0
+
+2025-06-21 18:49:18,475 - result - INFO - Datapoint 787
+2025-06-21 18:49:19,259 - result - INFO - got score from new prediction
+2025-06-21 18:49:19,259 - result - INFO - Score prediction: 4.0
+
+2025-06-21 18:49:19,259 - result - INFO - Datapoint 397
+2025-06-21 18:49:20,227 - result - INFO - got score from new prediction
+2025-06-21 18:49:20,227 - result - INFO - Score prediction: 5.0
+
+2025-06-21 18:49:20,227 - result - INFO - Datapoint 410
+2025-06-21 18:49:21,167 - result - INFO - got score from new prediction
+2025-06-21 18:49:21,167 - result - INFO - Score prediction: 4.0
+
+2025-06-21 18:49:21,167 - result - INFO - Datapoint 103
+2025-06-21 18:49:22,042 - result - INFO - got score from new prediction
+2025-06-21 18:49:22,042 - result - INFO - Score prediction: 5.0
+
+2025-06-21 18:49:22,042 - result - INFO - Datapoint 377
+2025-06-21 18:49:22,871 - result - INFO - got score from new prediction
+2025-06-21 18:49:22,871 - result - INFO - Score prediction: 6.0
+
+2025-06-21 18:49:22,871 - result - INFO - Datapoint 267
+2025-06-21 18:49:23,710 - result - INFO - got score from new prediction
+2025-06-21 18:49:23,710 - result - INFO - Score prediction: 4.0
+
+2025-06-21 18:49:23,710 - result - INFO - Datapoint 1007
+2025-06-21 18:49:24,672 - result - INFO - got score from new prediction
+2025-06-21 18:49:24,672 - result - INFO - Score prediction: 6.0
+
+2025-06-21 18:49:24,672 - result - INFO - Datapoint 304
+2025-06-21 18:49:25,468 - result - INFO - got score from new prediction
+2025-06-21 18:49:25,468 - result - INFO - Score prediction: 5.0
+
+2025-06-21 18:49:25,468 - result - INFO - Datapoint 673
+2025-06-21 18:49:26,246 - result - INFO - got score from new prediction
+2025-06-21 18:49:26,246 - result - INFO - Score prediction: 7.5
+
+2025-06-21 18:49:26,246 - result - INFO - Datapoint 912
+2025-06-21 18:49:27,171 - result - INFO - got score from new prediction
+2025-06-21 18:49:27,171 - result - INFO - Score prediction: 5.0
+
+2025-06-21 18:49:27,171 - result - INFO - Datapoint 854
+2025-06-21 18:49:27,980 - result - INFO - got score from new prediction
+2025-06-21 18:49:27,980 - result - INFO - Score prediction: 4.0
+
+2025-06-21 18:49:27,980 - result - INFO - Datapoint 1073
+2025-06-21 18:49:28,761 - result - INFO - got score from new prediction
+2025-06-21 18:49:28,761 - result - INFO - Score prediction: 5.5
+
+2025-06-21 18:49:28,761 - result - INFO - Datapoint 424
+2025-06-21 18:49:29,581 - result - INFO - got score from new prediction
+2025-06-21 18:49:29,581 - result - INFO - Score prediction: 5.0
+
+2025-06-21 18:49:29,581 - result - INFO - Datapoint 681
+2025-06-21 18:49:30,487 - result - INFO - got score from new prediction
+2025-06-21 18:49:30,487 - result - INFO - Score prediction: 5.5
+
+2025-06-21 18:49:30,487 - result - INFO - Datapoint 632
+2025-06-21 18:49:32,087 - result - INFO - got score from new prediction
+2025-06-21 18:49:32,087 - result - INFO - Score prediction: 3.5
+
+2025-06-21 18:49:32,088 - result - INFO - Datapoint 1071
+2025-06-21 18:49:32,902 - result - INFO - got score from new prediction
+2025-06-21 18:49:32,902 - result - INFO - Score prediction: 6.0
+
+2025-06-21 18:49:32,902 - result - INFO - Datapoint 518
+2025-06-21 18:49:33,780 - result - INFO - got score from new prediction
+2025-06-21 18:49:33,780 - result - INFO - Score prediction: 5.5
+
+2025-06-21 18:49:33,780 - result - INFO - Datapoint 172
+2025-06-21 18:49:34,521 - result - INFO - got score from new prediction
+2025-06-21 18:49:34,521 - result - INFO - Score prediction: 5.5
+
+2025-06-21 18:49:34,521 - result - INFO - Datapoint 444
+2025-06-21 18:49:35,311 - result - INFO - got score from new prediction
+2025-06-21 18:49:35,311 - result - INFO - Score prediction: 5.0
+
+2025-06-21 18:49:35,311 - result - INFO - Datapoint 536
+2025-06-21 18:49:36,487 - result - INFO - got score from new prediction
+2025-06-21 18:49:36,487 - result - INFO - Score prediction: 5.0
+
+2025-06-21 18:49:36,488 - result - INFO - Datapoint 1012
+2025-06-21 18:49:37,234 - result - INFO - got score from new prediction
+2025-06-21 18:49:37,234 - result - INFO - Score prediction: 5.0
+
+2025-06-21 18:49:37,234 - result - INFO - Datapoint 731
+2025-06-21 18:49:38,025 - result - INFO - got score from new prediction
+2025-06-21 18:49:38,025 - result - INFO - Score prediction: 6.6
+
+2025-06-21 18:49:38,025 - result - INFO - Datapoint 143
+2025-06-21 18:49:38,810 - result - INFO - got score from new prediction
+2025-06-21 18:49:38,810 - result - INFO - Score prediction: 5.34
+
+2025-06-21 18:49:38,810 - result - INFO - Datapoint 1017
+2025-06-21 18:49:39,741 - result - INFO - got score from new prediction
+2025-06-21 18:49:39,742 - result - INFO - Score prediction: 6.0
+
+2025-06-21 18:49:39,742 - result - INFO - Datapoint 37
+2025-06-21 18:49:40,496 - result - INFO - got score from new prediction
+2025-06-21 18:49:40,496 - result - INFO - Score prediction: 7.0
+
+2025-06-21 18:49:40,496 - result - INFO - Datapoint 387
+2025-06-21 18:49:41,352 - result - INFO - got score from new prediction
+2025-06-21 18:49:41,352 - result - INFO - Score prediction: 5.0
+
+2025-06-21 18:49:41,353 - result - INFO - Datapoint 336
+2025-06-21 18:49:42,108 - result - INFO - got score from new prediction
+2025-06-21 18:49:42,108 - result - INFO - Score prediction: 5.0
+
+2025-06-21 18:49:42,108 - result - INFO - Datapoint 935
+2025-06-21 18:49:42,921 - result - INFO - got score from new prediction
+2025-06-21 18:49:42,921 - result - INFO - Score prediction: 3.0
+
+2025-06-21 18:49:42,921 - result - INFO - Datapoint 77
+2025-06-21 18:49:43,700 - result - INFO - got score from new prediction
+2025-06-21 18:49:43,700 - result - INFO - Score prediction: 4.0
+
+2025-06-21 18:49:43,701 - result - INFO - Datapoint 834
+2025-06-21 18:49:44,454 - result - INFO - got score from new prediction
+2025-06-21 18:49:44,454 - result - INFO - Score prediction: 6.0
+
+2025-06-21 18:49:44,454 - result - INFO - Datapoint 954
+2025-06-21 18:49:45,318 - result - INFO - got score from new prediction
+2025-06-21 18:49:45,318 - result - INFO - Score prediction: 6.0
+
+2025-06-21 18:49:45,318 - result - INFO - Datapoint 841
+2025-06-21 18:49:46,237 - result - INFO - got score from new prediction
+2025-06-21 18:49:46,237 - result - INFO - Score prediction: 6.0
+
+2025-06-21 18:49:46,237 - result - INFO - Datapoint 611
+2025-06-21 18:49:47,032 - result - INFO - got score from new prediction
+2025-06-21 18:49:47,032 - result - INFO - Score prediction: 6.0
+
+2025-06-21 18:49:47,033 - result - INFO - Datapoint 848
+2025-06-21 18:49:47,838 - result - INFO - got score from new prediction
+2025-06-21 18:49:47,838 - result - INFO - Score prediction: 7.0
+
+2025-06-21 18:49:47,838 - result - INFO - Datapoint 42
+2025-06-21 18:49:48,615 - result - INFO - got score from new prediction
+2025-06-21 18:49:48,615 - result - INFO - Score prediction: 6.0
+
+2025-06-21 18:49:48,615 - result - INFO - Datapoint 89
+2025-06-21 18:49:49,364 - result - INFO - got score from new prediction
+2025-06-21 18:49:49,364 - result - INFO - Score prediction: 6.0
+
+2025-06-21 18:49:49,364 - result - INFO - predicted scores solo
+2025-06-21 18:49:49,367 - result - CRITICAL - 
+                                                  essay  score  y_pred  diff
+959   "When attempting to allow dirigibles to dock o...      3       6     3
+40    "In attempting to allow dirigibles to dock on ...      3       7     4
+1055  "Some of the obstacles facing the builders was...      2       5     3
+1008  "They get good idea to make that building, but...      0       0     0
+383   "Most of the obsticles the builders of the Emp...      2       3     1
+248   "The obstacles the builders of the @ORGANIZATI...      4       5     1
+234   "In the excerp ""The Mooring Mast"", by @ORGAN...      3       5     2
+572   "The builders of the Empire State building fac...      3       6     3
+585   "One problem that the builders has was that th...      3       4     1
+972   "In ""The Mooring Mast"" by Marcia Amidon @CAP...      2       4     2
+796   The builders faced many obstacles in trying to...      2       6     4
+1074  "Based on the excerpt ""The Mooring mast"" by ...      1       2     1
+36    "The builders of the Empire State Building's m...      3       7     4
+634   "Based on the excerpt, the obstacles the build...      4       6     2
+787   "Besides The facts That docking dirigibles on ...      3       4     1
+397   "During the Building of the Mast, the builders...      3       5     2
+410   "In the excerpt ""THE MOORING MAST"" by Marcia...      3       4     1
+103   "On @DATE1, The Empire State Building was anno...      3       5     2
+377   "There were many obstacles that the builders o...      4       6     2
+267   "In the excerpt ""The Mooring Mast"" by Marcia...      2       4     2
+1007  "The builders faced multiple obsticles in atte...      3       6     3
+304   "The builders of the Empire State Building fac...      3       5     2
+673   "The architects of the Empire State Building f...      4       7     3
+912   "When building the Empire State Building, the ...      3       5     2
+854   "In The Mooring Mast by Marcia Amidon Lüsted, ...      2       4     2
+1073  "The weight was an obstacle they faced. ""A th...      4       5     1
+424   "In the excerpt ""The Mooring Mast"" by Marcia...      1       5     4
+681   "There were many obstacles the builders of the...      3       5     2
+632   "The Empire State Building was built with grea...      2       3     1
+1071  "The builders of the Empire State building fac...      4       6     2
+518   "In the excerpt ""The Mooring Mast"" written b...      4       5     1
+172   "In @DATE1, the Empire State Building was cons...      3       5     2
+444   "The dirigibles were not able to dock on the m...      2       5     3
+536   "When building the empire state Building, the ...      3       5     2
+1012  "There were many obstacles the builders of the...      2       5     3
+731   "The builders of the Empire State Building fac...      3       6     3
+143   "During the attemp in building a docking stati...      4       5     1
+1017  "The dream of the aviation pioneers of docking...      3       6     3
+37    "In order for the Empire State Building to doc...      4       7     3
+387   "In the excerpt ""The Mooring Mast"" by Marcia...      3       5     2
+336   "The Mooring Mast by @ORGANIZATION1, the build...      3       5     2
+935   "Obstacles the builders haded to face with the...      1       3     2
+77    The obstacles the builders of the Empire State...      3       4     1
+834   "When building the Empire State Building, the ...      3       6     3
+954   "The builders of the Empire State Building fac...      3       6     3
+841   "Although the builders tried hard to make thei...      3       6     3
+611   "In the excerpt ""The Mooring Mast"" by Marcia...      4       6     2
+848   "The Mooring Mast by @ORGANIZATION2 outlines t...      4       7     3
+42    "The task of trying to allow dirigibles to doc...      3       6     3
+89    "The plan to allow dirigibles to dock on the E...      4       6     2
+
+
+2025-06-21 18:49:49,367 - result - INFO - QWK of Set: 0.22903
+2025-06-21 18:49:49,368 - result - INFO - MSE of Set: 0.35750
+
+2025-06-21 18:49:49,368 - result - CRITICAL - ESSAY SET 7:
+
+2025-06-21 18:49:49,850 - result - INFO - score prediction started
+
+2025-06-21 18:49:49,850 - result - INFO - Datapoint 935
+2025-06-21 18:49:50,734 - result - INFO - got score from new prediction
+2025-06-21 18:49:50,734 - result - INFO - Score prediction: 28.0
+
+2025-06-21 18:49:50,734 - result - INFO - Datapoint 372
+2025-06-21 18:49:51,636 - result - INFO - got score from new prediction
+2025-06-21 18:49:51,636 - result - INFO - Score prediction: 24.0
+
+2025-06-21 18:49:51,636 - result - INFO - Datapoint 142
+2025-06-21 18:49:52,496 - result - INFO - got score from new prediction
+2025-06-21 18:49:52,496 - result - INFO - Score prediction: 12.0
+
+2025-06-21 18:49:52,496 - result - INFO - Datapoint 273
+2025-06-21 18:49:53,319 - result - INFO - got score from new prediction
+2025-06-21 18:49:53,319 - result - INFO - Score prediction: 16.0
+
+2025-06-21 18:49:53,319 - result - INFO - Datapoint 44
+2025-06-21 18:49:54,079 - result - INFO - got score from new prediction
+2025-06-21 18:49:54,079 - result - INFO - Score prediction: 18.0
+
+2025-06-21 18:49:54,079 - result - INFO - Datapoint 201
+2025-06-21 18:49:54,824 - result - INFO - got score from new prediction
+2025-06-21 18:49:54,824 - result - INFO - Score prediction: 10.0
+
+2025-06-21 18:49:54,824 - result - INFO - Datapoint 352
+2025-06-21 18:49:55,585 - result - INFO - got score from new prediction
+2025-06-21 18:49:55,585 - result - INFO - Score prediction: 12.0
+
+2025-06-21 18:49:55,585 - result - INFO - Datapoint 340
+2025-06-21 18:49:56,409 - result - INFO - got score from new prediction
+2025-06-21 18:49:56,410 - result - INFO - Score prediction: 12.0
+
+2025-06-21 18:49:56,410 - result - INFO - Datapoint 808
+2025-06-21 18:49:57,206 - result - INFO - got score from new prediction
+2025-06-21 18:49:57,206 - result - INFO - Score prediction: 16.0
+
+2025-06-21 18:49:57,206 - result - INFO - Datapoint 15
+2025-06-21 18:49:58,087 - result - INFO - got score from new prediction
+2025-06-21 18:49:58,087 - result - INFO - Score prediction: 12.0
+
+2025-06-21 18:49:58,087 - result - INFO - Datapoint 167
+2025-06-21 18:49:58,899 - result - INFO - got score from new prediction
+2025-06-21 18:49:58,900 - result - INFO - Score prediction: 18.0
+
+2025-06-21 18:49:58,900 - result - INFO - Datapoint 297
+2025-06-21 18:49:59,661 - result - INFO - got score from new prediction
+2025-06-21 18:49:59,661 - result - INFO - Score prediction: 12.0
+
+2025-06-21 18:49:59,661 - result - INFO - Datapoint 93
+2025-06-21 18:50:00,439 - result - INFO - got score from new prediction
+2025-06-21 18:50:00,439 - result - INFO - Score prediction: 28.0
+
+2025-06-21 18:50:00,439 - result - INFO - Datapoint 821
+2025-06-21 18:50:01,181 - result - INFO - got score from new prediction
+2025-06-21 18:50:01,181 - result - INFO - Score prediction: 20.0
+
+2025-06-21 18:50:01,181 - result - INFO - Datapoint 183
+2025-06-21 18:50:01,972 - result - INFO - got score from new prediction
+2025-06-21 18:50:01,972 - result - INFO - Score prediction: 28.0
+
+2025-06-21 18:50:01,972 - result - INFO - Datapoint 37
+2025-06-21 18:50:02,775 - result - INFO - got score from new prediction
+2025-06-21 18:50:02,775 - result - INFO - Score prediction: 14.0
+
+2025-06-21 18:50:02,776 - result - INFO - Datapoint 38
+2025-06-21 18:50:03,592 - result - INFO - got score from new prediction
+2025-06-21 18:50:03,592 - result - INFO - Score prediction: 12.0
+
+2025-06-21 18:50:03,592 - result - INFO - Datapoint 875
+2025-06-21 18:50:04,385 - result - INFO - got score from new prediction
+2025-06-21 18:50:04,385 - result - INFO - Score prediction: 12.0
+
+2025-06-21 18:50:04,385 - result - INFO - Datapoint 518
+2025-06-21 18:50:05,113 - result - INFO - got score from new prediction
+2025-06-21 18:50:05,113 - result - INFO - Score prediction: 24.0
+
+2025-06-21 18:50:05,113 - result - INFO - Datapoint 414
+2025-06-21 18:50:05,883 - result - INFO - got score from new prediction
+2025-06-21 18:50:05,883 - result - INFO - Score prediction: 22.0
+
+2025-06-21 18:50:05,883 - result - INFO - Datapoint 179
+2025-06-21 18:50:06,698 - result - INFO - got score from new prediction
+2025-06-21 18:50:06,698 - result - INFO - Score prediction: 16.0
+
+2025-06-21 18:50:06,698 - result - INFO - Datapoint 774
+2025-06-21 18:50:07,546 - result - INFO - got score from new prediction
+2025-06-21 18:50:07,546 - result - INFO - Score prediction: 24.0
+
+2025-06-21 18:50:07,546 - result - INFO - Datapoint 421
+2025-06-21 18:50:08,325 - result - INFO - got score from new prediction
+2025-06-21 18:50:08,325 - result - INFO - Score prediction: 4.0
+
+2025-06-21 18:50:08,325 - result - INFO - Datapoint 862
+2025-06-21 18:50:09,300 - result - INFO - got score from new prediction
+2025-06-21 18:50:09,300 - result - INFO - Score prediction: 24.0
+
+2025-06-21 18:50:09,300 - result - INFO - Datapoint 579
+2025-06-21 18:50:10,984 - result - INFO - got score from new prediction
+2025-06-21 18:50:10,984 - result - INFO - Score prediction: 10.0
+
+2025-06-21 18:50:10,984 - result - INFO - Datapoint 512
+2025-06-21 18:50:11,798 - result - INFO - got score from new prediction
+2025-06-21 18:50:11,798 - result - INFO - Score prediction: 24.0
+
+2025-06-21 18:50:11,798 - result - INFO - Datapoint 647
+2025-06-21 18:50:12,686 - result - INFO - got score from new prediction
+2025-06-21 18:50:12,686 - result - INFO - Score prediction: 18.0
+
+2025-06-21 18:50:12,686 - result - INFO - Datapoint 652
+2025-06-21 18:50:13,500 - result - INFO - got score from new prediction
+2025-06-21 18:50:13,501 - result - INFO - Score prediction: 22.0
+
+2025-06-21 18:50:13,501 - result - INFO - Datapoint 780
+2025-06-21 18:50:14,266 - result - INFO - got score from new prediction
+2025-06-21 18:50:14,266 - result - INFO - Score prediction: 26.0
+
+2025-06-21 18:50:14,267 - result - INFO - Datapoint 873
+2025-06-21 18:50:15,890 - result - INFO - got score from new prediction
+2025-06-21 18:50:15,890 - result - INFO - Score prediction: 40.0
+
+2025-06-21 18:50:15,890 - result - INFO - Datapoint 826
+2025-06-21 18:50:16,702 - result - INFO - got score from new prediction
+2025-06-21 18:50:16,702 - result - INFO - Score prediction: 24.0
+
+2025-06-21 18:50:16,702 - result - INFO - Datapoint 503
+2025-06-21 18:50:17,624 - result - INFO - got score from new prediction
+2025-06-21 18:50:17,624 - result - INFO - Score prediction: 30.0
+
+2025-06-21 18:50:17,624 - result - INFO - Datapoint 234
+2025-06-21 18:50:18,429 - result - INFO - got score from new prediction
+2025-06-21 18:50:18,429 - result - INFO - Score prediction: 28.0
+
+2025-06-21 18:50:18,429 - result - INFO - Datapoint 670
+2025-06-21 18:50:19,254 - result - INFO - got score from new prediction
+2025-06-21 18:50:19,254 - result - INFO - Score prediction: 16.0
+
+2025-06-21 18:50:19,254 - result - INFO - Datapoint 782
+2025-06-21 18:50:20,094 - result - INFO - got score from new prediction
+2025-06-21 18:50:20,094 - result - INFO - Score prediction: 10.0
+
+2025-06-21 18:50:20,094 - result - INFO - Datapoint 838
+2025-06-21 18:50:21,044 - result - INFO - got score from new prediction
+2025-06-21 18:50:21,045 - result - INFO - Score prediction: 12.0
+
+2025-06-21 18:50:21,045 - result - INFO - Datapoint 330
+2025-06-21 18:50:21,840 - result - INFO - got score from new prediction
+2025-06-21 18:50:21,840 - result - INFO - Score prediction: 20.0
+
+2025-06-21 18:50:21,840 - result - INFO - Datapoint 703
+2025-06-21 18:50:22,623 - result - INFO - got score from new prediction
+2025-06-21 18:50:22,623 - result - INFO - Score prediction: 20.0
+
+2025-06-21 18:50:22,623 - result - INFO - Datapoint 483
+2025-06-21 18:50:23,388 - result - INFO - got score from new prediction
+2025-06-21 18:50:23,388 - result - INFO - Score prediction: 16.0
+
+2025-06-21 18:50:23,388 - result - INFO - Datapoint 374
+2025-06-21 18:50:24,178 - result - INFO - got score from new prediction
+2025-06-21 18:50:24,178 - result - INFO - Score prediction: 12.0
+
+2025-06-21 18:50:24,179 - result - INFO - Datapoint 604
+2025-06-21 18:50:24,971 - result - INFO - got score from new prediction
+2025-06-21 18:50:24,971 - result - INFO - Score prediction: 18.0
+
+2025-06-21 18:50:24,971 - result - INFO - Datapoint 293
+2025-06-21 18:50:25,801 - result - INFO - got score from new prediction
+2025-06-21 18:50:25,801 - result - INFO - Score prediction: 6.0
+
+2025-06-21 18:50:25,801 - result - INFO - Datapoint 14
+2025-06-21 18:50:26,590 - result - INFO - got score from new prediction
+2025-06-21 18:50:26,590 - result - INFO - Score prediction: 14.0
+
+2025-06-21 18:50:26,590 - result - INFO - Datapoint 316
+2025-06-21 18:50:27,368 - result - INFO - got score from new prediction
+2025-06-21 18:50:27,368 - result - INFO - Score prediction: 24.0
+
+2025-06-21 18:50:27,368 - result - INFO - Datapoint 752
+2025-06-21 18:50:28,100 - result - INFO - got score from new prediction
+2025-06-21 18:50:28,101 - result - INFO - Score prediction: 18.0
+
+2025-06-21 18:50:28,101 - result - INFO - Datapoint 108
+2025-06-21 18:50:28,890 - result - INFO - got score from new prediction
+2025-06-21 18:50:28,890 - result - INFO - Score prediction: 14.0
+
+2025-06-21 18:50:28,890 - result - INFO - Datapoint 656
+2025-06-21 18:50:29,692 - result - INFO - got score from new prediction
+2025-06-21 18:50:29,692 - result - INFO - Score prediction: 18.0
+
+2025-06-21 18:50:29,692 - result - INFO - Datapoint 517
+2025-06-21 18:50:30,471 - result - INFO - got score from new prediction
+2025-06-21 18:50:30,471 - result - INFO - Score prediction: 14.0
+
+2025-06-21 18:50:30,472 - result - INFO - Datapoint 404
+2025-06-21 18:50:31,309 - result - INFO - got score from new prediction
+2025-06-21 18:50:31,309 - result - INFO - Score prediction: 0.0
+
+2025-06-21 18:50:31,309 - result - INFO - Datapoint 198
+2025-06-21 18:50:32,065 - result - INFO - got score from new prediction
+2025-06-21 18:50:32,066 - result - INFO - Score prediction: 14.0
+
+2025-06-21 18:50:32,066 - result - INFO - predicted scores solo
+2025-06-21 18:50:32,068 - result - CRITICAL - 
+                                                 essay  score  y_pred  diff
+935  "I was patient one time, really patient but ki...     16      28    12
+372  "A time that I was patient is when I had my tw...     13      24    11
+142  "It was @CAPS1 @CAPS2 I was up watching tv wai...     17      12    -5
+273  "Sometimes its hard to be patient, especilly w...     14      16     2
+44   "You being patient is important. People should...     18      18     0
+201  "One day me, my mom, my dad, my sister, my bot...     15      10    -5
+352  A time I was pacent was I was wating in line f...      8      12     4
+340  Patience perso is someone that deal with diffi...     11      12     1
+808  "Patience, @CAPS6 essential part of our world....     14      16     2
+15   "@NUM1 years ago on my birthday the only thing...     18      12    -6
+167  "There are lots of times that I have been pati...     16      18     2
+297  "“@CAPS1 on @CAPS2, where are you ,” @PERSON1 ...     21      12    -9
+93   "One important skill you need in the life is p...     17      28    11
+821  "A day that I was patient was, one day I was r...     18      20     2
+183  "Have you ever been patient before? Well l hav...     24      28     4
+37   When I was going to the doctor I had to be pat...     13      14     1
+38   "I was patient when I was on my way to @LOCATI...     16      12    -4
+875  "Why wasn’t my uncle there yet? Come on! I was...     23      12   -11
+518  "One day I woke up and looked outside it was s...     17      24     7
+414  "Being patient means that your understanding a...     21      22     1
+179  Being patience is a good thing because if you ...      9      16     7
+774  "A time when I was patient was when I was at m...     17      24     7
+421  A time when I was patient was when I was at th...     16       4   -12
+862  "I am writing about a time when someone I knew...     17      24     7
+579  A time I was patient was when I had to be pati...     10      10     0
+512  "When ll was going to @LOCATION1 with my famil...     18      24     6
+647  "Have you ever been patience ? I believe we sh...     11      18     7
+652  "Once, I was @NUM1 old and I was so eager abou...     12      22    10
+780  "Being patient is one of the many things child...     24      26     2
+873  "Every year me and my entire family take a tri...     16      40    24
+826  "One day me and my mom dad and sister were goi...     13      24    11
+503  "My story about being patient is the time I wa...     15      30    15
+234  "One day in the beginning of foll, @PERSON1 wa...     21      28     7
+670  "A time when I was patient was when I ordered ...     17      16    -1
+782  "A time when I was patint is when I was at the...      9      10     1
+838  "There was a time that I didn’t want to be pat...     17      12    -5
+330  "@PERSON1, this is boring! I want to try my ba...     24      20    -4
+703  "I remember a time when @CAPS3 sister used to ...     22      20    -2
+483  A time when I had to be patient was when I had...     22      16    -6
+374  "When I was about @NUM1 I wanted one thing in ...     15      12    -3
+604  "I remember when me, my brother, my dad and my...     15      18     3
+293  "“ @CAPS1 can I get a puppy .” “ @CAPS2” “@CAP...     19       6   -13
+14   "You have to be paceint when you are cooking s...      8      14     6
+316  "It can be very hard for somebody to be patien...     13      24    11
+752  "There once was a time when someone I knew was...     15      18     3
+108  "Patience. Patience is something I have absolu...     15      14    -1
+656  "One time it was hard to wait, but I was patie...     23      18    -5
+517  "Patience is, in definition, being understandi...     10      14     4
+404  "“@CAPS1  @PERSON1, it’s @PERSON3 how are u”? ...     20       0   -20
+198  "@CAPS6 was @NUM1 at night, @CAPS1 @CAPS2 and ...     13      14     1
+
+
+2025-06-21 18:50:32,069 - result - INFO - QWK of Set: 0.20091
+2025-06-21 18:50:32,070 - result - INFO - MSE of Set: 0.06933
+
+2025-06-21 18:50:32,070 - result - CRITICAL - ESSAY SET 8:
+
+2025-06-21 18:50:32,556 - result - INFO - score prediction started
+
+2025-06-21 18:50:32,556 - result - INFO - Datapoint 135
+2025-06-21 18:50:33,547 - result - INFO - got score from new prediction
+2025-06-21 18:50:33,547 - result - INFO - Score prediction: 22.0
+
+2025-06-21 18:50:33,547 - result - INFO - Datapoint 151
+2025-06-21 18:50:34,688 - result - INFO - got score from new prediction
+2025-06-21 18:50:34,688 - result - INFO - Score prediction: 52.0
+
+2025-06-21 18:50:34,688 - result - INFO - Datapoint 330
+2025-06-21 18:50:35,745 - result - INFO - got score from new prediction
+2025-06-21 18:50:35,745 - result - INFO - Score prediction: 74.0
+
+2025-06-21 18:50:35,745 - result - INFO - Datapoint 19
+2025-06-21 18:50:36,860 - result - INFO - got score from new prediction
+2025-06-21 18:50:36,860 - result - INFO - Score prediction: 45.32
+
+2025-06-21 18:50:36,860 - result - INFO - Datapoint 405
+2025-06-21 18:50:37,707 - result - INFO - got score from new prediction
+2025-06-21 18:50:37,707 - result - INFO - Score prediction: 64.0
+
+2025-06-21 18:50:37,708 - result - INFO - Datapoint 15
+2025-06-21 18:50:38,671 - result - INFO - got score from new prediction
+2025-06-21 18:50:38,671 - result - INFO - Score prediction: 24.0
+
+2025-06-21 18:50:38,671 - result - INFO - Datapoint 110
+2025-06-21 18:50:39,463 - result - INFO - got score from new prediction
+2025-06-21 18:50:39,465 - result - INFO - Score prediction: 49.0
+
+2025-06-21 18:50:39,465 - result - INFO - Datapoint 329
+2025-06-21 18:50:40,254 - result - INFO - got score from new prediction
+2025-06-21 18:50:40,254 - result - INFO - Score prediction: 75.0
+
+2025-06-21 18:50:40,254 - result - INFO - Datapoint 68
+2025-06-21 18:50:41,073 - result - INFO - got score from new prediction
+2025-06-21 18:50:41,073 - result - INFO - Score prediction: 69.6
+
+2025-06-21 18:50:41,073 - result - INFO - Datapoint 222
+2025-06-21 18:50:41,885 - result - INFO - got score from new prediction
+2025-06-21 18:50:41,885 - result - INFO - Score prediction: 48.0
+
+2025-06-21 18:50:41,885 - result - INFO - Datapoint 187
+2025-06-21 18:50:42,674 - result - INFO - got score from new prediction
+2025-06-21 18:50:42,674 - result - INFO - Score prediction: 81.0
+
+2025-06-21 18:50:42,674 - result - INFO - Datapoint 95
+2025-06-21 18:50:43,664 - result - INFO - got score from new prediction
+2025-06-21 18:50:43,664 - result - INFO - Score prediction: 60.0
+
+2025-06-21 18:50:43,665 - result - INFO - Datapoint 207
+2025-06-21 18:50:44,709 - result - INFO - got score from new prediction
+2025-06-21 18:50:44,709 - result - INFO - Score prediction: 48.6
+
+2025-06-21 18:50:44,709 - result - INFO - Datapoint 266
+2025-06-21 18:50:45,564 - result - INFO - got score from new prediction
+2025-06-21 18:50:45,564 - result - INFO - Score prediction: 56.0
+
+2025-06-21 18:50:45,564 - result - INFO - Datapoint 365
+2025-06-21 18:50:46,581 - result - INFO - got score from new prediction
+2025-06-21 18:50:46,581 - result - INFO - Score prediction: 50.0
+
+2025-06-21 18:50:46,581 - result - INFO - Datapoint 336
+2025-06-21 18:50:47,436 - result - INFO - got score from new prediction
+2025-06-21 18:50:47,436 - result - INFO - Score prediction: 58.0
+
+2025-06-21 18:50:47,436 - result - INFO - Datapoint 126
+2025-06-21 18:50:49,720 - result - INFO - got score from new prediction
+2025-06-21 18:50:49,720 - result - INFO - Score prediction: 36.0
+
+2025-06-21 18:50:49,720 - result - INFO - Datapoint 103
+2025-06-21 18:50:50,532 - result - INFO - got score from new prediction
+2025-06-21 18:50:50,532 - result - INFO - Score prediction: 44.0
+
+2025-06-21 18:50:50,533 - result - INFO - Datapoint 44
+2025-06-21 18:50:51,314 - result - INFO - got score from new prediction
+2025-06-21 18:50:51,314 - result - INFO - Score prediction: 32.0
+
+2025-06-21 18:50:51,314 - result - INFO - Datapoint 274
+2025-06-21 18:50:52,199 - result - INFO - got score from new prediction
+2025-06-21 18:50:52,199 - result - INFO - Score prediction: 76.0
+
+2025-06-21 18:50:52,199 - result - INFO - Datapoint 85
+2025-06-21 18:50:53,065 - result - INFO - got score from new prediction
+2025-06-21 18:50:53,065 - result - INFO - Score prediction: 60.0
+
+2025-06-21 18:50:53,065 - result - INFO - Datapoint 428
+2025-06-21 18:50:53,841 - result - INFO - got score from new prediction
+2025-06-21 18:50:53,841 - result - INFO - Score prediction: 30.0
+
+2025-06-21 18:50:53,841 - result - INFO - Datapoint 13
+2025-06-21 18:50:54,645 - result - INFO - got score from new prediction
+2025-06-21 18:50:54,645 - result - INFO - Score prediction: 51.0
+
+2025-06-21 18:50:54,645 - result - INFO - Datapoint 239
+2025-06-21 18:50:55,440 - result - INFO - got score from new prediction
+2025-06-21 18:50:55,440 - result - INFO - Score prediction: 84.0
+
+2025-06-21 18:50:55,440 - result - INFO - Datapoint 334
+2025-06-21 18:50:56,275 - result - INFO - got score from new prediction
+2025-06-21 18:50:56,275 - result - INFO - Score prediction: 70.0
+
+2025-06-21 18:50:56,275 - result - INFO - Datapoint 182
+2025-06-21 18:50:57,079 - result - INFO - got score from new prediction
+2025-06-21 18:50:57,079 - result - INFO - Score prediction: 2.0
+
+2025-06-21 18:50:57,080 - result - INFO - Datapoint 100
+2025-06-21 18:50:58,032 - result - INFO - got score from new prediction
+2025-06-21 18:50:58,032 - result - INFO - Score prediction: 53.0
+
+2025-06-21 18:50:58,032 - result - INFO - Datapoint 156
+2025-06-21 18:50:58,873 - result - INFO - got score from new prediction
+2025-06-21 18:50:58,873 - result - INFO - Score prediction: 45.0
+
+2025-06-21 18:50:58,873 - result - INFO - Datapoint 20
+2025-06-21 18:50:59,771 - result - INFO - got score from new prediction
+2025-06-21 18:50:59,771 - result - INFO - Score prediction: 24.0
+
+2025-06-21 18:50:59,772 - result - INFO - Datapoint 77
+2025-06-21 18:51:00,724 - result - INFO - got score from new prediction
+2025-06-21 18:51:00,724 - result - INFO - Score prediction: 84.88
+
+2025-06-21 18:51:00,724 - result - INFO - Datapoint 270
+2025-06-21 18:51:01,683 - result - INFO - got score from new prediction
+2025-06-21 18:51:01,683 - result - INFO - Score prediction: 68.0
+
+2025-06-21 18:51:01,683 - result - INFO - Datapoint 221
+2025-06-21 18:51:02,595 - result - INFO - got score from new prediction
+2025-06-21 18:51:02,595 - result - INFO - Score prediction: 50.4
+
+2025-06-21 18:51:02,596 - result - INFO - Datapoint 321
+2025-06-21 18:51:03,397 - result - INFO - got score from new prediction
+2025-06-21 18:51:03,397 - result - INFO - Score prediction: 64.0
+
+2025-06-21 18:51:03,397 - result - INFO - Datapoint 303
+2025-06-21 18:51:04,201 - result - INFO - got score from new prediction
+2025-06-21 18:51:04,201 - result - INFO - Score prediction: 44.0
+
+2025-06-21 18:51:04,201 - result - INFO - Datapoint 196
+2025-06-21 18:51:05,024 - result - INFO - got score from new prediction
+2025-06-21 18:51:05,024 - result - INFO - Score prediction: 44.0
+
+2025-06-21 18:51:05,025 - result - INFO - Datapoint 134
+2025-06-21 18:51:05,913 - result - INFO - got score from new prediction
+2025-06-21 18:51:05,913 - result - INFO - Score prediction: 55.04
+
+2025-06-21 18:51:05,913 - result - INFO - Datapoint 309
+2025-06-21 18:51:06,702 - result - INFO - got score from new prediction
+2025-06-21 18:51:06,702 - result - INFO - Score prediction: 52.0
+
+2025-06-21 18:51:06,703 - result - INFO - Datapoint 210
+2025-06-21 18:51:07,513 - result - INFO - got score from new prediction
+2025-06-21 18:51:07,514 - result - INFO - Score prediction: 47.16
+
+2025-06-21 18:51:07,514 - result - INFO - Datapoint 320
+2025-06-21 18:51:08,383 - result - INFO - got score from new prediction
+2025-06-21 18:51:08,383 - result - INFO - Score prediction: 20.0
+
+2025-06-21 18:51:08,383 - result - INFO - Datapoint 224
+2025-06-21 18:51:09,192 - result - INFO - got score from new prediction
+2025-06-21 18:51:09,192 - result - INFO - Score prediction: 76.0
+
+2025-06-21 18:51:09,193 - result - INFO - Datapoint 397
+2025-06-21 18:51:10,023 - result - INFO - got score from new prediction
+2025-06-21 18:51:10,023 - result - INFO - Score prediction: 79.0
+
+2025-06-21 18:51:10,023 - result - INFO - Datapoint 337
+2025-06-21 18:51:10,857 - result - INFO - got score from new prediction
+2025-06-21 18:51:10,857 - result - INFO - Score prediction: 50.0
+
+2025-06-21 18:51:10,857 - result - INFO - Datapoint 155
+2025-06-21 18:51:11,732 - result - INFO - got score from new prediction
+2025-06-21 18:51:11,732 - result - INFO - Score prediction: 50.6
+
+2025-06-21 18:51:11,732 - result - INFO - Datapoint 35
+2025-06-21 18:51:12,542 - result - INFO - got score from new prediction
+2025-06-21 18:51:12,542 - result - INFO - Score prediction: 82.0
+
+2025-06-21 18:51:12,542 - result - INFO - Datapoint 328
+2025-06-21 18:51:13,354 - result - INFO - got score from new prediction
+2025-06-21 18:51:13,354 - result - INFO - Score prediction: 76.0
+
+2025-06-21 18:51:13,354 - result - INFO - Datapoint 378
+2025-06-21 18:51:14,144 - result - INFO - got score from new prediction
+2025-06-21 18:51:14,144 - result - INFO - Score prediction: 20.0
+
+2025-06-21 18:51:14,144 - result - INFO - Datapoint 426
+2025-06-21 18:51:14,980 - result - INFO - got score from new prediction
+2025-06-21 18:51:14,980 - result - INFO - Score prediction: 75.0
+
+2025-06-21 18:51:14,980 - result - INFO - Datapoint 169
+2025-06-21 18:51:15,837 - result - INFO - got score from new prediction
+2025-06-21 18:51:15,837 - result - INFO - Score prediction: 48.0
+
+2025-06-21 18:51:15,837 - result - INFO - Datapoint 306
+2025-06-21 18:51:16,732 - result - INFO - got score from new prediction
+2025-06-21 18:51:16,732 - result - INFO - Score prediction: 59.9
+
+2025-06-21 18:51:16,733 - result - INFO - Datapoint 37
+2025-06-21 18:51:17,599 - result - INFO - got score from new prediction
+2025-06-21 18:51:17,599 - result - INFO - Score prediction: 72.0
+
+2025-06-21 18:51:17,600 - result - INFO - predicted scores solo
+2025-06-21 18:51:17,602 - result - CRITICAL - 
+                                                 essay  score  y_pred  diff
+135  Have u ever been hit by a basketball in the fa...     31      22    -9
+151  "Someone once told me that laughter is the key...     33      52    19
+330  " My @CAPS1 year of high school started off le...     40      74    34
+19   "Iv always loved laughter in my life, I don't ...     27      45    18
+405  "            Just One @CAPS1 @CAPS2 @CAPS3 A @...     36      64    28
+15   "@DATE1 was the start of a new age, i had just...     28      24    -4
+110  " I have been waiting a whole year for @TIME1 ...     34      49    15
+329  " One day I decided to go over to my friend @P...     40      75    35
+68   "Laughter can create this type of bond that's ...     35      69    34
+222  "       Laughter In A Relationship The most im...     36      48    12
+187  "    Laughter is an important part of any rela...     41      81    40
+95   "Laughter: A @CAPS1 @CAPS2 @CAPS3 of the varie...     35      60    25
+207  " The human brain is a piece of work. Its the ...     45      48     3
+266  "     Every one laughs, i love to laugh in fac...     36      56    20
+365  " Its my sophomore year and some of my friends...     40      50    10
+336  " One of the most oddest things in life is how...     42      58    16
+126  "One time I was sick, and I told my mom ""I ne...     28      36     8
+103  "  Laughter is the only expression in my opini...     36      44     8
+44   "                          A funny Story  Many...     30      32     2
+274  "Have @CAPS1 ever had that one friend who was ...     40      76    36
+85   " It was the first day of the ninth grade, tha...     42      60    18
+428  " It all started when my eighth grade class ha...     34      30    -4
+13   "                              Laughter       ...     31      51    20
+239  "  Middle school was a challenging environment...     40      84    44
+334  " I believe laughter brings many different peo...     36      70    34
+182  DUE you think that being part of sameting funi...     15       2   -13
+100  " When I had turned fifteen I was so anxious t...     36      53    17
+156  " What makes you laugh? Laughter is a really g...     37      45     8
+20   One day me and my friend taylor got the idea o...     24      24     0
+77   " For a year and two months I'd devoted my lif...     40      84    44
+270  " My sister @PERSON3 and my niece @PERSON2 had...     32      68    36
+221  " The wind rose and fell, whipping against the...     46      50     4
+321  " A while back, I had a friend named @PERSON4....     31      64    33
+303  " In this essay I will be telling you about wh...     33      44    11
+196  "Laughter can sometimes be something that ever...     29      44    15
+134  " Laughter, one of the wonderful things that w...     35      55    20
+309  " Just @CAPS1 walking through @ORGANIZATION2 i...     40      52    12
+210  " The members of my immediate family are known...     41      47     6
+320  "Laughter is the best medicine Many people say...     40      20   -20
+224  " Close people to you enjoy the moment you hav...     40      76    36
+397  " When I was adopted, I didn't know what to ex...     41      79    38
+337  "Laughter is the @CAPS1 @CAPS2't @CAPS6 frustr...     43      50     7
+155  "                               The @CAPS1 @CA...     33      50    17
+35   " Laughter is key. You never really think abou...     40      82    42
+328  " People can share many things. DNA, clothes, ...     36      76    40
+378  "                             laughter      wh...     30      20   -10
+426  " The sound of laughter could be one that brea...     46      75    29
+169  " Having laughter in your life is a big part i...     37      48    11
+306  " I have had many great times with my grandpa....     40      59    19
+37   " Everyone laughs differently , some people la...     40      72    32
+
+
+2025-06-21 18:51:17,603 - result - INFO - QWK of Set: 0.18163
+2025-06-21 18:51:17,604 - result - INFO - MSE of Set: 0.15998
+
+2025-06-21 18:51:17,604 - result - INFO - Baseline Cache-Stats:
+2025-06-21 18:51:17,604 - result - INFO - Cache hits: 0
+2025-06-21 18:51:17,604 - result - INFO - Cache misses: 400
+
+2025-06-21 18:51:17,604 - result - CRITICAL - Evaluation:
+2025-06-21 18:51:17,604 - result - CRITICAL - MSE of Set 1: 0.03903
+2025-06-21 18:51:17,604 - result - CRITICAL - MSE of Set 2: 0.03340
+2025-06-21 18:51:17,604 - result - CRITICAL - MSE of Set 3: 0.11556
+2025-06-21 18:51:17,604 - result - CRITICAL - MSE of Set 4: 0.26444
+2025-06-21 18:51:17,604 - result - CRITICAL - MSE of Set 5: 0.18375
+2025-06-21 18:51:17,604 - result - CRITICAL - MSE of Set 6: 0.35750
+2025-06-21 18:51:17,604 - result - CRITICAL - MSE of Set 7: 0.06933
+2025-06-21 18:51:17,604 - result - CRITICAL - MSE of Set 8: 0.15998
+2025-06-21 18:51:17,604 - result - CRITICAL - Average MSE: 0.15287
+
+2025-06-21 18:51:17,604 - result - CRITICAL - QWK of Set 1: 0.28318
+2025-06-21 18:51:17,604 - result - CRITICAL - QWK of Set 2: 0.44504
+2025-06-21 18:51:17,604 - result - CRITICAL - QWK of Set 3: 0.36678
+2025-06-21 18:51:17,604 - result - CRITICAL - QWK of Set 4: 0.27527
+2025-06-21 18:51:17,604 - result - CRITICAL - QWK of Set 5: 0.28488
+2025-06-21 18:51:17,604 - result - CRITICAL - QWK of Set 6: 0.22903
+2025-06-21 18:51:17,604 - result - CRITICAL - QWK of Set 7: 0.20091
+2025-06-21 18:51:17,604 - result - CRITICAL - QWK of Set 8: 0.18163
+2025-06-21 18:51:17,604 - result - CRITICAL - Average QWK: 0.28334
+
+2025-06-21 18:51:17,604 - result - CRITICAL - -----------------------------------------------------------------
+
+
+
