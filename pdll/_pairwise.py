@@ -1,22 +1,55 @@
 """Pairwise Difference Learning meta-estimator."""
-import functools
+import pandas as pd
+import numpy as np
+
+# Data visualization
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Machine Learning
+from sklearn.metrics import (
+    roc_auc_score,
+    average_precision_score,
+    confusion_matrix,
+    classification_report,
+    accuracy_score,
+    f1_score
+)
+from sklearn.datasets import fetch_openml
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler, OneHotEncoder, OrdinalEncoder
+from sklearn.neighbors import KNeighborsClassifier, NearestNeighbors
+from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import IsolationForest
+from sklearn.pipeline import Pipeline
+from sklearn.compose import ColumnTransformer
+from sklearn.base import BaseEstimator, OutlierMixin
+from sklearn.utils.validation import check_array, check_is_fitted
+
+# Statistics
+from scipy.stats import sem, ttest_rel, entropy
+from scipy.optimize import LinearConstraint, minimize
+from scipy.spatial.distance import cdist
+from scipy.special import softmax
+
+# Clustering
+from sklearn.cluster import KMeans
+
+# Pandas utilities
+from pandas.core.dtypes.common import is_unsigned_integer_dtype
+
+# Ignore warnings for cleaner output
 import warnings
+warnings.filterwarnings('ignore')
+
+# Typing and utilities
+import functools
 from typing import Iterable
 
 # Author: Mohamed Karim Belaid <karim.belaid@idiada.com> or <extern.karim.belaid@porsche.de>
+# PairwiseDifferenceOutlierDetection class: Author Nizar Kadri <nizar.kadri@campus.lmu.de>
 # License: Apache-2.0 clause
 
-import numpy as np
-import pandas as pd
-import sklearn.base
-from scipy.optimize import LinearConstraint, minimize
-from scipy.spatial.distance import cdist
-from scipy.stats import entropy
-from sklearn.cluster import KMeans
-from sklearn.compose import ColumnTransformer
-from sklearn.utils.validation import check_is_fitted
-from scipy.special import softmax
-from pandas.core.dtypes.common import is_unsigned_integer_dtype
 
 
 # todo Developing scikit-learn estimators: https://scikit-learn.org/stable/developers/develop.html    and this for common term    https://scikit-learn.org/stable/glossary.html
@@ -942,3 +975,141 @@ class PDCDataTransformer(sklearn.base.BaseEstimator, sklearn.base.TransformerMix
         if y is None:
             return X.values
         return X.values, y.values
+    
+    
+class PairwiseDifferenceOutlierDetection(BaseEstimator, OutlierMixin):
+"""
+Custom Isolation Forest model following sklearn's interface.
+This model detects anomalies using pairwise feature differences.
+"""
+
+def __init__(self, estimator=None):
+    """
+    Initializes the PairwiseDifferenceOutlierDetection model.
+
+    Parameters:
+    - estimator: A scikit-learn compatible estimator (default is IsolationForest).
+    """
+    self.estimator = estimator if estimator is not None else IsolationForest()
+    self.classifier = self.estimator
+
+def fit(self, X, y):
+    """
+    Fits the Isolation Forest model on the training data and finds the best threshold.
+
+    - Pairs all training samples (X_train × X_train)
+    - Trains the Isolation Forest on pairwise differences
+    - Searches for the best percentile threshold (1% to 99%) that maximizes F1-macro score
+    """
+    self.estimator.fit(X)
+    self.X_train = X
+
+    # Create pairwise differences for training
+    X_train_pair, _ = self.__pair_input(X, X)
+    self.estimator.fit(X_train_pair)
+
+    # Calculate anomaly scores on the training pairs
+    scores = abs(self.estimator.score_samples(X_train_pair))
+    score_df = pd.DataFrame(scores.reshape((-1, len(self.X_train))))
+    mean_scores = score_df.mean(axis=1).to_numpy()
+
+    # Automatically find the best threshold by maximizing F1-macro
+    candidate_percentiles = np.arange(1, 100, 1)
+    best_f1 = -np.inf
+    best_threshold = None
+    best_percentile = None
+
+    for p in candidate_percentiles:
+        threshold = np.percentile(mean_scores, p)
+        y_pred = np.where(mean_scores < threshold, 0, 1)
+        f1 = f1_score(y, y_pred, average='macro')
+
+        if f1 > best_f1:
+            best_f1 = f1
+            best_threshold = threshold
+            best_percentile = p
+
+    # Save the best found threshold and percentile
+    self.threshold_ = best_threshold
+    self.percentile_ = best_percentile
+
+    print(f" Best percentile selected: {self.percentile_} with F1-macro: {best_f1:.4f}")
+
+    return self
+
+def predict(self, X):
+    """
+    Predicts anomalies in the test data using the threshold found during training.
+
+    Parameters:
+    - X (pd.DataFrame or np.ndarray): Test feature matrix.
+
+    Returns:
+    - np.ndarray: Predicted labels (0 for normal, 1 for anomaly).
+    """
+    scores = self.score_samples(X)
+    return np.where(scores < self.threshold_, 0, 1)
+
+def score_samples(self, X):
+    """
+    Computes the mean anomaly score for each sample in the input.
+
+    Parameters:
+    - X (pd.DataFrame or np.ndarray): Test feature matrix.
+
+    Returns:
+    - np.ndarray: Mean anomaly scores per sample.
+    """
+    X_test_pair, _  = self.__pair_input(X, self.X_train)
+    scores = abs(self.estimator.score_samples(X_test_pair))
+    score_df = pd.DataFrame(scores.reshape((-1, len(self.X_train))))
+    return score_df.mean(axis=1).to_numpy()
+
+def decision_function(self, X):
+    """
+    Computes the distance of each sample's score from the threshold.
+
+    Parameters:
+    - X (pd.DataFrame or np.ndarray): Test feature matrix.
+
+    Returns:
+    - np.ndarray: Distance from the decision threshold.
+    """
+    scores = self.score_samples(X)
+    return scores - self.threshold_
+
+def __pair_input(self, X1, X2):
+    """
+    Creates pairwise feature differences between two datasets.
+
+    Parameters:
+    - X1 (pd.DataFrame): First dataset.
+    - X2 (pd.DataFrame): Second dataset.
+
+    Returns:
+    - tuple: (paired feature differences, symmetric feature differences)
+    """
+    X_pair = X1.merge(X2, how="cross")
+
+    # Extract and rename columns for difference calculation
+    x1_pair = X_pair[[f'{col}_x' for col in X1.columns]].rename(columns={f'{col}_x': f'{col}_diff' for col in X1.columns})
+    x2_pair = X_pair[[f'{col}_y' for col in X1.columns]].rename(columns={f'{col}_y': f'{col}_diff' for col in X1.columns})
+
+    try:
+        calculate_difference = x1_pair - x2_pair
+    except Exception as e:
+        raise ValueError("PairwiseDifference: Non-numeric data found.") from e
+
+    # Concatenate the original cross-join and calculated differences
+    X_pair = pd.concat([X_pair, calculate_difference], axis='columns')
+
+
+    # Create symmetric feature differences (optional)
+    x2_pair_sym = X_pair[[f'{col}_x' for col in X1.columns]].rename(columns={f'{col}_x': f'{col}_y' for col in X1.columns})
+    x1_pair_sym = X_pair[[f'{col}_y' for col in X1.columns]].rename(columns={f'{col}_y': f'{col}_x' for col in X1.columns})
+    X_pair_sym = pd.concat([x1_pair_sym, x2_pair_sym, x2_pair - x1_pair], axis='columns')
+
+    return X_pair, X_pair_sym
+
+    
+    
