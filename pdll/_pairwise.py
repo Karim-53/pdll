@@ -373,7 +373,9 @@ class PairwiseDifferenceClassifier(sklearn.base.BaseEstimator, sklearn.base.Clas
                 raise NotImplementedError()
             else:
                 def f(predictions_proba_similarity: pd.Series) -> pd.Series:
-                    df = pd.DataFrame({'start': self.y_train_.reset_index(drop=True), 'similarity': predictions_proba_similarity})
+                    # pair anchors with their similarity by position: the row is indexed by X_train_.index,
+                    # which is not 0..N-1 for e.g. pandas data straight out of train_test_split
+                    df = pd.DataFrame({'start': self.y_train_.to_numpy(), 'similarity': predictions_proba_similarity.to_numpy()})
                     mean = df.groupby('start', observed=False).mean()['similarity']
                     return mean
 
