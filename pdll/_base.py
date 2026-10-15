@@ -20,6 +20,10 @@ CHUNK_CELLS = 2 ** 24
 DEFAULT_MAX_PAIRS = 100_000
 PAIR_CELL_BUDGET = 2 ** 26
 
+# Above this many training rows, PDL was usually less accurate than its base estimator alone on 130 real datasets
+# (benchmark/real_world, 2026-10): it is a small-data method. fit() says so.
+LARGE_DATA_ROWS = 2000
+
 # Base learners whose predictions rarely improve when wrapped in PDL (see the paper, section 5).
 _PARAMETRIC_HINT = ('PDL is not compatible with base estimators of type parametric models, i.e., even if the code works there is '
                     'low chance of improvement compared to using directly that estimator. To obtain an improvement, it is better '
@@ -109,6 +113,14 @@ class PairwiseDifferenceMixin:
         if not (hasattr(estimator, 'fit') and hasattr(estimator, 'predict')):
             raise TypeError(f'estimator must implement fit and predict, got {estimator!r}.')
         return _check_max(self.max_pairs, 'max_pairs', allow_auto=True), _check_max(self.max_anchors, 'max_anchors')
+
+    @staticmethod
+    def _warn_if_large(n_samples):
+        if n_samples > LARGE_DATA_ROWS:
+            warnings.warn(f'PDL is designed for small datasets. With {n_samples} training rows it uses a sample of the pairs and '
+                          f'anchors (max_pairs, max_anchors), and in our benchmark of 130 real datasets it was usually less accurate '
+                          f'than its base estimator alone above {LARGE_DATA_ROWS} rows. Compare both on your data, or raise '
+                          f'max_pairs and max_anchors.', UserWarning, stacklevel=3)
 
     @staticmethod
     def _resolve_max_pairs(max_pairs, n_samples, n_features):

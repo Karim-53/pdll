@@ -32,7 +32,13 @@ A rewrite for robustness and speed. On the inputs the paper used (numpy arrays),
   1M pairs, mean macro-F1 -0.005 for about 10x less time and memory, and no out-of-memory failure on a 16 GB machine
   (1M pairs ran out of memory on a 1,473-row dataset and needed 5 GB for Titanic).
 - `sample_weight` in `fit` for both estimators (pair weight w_i·w_j, equivalent to repeating rows).
+- `class_weight` (`None`, `"balanced"` or a dict) for the classifier, applied as sample weights. On imbalanced data
+  PDL otherwise under-predicts minority classes.
+- `fit` warns above 2,000 training rows: PDL is a small-data method, and above that size the base estimator alone was
+  usually more accurate in the real-data benchmark.
 - `predict_log_proba`, `pdll.__citation__`, `CITATION.cff` (GitHub "Cite this repository").
+- `benchmark/real_world`: validation on 131 real datasets (OpenML-CC18, OpenML-CTR23, Kaggle, scikit-learn, Zindi):
+  129 ran, 2 were refused with an actionable message, none failed.
 - Tests: golden equivalence with 0.3.1, scikit-learn's `parametrize_with_checks`, a reference implementation of the
   paper's formulas, an end-to-end accuracy/speed regression gate, and OpenML integration tests. CI covers the oldest
   supported, Kaggle-like, Colab-like and latest dependency stacks on Linux, Windows and macOS.

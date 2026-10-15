@@ -437,3 +437,24 @@ def test_auto_max_pairs_in_fit(iris):
     assert len(large.X_anchors_) == 450  # max_anchors=500
     with pytest.raises(ValueError, match='auto'):
         pdc(max_pairs='many').fit(*iris)
+
+
+def test_class_weight_is_applied_as_sample_weight(iris):
+    from sklearn.utils.class_weight import compute_sample_weight
+    X, y = iris[0][:120], iris[1][:120]  # 50 / 50 / 20: imbalanced
+    balanced = PairwiseDifferenceClassifier(FakePairClassifier(), class_weight='balanced').fit(X, y)
+    weighted = PairwiseDifferenceClassifier(FakePairClassifier()).fit(X, y, sample_weight=compute_sample_weight('balanced', y))
+    np.testing.assert_allclose(balanced.predict_proba(iris[0]), weighted.predict_proba(iris[0]))
+    np.testing.assert_allclose(balanced.prior_, [1 / 3] * 3)
+    dropped = PairwiseDifferenceClassifier(FakePairClassifier(), class_weight={0: 1, 1: 1, 2: 0}).fit(X, y)
+    np.testing.assert_array_equal(dropped.classes_, [0, 1])  # like rows with a zero sample_weight, the class is left out
+    np.testing.assert_allclose(dropped.prior_, [0.5, 0.5])
+    with pytest.raises(ValueError, match='class_weight is applied through sample weights'):
+        PairwiseDifferenceClassifier(KNeighborsClassifier(), class_weight='balanced').fit(X, y)
+
+
+def test_large_training_sets_get_a_warning():
+    rng = np.random.RandomState(0)
+    X, y = rng.normal(size=(2500, 3)), rng.randint(0, 2, 2500)
+    with pytest.warns(UserWarning, match='designed for small datasets'):
+        PairwiseDifferenceClassifier(FakePairClassifier(), max_pairs=1000, max_anchors=50).fit(X, y)

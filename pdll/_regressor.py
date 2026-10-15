@@ -96,6 +96,7 @@ class PairwiseDifferenceRegressor(RegressorMixin, PairwiseDifferenceMixin, BaseE
         """
         max_pairs, max_anchors = self._check_params()
         X, y, sample_weight, row_labels = self._fit_prepare(X, y, sample_weight, y_numeric=True)
+        self._warn_if_large(len(X))
         if y.dtype.kind != 'f':
             y = y.astype(np.float64)
 
