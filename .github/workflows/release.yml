@@ -1,0 +1,46 @@
+# Publish to PyPI when a GitHub release is published (PyPI trusted publishing, no API token).
+# One-time setup on pypi.org > pdll > Settings > Publishing: owner Karim-53, repository pdll,
+# workflow release.yml, environment pypi.
+name: Release
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Check that the tag matches pdll.__version__
+        if: github.event_name == 'release'
+        run: |
+          version=$(python -c "import re; print(re.search(r\"__version__ = '([^']+)'\", open('pdll/__init__.py').read()).group(1))")
+          test "${GITHUB_REF_NAME#v}" = "$version" || { echo "tag $GITHUB_REF_NAME != version $version"; exit 1; }
+      - run: |
+          python -m pip install build twine
+          python -m build
+          twine check --strict dist/*
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+  publish:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: pypi
+      url: https://pypi.org/p/pdll
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+      - uses: pypa/gh-action-pypi-publish@release/v1
