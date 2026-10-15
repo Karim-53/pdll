@@ -1,13 +1,17 @@
+import sys
 import unittest
 
 import numpy as np
 import pandas as pd
+import pytest
 import scipy
 from sklearn.datasets import make_regression
 from sklearn.tree import DecisionTreeRegressor
-import sys
+
 sys.path.extend('../')
 from pdll import PairwiseDifferenceRegressor
+
+pytestmark = pytest.mark.slow  # SLSQP with numerical gradients over 50-150 anchor weights
 
 
 def load_fake_data(n_samples = 50, n_validation_samples = 10, n_test_samples = 10, n_features = 8, noise_level=0.):
