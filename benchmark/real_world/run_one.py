@@ -119,6 +119,9 @@ def run(name, config, max_test, split='random'):
         result.update(status='load_error', error=f'{type(error).__name__}: {str(error)[:300]}')
         return result
     result['load_seconds'] = round(time.perf_counter() - t, 1)
+    if isinstance(y, pd.Series) and len(y) and isinstance(y.iloc[0], bytes):  # scikit-learn asks for str labels, not bytes
+        y = y.map(lambda label: label.decode())
+        result['decoded_bytes_target'] = True
     if isinstance(y, pd.Series) and y.isna().any():  # rows without a target cannot be used by any model
         result['dropped_missing_target'] = int(y.isna().sum())
         X, y = X[y.notna()], y[y.notna()]

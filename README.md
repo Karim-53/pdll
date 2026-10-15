@@ -164,7 +164,7 @@ Every change to `pdll` runs [`tests/e2e`](tests/e2e/): 10 offline datasets (iris
 | Mean macro-F1 (30 dataset × learner pairs) | 0.873 | **0.894** |
 | Wins / losses | | 18 / 11 |
 
-The largest gains appear for single decision trees (e.g. digits: 0.75 → 0.93) and for classes with very few rows (wine with an 8-row class, RandomForest: 0.85 → 0.97). PDL does not win everywhere: it is slightly behind on the linearly separable toy problem and on breast cancer with forests.
+The largest and most stable gains are for single decision trees (digits, 300 rows: 0.75 → 0.93; across three CV seeds a tree goes from 0.70–0.75 to 0.86–0.91). PDL does not win everywhere: it is slightly behind on the linearly separable toy problem and on breast cancer with forests.
 
 ### Paper experiment
 To reproduce the experiment of the paper, install the research requirements and run `run_benchmark.py` with a base learner and a dataset number, between 0 and 99. Example:
