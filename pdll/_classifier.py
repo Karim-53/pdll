@@ -36,14 +36,16 @@ class PairwiseDifferenceClassifier(ClassifierMixin, PairwiseDifferenceMixin, Bas
         averaged over anchors. ``False``: the mean similarity to each class, normalised.
         ``"auto"``: ``True`` if some class has fewer than 5 training rows, else ``False``.
 
-    max_anchors : int or None, default=1000
+    max_anchors : int or None, default=500
         Prediction compares each point with every anchor, so its cost grows with the number of anchors.
         If the training set is larger, a class-stratified random subset of ``max_anchors`` rows is used
         as anchors. ``None`` uses every training row.
 
-    max_pairs : int or None, default=1_000_000
+    max_pairs : "auto", int or None, default="auto"
         The base estimator is trained on n² pairs. If that exceeds ``max_pairs``, a uniform random subset
-        of ``max_pairs`` pairs is used. ``None`` uses every pair. Up to 1000 training rows, all pairs are used.
+        of ``max_pairs`` pairs is used. ``"auto"`` means 100,000 pairs (every pair up to 316 training rows), fewer for
+        very wide data so the pair matrix stays below 0.5 GB. ``None`` uses every pair, as in the paper; time and
+        memory then grow with n².
 
     random_state : int, RandomState instance or None, default=None
         Seeds the pair and anchor subsampling, and the base estimator if its own ``random_state`` is None.
@@ -80,7 +82,7 @@ class PairwiseDifferenceClassifier(ClassifierMixin, PairwiseDifferenceMixin, Bas
     array([0, 0, 0])
     """
 
-    def __init__(self, estimator=None, *, use_prior='auto', max_anchors=1000, max_pairs=1_000_000, random_state=None):
+    def __init__(self, estimator=None, *, use_prior='auto', max_anchors=500, max_pairs='auto', random_state=None):
         self.estimator = estimator
         self.use_prior = use_prior
         self.max_anchors = max_anchors
@@ -127,7 +129,7 @@ class PairwiseDifferenceClassifier(ClassifierMixin, PairwiseDifferenceMixin, Bas
         seed_estimator, seed_pairs, seed_anchors = self._random_seeds()
         self.estimator_ = self._make_estimator(seed_estimator, sample_weight)
         self._warn_class_weight()
-        left, right = self._sample_pairs(len(X), max_pairs, seed_pairs)
+        left, right = self._sample_pairs(len(X), self._resolve_max_pairs(max_pairs, len(X), X.shape[1]), seed_pairs)
         left, right = self._ensure_both_targets(y_all, left, right)
         X_pairs = pair_features(X, X, left, right, order='F')
         y_pairs = (y_all[left] != y_all[right]).astype(int)  # 0 = same class, 1 = different

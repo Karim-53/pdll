@@ -429,8 +429,8 @@ if __name__ == '__main__':
 
                 pbar.set_description(f"{description} pdc")
                 
-                result.update(safe_cross_validate(PairwiseDifferenceClassifier(
-                    get_base_classifier(classifier_name, for_pdc=True)), n_jobs, param_grid))
+                result.update(safe_cross_validate(PairwiseDifferenceClassifier(  # every pair and anchor, as in the paper
+                    get_base_classifier(classifier_name, for_pdc=True), max_pairs=None, max_anchors=None), n_jobs, param_grid))
                 assert len(results) > 0 or not pd.isna(result['pdc_test_f1']), 'The first PDC fit failed, probably something to debug.'
                 result['data_time'] = time.time() - data_t0
             except np.core._exceptions._ArrayMemoryError as e:

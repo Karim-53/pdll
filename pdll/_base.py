@@ -14,6 +14,12 @@ from ._input import check_sample_weight, to_float_array
 # Upper bound on the number of cells (pairs x features) materialised at once when predicting.
 CHUNK_CELLS = 2 ** 24
 
+# max_pairs='auto': at most DEFAULT_MAX_PAIRS training pairs (all of them up to 316 rows), and fewer for very wide data so
+# that the pair matrix stays below PAIR_CELL_BUDGET cells (0.5 GB in float64). Chosen in the 2026-10 study on real datasets
+# (benchmark/real_world): versus 1M pairs, mean macro-F1 -0.005 for ~10x less time and memory, and no out-of-memory failures.
+DEFAULT_MAX_PAIRS = 100_000
+PAIR_CELL_BUDGET = 2 ** 26
+
 # Base learners whose predictions rarely improve when wrapped in PDL (see the paper, section 5).
 _PARAMETRIC_HINT = ('PDL is not compatible with base estimators of type parametric models, i.e., even if the code works there is '
                     'low chance of improvement compared to using directly that estimator. To obtain an improvement, it is better '
@@ -57,11 +63,14 @@ def all_pairs(n_test, n_anchors):
     return np.repeat(np.arange(n_test), n_anchors), np.tile(np.arange(n_anchors), n_test)
 
 
-def _check_max(value, name):
+def _check_max(value, name, allow_auto=False):
     if value is None:
         return None
+    if allow_auto and isinstance(value, str) and value == 'auto':
+        return 'auto'
     if isinstance(value, bool) or not isinstance(value, numbers.Integral) or value < 1:
-        raise ValueError(f'{name} must be None or a positive integer, got {value!r}.')
+        options = 'None, "auto"' if allow_auto else 'None'
+        raise ValueError(f'{name} must be {options} or a positive integer, got {value!r}.')
     return int(value)
 
 
@@ -99,7 +108,19 @@ class PairwiseDifferenceMixin:
             raise TypeError('estimator must be an instance of the class not a class, i.e., use MyEstimator() but not MyEstimator')
         if not (hasattr(estimator, 'fit') and hasattr(estimator, 'predict')):
             raise TypeError(f'estimator must implement fit and predict, got {estimator!r}.')
-        return _check_max(self.max_pairs, 'max_pairs'), _check_max(self.max_anchors, 'max_anchors')
+        return _check_max(self.max_pairs, 'max_pairs', allow_auto=True), _check_max(self.max_anchors, 'max_anchors')
+
+    @staticmethod
+    def _resolve_max_pairs(max_pairs, n_samples, n_features):
+        """Turn max_pairs='auto' into a number; warn when memory, not the default, limits very wide data."""
+        if max_pairs != 'auto':
+            return max_pairs
+        memory_cap = max(1, PAIR_CELL_BUDGET // (3 * max(1, n_features)))
+        if memory_cap < min(DEFAULT_MAX_PAIRS, n_samples * n_samples) and memory_cap < 10 * n_samples:
+            warnings.warn(f'With {n_features} features, only {memory_cap} training pairs fit in the memory budget of '
+                          f'max_pairs="auto" ({n_samples} training rows). PDL is designed for tabular data with fewer features: '
+                          f'consider feature selection, or set max_pairs explicitly.', UserWarning, stacklevel=4)
+        return min(DEFAULT_MAX_PAIRS, memory_cap)
 
     def _random_seeds(self):
         """Independent seeds for (base estimator, pair sampling, anchor sampling), all derived from random_state."""

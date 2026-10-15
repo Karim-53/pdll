@@ -26,8 +26,11 @@ A rewrite for robustness and speed. On the inputs the paper used (numpy arrays),
 - DataFrames with string, object, category, bool, uint and nullable columns: categorical columns are ordinal-encoded
   inside the estimator (missing/unseen values become -1), and identifier-like columns trigger a warning.
 - NaN support whenever the base estimator supports it (e.g. HistGradientBoosting).
-- `max_pairs` (default 1,000,000) and `max_anchors` (default 1,000) bound training and prediction cost. Below these
-  limits the behaviour is exactly the paper's.
+- `max_pairs` (default `"auto"`: 100,000 pairs, fewer for very wide data) and `max_anchors` (default 500) bound training
+  and prediction cost. Up to 316 training rows the behaviour is exactly the paper's; `max_pairs=None, max_anchors=None`
+  reproduces it at any size, which `run_benchmark.py` now does. The defaults come from a study on 20 real datasets: against
+  1M pairs, mean macro-F1 -0.005 for about 10x less time and memory, and no out-of-memory failure on a 16 GB machine
+  (1M pairs ran out of memory on a 1,473-row dataset and needed 5 GB for Titanic).
 - `sample_weight` in `fit` for both estimators (pair weight w_i·w_j, equivalent to repeating rows).
 - `predict_log_proba`, `pdll.__citation__`, `CITATION.cff` (GitHub "Cite this repository").
 - Tests: golden equivalence with 0.3.1, scikit-learn's `parametrize_with_checks`, a reference implementation of the
@@ -44,6 +47,9 @@ A rewrite for robustness and speed. On the inputs the paper used (numpy arrays),
 - `PDCDataTransformer` imported `benchmark`, which is not part of the package, and modified its parameters in `fit`.
 - `PairwiseDifferenceRegressor.predict` overwrote zero anchor weights in `sample_weight_` with NaN.
 - `PairwiseDifferenceRegressor.fit` silently ignored `sample_weight`.
+- Unseen categories at prediction time used a pandas construction that pandas 3 deprecates and pandas 4 will reject.
+- Multi-output targets and targets with missing values now get errors that say what to do
+  (`MultiOutputClassifier`/`MultiOutputRegressor`, drop rows with a missing target).
 - Prediction is vectorised and memory-bounded: about 2x faster than 0.3.1 at a few hundred anchors. Training cost is
   dominated by the base estimator (unchanged), and `max_pairs` now caps it on larger datasets.
 

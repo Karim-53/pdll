@@ -62,7 +62,8 @@ def encode_frame(X: pd.DataFrame, categories: dict) -> pd.DataFrame:
     for column in X.columns:
         series = X[column]
         if column in categories:
-            codes = pd.Categorical(series.to_numpy(dtype=object), categories=categories[column]).codes
+            # -1 for missing and unseen values (pd.Categorical with unseen values is deprecated in pandas 3)
+            codes = pd.Index(categories[column], dtype=object).get_indexer(series.to_numpy(dtype=object))
             arrays.append(codes.astype(np.float64))
         elif _is_plain_numeric(series.dtype):
             arrays.append(series.to_numpy())
@@ -81,6 +82,14 @@ def needs_encoding(X: pd.DataFrame) -> bool:
     return not all(_is_plain_numeric(dtype) for dtype in X.dtypes)
 
 
+def _shape(y):
+    """Shape of y without calling numpy functions on it (array-likes may forbid them); () when absent."""
+    if y is None or (isinstance(y, str) and y == 'no_validation'):
+        return ()
+    shape = getattr(y, 'shape', None)
+    return tuple(shape) if shape is not None else np.asarray(y).shape
+
+
 def to_float_array(estimator, X, y='no_validation', *, reset, allow_nan, **check_params):
     """Validate X (and y) like scikit-learn does and return X as a float32/float64 ndarray.
 
@@ -97,11 +106,18 @@ def to_float_array(estimator, X, y='no_validation', *, reset, allow_nan, **check
     elif categories and estimator._columns is not None and np.ndim(X) == 2 and np.shape(X)[1] == len(estimator._columns):
         # fitted on a DataFrame with string columns, now called with an array of the same layout
         X = encode_frame(pd.DataFrame(np.asarray(X, dtype=object), columns=estimator._columns), categories).to_numpy()
+    y_shape = _shape(y)
+    if len(y_shape) == 2 and y_shape[1] > 1:
+        wrapper = 'MultiOutputClassifier' if type(estimator).__name__.endswith('Classifier') else 'MultiOutputRegressor'
+        raise ValueError(f'{type(estimator).__name__} predicts one target, but y has shape {y_shape}. For several targets, '
+                         f'wrap it: sklearn.multioutput.{wrapper}({type(estimator).__name__}()).')
     try:
         return validate_data(estimator, X, y, reset=reset, allow_nan=allow_nan, dtype=[np.float64, np.float32], **check_params)
     except ValueError as error:
         if 'convert' in str(error) and 'string' in str(error):
             raise ValueError(f'{error}. {_STRING_HINT}') from error
+        if 'y contains NaN' in str(error):
+            raise ValueError(f'{error} Drop the rows whose target is missing first, e.g. keep = y.notna(); X, y = X[keep], y[keep].') from error
         raise
 
 

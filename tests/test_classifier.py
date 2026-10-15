@@ -389,3 +389,47 @@ def test_sample_weight_needs_base_estimator_support(iris):
         PairwiseDifferenceClassifier(KNeighborsClassifier()).fit(*iris, sample_weight=np.ones(150))
     with pytest.raises(ValueError, match='Negative'):
         pdc().fit(*iris, sample_weight=-np.ones(150))
+
+
+# --------------------------------------------------------------------------- found by the real-world campaign (benchmark/real_world)
+
+def test_unseen_categories_raise_no_pandas_deprecation():
+    """pd.Categorical with values outside its categories is deprecated in pandas 3 and will raise in pandas 4."""
+    X, y = titanic_like()
+    model = PairwiseDifferenceClassifier(HistGradientBoostingClassifier(max_iter=5)).fit(X, y)
+    X_new = X[:4].copy()
+    X_new['embarked'] = ['Z', 'Y', None, 'S']
+    with warnings.catch_warnings(record=True) as caught:
+        warnings.simplefilter('always')
+        model.predict(X_new)
+    assert not [w for w in caught if issubclass(w.category, (DeprecationWarning, FutureWarning)) or 'Pandas' in w.category.__name__]
+
+
+def test_actionable_errors_for_multi_output_and_missing_target(iris):
+    X, y = iris
+    with pytest.raises(ValueError, match='MultiOutputClassifier'):
+        pdc().fit(X, np.column_stack([y, y]))
+    with pytest.raises(ValueError, match='contains NaN.*Drop the rows'):
+        pdc().fit(X, np.where(np.arange(150) % 7 == 0, np.nan, y))
+
+
+def test_auto_max_pairs_rule():
+    resolve = PairwiseDifferenceClassifier._resolve_max_pairs
+    assert resolve(None, 2000, 10) is None and resolve(5000, 2000, 10) == 5000  # explicit values are kept
+    assert resolve('auto', 300, 10) == pdll._base.DEFAULT_MAX_PAIRS  # 300 rows: every pair is below the cap
+    wide = pdll._base.PAIR_CELL_BUDGET // (3 * 2000)
+    assert resolve('auto', 300, 2000) == wide < pdll._base.DEFAULT_MAX_PAIRS  # wide data: the memory budget binds
+    with pytest.warns(UserWarning, match='memory budget'):
+        resolve('auto', 5000, 20_000)  # fewer pairs than rows: tell the user
+
+
+def test_auto_max_pairs_in_fit(iris):
+    X = np.tile(iris[0], (3, 1)) + np.random.RandomState(0).normal(scale=0.01, size=(450, 4))
+    y = np.tile(iris[1], 3)
+    small = PairwiseDifferenceClassifier(FakePairClassifier()).fit(X[:300], y[:300])
+    assert len(small.estimator_.X_fit_) == 300 * 300  # all pairs, as in the paper
+    large = PairwiseDifferenceClassifier(FakePairClassifier(), random_state=0).fit(X, y)
+    assert len(large.estimator_.X_fit_) == pdll._base.DEFAULT_MAX_PAIRS
+    assert len(large.X_anchors_) == 450  # max_anchors=500
+    with pytest.raises(ValueError, match='auto'):
+        pdc(max_pairs='many').fit(*iris)

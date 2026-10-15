@@ -29,13 +29,15 @@ class PairwiseDifferenceRegressor(RegressorMixin, PairwiseDifferenceMixin, BaseE
     estimator : regressor, default=None
         Regressor used on the pairs. It is cloned, never modified. ``None`` means ``ExtraTreesRegressor(n_jobs=-1)``.
 
-    max_anchors : int or None, default=1000
+    max_anchors : int or None, default=500
         If the training set is larger, a random subset of ``max_anchors`` rows is used as anchors.
         ``None`` uses every training row.
 
-    max_pairs : int or None, default=1_000_000
-        If n² exceeds ``max_pairs``, the base estimator is trained on a uniform random subset of pairs.
-        ``None`` uses every pair.
+    max_pairs : "auto", int or None, default="auto"
+        If n² exceeds ``max_pairs``, the base estimator is trained on a uniform random subset of pairs. ``"auto"``
+        means 100,000 pairs (every pair up to 316 training rows), fewer for very wide data. ``None`` uses every pair.
+        Regression trees grow one leaf per distinct target difference, so with wide data
+        ``ExtraTreesRegressor(max_features=0.3)`` trains about 3x faster for a small loss in accuracy.
 
     random_state : int, RandomState instance or None, default=None
         Seeds the pair and anchor subsampling, and the base estimator if its own ``random_state`` is None.
@@ -66,7 +68,7 @@ class PairwiseDifferenceRegressor(RegressorMixin, PairwiseDifferenceMixin, BaseE
     (2,)
     """
 
-    def __init__(self, estimator=None, *, max_anchors=1000, max_pairs=1_000_000, random_state=None):
+    def __init__(self, estimator=None, *, max_anchors=500, max_pairs='auto', random_state=None):
         self.estimator = estimator
         self.max_anchors = max_anchors
         self.max_pairs = max_pairs
@@ -99,7 +101,7 @@ class PairwiseDifferenceRegressor(RegressorMixin, PairwiseDifferenceMixin, BaseE
 
         seed_estimator, seed_pairs, seed_anchors = self._random_seeds()
         self.estimator_ = self._make_estimator(seed_estimator, sample_weight)
-        left, right = self._sample_pairs(len(X), max_pairs, seed_pairs)
+        left, right = self._sample_pairs(len(X), self._resolve_max_pairs(max_pairs, len(X), X.shape[1]), seed_pairs)
         X_pairs = pair_features(X, X, left, right, order='F')
         y_pairs = y[left] - y[right]
         if sample_weight is None:

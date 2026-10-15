@@ -83,7 +83,7 @@ def evaluate_model_on_dataset(model, X_train, X_val, X_test, y_train, y_val, y_t
                     'weights': None})
 
     # Standard Padre
-    padre = PairwiseDifferenceRegressor(instantiate_base_model(model))
+    padre = PairwiseDifferenceRegressor(instantiate_base_model(model), max_pairs=None, max_anchors=None)  # as in the paper
     padre.fit(X_train, y_train)
     results.append({'method': "Padre",
                     'val_set': "",
