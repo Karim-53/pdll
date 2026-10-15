@@ -1,12 +1,9 @@
-"""Quick test."""
-import sys
-
-sys.path.extend('../')
-from pdll import PairwiseDifferenceRegressor
-
+"""Regression with pdll."""
 import numpy as np
-from sklearn.tree import DecisionTreeRegressor
 from sklearn.datasets import make_regression
+from sklearn.tree import DecisionTreeRegressor
+
+from pdll import PairwiseDifferenceRegressor
 
 
 def test_regression_task():
@@ -18,8 +15,7 @@ def test_regression_task():
     pdr = PairwiseDifferenceRegressor(estimator=DecisionTreeRegressor())
     pdr.fit(X, y)
     print('score:', pdr.score(X, y))
-
-    y_pred = pdr.predict(X)
+    print('first predictions:', pdr.predict(X[:3]).round(1), 'true:', y[:3].round(1))
 
     assert pdr.score(X, y) == 1.0
 

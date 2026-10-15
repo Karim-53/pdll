@@ -1,0 +1,222 @@
+{
+ "environment": {
+  "pdll": "1.0.0",
+  "python": "3.12.10",
+  "numpy": "2.5.4",
+  "pandas": "3.0.6",
+  "scikit-learn": "1.9.1",
+  "scipy": "1.18.1",
+  "machine": "AMD64",
+  "system": "Windows"
+ },
+ "summary": {
+  "mean_base_f1": 0.8728466666666665,
+  "mean_pdc_f1": 0.8938633333333336,
+  "pdc_wins": 18,
+  "pdc_losses": 11,
+  "pdc_seconds": 145.527,
+  "base_seconds": 14.259
+ },
+ "results": {
+  "iris": {
+   "ExtraTrees": {
+    "base_f1": 0.9531,
+    "pdc_f1": 0.9531,
+    "base_seconds": 0.632,
+    "pdc_seconds": 1.324
+   },
+   "RandomForest": {
+    "base_f1": 0.9462,
+    "pdc_f1": 0.9531,
+    "base_seconds": 0.798,
+    "pdc_seconds": 1.548
+   },
+   "DecisionTree": {
+    "base_f1": 0.9522,
+    "pdc_f1": 0.9327,
+    "base_seconds": 0.01,
+    "pdc_seconds": 0.325
+   }
+  },
+  "wine": {
+   "ExtraTrees": {
+    "base_f1": 0.9949,
+    "pdc_f1": 0.9889,
+    "base_seconds": 0.669,
+    "pdc_seconds": 2.053
+   },
+   "RandomForest": {
+    "base_f1": 0.9889,
+    "pdc_f1": 0.9832,
+    "base_seconds": 0.801,
+    "pdc_seconds": 3.192
+   },
+   "DecisionTree": {
+    "base_f1": 0.9283,
+    "pdc_f1": 0.9781,
+    "base_seconds": 0.021,
+    "pdc_seconds": 3.368
+   }
+  },
+  "breast_cancer_250": {
+   "ExtraTrees": {
+    "base_f1": 0.9615,
+    "pdc_f1": 0.953,
+    "base_seconds": 0.62,
+    "pdc_seconds": 5.648
+   },
+   "RandomForest": {
+    "base_f1": 0.9614,
+    "pdc_f1": 0.9483,
+    "base_seconds": 0.75,
+    "pdc_seconds": 9.148
+   },
+   "DecisionTree": {
+    "base_f1": 0.9441,
+    "pdc_f1": 0.9491,
+    "base_seconds": 0.021,
+    "pdc_seconds": 14.675
+   }
+  },
+  "digits_300": {
+   "ExtraTrees": {
+    "base_f1": 0.9627,
+    "pdc_f1": 0.9766,
+    "base_seconds": 0.705,
+    "pdc_seconds": 14.81
+   },
+   "RandomForest": {
+    "base_f1": 0.9407,
+    "pdc_f1": 0.9796,
+    "base_seconds": 0.83,
+    "pdc_seconds": 11.291
+   },
+   "DecisionTree": {
+    "base_f1": 0.7534,
+    "pdc_f1": 0.9312,
+    "base_seconds": 0.03,
+    "pdc_seconds": 29.287
+   }
+  },
+  "moons": {
+   "ExtraTrees": {
+    "base_f1": 0.8743,
+    "pdc_f1": 0.8843,
+    "base_seconds": 0.592,
+    "pdc_seconds": 1.896
+   },
+   "RandomForest": {
+    "base_f1": 0.8892,
+    "pdc_f1": 0.8592,
+    "base_seconds": 0.751,
+    "pdc_seconds": 2.783
+   },
+   "DecisionTree": {
+    "base_f1": 0.8092,
+    "pdc_f1": 0.8444,
+    "base_seconds": 0.01,
+    "pdc_seconds": 0.975
+   }
+  },
+  "circles": {
+   "ExtraTrees": {
+    "base_f1": 0.9248,
+    "pdc_f1": 0.9196,
+    "base_seconds": 0.618,
+    "pdc_seconds": 1.85
+   },
+   "RandomForest": {
+    "base_f1": 0.8847,
+    "pdc_f1": 0.8997,
+    "base_seconds": 0.747,
+    "pdc_seconds": 3.042
+   },
+   "DecisionTree": {
+    "base_f1": 0.8845,
+    "pdc_f1": 0.9044,
+    "base_seconds": 0.01,
+    "pdc_seconds": 1.061
+   }
+  },
+  "linearly_separable": {
+   "ExtraTrees": {
+    "base_f1": 0.8393,
+    "pdc_f1": 0.8224,
+    "base_seconds": 0.61,
+    "pdc_seconds": 2.065
+   },
+   "RandomForest": {
+    "base_f1": 0.839,
+    "pdc_f1": 0.8319,
+    "base_seconds": 0.764,
+    "pdc_seconds": 3.016
+   },
+   "DecisionTree": {
+    "base_f1": 0.7823,
+    "pdc_f1": 0.7971,
+    "base_seconds": 0.01,
+    "pdc_seconds": 1.003
+   }
+  },
+  "synthetic_3class": {
+   "ExtraTrees": {
+    "base_f1": 0.6784,
+    "pdc_f1": 0.7112,
+    "base_seconds": 0.632,
+    "pdc_seconds": 3.673
+   },
+   "RandomForest": {
+    "base_f1": 0.6508,
+    "pdc_f1": 0.715,
+    "base_seconds": 0.799,
+    "pdc_seconds": 6.921
+   },
+   "DecisionTree": {
+    "base_f1": 0.5551,
+    "pdc_f1": 0.6557,
+    "base_seconds": 0.021,
+    "pdc_seconds": 7.274
+   }
+  },
+  "titanic_like": {
+   "ExtraTrees": {
+    "base_f1": 0.8894,
+    "pdc_f1": 0.8903,
+    "base_seconds": 0.643,
+    "pdc_seconds": 2.756
+   },
+   "RandomForest": {
+    "base_f1": 0.8816,
+    "pdc_f1": 0.8778,
+    "base_seconds": 0.747,
+    "pdc_seconds": 3.486
+   },
+   "DecisionTree": {
+    "base_f1": 0.8274,
+    "pdc_f1": 0.8243,
+    "base_seconds": 0.011,
+    "pdc_seconds": 1.645
+   }
+  },
+  "wine_small_class": {
+   "ExtraTrees": {
+    "base_f1": 0.965,
+    "pdc_f1": 0.9949,
+    "base_seconds": 0.632,
+    "pdc_seconds": 1.503
+   },
+   "RandomForest": {
+    "base_f1": 0.8473,
+    "pdc_f1": 0.9703,
+    "base_seconds": 0.76,
+    "pdc_seconds": 2.154
+   },
+   "DecisionTree": {
+    "base_f1": 0.8757,
+    "pdc_f1": 0.8865,
+    "base_seconds": 0.015,
+    "pdc_seconds": 1.755
+   }
+  }
+ }
+}

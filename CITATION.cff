@@ -1,0 +1,40 @@
+cff-version: 1.2.0
+message: "If you use pdll, please cite the paper in preferred-citation."
+title: "pdll: Pairwise Difference Learning for scikit-learn"
+type: software
+authors:
+  - family-names: Belaid
+    given-names: Mohamed Karim
+  - family-names: Rabus
+    given-names: Maximilian
+  - family-names: Hüllermeier
+    given-names: Eyke
+repository-code: "https://github.com/Karim-53/pdll"
+url: "https://pypi.org/project/pdll/"
+license: Apache-2.0
+version: 1.0.0
+keywords:
+  - pairwise difference learning
+  - scikit-learn
+  - classification
+  - tabular data
+  - meta-learning
+preferred-citation:
+  type: conference-paper
+  title: "Pairwise Difference Learning for Classification"
+  authors:
+    - family-names: Belaid
+      given-names: Mohamed Karim
+    - family-names: Rabus
+      given-names: Maximilian
+    - family-names: Hüllermeier
+      given-names: Eyke
+  collection-title: "Discovery Science"
+  collection-type: proceedings
+  publisher:
+    name: Springer
+  doi: "10.1007/978-3-031-78980-9_18"
+  start: 284
+  end: 299
+  year: 2024
+  url: "https://arxiv.org/abs/2406.20031"

@@ -1,7 +1,84 @@
 [build-system]
-# Minimum requirements for the build system to execute.
-requires = [
-    "setuptools",
-    "wheel",
-]
+requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "pdll"
+dynamic = ["version"]
+description = "Pairwise Difference Learning: scikit-learn meta-estimators that make tree models more accurate on small tabular data by learning from pairs of points."
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+authors = [{ name = "Mohamed Karim Belaid", email = "karim.belaid@idiada.com" }]
+requires-python = ">=3.9"
+dependencies = [
+    "numpy>=1.23",
+    "pandas>=1.5",
+    "scikit-learn>=1.2",
+    "scipy>=1.9",
+]
+keywords = [
+    "pairwise difference learning", "scikit-learn", "meta-learning", "classification", "regression",
+    "tabular data", "small data", "random forest", "extra trees", "siamese", "machine learning",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7", "pytest-cov"]
+
+[project.urls]
+Homepage = "https://github.com/Karim-53/pdll"
+Paper = "https://arxiv.org/abs/2406.20031"
+Changelog = "https://github.com/Karim-53/pdll/blob/main/CHANGELOG.md"
+Issues = "https://github.com/Karim-53/pdll/issues"
+
+[tool.setuptools]
+packages = ["pdll"]
+
+[tool.setuptools.dynamic]
+version = { attr = "pdll.__version__" }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-m 'not network and not e2e' --doctest-modules --ignore=tests/golden/make_golden_v031.py --ignore=tests/e2e/update_baseline.py --ignore=tests/e2e/benchmark.py"
+markers = [
+    "network: downloads public datasets from OpenML (run with -m network)",
+    "e2e: end-to-end performance regression benchmark, a few minutes (run with -m e2e)",
+    "slow: unit tests that take more than ~10 s each (skip with -m 'not slow')",
+]
+filterwarnings = [
+    "ignore:For better performance, estimator should have class_weight:UserWarning",
+]
+
+[tool.coverage.run]
+source = ["pdll"]
+
+[tool.ruff]
+line-length = 150
+include = ["pdll/**/*.py", "tests/**/*.py", "examples/**/*.py"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+ignore = ["E402"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/test_weighted_pdr.py" = ["E501", "F841"]  # legacy test file, kept as written
+
+[tool.ruff.lint.isort]
+known-first-party = ["pdll", "helpers", "benchmark", "golden_cases", "test_classifier"]

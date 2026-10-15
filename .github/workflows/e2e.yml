@@ -1,0 +1,38 @@
+# End-to-end checks. The weekly run installs the newest releases of every dependency, so upstream
+# breakage (a new pandas, numpy or scikit-learn) shows up here before users report it.
+name: E2E
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "17 4 * * 1"  # Mondays 04:17 UTC
+  workflow_dispatch:
+
+jobs:
+  performance:
+    name: Performance regression gate (accuracy and speed vs baseline)
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: python -m pip install --upgrade pip && python -m pip install -e ".[test]"
+      - run: python -m pytest -m e2e -v -s -rfE
+
+  real-data:
+    name: Raw public datasets from OpenML
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    continue-on-error: true  # OpenML outages must not block merges
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: python -m pip install --upgrade pip && python -m pip install -e ".[test]"
+      - run: python -m pytest -m network -v -rfEs
+      - run: python examples/raw_dataframe_titanic.py
