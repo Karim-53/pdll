@@ -22,6 +22,7 @@
 - 🔌 **Drop-in**: works in `Pipeline`, `GridSearchCV` and `cross_val_score`, passes scikit-learn's own estimator checks, and never modifies the estimator you pass in.
 - 🧾 **Raw DataFrames welcome**: string, category, bool and nullable columns are encoded for you; missing values go straight to base learners that support them (e.g. HistGradientBoosting).
 - 📈 **More accurate tree models**: in the paper, PDL improves tree-based learners on 99 OpenML datasets (macro-F1). In the [end-to-end suite](#evaluation) that CI runs on every change, it wins 18 of 30 dataset/learner pairs (11 losses) and raises mean macro-F1 from 0.873 to 0.894.
+- 🧪 **Validated on 131 real datasets** ([results](benchmark/real_world/README.md)): raw Kaggle, OpenML, scikit-learn and Zindi data, with no crashes and at most 2.6 GB of memory.
 - 🛡️ **Tested**: Python 3.9–3.14, numpy ≥ 1.23, pandas ≥ 1.5, scikit-learn ≥ 1.2 (Kaggle and Colab stacks included), Linux, Windows and macOS.
 
 [<img src="https://github.com/user-attachments/assets/e15057cf-fef8-4061-8bb9-611adde0128b" width="70%">](https://youtu.be/5Yl6yFiNK3U?si=SXuRrO3mibD188xF "Learn more about PDL on youtube")
@@ -85,13 +86,15 @@ More in [`examples/`](examples/): uncertainty from the per-anchor posteriors (`p
 | `max_pairs` | `"auto"` | Training uses all n² pairs up to 100,000 (every pair up to 316 rows, exactly as in the paper), then a uniform random subset; fewer for very wide data so memory stays bounded. `None` uses every pair. |
 | `max_anchors` | `500` | Prediction compares each point with every anchor. Larger training sets use a class-stratified random subset. |
 | `use_prior` | `"auto"` | How similarities become probabilities: the paper's prior-based posterior (`True`) or the normalised mean similarity per class (`False`). `"auto"` picks the prior when a class has fewer than 5 rows. |
+| `class_weight` | `None` | `"balanced"` (or a dict) weights the classes through sample weights. Recommended for imbalanced classes, where PDL otherwise under-predicts the minority class. |
 | `random_state` | `None` | Seeds the subsampling and the base model (if its own `random_state` is unset). |
 
 `fit` also accepts `sample_weight`. A pair (i, j) is weighted w_i·w_j, which is exactly equivalent to repeating rows.
 
 ## When to use it
-- ✅ **Small to medium tabular data** (tens to a few thousand rows), where every extra training signal counts.
-- ✅ **Tree-based base learners**: DecisionTree, RandomForest, ExtraTrees, Bagging, (Hist)GradientBoosting.
+- ✅ **Small tabular data**: up to about 2,000 training rows. In the [real-data benchmark](benchmark/real_world/) PDL matches its base learner on average below 1,000 rows and beats it on many datasets. Above 2,000 rows it was usually *less* accurate than the base learner alone, and `fit` warns you.
+- ✅ **Tree-based base learners**: DecisionTree, RandomForest, ExtraTrees, Bagging, (Hist)GradientBoosting. The weaker the learner, the larger the gain (a single decision tree gains 15 points on small digits data).
+- ⚖️ **Imbalanced classes**: use `class_weight="balanced"`. PDL ranks well (its ROC AUC is on par or better) but under-predicts minority classes by default.
 - ⚠️ **Parametric base learners** (logistic regression, SVM, kNN, naive Bayes, MLP) rarely gain from PDL; pdll warns you.
 - ⏱️ **Cost**: training sees up to `max_pairs` pairs with 3× the features, and prediction compares every point with up to `max_anchors` anchors. With the defaults, a typical dataset fits in seconds and stays well under 2 GB of memory, whatever its size. For more accuracy on a few thousand rows, raise `max_pairs` (e.g. `1_000_000`), at about 10× the time and memory.
 
@@ -155,6 +158,17 @@ Finally, the predicted class is the most likely prediction:
 </details>
 
 ## Evaluation
+
+### Real-world validation (131 datasets)
+Before release, pdll ran with default settings on 131 raw real datasets: OpenML-CC18 and CTR23 (official task splits), Kaggle datasets, scikit-learn datasets and a Zindi dataset. 129 ran, and 2 were refused with an actionable message (sparse text, multi-target). There were no crashes, out-of-memory errors or timeouts, and peak memory stayed at or below 2.6 GB. [Protocol and findings](benchmark/real_world/README.md), [full table](benchmark/real_world/RESULTS.md).
+
+| Training rows | Classification: macro-F1, PDL minus base learner (wins / ties / losses) |
+|---|---|
+| up to 1,000 | -0.001 (10 / 10 / 10) |
+| 1,000 to 2,000 | -0.012 (3 / 5 / 10) |
+| more than 2,000 | -0.061 (5 / 3 / 35) |
+
+The base learner here is a strong default, ExtraTrees with balanced class weights. PDL holds its own on small data and is not meant for large data; `fit` warns from 2,000 rows on.
 
 ### Continuous benchmark (CI)
 Every change to `pdll` runs [`tests/e2e`](tests/e2e/): 10 offline datasets (iris, wine, breast cancer, digits, 2D toy problems, synthetic, a Titanic-like mixed-type table and a dataset with a tiny class). Each is scored with 5-fold stratified CV and macro-F1, comparing ExtraTrees, RandomForest and DecisionTree alone versus wrapped in PDC. The build fails if accuracy or speed regresses against the [committed baseline](tests/e2e/baseline.json).
