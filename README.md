@@ -1,59 +1,99 @@
 <h1 align="center">Pairwise Difference Learning (pdll)</h1>
 
 <p align="center">
-  <b>A scikit-learn compatible meta-learner that boosts tabular classifiers by learning from <i>pairs of points</i> instead of single points.</b>
+  <b>A scikit-learn meta-estimator that makes tree models more accurate on small tabular datasets by learning from <i>pairs of points</i>.</b>
 </p>
 
 <p align="center">
   <a href="https://pypi.org/project/pdll/"><img alt="PyPI" src="https://img.shields.io/pypi/v/pdll?color=blue"></a>
   <a href="https://pypi.org/project/pdll/"><img alt="Python" src="https://img.shields.io/pypi/pyversions/pdll"></a>
+  <a href="https://github.com/Karim-53/pdll/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/Karim-53/pdll/actions/workflows/ci.yml/badge.svg"></a>
+  <a href="https://github.com/Karim-53/pdll/actions/workflows/e2e.yml"><img alt="E2E" src="https://github.com/Karim-53/pdll/actions/workflows/e2e.yml/badge.svg"></a>
   <a href="https://pepy.tech/project/pdll"><img alt="Downloads" src="https://static.pepy.tech/badge/pdll"></a>
   <a href="https://github.com/Karim-53/pdll/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/badge/license-Apache%202.0-green"></a>
-  <a href="https://arxiv.org/abs/2406.20031"><img alt="Paper" src="https://img.shields.io/badge/paper-Discovery%20Science%202024-b31b1b"></a>
+  <a href="https://doi.org/10.1007/978-3-031-78980-9_18"><img alt="Paper" src="https://img.shields.io/badge/paper-Discovery%20Science%202024-b31b1b"></a>
 </p>
 
-**Pairwise Difference Learning (PDL)** turns a hard multiclass problem into an easy binary one. Instead of asking *"what class is this point?"*, PDL asks *"are these two points the same class?"* — a reformulation that squeezes more signal out of the same training data and consistently improves the accuracy of tree-based models such as Random Forest and Gradient Boosting.
+**Pairwise Difference Learning (PDL)** turns a multiclass problem into a binary one. Instead of asking *"what class is this point?"*, the base model learns *"are these two points of the same class?"* from every pair of training points. A new point is then compared with the training points (the *anchors*), whose labels are known. With n training rows the model sees n² examples, which helps most when data is scarce.
 
-This library provides a drop-in, scikit-learn compatible `PairwiseDifferenceClassifier` (PDC), as introduced in [Belaid et al., *Pairwise Difference Learning for Classification*, Discovery Science 2024](https://arxiv.org/abs/2406.20031).
+`pdll` wraps any scikit-learn classifier (or regressor) and keeps the usual `fit` / `predict` / `predict_proba` / `score` API. It implements [Belaid, Rabus & Hüllermeier, *Pairwise Difference Learning for Classification*, Discovery Science 2024](https://doi.org/10.1007/978-3-031-78980-9_18) ([arXiv](https://arxiv.org/abs/2406.20031)).
 
 ### ✨ Highlights
-- 🔌 **Drop-in** — wraps any scikit-learn classifier; keeps `.fit`, `.predict`, `.predict_proba`, `.score`.
-- 📈 **Better accuracy** — benchmarked on 99 OpenML datasets against 7 base learners (macro-F1); wins on compatible learners.
-- 🧠 **Principled** — probabilistic reformulation of multiclass classification into a similarity task.
-- 🪶 **Lightweight** — pure Python, only `numpy`, `pandas`, and `scikit-learn` as dependencies.
+- 🔌 **Drop-in**: works in `Pipeline`, `GridSearchCV` and `cross_val_score`, passes scikit-learn's own estimator checks, and never modifies the estimator you pass in.
+- 🧾 **Raw DataFrames welcome**: string, category, bool and nullable columns are encoded for you; missing values go straight to base learners that support them (e.g. HistGradientBoosting).
+- 📈 **More accurate tree models**: in the paper, PDL improves tree-based learners on 99 OpenML datasets (macro-F1). In the [end-to-end suite](#evaluation) that CI runs on every change, it wins 18 of 30 dataset/learner pairs (11 losses) and raises mean macro-F1 from 0.873 to 0.894.
+- 🛡️ **Tested**: Python 3.9–3.14, numpy ≥ 1.23, pandas ≥ 1.5, scikit-learn ≥ 1.2 (Kaggle and Colab stacks included), Linux, Windows and macOS.
 
 [<img src="https://github.com/user-attachments/assets/e15057cf-fef8-4061-8bb9-611adde0128b" width="70%">](https://youtu.be/5Yl6yFiNK3U?si=SXuRrO3mibD188xF "Learn more about PDL on youtube")
 
 ### 📖 Contents
-[Installation](#installation) · [Usage](#usage) · [How does it work?](#how-does-it-work) · [Evaluation](#evaluation) · [Reference](#reference)
+[Installation](#installation) · [Usage](#usage) · [When to use it](#when-to-use-it) · [How does it work?](#how-does-it-work) · [Evaluation](#evaluation) · [Citation](#citation)
 
 ## Installation
-To install the package, run the following command:
 ```shell
 pip install -U pdll
 ```
 
-[comment]: <> (todo conda link)
-
 ## Usage
 ```python
+from sklearn.datasets import load_wine
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import cross_val_score
+
 from pdll import PairwiseDifferenceClassifier
 
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.datasets import make_blobs
+X, y = load_wine(return_X_y=True)
 
-# Generate random data with 2 features, 10 points, and 3 classes
-X, y = make_blobs(n_samples=10, n_features=2, centers=3, random_state=0)
+rf = RandomForestClassifier(class_weight="balanced", random_state=0)
+pdc = PairwiseDifferenceClassifier(estimator=rf)
 
-pdc = PairwiseDifferenceClassifier(estimator=RandomForestClassifier())
+print("RandomForest     :", cross_val_score(rf, X, y, cv=5).mean())
+print("PDC(RandomForest):", cross_val_score(pdc, X, y, cv=5).mean())
+
 pdc.fit(X, y)
-print('score:', pdc.score(X, y))
-
-y_pred = pdc.predict(X)
-proba_pred = pdc.predict_proba(X)
+pdc.predict(X[:3])            # array of labels, like any scikit-learn classifier
+pdc.predict_proba(X[:3])      # ndarray (n_samples, n_classes), columns follow pdc.classes_
 ```
-Please consult `examples/` directory for more examples.
 
+**Raw DataFrames** (strings, categories, missing values) work directly:
+```python
+from sklearn.datasets import fetch_openml
+from sklearn.ensemble import HistGradientBoostingClassifier
+
+X, y = fetch_openml("titanic", version=1, as_frame=True, return_X_y=True)
+X = X[["pclass", "sex", "age", "sibsp", "parch", "fare", "embarked"]]   # drop identifiers such as name or ticket
+
+pdc = PairwiseDifferenceClassifier(HistGradientBoostingClassifier(class_weight="balanced"))
+pdc.fit(X[:600], y[:600]).score(X[600:900], y[600:900])
+```
+
+**Regression** uses the same idea: the base model learns the target *difference* between two points.
+```python
+from pdll import PairwiseDifferenceRegressor
+from sklearn.tree import DecisionTreeRegressor
+
+pdr = PairwiseDifferenceRegressor(DecisionTreeRegressor()).fit(X_train, y_train)
+pdr.learn_anchor_weights(X_val, y_val, method="L2")   # optional: learn a weight per anchor
+```
+
+More in [`examples/`](examples/): uncertainty from the per-anchor posteriors (`predict_proba_samples`), weighted regression, and more.
+
+### Main parameters
+| Parameter | Default | Meaning |
+|---|---|---|
+| `estimator` | `ExtraTreesClassifier(class_weight="balanced")` | Base model trained on pairs. Prefer tree ensembles with `class_weight="balanced"`. It is cloned, never modified. |
+| `max_pairs` | `1_000_000` | Training uses all n² pairs up to this limit, then a uniform random subset. Up to 1,000 rows, every pair is used, exactly as in the paper. |
+| `max_anchors` | `1000` | Prediction compares each point with every anchor. Larger training sets use a class-stratified random subset. |
+| `use_prior` | `"auto"` | How similarities become probabilities: the paper's prior-based posterior (`True`) or the normalised mean similarity per class (`False`). `"auto"` picks the prior when a class has fewer than 5 rows. |
+| `random_state` | `None` | Seeds the subsampling and the base model (if its own `random_state` is unset). |
+
+`fit` also accepts `sample_weight`. A pair (i, j) is weighted w_i·w_j, which is exactly equivalent to repeating rows.
+
+## When to use it
+- ✅ **Small to medium tabular data** (tens to a few thousand rows), where every extra training signal counts.
+- ✅ **Tree-based base learners**: DecisionTree, RandomForest, ExtraTrees, Bagging, (Hist)GradientBoosting.
+- ⚠️ **Parametric base learners** (logistic regression, SVM, kNN, naive Bayes, MLP) rarely gain from PDL; pdll warns you.
+- ⏱️ **Cost**: training sees up to `max_pairs` rows with 3× the features, and prediction compares every point with up to `max_anchors` anchors. Expect seconds to minutes rather than milliseconds.
 
 
 ## How does it work?
@@ -115,11 +155,26 @@ Finally, the predicted class is the most likely prediction:
 </details>
 
 ## Evaluation
-To reproduce the experiment of the paper, please run `run_benchmark.py` with a base learner and a dataset number, between 0 and 99. Example:
 
-`python run_benchmark.py --model DecisionTreeClassifier --data 0`
+### Continuous benchmark (CI)
+Every change to `pdll` runs [`tests/e2e`](tests/e2e/): 10 offline datasets (iris, wine, breast cancer, digits, 2D toy problems, synthetic, a Titanic-like mixed-type table and a dataset with a tiny class). Each is scored with 5-fold stratified CV and macro-F1, comparing ExtraTrees, RandomForest and DecisionTree alone versus wrapped in PDC. The build fails if accuracy or speed regresses against the [committed baseline](tests/e2e/baseline.json).
 
-Scores will be stored in `./results/tmp/` directory.
+| | Base learner alone | PDC(base learner) |
+|---|---|---|
+| Mean macro-F1 (30 dataset × learner pairs) | 0.873 | **0.894** |
+| Wins / losses | | 18 / 11 |
+
+The largest gains appear for single decision trees (e.g. digits: 0.75 → 0.93) and for classes with very few rows (wine with an 8-row class, RandomForest: 0.85 → 0.97). PDL does not win everywhere: it is slightly behind on the linearly separable toy problem and on breast cancer with forests.
+
+### Paper experiment
+To reproduce the experiment of the paper, install the research requirements and run `run_benchmark.py` with a base learner and a dataset number, between 0 and 99. Example:
+
+```shell
+pip install -r requirements-benchmark.txt
+python run_benchmark.py --model DecisionTreeClassifier --data 0
+```
+
+Scores will be stored in `./results/tmp/` directory. `pdll` 1.x reproduces the predictions of the original implementation (0.3.1) on the paper's inputs; [`tests/test_golden.py`](tests/test_golden.py) checks this on every change.
 
 ### Experiment
 We use 99 datasets from the OpenML repository. We compare the performance of the PDC algorithm with 7 base learners. We use the macro F1 score as a metric.
@@ -308,18 +363,26 @@ Here we see the difference in the learned patterns between PDL and the base lear
 
 
 
-## Reference
-Please cite us if you use this library in your research:
-```
-@article{belaid2024pairwise,
-  title={Pairwise Difference Learning for Classification},
-  author={Belaid, Mohamed Karim and Rabus, Maximilian and H{\"u}llermeier, Eyke},
-  journal={Discovery Science},
-  year={2024}
+## Citation
+If `pdll` helps your work, please cite the paper (GitHub's **"Cite this repository"** button gives the same entry, and `pdll.__citation__` holds it too):
+```bibtex
+@inproceedings{belaid2024pairwise,
+  title     = {Pairwise Difference Learning for Classification},
+  author    = {Belaid, Mohamed Karim and Rabus, Maximilian and H{\"u}llermeier, Eyke},
+  booktitle = {Discovery Science},
+  pages     = {284--299},
+  publisher = {Springer},
+  year      = {2024},
+  doi       = {10.1007/978-3-031-78980-9_18},
+  url       = {https://arxiv.org/abs/2406.20031}
 }
 ```
-The first commit correspond to the original implementation of the PDC algorithm
+Uncertainty quantification with PDL: Belaid, Rabus & Hüllermeier, *Uncertainty Quantification in Pairwise Difference Learning for Classification*, Machine Learning, 2025, [doi:10.1007/s10994-025-06949-0](https://doi.org/10.1007/s10994-025-06949-0).
 
+The first commit of this repository corresponds to the original implementation of the PDC algorithm.
+
+## Contributing
+Issues and pull requests are welcome. `pip install -e ".[test]"` then `pytest` runs the fast suite; `pytest -m e2e` runs the performance regression gate (a few minutes) and `pytest -m network` the OpenML integration tests.
 
 **Acknowledgments:** We would like to thank [Tim Wibiral](https://github.com/twibiral), [Dorra ElMekki](https://github.com/DorraElMekki), Viktor Bengs, Muhammad Zeeshan Anwer,  Muhammad Hossein Shaker, Alireza Javanmardi, [Patrick Kolpaczki](https://github.com/kolpaczki), and [Maximilian Muschalik](https://github.com/mmschlk) for their early comments on this work.
 We also acknowledge LRZ and IDIADA for computational resources.

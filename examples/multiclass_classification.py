@@ -1,12 +1,9 @@
-"""Quick test."""
-import sys
-
-sys.path.extend('../')
-from pdll import PairwiseDifferenceClassifier
-
+"""Multiclass classification with pdll."""
 import numpy as np
-from sklearn.ensemble import RandomForestClassifier
 from sklearn.datasets import make_blobs
+from sklearn.ensemble import RandomForestClassifier
+
+from pdll import PairwiseDifferenceClassifier
 
 
 def test_multiclass_classification():
@@ -26,8 +23,8 @@ def test_multiclass_classification():
     pdc.fit(X, y)
     print('score:', pdc.score(X, y))
 
-    y_pred = pdc.predict(X)
-    proba_pred = pdc.predict_proba(X)
+    print('predictions:', pdc.predict(X))
+    print('probabilities:', pdc.predict_proba(X[:2]).round(2))
 
     assert pdc.score(X, y) == 1.0
 

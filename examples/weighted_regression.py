@@ -1,13 +1,9 @@
-"""Quick test."""
-import sys
-
-
-sys.path.extend('../')
-from pdll import PairwiseDifferenceRegressor
-
+"""Weighted regression with pdll."""
 import numpy as np
-from sklearn.tree import DecisionTreeRegressor
 from sklearn.datasets import make_regression
+from sklearn.tree import DecisionTreeRegressor
+
+from pdll import PairwiseDifferenceRegressor
 
 
 def test_weighted_regression_task():
