@@ -1,4 +1,5 @@
 """Unit tests of PairwiseDifferenceClassifier: inputs, labels, maths, subsampling, weights, sklearn tooling."""
+import os
 import pickle
 import warnings
 
@@ -402,7 +403,10 @@ def test_unseen_categories_raise_no_pandas_deprecation():
     with warnings.catch_warnings(record=True) as caught:
         warnings.simplefilter('always')
         model.predict(X_new)
-    assert not [w for w in caught if issubclass(w.category, (DeprecationWarning, FutureWarning)) or 'Pandas' in w.category.__name__]
+    deprecations = [w for w in caught if issubclass(w.category, (DeprecationWarning, FutureWarning)) or 'Pandas' in w.category.__name__]
+    # old scikit-learn releases raise their own deprecations against newer pandas: only pdll's code and Categorical matter here
+    from_pdll = [w for w in deprecations if 'Categorical' in str(w.message) or os.path.basename(os.path.dirname(w.filename)) == 'pdll']
+    assert not from_pdll, [str(w.message) for w in from_pdll]
 
 
 def test_actionable_errors_for_multi_output_and_missing_target(iris):
