@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 - Fix the bug in the PDC.predict() output
+- PDC.predict_proba / predict: wrong predictions when `X`/`y` are pandas objects whose index is not 0..N-1 (e.g. straight out of `train_test_split`). Anchor labels were matched to similarities by index label instead of by position; a string index crashed.
 
 ## [0.2.0] - 2024-07-15
 ### Added
