@@ -162,8 +162,8 @@ class PairwiseDifferenceClassifier(ClassifierMixin, PairwiseDifferenceMixin, Bas
 
     def decide_use_prior(self) -> bool:
         """Whether predict_proba uses the prior-based aggregation (see ``use_prior``)."""
-        if isinstance(self.use_prior, bool):
-            return self.use_prior
+        if not isinstance(self.use_prior, str):  # True / False, including numpy booleans
+            return bool(self.use_prior)
         return self._min_class_count < MIN_CLASS_SIZE_WITHOUT_PRIOR
 
     def _p_same(self, X_pairs):

@@ -237,6 +237,7 @@ def test_errors_and_not_fitted(iris):
         PairwiseDifferenceClassifier(RandomForestClassifier).fit(X, y)
     with pytest.raises(ValueError, match='use_prior'):
         pdc(use_prior='sometimes').fit(X, y)
+    assert pdc(use_prior=np.True_).fit(X, y).decide_use_prior() is True  # numpy bools, e.g. from a GridSearch grid
     for bad in (0, -5, 2.5, True):
         with pytest.raises(ValueError, match='max_pairs'):
             pdc(max_pairs=bad).fit(X, y)
