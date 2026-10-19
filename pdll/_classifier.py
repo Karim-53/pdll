@@ -169,8 +169,10 @@ class PairwiseDifferenceClassifier(ClassifierMixin, PairwiseDifferenceMixin, Bas
 
         Before scikit-learn 1.8, forests and trees balance on row counts and ignore sample_weight, so the same weights
         gave a different model on older versions. Folding the balance into the pair weights fits the same model on all.
+        Estimators without a settable class_weight parameter get the pair weights unchanged.
         """
-        if getattr(self.estimator_, 'class_weight', None) != 'balanced':
+        params = self.estimator_.get_params(deep=False) if hasattr(self.estimator_, 'get_params') else {}
+        if params.get('class_weight') != 'balanced' or not hasattr(self.estimator_, 'set_params'):
             self.estimator_.fit(X_pairs, y_pairs, sample_weight=pair_weight)
             return
         weighted_counts = np.bincount(y_pairs, weights=pair_weight, minlength=2)
