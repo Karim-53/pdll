@@ -12,6 +12,9 @@ ID_LIKE_UNIQUE_RATIO = 0.5
 ID_LIKE_MIN_ROWS = 20
 
 _NUMERIC_INFERRED_TYPES = ('integer', 'floating', 'mixed-integer-float', 'decimal', 'boolean', 'empty')
+_TEMPORAL_INFERRED_TYPES = ('date', 'datetime', 'datetime64', 'time', 'timedelta', 'timedelta64', 'period')
+_CONVERT_HINT = 'Convert it first, e.g. extract the year/month/day or use .astype("int64").'
+_MISSING_TARGET_HINT = 'Drop the rows whose target is missing first, e.g. keep = y.notna(); X, y = X[keep], y[keep].'
 _STRING_HINT = ('PDL needs numeric features. Pass a pandas DataFrame (pdll encodes string and categorical columns '
                 'itself) or encode them first, e.g. with sklearn.preprocessing.OrdinalEncoder.')
 
@@ -24,12 +27,14 @@ def _is_plain_numeric(dtype) -> bool:
 def _check_supported_dtype(column, dtype):
     if (pd.api.types.is_datetime64_any_dtype(dtype) or pd.api.types.is_timedelta64_dtype(dtype)
             or isinstance(dtype, (pd.PeriodDtype, pd.IntervalDtype))):
-        raise TypeError(f'Column {column!r} has dtype {dtype}, but PDL needs numbers. Convert it first, e.g. '
-                        f'extract the year/month/day or use .astype("int64").')
+        raise TypeError(f'Column {column!r} has dtype {dtype}, but PDL needs numbers. {_CONVERT_HINT}')
 
 
 def learn_categories(X: pd.DataFrame) -> dict:
     """Find the columns of X that must be encoded and fix their categories (position = code)."""
+    duplicated = list(X.columns[X.columns.duplicated()].unique())
+    if duplicated:
+        raise ValueError(f'Column names must be unique, but {duplicated} appear more than once.')
     categories, id_like = {}, []
     for column in X.columns:
         series = X[column]
@@ -37,15 +42,22 @@ def learn_categories(X: pd.DataFrame) -> dict:
         _check_supported_dtype(column, dtype)
         if isinstance(dtype, pd.CategoricalDtype):
             categories[column] = list(dtype.categories)  # keeps the order of ordered categoricals
-        elif pd.api.types.is_bool_dtype(dtype) or pd.api.types.is_numeric_dtype(dtype):
             continue
-        elif pd.api.types.infer_dtype(series, skipna=True) in _NUMERIC_INFERRED_TYPES:
+        if pd.api.types.is_bool_dtype(dtype) or pd.api.types.is_numeric_dtype(dtype):
+            continue
+        inferred = pd.api.types.infer_dtype(series, skipna=True)
+        if inferred in _NUMERIC_INFERRED_TYPES:
             continue  # object column holding numbers
-        else:
-            values = series.dropna()
+        if inferred in _TEMPORAL_INFERRED_TYPES:  # e.g. datetime.date objects, as pyarrow date32 columns arrive
+            raise TypeError(f'Column {column!r} holds {inferred} values, but PDL needs numbers. {_CONVERT_HINT}')
+        values = series.dropna()
+        try:
             categories[column] = sorted(pd.unique(values.to_numpy(dtype=object)), key=str)
-            if len(values) >= ID_LIKE_MIN_ROWS and len(categories[column]) > ID_LIKE_UNIQUE_RATIO * len(values):
-                id_like.append(column)
+        except TypeError as error:  # lists, dicts or arrays in the cells
+            raise TypeError(f'Column {column!r} holds non-scalar values ({error}). PDL needs one number or category per '
+                            f'cell: expand or drop the column first.') from error
+        if len(values) >= ID_LIKE_MIN_ROWS and len(categories[column]) > ID_LIKE_UNIQUE_RATIO * len(values):
+            id_like.append(column)
     if id_like:
         warnings.warn(f'Columns {id_like} look like identifiers (mostly distinct values). PDL encodes them as categories, '
                       f'which rarely helps and slows training; consider dropping them.', UserWarning, stacklevel=4)
@@ -82,6 +94,34 @@ def needs_encoding(X: pd.DataFrame) -> bool:
     return not all(_is_plain_numeric(dtype) for dtype in X.dtypes)
 
 
+def _polars_to_pandas_without_pyarrow(data):
+    """polars' own column-by-column conversion, for environments without pyarrow (which ``to_pandas`` needs)."""
+    if hasattr(data, 'get_column'):
+        return pd.DataFrame({name: data.get_column(name).to_numpy() for name in data.columns})
+    return pd.Series(data.to_numpy(), name=data.name or None)
+
+
+def as_pandas(data):
+    """polars and pyarrow tables, series and arrays become pandas; everything else is returned unchanged.
+
+    A polars LazyFrame is collected. pyarrow dates become datetime64 (rejected with advice, like pandas datetimes)
+    instead of ``datetime.date`` objects. Anything that does not convert to a pandas DataFrame or Series is
+    returned unchanged, for scikit-learn's own validation to handle.
+    """
+    library = type(data).__module__.split('.')[0]
+    if library not in ('polars', 'pyarrow'):
+        return data
+    if library == 'polars' and type(data).__name__ == 'LazyFrame':
+        data = data.collect()
+    if not callable(getattr(data, 'to_pandas', None)):
+        return data
+    try:
+        converted = data.to_pandas(date_as_object=False) if library == 'pyarrow' else data.to_pandas()
+    except ImportError:  # polars without pyarrow
+        converted = _polars_to_pandas_without_pyarrow(data) if library == 'polars' else data
+    return converted if isinstance(converted, (pd.DataFrame, pd.Series)) else data
+
+
 def _shape(y):
     """Shape of y without calling numpy functions on it (array-likes may forbid them); () when absent."""
     if y is None or (isinstance(y, str) and y == 'no_validation'):
@@ -95,7 +135,9 @@ def to_float_array(estimator, X, y='no_validation', *, reset, allow_nan, **check
 
     On ``reset`` (fit) the categorical columns of a DataFrame are learned and stored in ``estimator._categories``;
     afterwards the same encoding is applied, by column name, or by position if X is no longer a DataFrame.
+    polars and pyarrow tables are handled as pandas DataFrames.
     """
+    X, y = as_pandas(X), as_pandas(y)
     if reset:
         estimator._categories = learn_categories(X) if isinstance(X, pd.DataFrame) else {}
         estimator._columns = list(X.columns) if isinstance(X, pd.DataFrame) else None
@@ -111,13 +153,15 @@ def to_float_array(estimator, X, y='no_validation', *, reset, allow_nan, **check
         wrapper = 'MultiOutputClassifier' if type(estimator).__name__.endswith('Classifier') else 'MultiOutputRegressor'
         raise ValueError(f'{type(estimator).__name__} predicts one target, but y has shape {y_shape}. For several targets, '
                          f'wrap it: sklearn.multioutput.{wrapper}({type(estimator).__name__}()).')
+    if isinstance(y, pd.Series) and y.isna().any():  # string, object or nullable targets bypass scikit-learn's y message
+        raise ValueError(f'Input y contains NaN. {_MISSING_TARGET_HINT}')
     try:
         return validate_data(estimator, X, y, reset=reset, allow_nan=allow_nan, dtype=[np.float64, np.float32], **check_params)
     except ValueError as error:
         if 'convert' in str(error) and 'string' in str(error):
             raise ValueError(f'{error}. {_STRING_HINT}') from error
         if 'y contains NaN' in str(error):
-            raise ValueError(f'{error} Drop the rows whose target is missing first, e.g. keep = y.notna(); X, y = X[keep], y[keep].') from error
+            raise ValueError(f'{error} {_MISSING_TARGET_HINT}') from error
         raise
 
 

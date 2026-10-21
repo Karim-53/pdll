@@ -9,7 +9,7 @@ from sklearn.model_selection import cross_val_score
 from sklearn.pipeline import make_pipeline
 from sklearn.tree import DecisionTreeClassifier, DecisionTreeRegressor
 
-from helpers import FakePairRegressor
+from helpers import FakePairRegressor, check_score
 from pdll import PairwiseDifferenceClassifier, PairwiseDifferenceRegressor, PDCDataTransformer
 from test_classifier import titanic_like
 
@@ -28,7 +28,7 @@ def test_predict_is_ndarray_and_decent(diabetes):
     X, y, X_test, y_test = diabetes
     pred = pdr().fit(X, y).predict(X_test)
     assert isinstance(pred, np.ndarray) and pred.shape == (len(X_test),)
-    assert pdr().fit(X, y).score(X_test, y_test) > 0.2
+    check_score(pdr().fit(X, y).score(X_test, y_test), 0.5125, ratio=0.9)
 
 
 def test_training_pairs_and_symmetric_prediction(diabetes):
@@ -118,7 +118,7 @@ def test_set_sample_weight_and_unknown_method(diabetes):
 
 def test_works_with_cross_validation(diabetes):
     X, y, _, _ = diabetes
-    assert cross_val_score(pdr(), X, y, cv=3).mean() > 0.1
+    check_score(cross_val_score(pdr(), X, y, cv=3).mean(), 0.2707, ratio=0.9)
 
 
 # --------------------------------------------------------------------------- PDCDataTransformer
@@ -132,7 +132,7 @@ def test_data_transformer_is_self_contained_and_pipelines():
     assert Xt.dtype == np.float32 and Xt.shape[0] == len(X)
     assert transformer.numeric_features is None  # fit does not modify parameters
     pipeline = make_pipeline(PDCDataTransformer(), PairwiseDifferenceClassifier(DecisionTreeClassifier(class_weight='balanced', random_state=0)))
-    assert pipeline.fit(X[:150], y[:150]).score(X[150:], y[150:]) > 0.6
+    check_score(pipeline.fit(X[:150], y[:150]).score(X[150:], y[150:]), 0.84)
     _, y_t = PDCDataTransformer(y_type='ordinal').fit(X, y).transform(X, y)
     assert y_t.shape == (len(X), 1)
     with pytest.raises(ValueError, match='y_type'):

@@ -1,4 +1,4 @@
-"""Performance regression gate: fails when PDC gets less accurate or much slower than the committed baseline.
+"""Performance regression gate: fails when PDC or PDR gets less accurate or much slower than the committed baseline.
 
 Run with ``pytest -m e2e``. After an intended change of behaviour, regenerate the baseline with
 ``python tests/e2e/update_baseline.py`` and commit it together with the change, explaining why.
@@ -8,7 +8,7 @@ import json
 import numpy as np
 import pytest
 
-from benchmark import BASELINE_PATH, run, summary
+from benchmark import BASELINE_PATH, regression_summary, run, run_regression, summary
 
 pytestmark = pytest.mark.e2e
 
@@ -55,3 +55,40 @@ def test_not_much_slower(results, baseline):
     assert now <= MAX_SLOWDOWN_SINGLE_THREAD * before, f'PDC(DecisionTree) took {now:.1f}s, baseline {before:.1f}s'
     total_now, total_before = summary(results)['pdc_seconds'], baseline['summary']['pdc_seconds']
     assert total_now <= MAX_SLOWDOWN_TOTAL * total_before, f'PDC took {total_now:.1f}s in total, baseline {total_before:.1f}s'
+
+
+MAX_DROP_PER_CASE_R2 = 0.05   # R², one (dataset, base learner) pair
+MAX_DROP_MEAN_R2 = 0.01       # R², averaged over all pairs
+
+
+@pytest.fixture(scope='module')
+def regression_results():
+    return run_regression(verbose=True)
+
+
+def test_no_regression_case_got_much_worse(regression_results, baseline):
+    drops = {f'{data}/{learner}': baseline['regression']['results'][data][learner]['pdr_r2'] - row['pdr_r2']
+             for data, per_learner in regression_results.items() for learner, row in per_learner.items()}
+    worst = {case: round(drop, 4) for case, drop in drops.items() if drop > MAX_DROP_PER_CASE_R2}
+    assert not worst, f'R2 dropped by more than {MAX_DROP_PER_CASE_R2}: {worst}'
+
+
+def test_mean_regression_score_did_not_drop(regression_results, baseline):
+    now, before = regression_summary(regression_results)['mean_pdr_r2'], baseline['regression']['summary']['mean_pdr_r2']
+    assert now >= before - MAX_DROP_MEAN_R2, f'mean PDR R2 {now:.4f} < baseline {before:.4f} - {MAX_DROP_MEAN_R2}'
+
+
+def test_pdr_still_beats_its_base_learners_on_average(regression_results):
+    stats = regression_summary(regression_results)
+    assert stats['mean_pdr_r2'] > stats['mean_base_r2'], stats
+    assert stats['pdr_wins'] > stats['pdr_losses'], stats
+
+
+def test_pdr_not_much_slower(regression_results, baseline):
+    def single_thread_seconds(res):
+        return float(np.sum([per_learner['DecisionTree']['pdr_seconds'] for per_learner in res.values()]))
+
+    now, before = single_thread_seconds(regression_results), single_thread_seconds(baseline['regression']['results'])
+    assert now <= MAX_SLOWDOWN_SINGLE_THREAD * before, f'PDR(DecisionTree) took {now:.1f}s, baseline {before:.1f}s'
+    total_now, total_before = regression_summary(regression_results)['pdr_seconds'], baseline['regression']['summary']['pdr_seconds']
+    assert total_now <= MAX_SLOWDOWN_TOTAL * total_before, f'PDR took {total_now:.1f}s in total, baseline {total_before:.1f}s'
