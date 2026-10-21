@@ -8,9 +8,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - 2026-10-21
 
 A rewrite for robustness and speed. On the inputs the paper used (numpy arrays), predictions are identical to
-0.3.1; `tests/test_golden.py` checks this.
+0.3.1 with the same `use_prior`; `tests/test_golden.py` checks this.
 
 ### Changed (breaking)
+- `use_prior="auto"` takes the prior-based posterior only when a class has fewer than 5 training rows **and** the
+  classes are about equally frequent (two classes, or the largest at most twice the smallest); class sizes count
+  `sample_weight`. 0.3.1 took it whenever a class had fewer than 5 rows. On imbalanced multiclass data that posterior
+  favours large classes so strongly that a tiny class was never predicted, not even on its own training rows (with
+  40/40/40/10/3 rows: accuracy 0.58 against 0.85; on 50 long-tailed classes: 0.06 against 0.76). `use_prior=True`
+  still gives the paper's posterior.
 - `predict` returns a numpy array of labels and `predict_proba` a numpy array whose columns follow `classes_`,
   like every scikit-learn classifier. 0.3.1 returned a pandas Series/DataFrame for DataFrame input, so
   `predict_proba(X)[:, 1]` failed.
@@ -65,6 +71,19 @@ A rewrite for robustness and speed. On the inputs the paper used (numpy arrays),
 - Unseen categories at prediction time used a pandas construction that pandas 3 deprecates and pandas 4 will reject.
 - Multi-output targets and targets with missing values now get errors that say what to do
   (`MultiOutputClassifier`/`MultiOutputRegressor`, drop rows with a missing target).
+- When pairs are subsampled (more than 316 training rows by default), a class could end up without any same-class
+  pair, e.g. a single-row class, and was then never predicted, even on its own row; with `class_weight="balanced"`
+  its anchor even voted against it. Such a class now keeps its diagonal pairs (i, i). Datasets where every class has
+  same-class pairs, which is nearly all, get exactly the same model as before.
+- Numbers stored as text (`read_csv(dtype=str)`, padded `" 5 "`) were encoded as string-ordered categories, so every
+  unseen value lost its meaning; they are now converted to numbers, as scikit-learn does. Mostly-numeric text with
+  placeholders such as `"?"` or `" "` stays categorical with a warning that says how to convert it.
+- Complex numbers lost their imaginary part silently; they are now refused, as by scikit-learn.
+- An extra, renamed or missing column at predict time (e.g. Kaggle's `Id`) gave a misleading "pass a DataFrame"
+  error; it now gets scikit-learn's feature-name message. A text target for the regressor is told to use the
+  classifier.
+- `PairwiseDifferenceRegressor`: float16 targets overflowed in the pair differences; `learn_anchor_weights` with a
+  column-vector `y_val` built an n_val × n_val × n_anchors array and crashed.
 - Prediction is vectorised and memory-bounded: about 2x faster than 0.3.1 at a few hundred anchors. Training cost is
   dominated by the base estimator (unchanged), and `max_pairs` now caps it on larger datasets.
 
