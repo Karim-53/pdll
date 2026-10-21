@@ -1,6 +1,6 @@
 """Best public OpenML score per method on each task, for ranking our results against everything ever uploaded.
 
-    python public_rank.py results/cc18_small.jsonl     # writes results/openml_public.json
+    python public_rank.py results/cc18_small.jsonl [model ...]   # writes results/openml_public.json (default: rank pdl)
 
 Every public run on an OpenML task uses the task's official 10-fold split, so its predictive accuracy is comparable
 with ours. A "method" is an OpenML flow name without its version suffix: two scikit-learn pipelines with different
@@ -42,12 +42,13 @@ def best_public_per_method(task_id, floor):
 
 
 def main():
-    results_path = sys.argv[1]
+    from report import read_records
+    results_path, models = sys.argv[1], sys.argv[2:] or ['pdl']  # only the models to rank set how deep to fetch
     out = os.path.join(os.path.dirname(results_path), 'openml_public.json')
     cache = json.load(open(out)) if os.path.exists(out) else {}
     floors = {}
-    for r in map(json.loads, open(results_path)):
-        if r.get('status') == 'ok':
+    for r in read_records(results_path):
+        if r.get('status') == 'ok' and r.get('model') in models:
             floors[r['task']] = min(floors.get(r['task'], 1.), r['accuracy'])
     lock = threading.Lock()
 

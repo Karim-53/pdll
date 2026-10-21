@@ -41,9 +41,13 @@ def _skip_if_other_sklearn(name):
 def test_classifier_matches_0_3_1(name, data, make_estimator):
     _skip_if_other_sklearn(name)
     X_train, y_train, X_test = data
-    pdc = PairwiseDifferenceClassifier(estimator=make_estimator()).fit(X_train, y_train)
-    assert pdc.decide_use_prior() == bool(GOLDEN[f'{name}__use_prior'])
+    # 0.3.1's aggregation, chosen explicitly: since 1.0, use_prior='auto' no longer picks the prior-based posterior for
+    # imbalanced multiclass data (wine_prior: 3 rows in one class), where it never predicts the tiny class
+    used_prior = bool(GOLDEN[f'{name}__use_prior'])
+    pdc = PairwiseDifferenceClassifier(estimator=make_estimator(), use_prior=used_prior).fit(X_train, y_train)
     np.testing.assert_allclose(pdc.predict_proba(X_test), GOLDEN[f'{name}__proba'], rtol=1e-10, atol=1e-12)
+    expected_auto = used_prior and not name.startswith('wine_prior')
+    assert PairwiseDifferenceClassifier(estimator=make_estimator()).fit(X_train, y_train).decide_use_prior() == expected_auto
 
 
 @pytest.mark.parametrize('name, data, make_estimator, weighting', list(regression_cases()), ids=lambda v: v if isinstance(v, str) else '')

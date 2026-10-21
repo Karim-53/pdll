@@ -24,7 +24,7 @@ OpenML-CC18 task with at most 2,000 rows: 35 tasks, the official 10-fold split o
 ```shell
 pip install -e . -r benchmark/small_data/requirements.txt   # scikit-learn >= 1.6 is required
 cd benchmark/small_data
-python run_all.py --out results/cc18_small.jsonl --workers 4 --n-jobs 2   # a few hours on a laptop
+python run_all.py --out results/cc18_small.jsonl --workers 4 --n-jobs 2   # a few hours on a laptop; add --retry-failed to rerun errors and timeouts
 python public_rank.py results/cc18_small.jsonl                            # writes results/openml_public.json
 python report.py results/cc18_small.jsonl results/openml_public.json > RESULTS.md
 ```

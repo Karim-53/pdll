@@ -17,6 +17,7 @@ from sklearn.model_selection import GridSearchCV, cross_val_score, train_test_sp
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
+from sklearn.tree import DecisionTreeClassifier
 
 import pdll._base
 from helpers import FakePairClassifier, check_score
@@ -543,3 +544,105 @@ def test_large_training_sets_get_a_warning():
     X, y = rng.normal(size=(2500, 3)), rng.randint(0, 2, 2500)
     with pytest.warns(UserWarning, match='designed for small datasets'):
         PairwiseDifferenceClassifier(FakePairClassifier(), max_pairs=1000, max_anchors=50).fit(X, y)
+
+
+# --------------------------------------------------------------------------- tiny classes
+
+def _imbalanced_multiclass(sizes=(40, 40, 40, 10, 3), seed=0):
+    rng = np.random.default_rng(seed)
+    centers = rng.normal(scale=3.0, size=(len(sizes), 4))
+    y = np.repeat(np.arange(len(sizes)), sizes)
+    return centers[y] + rng.normal(size=(len(y), 4)), y
+
+
+def test_auto_does_not_take_the_prior_path_on_imbalanced_multiclass_data():
+    """The prior-based posterior favours large classes: with 'auto' it used to hide a 3-row class completely."""
+    X, y = _imbalanced_multiclass()
+    model = pdc(random_state=0).fit(X, y)
+    assert not model.decide_use_prior()
+    assert (model.predict(X[y == 4]) == 4).mean() == 1.  # the 3-row class is predicted on its own rows
+    assert (model.predict(X[y == 3]) == 3).mean() > 0.9
+    assert pdc(use_prior=True, random_state=0).fit(X, y).decide_use_prior()  # still available explicitly
+
+
+def test_auto_keeps_the_prior_path_for_tiny_balanced_or_binary_data(iris, small_classes):
+    assert pdc().fit(*small_classes).decide_use_prior()  # 3-4 rows in each of 3 classes
+    X, y = iris
+    binary = (y == 0).astype(int)
+    keep = (binary == 0) | (np.cumsum(binary) <= 3)  # 100 negatives, 3 positives
+    assert pdc().fit(X[keep], binary[keep]).decide_use_prior()
+
+
+def test_auto_counts_weighted_rows_like_repeated_rows():
+    X, y = _imbalanced_multiclass(sizes=(4, 4, 4))
+    make = lambda: PairwiseDifferenceClassifier(DecisionTreeClassifier(random_state=0), max_pairs=None, max_anchors=None)  # noqa: E731
+    weighted = make().fit(X, y, sample_weight=np.full(len(y), 2.))
+    repeated = make().fit(np.repeat(X, 2, axis=0), np.repeat(y, 2))
+    assert weighted.decide_use_prior() == repeated.decide_use_prior() == False  # noqa: E712 - 8 effective rows per class
+    np.testing.assert_allclose(weighted.predict_proba(X), repeated.predict_proba(X))
+
+
+@pytest.mark.parametrize('class_weight', [None, 'balanced'])
+def test_a_single_row_class_still_gets_same_class_pairs_when_pairs_are_subsampled(class_weight):
+    rng = np.random.default_rng(0)
+    X = rng.normal(size=(141, 5))
+    y = np.zeros(141, int)
+    X[0] += 4
+    y[0] = 1
+    model = pdc(class_weight=class_weight, max_pairs=5000, max_anchors=200, random_state=0).fit(X, y)
+    assert model.predict(X[:1])[0] == 1
+    assert model.predict_proba(X[:1])[0, 1] > 0.9
+
+
+# --------------------------------------------------------------------------- numbers as text, complex, columns at predict
+
+def test_numbers_stored_as_text_are_converted_like_scikit_learn_does():
+    """read_csv(dtype=str) or padded numbers: before, they became string-ordered categories and unseen values -1."""
+    rng = np.random.default_rng(1)
+    x = rng.uniform(0, 2000, 200).round(2)
+    y = (x > 1000).astype(int)
+    as_text = pd.DataFrame({'x': [f' {v} ' for v in x], 'z': rng.normal(size=200)})
+    as_numbers = as_text.assign(x=x)
+    text_model = pdc(random_state=0).fit(as_text[:120], y[:120])
+    number_model = pdc(random_state=0).fit(as_numbers[:120], y[:120])
+    assert 'x' not in text_model._categories
+    np.testing.assert_allclose(text_model.predict_proba(as_text[120:]), number_model.predict_proba(as_numbers[120:]))
+
+
+def test_mostly_numeric_text_with_placeholders_warns():
+    X, y = titanic_like()
+    X['age'] = X['age'].fillna(30.)  # ExtraTrees accepts NaN only from scikit-learn 1.6 on
+    X['charges'] = [f'{v:.2f}' for v in np.arange(len(X)) * 3.5]
+    X.loc[[3, 9], 'charges'] = [' ', '?']
+    with pytest.warns(UserWarning, match="numbers stored as text, plus values such as"):
+        pdc().fit(X, y)
+
+
+@pytest.mark.parametrize('dtype', [complex, object])
+def test_complex_columns_are_rejected_with_advice(dtype):
+    X, y = titanic_like()
+    X['c'] = pd.Series(np.arange(len(X)) + 1j, dtype=dtype)
+    with pytest.raises(TypeError, match="Column 'c' holds complex numbers"):
+        pdc().fit(X, y)
+
+
+def test_extra_or_renamed_columns_at_predict_get_the_feature_name_message():
+    X, y = titanic_like()
+    X['age'] = X['age'].fillna(30.)  # ExtraTrees accepts NaN only from scikit-learn 1.6 on
+    model = pdc().fit(X, y)
+    with pytest.raises(ValueError, match='Feature names unseen at fit time:\n- Id'):
+        model.predict(X.assign(Id=[f'id_{i}' for i in range(len(X))]))
+    with pytest.raises(ValueError, match='seen at fit time, yet now missing:\n- sex'):
+        model.predict(X.rename(columns={'sex': 'gender'}))
+
+
+def test_coverage_pairs_stay_within_a_per_class_budget():
+    """A tiny max_pairs leaves many classes without a same-class pair: the extra pairs must not grow with the rows."""
+    rng = np.random.default_rng(0)
+    y = np.repeat(np.arange(20), 30)
+    X = rng.normal(size=(len(y), 3)) + y[:, None]
+    model = PairwiseDifferenceClassifier(FakePairClassifier(), max_pairs=50, max_anchors=None, random_state=0).fit(X, y)
+    n_pairs = model.estimator_.X_fit_.shape[0]
+    assert 50 < n_pairs <= 50 + 10 * 20 + 1
+    same = model.estimator_.y_fit_ == 0
+    assert same.any()

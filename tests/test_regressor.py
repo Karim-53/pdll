@@ -4,7 +4,7 @@ import pandas as pd
 import pytest
 from sklearn.datasets import load_diabetes
 from sklearn.ensemble import ExtraTreesRegressor, HistGradientBoostingRegressor
-from sklearn.exceptions import NotFittedError
+from sklearn.exceptions import DataConversionWarning, NotFittedError
 from sklearn.model_selection import cross_val_score
 from sklearn.pipeline import make_pipeline
 from sklearn.tree import DecisionTreeClassifier, DecisionTreeRegressor
@@ -137,3 +137,25 @@ def test_data_transformer_is_self_contained_and_pipelines():
     assert y_t.shape == (len(X), 1)
     with pytest.raises(ValueError, match='y_type'):
         PDCDataTransformer(y_type='bad').fit(X)
+
+
+def test_float16_target_does_not_overflow_in_the_pair_differences():
+    X = np.random.default_rng(0).normal(size=(60, 3))
+    y = np.tile(np.array([-40000., 0., 40000.], dtype=np.float16), 20)
+    pred = pdr().fit(X, y).predict(X)
+    assert np.isfinite(pred).all() and pred.dtype == np.float64
+
+
+def test_text_target_gets_a_target_message():
+    X = np.random.default_rng(0).normal(size=(60, 3))
+    with pytest.raises(ValueError, match='needs a numeric target; for class labels use PairwiseDifferenceClassifier'):
+        pdr().fit(X, pd.Series(['a', 'b'] * 30))
+
+
+@pytest.mark.parametrize('method', ['NegativeError', 'InverseError', 'OrderedVoting', 'L2'])
+def test_anchor_weights_accept_a_column_vector_target(diabetes, method):
+    X, y, X_val, y_val = diabetes
+    flat = pdr(random_state=0).fit(X, y).learn_anchor_weights(X_val, y_val, method=method, enable_warnings=False)
+    with pytest.warns(DataConversionWarning):
+        column = pdr(random_state=0).fit(X, y).learn_anchor_weights(X_val, y_val.to_frame(), method=method, enable_warnings=False)
+    np.testing.assert_allclose(column.sample_weight_, flat.sample_weight_, rtol=1e-6, atol=1e-9)

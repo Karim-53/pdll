@@ -21,19 +21,24 @@ CC18_SMALL = [125920, 3913, 14954, 146819, 9946, 9971, 11, 29, 15, 2079, 10101, 
               9981, 146800, 3918, 10093, 3902, 23, 3903, 9964, 146821, 146817, 12, 14, 16, 18, 22, 146824]
 
 
-def done(path):
-    if not os.path.exists(path):
-        return set()
-    with open(path) as f:
-        return {(r['task'], r['model']) for r in map(json.loads, f)}
+def latest_status(path):
+    """{(task, model): status of its latest record}; lines cut short by concurrent appends are skipped."""
+    from report import read_records
+    return {(r['task'], r['model']): r['status'] for r in read_records(path)} if os.path.exists(path) else {}
+
+
+def records_of(path, task, model):
+    from report import read_records
+    return sum(r['task'] == task and r['model'] == model for r in read_records(path)) if os.path.exists(path) else 0
 
 
 def run(task, model, args):
     env = dict(os.environ, OMP_NUM_THREADS=str(args.n_jobs), OPENBLAS_NUM_THREADS=str(args.n_jobs), MKL_NUM_THREADS=str(args.n_jobs))
     command = [sys.executable, '-W', 'ignore', os.path.join(HERE, 'run_one.py'), str(task), model, '--out', args.out, '--n-jobs', str(args.n_jobs)]
+    before = records_of(args.out, task, model)
     try:
         completed = subprocess.run(command, env=env, capture_output=True, text=True, timeout=args.timeout)
-        if (task, model) not in done(args.out):  # crashed before writing its record
+        if records_of(args.out, task, model) == before:  # crashed before writing its record
             error = (completed.stderr.strip().splitlines() or ['no output'])[-1][:300]
             _append(args.out, {'task': task, 'model': model, 'status': 'crashed', 'error': error})
     except subprocess.TimeoutExpired:
@@ -54,10 +59,13 @@ def main():
     parser.add_argument('--workers', type=int, default=3)
     parser.add_argument('--n-jobs', type=int, default=4)
     parser.add_argument('--timeout', type=int, default=1800)
+    parser.add_argument('--retry-failed', action='store_true',
+                        help='also rerun pairs whose latest record is an error, crash or timeout (e.g. after running out of memory)')
     args = parser.parse_args()
     check_environment(args.models)
     args.out = os.path.abspath(args.out)
-    finished = done(args.out)
+    status = latest_status(args.out)
+    finished = {pair for pair, s in status.items() if s == 'ok' or not args.retry_failed}
     todo = [(t, m) for t in args.tasks for m in args.models if (t, m) not in finished]
     print(f'{len(todo)} runs to do', flush=True)
     with ThreadPoolExecutor(args.workers) as pool:

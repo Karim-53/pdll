@@ -429,7 +429,9 @@ if __name__ == '__main__':
 
                 pbar.set_description(f"{description} pdc")
                 
-                result.update(safe_cross_validate(PairwiseDifferenceClassifier(  # every pair and anchor, as in the paper
+                # every pair and anchor, as in the paper. use_prior="auto" matches 0.3.1 except on imbalanced multiclass
+                # folds with a class under 5 rows, where 1.0 keeps the mean-similarity path (pass use_prior=True for 0.3.1)
+                result.update(safe_cross_validate(PairwiseDifferenceClassifier(
                     get_base_classifier(classifier_name, for_pdc=True), max_pairs=None, max_anchors=None), n_jobs, param_grid))
                 assert len(results) > 0 or not pd.isna(result['pdc_test_f1']), 'The first PDC fit failed, probably something to debug.'
                 result['data_time'] = time.time() - data_t0

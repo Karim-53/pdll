@@ -28,6 +28,16 @@ def _check_supported_dtype(column, dtype):
     if (pd.api.types.is_datetime64_any_dtype(dtype) or pd.api.types.is_timedelta64_dtype(dtype)
             or isinstance(dtype, (pd.PeriodDtype, pd.IntervalDtype))):
         raise TypeError(f'Column {column!r} has dtype {dtype}, but PDL needs numbers. {_CONVERT_HINT}')
+    if pd.api.types.is_complex_dtype(dtype):
+        raise TypeError(f'Column {column!r} holds complex numbers, which scikit-learn estimators do not support. Split it '
+                        f'into two columns first, e.g. X[{column!r} + "_re"], X[{column!r} + "_im"] = X[{column!r}].real, X[{column!r}].imag.')
+
+
+def _numbers_as_text(values: pd.Series):
+    """Share of the distinct values of a string column that parse as numbers, and some that do not."""
+    distinct = pd.Series(pd.unique(values.to_numpy(dtype=object))).astype(str).str.strip()
+    parsed = pd.to_numeric(distinct, errors='coerce')
+    return (parsed.notna().mean() if len(distinct) else 0.), list(distinct[parsed.isna()][:3])
 
 
 def learn_categories(X: pd.DataFrame) -> dict:
@@ -50,12 +60,22 @@ def learn_categories(X: pd.DataFrame) -> dict:
             continue  # object column holding numbers
         if inferred in _TEMPORAL_INFERRED_TYPES:  # e.g. datetime.date objects, as pyarrow date32 columns arrive
             raise TypeError(f'Column {column!r} holds {inferred} values, but PDL needs numbers. {_CONVERT_HINT}')
+        if inferred.startswith('complex'):
+            _check_supported_dtype(column, np.dtype(complex))
         values = series.dropna()
         try:
             categories[column] = sorted(pd.unique(values.to_numpy(dtype=object)), key=str)
         except TypeError as error:  # lists, dicts or arrays in the cells
             raise TypeError(f'Column {column!r} holds non-scalar values ({error}). PDL needs one number or category per '
                             f'cell: expand or drop the column first.') from error
+        numeric_share, not_numbers = _numbers_as_text(values)
+        if numeric_share == 1.:  # numbers stored as text, e.g. read_csv(dtype=str): convert them like scikit-learn does
+            del categories[column]
+            continue
+        if numeric_share >= 0.9:
+            warnings.warn(f'Column {column!r} holds numbers stored as text, plus values such as {not_numbers}. PDL encodes it '
+                          f'as categories, which loses the order of the numbers; convert it first, e.g. '
+                          f'pd.to_numeric(X[{column!r}], errors="coerce").', UserWarning, stacklevel=4)
         if len(values) >= ID_LIKE_MIN_ROWS and len(categories[column]) > ID_LIKE_UNIQUE_RATIO * len(values):
             id_like.append(column)
     if id_like:
@@ -82,7 +102,11 @@ def encode_frame(X: pd.DataFrame, categories: dict) -> pd.DataFrame:
         else:
             _check_supported_dtype(column, series.dtype)
             try:
-                arrays.append(series.to_numpy(dtype=np.float64, na_value=np.nan))
+                if pd.api.types.is_string_dtype(series.dtype) or series.dtype == object:  # numbers stored as text
+                    arrays.append(pd.to_numeric(series.astype(object).where(series.notna(), np.nan).map(
+                        lambda v: v.strip() if isinstance(v, str) else v)).to_numpy(dtype=np.float64, na_value=np.nan))
+                else:
+                    arrays.append(series.to_numpy(dtype=np.float64, na_value=np.nan))
             except (TypeError, ValueError) as error:
                 raise ValueError(f'Column {column!r} could not be converted to numbers ({error}). {_STRING_HINT}') from error
     dtype = np.float32 if arrays and all(a.dtype == np.float32 for a in arrays) else np.float64
@@ -130,6 +154,31 @@ def _shape(y):
     return tuple(shape) if shape is not None else np.asarray(y).shape
 
 
+def _check_same_columns(fitted, columns):
+    """Encoding works by column name: report renamed, extra or missing columns the way scikit-learn does."""
+    if fitted is None:
+        return
+    unseen = [c for c in columns if c not in fitted]
+    missing = [c for c in fitted if c not in columns]
+    if unseen or missing:
+        message = 'The feature names should match those that were passed during fit.\n'
+        if unseen:
+            message += 'Feature names unseen at fit time:\n' + ''.join(f'- {c}\n' for c in unseen)
+        if missing:
+            message += 'Feature names seen at fit time, yet now missing:\n' + ''.join(f'- {c}\n' for c in missing)
+        raise ValueError(message)
+
+
+def _is_text_target(estimator, y):
+    if type(estimator).__name__.endswith('Classifier') or not _shape(y):
+        return False
+    try:
+        np.asarray(y, dtype=np.float64)
+    except (TypeError, ValueError):
+        return True
+    return False
+
+
 def to_float_array(estimator, X, y='no_validation', *, reset, allow_nan, **check_params):
     """Validate X (and y) like scikit-learn does and return X as a float32/float64 ndarray.
 
@@ -143,6 +192,8 @@ def to_float_array(estimator, X, y='no_validation', *, reset, allow_nan, **check
         estimator._columns = list(X.columns) if isinstance(X, pd.DataFrame) else None
     categories = estimator._categories
     if isinstance(X, pd.DataFrame):
+        if categories and not reset:
+            _check_same_columns(estimator._columns, X.columns)
         if categories or needs_encoding(X):
             X = encode_frame(X, categories)
     elif categories and estimator._columns is not None and np.ndim(X) == 2 and np.shape(X)[1] == len(estimator._columns):
@@ -159,6 +210,9 @@ def to_float_array(estimator, X, y='no_validation', *, reset, allow_nan, **check
         return validate_data(estimator, X, y, reset=reset, allow_nan=allow_nan, dtype=[np.float64, np.float32], **check_params)
     except ValueError as error:
         if 'convert' in str(error) and 'string' in str(error):
+            if _is_text_target(estimator, y):
+                raise ValueError(f'{error}. {type(estimator).__name__} needs a numeric target; for class labels use '
+                                 f'PairwiseDifferenceClassifier.') from error
             raise ValueError(f'{error}. {_STRING_HINT}') from error
         if 'y contains NaN' in str(error):
             raise ValueError(f'{error} {_MISSING_TARGET_HINT}') from error
