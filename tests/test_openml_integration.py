@@ -22,14 +22,15 @@ def fetch(name, version):
 
 
 @pytest.mark.parametrize('name, version, reference', [
-    ('credit-g', 1, 0.7167),   # 1000 rows, 13 categorical + 7 numeric columns, string target
-    ('titanic', 1, 0.79),    # missing values, names and tickets (identifier-like strings)
+    ('credit-g', 1, 0.73),   # 1000 rows, 13 categorical + 7 numeric columns, string target
+    ('titanic', 1, 0.7933),    # missing values, names and tickets (identifier-like strings)
 ])
 def test_classifier_on_raw_openml_dataframe(name, version, reference):
     X, y = fetch(name, version)
     X = X.drop(columns=[c for c in ('boat', 'body', 'home.dest', 'name', 'ticket', 'cabin') if c in X.columns])
     X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=400, test_size=300, random_state=0, stratify=y)
-    model = PairwiseDifferenceClassifier(HistGradientBoostingClassifier(max_iter=50, class_weight='balanced', random_state=0))
+    # 400 rows = 160,000 pairs, above max_pairs='auto': seed the pair sample too
+    model = PairwiseDifferenceClassifier(HistGradientBoostingClassifier(max_iter=50, class_weight='balanced', random_state=0), random_state=0)
     model.fit(X_train, y_train)
     assert set(model.predict(X_test)) <= set(y.unique())
     check_score(model.score(X_test, y_test), reference)

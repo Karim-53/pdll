@@ -7,7 +7,8 @@ from sklearn.base import BaseEstimator, ClassifierMixin, RegressorMixin
 
 
 def check_score(score, reference, ratio=0.95):
-    """Fail when a score drops below ``ratio`` x ``reference``, the value it had when the check was written.
+    """Fail when a held-out score drops more than ``1 - ratio`` of ``|reference|`` below the value it had when the check
+    was written (for a positive reference: below ``ratio`` x ``reference``).
 
     References were measured with pdll 1.0.0 on the latest stack (scikit-learn 1.9, Windows x86-64). The margin
     absorbs the slightly different trees that other platforms and older scikit-learn versions build; a real
@@ -20,7 +21,8 @@ def check_score(score, reference, ratio=0.95):
             f.write(json.dumps({'test': os.environ.get('PYTEST_CURRENT_TEST', '').split(' ')[0],
                                 'score': float(score), 'reference': reference}) + '\n')
     if reference is not None:
-        assert score >= ratio * reference, f'score {score:.4f} < {ratio} x reference {reference:.4f}'
+        floor = reference - (1 - ratio) * abs(reference)
+        assert score >= floor, f'score {score:.4f} < floor {floor:.4f} ({ratio} of reference {reference:.4f})'
 
 
 class FakePairClassifier(ClassifierMixin, BaseEstimator):

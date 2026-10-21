@@ -1,4 +1,5 @@
 """Unit tests of PairwiseDifferenceClassifier: inputs, labels, maths, subsampling, weights, sklearn tooling."""
+import datetime
 import os
 import pickle
 import warnings
@@ -85,7 +86,7 @@ def test_any_label_values(iris, small_classes, labels, path):
     model = pdc().fit(X, mapped)
     assert model.decide_use_prior() == (path == 'prior')
     pred = model.predict(X)
-    check_score((pred == mapped).mean(), 1.0)
+    assert (pred == mapped).mean() > 0.95  # training rows: checks that labels map back, not accuracy
 
 
 def test_pandas_categorical_target(iris):
@@ -97,8 +98,8 @@ def test_pandas_categorical_target(iris):
 def test_column_vector_target_warns_and_works(iris):
     X, y = iris
     with pytest.warns(DataConversionWarning):
-        model = pdc().fit(X, y.reshape(-1, 1))
-    check_score(model.score(X, y), 1.0)
+        model = pdc().fit(X[::2], y[::2].reshape(-1, 1))
+    check_score(model.score(X[1::2], y[1::2]), 0.9467)
 
 
 def test_single_class_is_rejected(iris):
@@ -196,6 +197,38 @@ def test_datetime_column_is_rejected_with_advice():
         pdc().fit(X, y)
 
 
+@pytest.mark.parametrize('values', [
+    lambda n: [datetime.date(2020, 1 + i % 12, 1) for i in range(n)],
+    lambda n: [datetime.time(i % 24) for i in range(n)],
+    lambda n: [datetime.timedelta(days=i) for i in range(n)],
+])
+def test_object_columns_of_dates_and_times_are_rejected_with_advice(values):
+    X, y = titanic_like()
+    X['when'] = pd.Series(values(len(X)), dtype=object)  # never ordinal-encode them: every later date would be unseen
+    with pytest.raises(TypeError, match="Column 'when' holds .* Convert it first"):
+        pdc().fit(X, y)
+
+
+def test_duplicate_column_names_are_rejected():
+    X, y = titanic_like()
+    with pytest.raises(ValueError, match=r"Column names must be unique, but \['age'\]"):
+        pdc().fit(pd.concat([X, X[['age']]], axis=1), y)
+
+
+def test_non_scalar_cells_name_the_column():
+    X, y = titanic_like()
+    X['tags'] = [[i, i + 1] for i in range(len(X))]
+    with pytest.raises(TypeError, match="Column 'tags' holds non-scalar values"):
+        pdc().fit(X, y)
+
+
+def test_missing_values_in_an_object_target_get_an_actionable_error(iris):
+    X, y = iris
+    target = pd.Series(np.array(['a', 'b', 'c'], dtype=object)[y]).where(np.arange(len(y)) != 7, None)
+    with pytest.raises(ValueError, match='Drop the rows whose target is missing'):
+        pdc().fit(X, target)
+
+
 def test_string_numpy_array_gets_actionable_error():
     X = np.array([['a', 1.], ['b', 2.], ['a', 3.], ['b', 4.]], dtype=object)
     with pytest.raises(ValueError, match='pandas DataFrame'):
@@ -262,7 +295,7 @@ def test_works_with_sklearn_tooling(iris):
     check_score(cross_val_score(pdc(), X, y, cv=3).mean(), 0.9533)
     search = GridSearchCV(pdc(), {'estimator__max_depth': [2, None], 'use_prior': [True, False]}, cv=3).fit(X, y)
     check_score(search.best_score_, 0.96)
-    check_score(make_pipeline(StandardScaler(), pdc()).fit(X, y).score(X, y), 1.0)
+    check_score(make_pipeline(StandardScaler(), pdc()).fit(X[::2], y[::2]).score(X[1::2], y[1::2]), 0.9467)
     model = pdc().fit(X, y)
     np.testing.assert_array_equal(pickle.loads(pickle.dumps(model)).predict(X), model.predict(X))
     assert clone(model).get_params()['estimator'].get_params() == forest().get_params()
@@ -358,8 +391,9 @@ def test_large_dataset_stays_fast():
     start = perf_counter()
     model = PairwiseDifferenceClassifier(ExtraTreesClassifier(n_estimators=10, class_weight='balanced', n_jobs=-1, random_state=0),
                                          max_pairs=100_000, max_anchors=200, random_state=0).fit(X, y)
-    check_score(model.score(X[:1000], y[:1000]), 1.0)
     assert perf_counter() - start < 60
+    X_test = rng.normal(size=(1000, 10))
+    check_score(model.score(X_test, (X_test[:, 0] + X_test[:, 1] > 0).astype(int)), 0.989)
 
 
 # --------------------------------------------------------------------------- sample weights
