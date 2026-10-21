@@ -1,6 +1,6 @@
 """pdll 0.3.1 vs 1.0 on the 21 OpenML-CC18 tasks with at most 1,100 rows: 10-fold accuracy and rank among public methods.
 
-    python make_table.py results/v031_vs_v1.jsonl ../small_data/results/openml_public.json > results/table.md
+    python make_table.py results/v031_vs_v1.jsonl results/openml_public.json > results/table.md
 """
 import json
 import sys

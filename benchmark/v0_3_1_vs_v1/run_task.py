@@ -7,6 +7,8 @@ benchmark/real_world/openml_leaderboard.py. pdll 0.3.1 is scored two ways on the
   raw      the same raw DataFrame and categorical target a user would pass;
   encoded  its best case: numpy arrays, categorical features ordinal-encoded (NaN kept), integer labels,
            i.e. what 1.0 does internally, which sidesteps 0.3.1's dtype, pandas-index and categorical-label bugs.
+Both versions use the same base learner with a fixed seed: 0.3.1's own default, ExtraTreesClassifier(class_weight=
+"balanced", n_jobs=-1), gets random_state=0 explicitly because 0.3.1's constructor has no random_state.
 """
 import argparse
 import json
@@ -64,17 +66,29 @@ def watchdog():
         time.sleep(0.2)
 
 
-def encode(X):
-    """Ordinal-encode non-numeric columns (NaN stays NaN) and return a float array."""
-    out = pd.DataFrame(index=X.index)
-    for col in X.columns:
-        s = X[col]
-        if isinstance(s.dtype, pd.CategoricalDtype) or s.dtype == object or pd.api.types.is_string_dtype(s) or pd.api.types.is_bool_dtype(s):
-            codes = s.astype('category').cat.codes.astype(float)
-            out[col] = codes.where(codes >= 0, np.nan)
+def encode(X_train, X_test):
+    """Ordinal-encode non-numeric columns (missing and unseen values become NaN) and return two float arrays.
+
+    Category columns keep the categories declared in their dtype (OpenML's dataset metadata, which 1.0 uses too);
+    other text columns learn their categories from the training fold only.
+    """
+    train, test = pd.DataFrame(index=X_train.index), pd.DataFrame(index=X_test.index)
+    for col in X_train.columns:
+        a, b = X_train[col], X_test[col]
+        if isinstance(a.dtype, pd.CategoricalDtype) or a.dtype == object or pd.api.types.is_string_dtype(a) or pd.api.types.is_bool_dtype(a):
+            known = a.dtype.categories if isinstance(a.dtype, pd.CategoricalDtype) else pd.Index(a.dropna().unique())
+            for frame, values in ((train, a), (test, b)):
+                codes = pd.Series(pd.Categorical(values.astype(object), categories=known).codes, index=values.index).astype(float)
+                frame[col] = codes.where(codes >= 0, np.nan)
         else:
-            out[col] = s.astype(float)
-    return out.to_numpy()
+            train[col], test[col] = a.astype(float), b.astype(float)
+    return train.to_numpy(), test.to_numpy()
+
+
+def legacy_model():
+    """0.3.1's default model, seeded: its constructor has no random_state."""
+    from sklearn.ensemble import ExtraTreesClassifier
+    return PairwiseDifferenceClassifier(ExtraTreesClassifier(class_weight='balanced', n_jobs=-1, random_state=0))
 
 
 def error_text(e):
@@ -99,20 +113,21 @@ if args.version == 'now':
             break
     result.update(status=status, error=error, accuracy_10fold=round(float(np.mean(acc)), 4) if status == 'ok' else None)
 else:
-    X_enc, y_codes = encode(X), y.cat.codes.to_numpy()
+    y_codes = y.cat.codes.to_numpy()
     acc_raw, raw_error, acc_enc, enc_error = [], None, [], None
     for fold in range(10):
         train, test = task.get_train_test_split_indices(fold=fold, repeat=0)
         if raw_error is None:
             try:
-                model = PairwiseDifferenceClassifier().fit(X.iloc[train], y.iloc[train])
+                model = legacy_model().fit(X.iloc[train], y.iloc[train])
                 acc_raw.append(accuracy_score(np.asarray(y.iloc[test]).astype(str), np.asarray(model.predict(X.iloc[test])).astype(str)))
             except Exception as e:
                 raw_error = error_text(e)
         if enc_error is None:
             try:
-                model = PairwiseDifferenceClassifier().fit(X_enc[train], y_codes[train])
-                acc_enc.append(accuracy_score(y_codes[test], np.asarray(model.predict(X_enc[test])).astype(y_codes.dtype)))
+                X_train, X_test = encode(X.iloc[train], X.iloc[test])
+                model = legacy_model().fit(X_train, y_codes[train])
+                acc_enc.append(accuracy_score(y_codes[test], np.asarray(model.predict(X_test)).astype(y_codes.dtype)))
             except Exception as e:
                 enc_error = error_text(e)
         if raw_error and enc_error:
