@@ -8,6 +8,8 @@ from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import OneHotEncoder, OrdinalEncoder, StandardScaler
 from sklearn.utils.validation import check_is_fitted
 
+from ._input import as_pandas
+
 _Y_TYPES = ('numeric', 'ordinal', 'string')
 
 
@@ -51,6 +53,7 @@ class PDCDataTransformer(TransformerMixin, BaseEstimator):
 
     @staticmethod
     def _as_frame(X):
+        X = as_pandas(X)
         return X if isinstance(X, pd.DataFrame) else pd.DataFrame(X)
 
     def _cast_numeric(self, X):

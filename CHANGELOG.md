@@ -25,7 +25,12 @@ A rewrite for robustness and speed. On the inputs the paper used (numpy arrays),
 ### Added
 - DataFrames with string, object, category, bool, uint and nullable columns: categorical columns are ordinal-encoded
   inside the estimator (missing/unseen values become -1), and identifier-like columns trigger a warning.
-- polars and pyarrow tables (and targets) are accepted and handled like pandas DataFrames.
+- polars and pyarrow tables (and targets) are accepted and handled like pandas DataFrames, also by
+  `PDCDataTransformer`. A polars LazyFrame is collected; without pyarrow (which polars' `to_pandas` needs), polars
+  data is converted column by column. Other objects with a `to_pandas` method are left to scikit-learn as before.
+- Actionable errors for date, time and timedelta values stored as objects (e.g. pyarrow `date32` columns) instead of
+  silently encoding them as categories, for duplicate column names, for cells holding lists or dicts, and for missing
+  values in string, object or nullable targets.
 - NaN support whenever the base estimator supports it (e.g. HistGradientBoosting).
 - `max_pairs` (default `"auto"`: 100,000 pairs, fewer for very wide data) and `max_anchors` (default 500) bound training
   and prediction cost. Up to 316 training rows the behaviour is exactly the paper's; `max_pairs=None, max_anchors=None`
