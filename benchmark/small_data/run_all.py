@@ -12,7 +12,7 @@ import subprocess
 import sys
 from concurrent.futures import ThreadPoolExecutor
 
-from models import MODELS
+from models import MODELS, check_environment
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 
@@ -55,6 +55,7 @@ def main():
     parser.add_argument('--n-jobs', type=int, default=4)
     parser.add_argument('--timeout', type=int, default=1800)
     args = parser.parse_args()
+    check_environment(args.models)
     args.out = os.path.abspath(args.out)
     finished = done(args.out)
     todo = [(t, m) for t in args.tasks for m in args.models if (t, m) not in finished]

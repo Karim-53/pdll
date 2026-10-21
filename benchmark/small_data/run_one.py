@@ -18,7 +18,7 @@ from sklearn.metrics import accuracy_score, f1_score, roc_auc_score
 from sklearn.preprocessing import LabelEncoder
 from threadpoolctl import threadpool_limits
 
-from models import make_model
+from models import check_environment, make_model
 
 
 def full_proba(model, X, n_classes):
@@ -47,6 +47,7 @@ def main():
     parser.add_argument('--out', required=True)
     parser.add_argument('--n-jobs', type=int, default=4)
     args = parser.parse_args()
+    check_environment([args.model])
 
     import openml
     import pdll

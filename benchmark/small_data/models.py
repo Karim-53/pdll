@@ -88,8 +88,8 @@ def make_model(name, X, n_jobs):
         return make_pipeline(_ordinal(X), RandomForestClassifier(random_state=SEED, n_jobs=n_jobs))
     if name == 'extra_trees':
         return make_pipeline(_ordinal(X), ExtraTreesClassifier(random_state=SEED, n_jobs=n_jobs))
-    if name == 'hist_gradient_boosting':
-        return _native(HistGradientBoostingClassifier(random_state=SEED), X)
+    if name == 'hist_gradient_boosting':  # 'from_dtype' is the default from scikit-learn 1.6 on; spelled out for clarity
+        return _native(HistGradientBoostingClassifier(categorical_features='from_dtype', random_state=SEED), X)
     if name == 'lightgbm':
         from lightgbm import LGBMClassifier
         return _native(LGBMClassifier(random_state=SEED, n_jobs=n_jobs, verbose=-1), X)
@@ -106,3 +106,22 @@ def make_model(name, X, n_jobs):
 
 MODELS = ['pdl', 'logistic_regression', 'knn', 'svm', 'decision_tree', 'random_forest', 'extra_trees',
           'hist_gradient_boosting', 'lightgbm', 'xgboost', 'catboost']
+EXTRA_PACKAGES = {'lightgbm': 'lightgbm', 'xgboost': 'xgboost', 'catboost': 'catboost', 'tabpfn': 'tabpfn'}  # model -> module
+MIN_SKLEARN = (1, 6)
+
+
+def check_environment(models):
+    """Fail early, with the install command, instead of recording every run of a missing package as a model error."""
+    import importlib.util
+
+    import sklearn
+    problems = []
+    if tuple(int(part) for part in sklearn.__version__.split('.')[:2]) < MIN_SKLEARN:
+        problems.append(f'scikit-learn {sklearn.__version__} is too old: this benchmark needs >= 1.6 (native categoricals in '
+                        f'HistGradientBoosting, missing values in every tree)')
+    missing = [EXTRA_PACKAGES[m] for m in models if m in EXTRA_PACKAGES and importlib.util.find_spec(EXTRA_PACKAGES[m]) is None]
+    if missing:
+        problems.append(f'missing packages for the requested models: {", ".join(missing)}')
+    if problems:
+        raise SystemExit('; '.join(problems) + '. Install the benchmark environment with: '
+                         'pip install -e . -r benchmark/small_data/requirements.txt')

@@ -1,0 +1,14 @@
+# Small-data benchmark (benchmark/small_data): the exact versions of the published run.
+# Install with: pip install -e . -r benchmark/small_data/requirements.txt
+# scikit-learn >= 1.6 is required: models.py relies on native categoricals in HistGradientBoosting
+# (categorical_features="from_dtype") and on missing-value support in every scikit-learn tree, ExtraTrees included.
+numpy==2.5.4
+pandas==3.0.6
+scikit-learn==1.9.1
+scipy==1.18.1
+openml==0.15.1
+xgboost==3.4.1
+lightgbm==4.7.0
+catboost==1.2.10
+psutil
+tabulate
