@@ -453,6 +453,57 @@ def test_class_weight_is_applied_as_sample_weight(iris):
         PairwiseDifferenceClassifier(KNeighborsClassifier(), class_weight='balanced').fit(X, y)
 
 
+class RecordingForest(ExtraTreesClassifier):
+    """ExtraTreesClassifier that records the labels, sample weights and class_weight its fit receives."""
+
+    def fit(self, X, y, sample_weight=None):
+        self.fit_args_ = (np.asarray(y), None if sample_weight is None else np.asarray(sample_weight), self.class_weight)
+        return super().fit(X, y, sample_weight=sample_weight)
+
+
+def test_balanced_base_estimator_balances_weighted_pairs(iris):
+    # Forests before scikit-learn 1.8 compute class_weight="balanced" from row counts and ignore sample_weight, so PDL
+    # balances "same" against "different" pairs on the weighted counts itself: every version then fits the same model.
+    X, y = iris[0][:120], iris[1][:120]
+    w = np.random.RandomState(0).uniform(0.1, 10, len(y))
+    weighted = PairwiseDifferenceClassifier(RecordingForest(n_estimators=5, class_weight='balanced', random_state=0))
+    weighted.fit(X, y, sample_weight=w)
+    y_pairs, pair_weight, class_weight = weighted.estimator_.fit_args_
+    assert class_weight is None
+    np.testing.assert_allclose(pair_weight[y_pairs == 0].sum(), pair_weight[y_pairs == 1].sum())
+    assert weighted.estimator_.class_weight == 'balanced'  # the fitted clone still shows the user's setting
+    unweighted = PairwiseDifferenceClassifier(RecordingForest(n_estimators=5, class_weight='balanced', random_state=0))
+    unweighted.fit(X, y)
+    assert unweighted.estimator_.fit_args_[1:] == (None, 'balanced')  # no weights: scikit-learn balances, as in the paper
+
+
+class PlainBalancedClassifier:
+    """A classifier without get_params/set_params that still exposes class_weight="balanced"."""
+
+    class_weight = 'balanced'
+
+    def fit(self, X, y, sample_weight=None):
+        self.inner_ = FakePairClassifier().fit(X, y, sample_weight=sample_weight)
+        self.classes_ = self.inner_.classes_
+        return self
+
+    def predict_proba(self, X):
+        return self.inner_.predict_proba(X)
+
+    def predict(self, X):
+        return self.inner_.predict(X)
+
+
+def test_weighted_fit_with_a_balanced_classifier_without_set_params(iris):
+    # Without a settable class_weight parameter PDL can't switch the estimator's own balancing off, so it passes the
+    # pair weights through unchanged.
+    X, y = iris[0][:120], iris[1][:120]
+    w = np.random.RandomState(0).uniform(0.1, 10, len(y))
+    model = PairwiseDifferenceClassifier(PlainBalancedClassifier()).fit(X, y, sample_weight=w)
+    np.testing.assert_allclose(np.sort(model.estimator_.inner_.sample_weight_fit_), np.sort(np.outer(w, w).ravel()))
+    assert model.predict(X).shape == y.shape
+
+
 def test_large_training_sets_get_a_warning():
     rng = np.random.RandomState(0)
     X, y = rng.normal(size=(2500, 3)), rng.randint(0, 2, 2500)

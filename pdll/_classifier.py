@@ -155,7 +155,7 @@ class PairwiseDifferenceClassifier(ClassifierMixin, PairwiseDifferenceMixin, Bas
         if sample_weight is None:
             self.estimator_.fit(X_pairs, y_pairs)
         else:
-            self.estimator_.fit(X_pairs, y_pairs, sample_weight=sample_weight[left] * sample_weight[right])
+            self._fit_weighted_pairs(X_pairs, y_pairs, sample_weight[left] * sample_weight[right])
         del X_pairs
 
         anchors = self._sample_anchors(len(X), max_anchors, seed_anchors, groups=y_all)
@@ -163,6 +163,23 @@ class PairwiseDifferenceClassifier(ClassifierMixin, PairwiseDifferenceMixin, Bas
         self.y_anchors_ = y_all[anchors]
         self.sample_weight_ = None if sample_weight is None else sample_weight[anchors] / sample_weight[anchors].sum()
         return self
+
+    def _fit_weighted_pairs(self, X_pairs, y_pairs, pair_weight):
+        """Fit the base estimator on weighted pairs, with class_weight="balanced" computed from the weighted counts.
+
+        Before scikit-learn 1.8, forests and trees balance on row counts and ignore sample_weight, so the same weights
+        gave a different model on older versions. Folding the balance into the pair weights fits the same model on all.
+        Estimators without a settable class_weight parameter get the pair weights unchanged.
+        """
+        params = self.estimator_.get_params(deep=False) if hasattr(self.estimator_, 'get_params') else {}
+        if params.get('class_weight') != 'balanced' or not hasattr(self.estimator_, 'set_params'):
+            self.estimator_.fit(X_pairs, y_pairs, sample_weight=pair_weight)
+            return
+        weighted_counts = np.bincount(y_pairs, weights=pair_weight, minlength=2)
+        balance = weighted_counts.sum() / (len(weighted_counts) * weighted_counts)
+        self.estimator_.set_params(class_weight=None)
+        self.estimator_.fit(X_pairs, y_pairs, sample_weight=pair_weight * balance[y_pairs])
+        self.estimator_.set_params(class_weight='balanced')  # keep the user's setting visible; prediction ignores it
 
     def _warn_class_weight(self):
         params = inspect.signature(type(self.estimator_).__init__).parameters

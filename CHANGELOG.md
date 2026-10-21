@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.0.0] - 2026-10-15
+## [1.0.0] - 2026-10-19
 
 A rewrite for robustness and speed. On the inputs the paper used (numpy arrays), predictions are identical to
 0.3.1; `tests/test_golden.py` checks this.
@@ -33,7 +33,9 @@ A rewrite for robustness and speed. On the inputs the paper used (numpy arrays),
   (1M pairs ran out of memory on a 1,473-row dataset and needed 5 GB for Titanic).
 - `sample_weight` in `fit` for both estimators (pair weight w_i·w_j, equivalent to repeating rows).
 - `class_weight` (`None`, `"balanced"` or a dict) for the classifier, applied as sample weights. On imbalanced data
-  PDL otherwise under-predicts minority classes.
+  PDL otherwise under-predicts minority classes. With weights, a base estimator with `class_weight="balanced"` balances
+  "same" against "different" pairs on the weighted counts, so every scikit-learn version fits the same model (before
+  1.8, forests balanced on row counts and ignored the weights).
 - `fit` warns above 2,000 training rows: PDL is a small-data method, and above that size the base estimator alone was
   usually more accurate in the real-data benchmark.
 - `predict_log_proba`, `pdll.__citation__`, `CITATION.cff` (GitHub "Cite this repository").
