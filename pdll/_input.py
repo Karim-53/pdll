@@ -82,6 +82,13 @@ def needs_encoding(X: pd.DataFrame) -> bool:
     return not all(_is_plain_numeric(dtype) for dtype in X.dtypes)
 
 
+def as_pandas(data):
+    """polars and pyarrow tables (anything with ``to_pandas``) become pandas; everything else is returned unchanged."""
+    if isinstance(data, (pd.DataFrame, pd.Series, np.ndarray)) or not callable(getattr(data, 'to_pandas', None)):
+        return data
+    return data.to_pandas()
+
+
 def _shape(y):
     """Shape of y without calling numpy functions on it (array-likes may forbid them); () when absent."""
     if y is None or (isinstance(y, str) and y == 'no_validation'):
@@ -95,7 +102,9 @@ def to_float_array(estimator, X, y='no_validation', *, reset, allow_nan, **check
 
     On ``reset`` (fit) the categorical columns of a DataFrame are learned and stored in ``estimator._categories``;
     afterwards the same encoding is applied, by column name, or by position if X is no longer a DataFrame.
+    polars and pyarrow tables are handled as pandas DataFrames.
     """
+    X, y = as_pandas(X), as_pandas(y)
     if reset:
         estimator._categories = learn_categories(X) if isinstance(X, pd.DataFrame) else {}
         estimator._columns = list(X.columns) if isinstance(X, pd.DataFrame) else None

@@ -25,6 +25,7 @@ A rewrite for robustness and speed. On the inputs the paper used (numpy arrays),
 ### Added
 - DataFrames with string, object, category, bool, uint and nullable columns: categorical columns are ordinal-encoded
   inside the estimator (missing/unseen values become -1), and identifier-like columns trigger a warning.
+- polars and pyarrow tables (and targets) are accepted and handled like pandas DataFrames.
 - NaN support whenever the base estimator supports it (e.g. HistGradientBoosting).
 - `max_pairs` (default `"auto"`: 100,000 pairs, fewer for very wide data) and `max_anchors` (default 500) bound training
   and prediction cost. Up to 316 training rows the behaviour is exactly the paper's; `max_pairs=None, max_anchors=None`
@@ -42,8 +43,9 @@ A rewrite for robustness and speed. On the inputs the paper used (numpy arrays),
 - `benchmark/real_world`: validation on 131 real datasets (OpenML-CC18, OpenML-CTR23, Kaggle, scikit-learn, Zindi):
   129 ran, 2 were refused with an actionable message, none failed.
 - Tests: golden equivalence with 0.3.1, scikit-learn's `parametrize_with_checks`, a reference implementation of the
-  paper's formulas, an end-to-end accuracy/speed regression gate, and OpenML integration tests. CI covers the oldest
-  supported, Kaggle-like, Colab-like and latest dependency stacks on Linux, Windows and macOS.
+  paper's formulas, an end-to-end accuracy/speed regression gate for the classifier and the regressor, score floors
+  (95% of the measured score, 90% for R²) on every unit test that computes a score, and OpenML integration tests.
+  CI covers the oldest supported, Kaggle-like, Colab-like and latest dependency stacks on Linux, Windows and macOS.
 
 ### Fixed
 - Wrong predictions when `X`/`y` are pandas objects whose index is not 0..N-1 (e.g. straight out of
