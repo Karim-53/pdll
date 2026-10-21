@@ -1,4 +1,6 @@
 """polars and pyarrow tables must give exactly what the same pandas DataFrame gives (skipped when not installed)."""
+import importlib
+
 import numpy as np
 import pytest
 from sklearn.ensemble import HistGradientBoostingClassifier, HistGradientBoostingRegressor
@@ -7,9 +9,16 @@ from pdll import PairwiseDifferenceClassifier, PairwiseDifferenceRegressor
 from test_classifier import titanic_like
 
 
+def import_or_skip(name):
+    try:
+        return importlib.import_module(name)
+    except ImportError as error:  # not installed, or built for another numpy (recent pyarrow needs numpy 2)
+        pytest.skip(f'{name} unavailable: {error}')
+
+
 def to_library(library, X, y):
-    lib = pytest.importorskip(library)
-    pytest.importorskip('pyarrow')  # polars converts to pandas through pyarrow
+    lib = import_or_skip(library)
+    import_or_skip('pyarrow')  # polars converts to pandas through pyarrow
     if library == 'polars':
         return lib.from_pandas(X), lib.Series(y)
     return lib.Table.from_pandas(X, preserve_index=False), lib.array(y)

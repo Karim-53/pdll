@@ -11,11 +11,14 @@ import json
 import os
 import re
 import sys
+import threading
+from concurrent.futures import ThreadPoolExecutor
 
 import openml
 
-PAGE = 1000
+PAGE = 1000  # the most the OpenML API returns per call
 MAX_PAGES = 200
+MARGIN = 0.01  # also fetch methods slightly below our lowest score
 
 
 def method(flow_name):
@@ -46,15 +49,21 @@ def main():
     for r in map(json.loads, open(results_path)):
         if r.get('status') == 'ok':
             floors[r['task']] = min(floors.get(r['task'], 1.), r['accuracy'])
-    for task_id, floor in floors.items():
-        key = str(task_id)
-        if key in cache and cache[key]['floor'] <= floor:
-            continue
-        best, complete = best_public_per_method(task_id, floor - 0.01)
-        cache[key] = {'floor': floor - 0.01, 'complete': complete, 'best_per_method': best}
-        print(f'{task_id}: {len(best)} public methods at or above {floor - 0.01:.3f}', flush=True)
-        with open(out, 'w') as f:
-            json.dump(cache, f, indent=0)
+    lock = threading.Lock()
+
+    def fetch(task_id):
+        floor = floors[task_id] - MARGIN
+        if str(task_id) in cache and cache[str(task_id)]['floor'] <= floor:
+            return
+        best, complete = best_public_per_method(task_id, floor)
+        with lock:
+            cache[str(task_id)] = {'floor': floor, 'complete': complete, 'best_per_method': best}
+            with open(out, 'w') as f:
+                json.dump(cache, f, indent=0)
+        print(f'{task_id}: {len(best)} public methods at or above {floor:.3f}', flush=True)
+
+    with ThreadPoolExecutor(4) as pool:
+        list(pool.map(fetch, floors))
 
 
 if __name__ == '__main__':
