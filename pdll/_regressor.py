@@ -9,7 +9,7 @@ from scipy.spatial.distance import cdist
 from scipy.stats import entropy
 from sklearn.base import BaseEstimator, RegressorMixin
 from sklearn.metrics import mean_absolute_error
-from sklearn.utils.validation import check_is_fitted
+from sklearn.utils.validation import check_is_fitted, column_or_1d
 
 from ._base import PairwiseDifferenceMixin, all_pairs, iter_test_chunks, pair_features
 
@@ -97,7 +97,7 @@ class PairwiseDifferenceRegressor(RegressorMixin, PairwiseDifferenceMixin, BaseE
         max_pairs, max_anchors = self._check_params()
         X, y, sample_weight, row_labels = self._fit_prepare(X, y, sample_weight, y_numeric=True)
         self._warn_if_large(len(X))
-        if y.dtype.kind != 'f':
+        if y.dtype not in (np.float32, np.float64):  # ints, bools, and float16 (whose differences overflow above 65,504)
             y = y.astype(np.float64)
 
         seed_estimator, seed_pairs, seed_anchors = self._random_seeds()
@@ -214,6 +214,8 @@ class PairwiseDifferenceRegressor(RegressorMixin, PairwiseDifferenceMixin, BaseE
         methods = self._name_to_method_mapping
         if method not in methods:
             raise ValueError(f"Weighting method {method} unknown! Use one of the following: '{', '.join(methods)}'")
+        if y_val is not None:  # a column vector would broadcast against the (n_val, n_anchors) predictions
+            y_val = column_or_1d(y_val, warn=True)
         old_validation_error = mean_absolute_error(y_val, self.predict(X_val)) if y_val is not None else 0.
         sample_weight = methods[method](X_val=X_val, y_val=y_val, X_test=X_test, **kwargs)
         self.set_sample_weight(sample_weight)
