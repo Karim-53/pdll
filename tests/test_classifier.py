@@ -611,6 +611,7 @@ def test_numbers_stored_as_text_are_converted_like_scikit_learn_does():
 
 def test_mostly_numeric_text_with_placeholders_warns():
     X, y = titanic_like()
+    X['age'] = X['age'].fillna(30.)  # ExtraTrees accepts NaN only from scikit-learn 1.6 on
     X['charges'] = [f'{v:.2f}' for v in np.arange(len(X)) * 3.5]
     X.loc[[3, 9], 'charges'] = [' ', '?']
     with pytest.warns(UserWarning, match="numbers stored as text, plus values such as"):
@@ -627,6 +628,7 @@ def test_complex_columns_are_rejected_with_advice(dtype):
 
 def test_extra_or_renamed_columns_at_predict_get_the_feature_name_message():
     X, y = titanic_like()
+    X['age'] = X['age'].fillna(30.)  # ExtraTrees accepts NaN only from scikit-learn 1.6 on
     model = pdc().fit(X, y)
     with pytest.raises(ValueError, match='Feature names unseen at fit time:\n- Id'):
         model.predict(X.assign(Id=[f'id_{i}' for i in range(len(X))]))
