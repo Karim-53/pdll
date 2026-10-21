@@ -74,7 +74,8 @@ A rewrite for robustness and speed. On the inputs the paper used (numpy arrays),
   (`MultiOutputClassifier`/`MultiOutputRegressor`, drop rows with a missing target).
 - When pairs are subsampled (more than 316 training rows by default), a class could end up without any same-class
   pair, e.g. a single-row class, and was then never predicted, even on its own row; with `class_weight="balanced"`
-  its anchor even voted against it. Such a class now keeps its diagonal pairs (i, i). Datasets where every class has
+  its anchor even voted against it. Such a class now keeps the diagonal pairs (i, i) of up to 10 of its rows, so the
+  extra pairs are bounded by the number of classes. Datasets where every class has
   same-class pairs, which is nearly all, get exactly the same model as before.
 - Numbers stored as text (`read_csv(dtype=str)`, padded `" 5 "`) were encoded as string-ordered categories, so every
   unseen value lost its meaning; they are now converted to numbers, as scikit-learn does. Mostly-numeric text with

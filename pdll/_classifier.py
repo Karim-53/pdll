@@ -12,6 +12,7 @@ from ._base import PairwiseDifferenceMixin, all_pairs, iter_test_chunks, pair_fe
 
 # With fewer rows than this in some class, use_prior='auto' switches to the prior-based aggregation.
 MIN_CLASS_SIZE_WITHOUT_PRIOR = 5
+COVERAGE_PAIRS_PER_CLASS = 10  # diagonal pairs added for a class that subsampling left without any same-class pair
 
 
 class PairwiseDifferenceClassifier(ClassifierMixin, PairwiseDifferenceMixin, BaseEstimator):
@@ -54,7 +55,8 @@ class PairwiseDifferenceClassifier(ClassifierMixin, PairwiseDifferenceMixin, Bas
 
     max_pairs : "auto", int or None, default="auto"
         The base estimator is trained on n² pairs. If that exceeds ``max_pairs``, a uniform random subset
-        of ``max_pairs`` pairs is used. ``"auto"`` means 100,000 pairs (every pair up to 316 training rows), fewer for
+        of ``max_pairs`` pairs is used, plus the diagonal pairs (i, i) of up to 10 rows of any class the subset left
+        without a same-class pair. ``"auto"`` means 100,000 pairs (every pair up to 316 training rows), fewer for
         very wide data so the pair matrix stays below 0.5 GB. ``None`` uses every pair, as in the paper; time and
         memory then grow with n².
 
@@ -194,11 +196,12 @@ class PairwiseDifferenceClassifier(ClassifierMixin, PairwiseDifferenceMixin, Bas
     @staticmethod
     def _ensure_pair_coverage(y, left, right):
         """Make subsampled pairs teach every class: a class without any same-class pair (e.g. a single row once pairs
-        are subsampled) gets its diagonal pairs (i, i), and one "different" pair is added if there is none."""
+        are subsampled) gets the diagonal pairs (i, i) of up to ``COVERAGE_PAIRS_PER_CLASS`` of its rows, and one
+        "different" pair is added if there is none. The extra pairs are bounded by the number of classes, not of rows."""
         same = y[left] == y[right]
         missing = np.setdiff1d(np.unique(y), y[left][same])
         if missing.size:
-            rows = np.flatnonzero(np.isin(y, missing))
+            rows = np.concatenate([np.flatnonzero(y == c)[:COVERAGE_PAIRS_PER_CLASS] for c in missing])
             left, right = np.append(left, rows), np.append(right, rows)
         if np.all(y[left] == y[right]):
             left, right = np.append(left, 0), np.append(right, np.flatnonzero(y != y[0])[0])

@@ -634,3 +634,15 @@ def test_extra_or_renamed_columns_at_predict_get_the_feature_name_message():
         model.predict(X.assign(Id=[f'id_{i}' for i in range(len(X))]))
     with pytest.raises(ValueError, match='seen at fit time, yet now missing:\n- sex'):
         model.predict(X.rename(columns={'sex': 'gender'}))
+
+
+def test_coverage_pairs_stay_within_a_per_class_budget():
+    """A tiny max_pairs leaves many classes without a same-class pair: the extra pairs must not grow with the rows."""
+    rng = np.random.default_rng(0)
+    y = np.repeat(np.arange(20), 30)
+    X = rng.normal(size=(len(y), 3)) + y[:, None]
+    model = PairwiseDifferenceClassifier(FakePairClassifier(), max_pairs=50, max_anchors=None, random_state=0).fit(X, y)
+    n_pairs = model.estimator_.X_fit_.shape[0]
+    assert 50 < n_pairs <= 50 + 10 * 20 + 1
+    same = model.estimator_.y_fit_ == 0
+    assert same.any()
