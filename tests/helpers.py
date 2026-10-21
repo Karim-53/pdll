@@ -1,6 +1,26 @@
 """Test helpers shared by the unit, golden and reference-math tests."""
+import json
+import os
+
 import numpy as np
 from sklearn.base import BaseEstimator, ClassifierMixin, RegressorMixin
+
+
+def check_score(score, reference, ratio=0.95):
+    """Fail when a score drops below ``ratio`` x ``reference``, the value it had when the check was written.
+
+    References were measured with pdll 1.0.0 on the latest stack (scikit-learn 1.9, Windows x86-64). The margin
+    absorbs the slightly different trees that other platforms and older scikit-learn versions build; a real
+    regression shows up as a drop well beyond it. Raise the reference when a change improves the score.
+    Set ``PDLL_SCORE_LOG=<file>`` to record every measured score, e.g. to refresh the references.
+    """
+    log = os.environ.get('PDLL_SCORE_LOG')
+    if log:
+        with open(log, 'a') as f:
+            f.write(json.dumps({'test': os.environ.get('PYTEST_CURRENT_TEST', '').split(' ')[0],
+                                'score': float(score), 'reference': reference}) + '\n')
+    if reference is not None:
+        assert score >= ratio * reference, f'score {score:.4f} < {ratio} x reference {reference:.4f}'
 
 
 class FakePairClassifier(ClassifierMixin, BaseEstimator):

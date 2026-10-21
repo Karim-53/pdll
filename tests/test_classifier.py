@@ -18,7 +18,7 @@ from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 
 import pdll._base
-from helpers import FakePairClassifier
+from helpers import FakePairClassifier, check_score
 from pdll import PairwiseDifferenceClassifier
 
 
@@ -61,7 +61,7 @@ def test_predict_proba_is_ndarray_usable_for_roc_auc(cancer_frame):
     X_train, X_test, y_train, y_test = cancer_frame
     proba = pdc().fit(X_train, y_train).predict_proba(X_test)
     assert isinstance(proba, np.ndarray) and proba.shape == (len(X_test), 2)
-    assert roc_auc_score(y_test, proba[:, 1]) > 0.9
+    check_score(roc_auc_score(y_test, proba[:, 1]), 0.982)
 
 
 def test_proba_columns_follow_classes_and_sum_to_one(iris):
@@ -85,7 +85,7 @@ def test_any_label_values(iris, small_classes, labels, path):
     model = pdc().fit(X, mapped)
     assert model.decide_use_prior() == (path == 'prior')
     pred = model.predict(X)
-    assert (pred == mapped).mean() > 0.8
+    check_score((pred == mapped).mean(), 1.0)
 
 
 def test_pandas_categorical_target(iris):
@@ -98,7 +98,7 @@ def test_column_vector_target_warns_and_works(iris):
     X, y = iris
     with pytest.warns(DataConversionWarning):
         model = pdc().fit(X, y.reshape(-1, 1))
-    assert model.score(X, y) > 0.9
+    check_score(model.score(X, y), 1.0)
 
 
 def test_single_class_is_rejected(iris):
@@ -147,7 +147,7 @@ def test_bool_uint_nullable_and_float32_columns(cancer_frame):
     model = pdc().fit(mixed(X_train), y_train)
     assert model.n_features_in_ == X_train.shape[1] + 4
     assert model.X_anchors_.dtype == np.float64
-    assert model.score(mixed(X_test), cancer_frame[3]) > 0.85
+    check_score(model.score(mixed(X_test), cancer_frame[3]), 0.9375)
     # uint differences must not wrap around
     assert np.abs(model.X_anchors_).max() < 1e4
 
@@ -172,7 +172,7 @@ def titanic_like(n=200, seed=0):
 def test_string_and_categorical_columns_are_encoded():
     X, y = titanic_like()
     model = PairwiseDifferenceClassifier(HistGradientBoostingClassifier(max_iter=30, random_state=0)).fit(X[:150], y[:150])
-    assert model.score(X[150:], y[150:]) > 0.7
+    check_score(model.score(X[150:], y[150:]), 0.86)
     # the ordered categorical keeps its order, unseen and missing values become -1
     assert model._categories['class'] == ['1st', '2nd', '3rd']
     X_new = X[150:155].copy()
@@ -259,10 +259,10 @@ def test_default_estimator_and_reproducibility(iris):
 
 def test_works_with_sklearn_tooling(iris):
     X, y = iris
-    assert cross_val_score(pdc(), X, y, cv=3).mean() > 0.85
+    check_score(cross_val_score(pdc(), X, y, cv=3).mean(), 0.9533)
     search = GridSearchCV(pdc(), {'estimator__max_depth': [2, None], 'use_prior': [True, False]}, cv=3).fit(X, y)
-    assert search.best_score_ > 0.85
-    assert make_pipeline(StandardScaler(), pdc()).fit(X, y).score(X, y) > 0.9
+    check_score(search.best_score_, 0.96)
+    check_score(make_pipeline(StandardScaler(), pdc()).fit(X, y).score(X, y), 1.0)
     model = pdc().fit(X, y)
     np.testing.assert_array_equal(pickle.loads(pickle.dumps(model)).predict(X), model.predict(X))
     assert clone(model).get_params()['estimator'].get_params() == forest().get_params()
@@ -358,7 +358,7 @@ def test_large_dataset_stays_fast():
     start = perf_counter()
     model = PairwiseDifferenceClassifier(ExtraTreesClassifier(n_estimators=10, class_weight='balanced', n_jobs=-1, random_state=0),
                                          max_pairs=100_000, max_anchors=200, random_state=0).fit(X, y)
-    assert model.score(X[:1000], y[:1000]) > 0.85
+    check_score(model.score(X[:1000], y[:1000]), 1.0)
     assert perf_counter() - start < 60
 
 
