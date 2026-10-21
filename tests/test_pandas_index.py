@@ -25,12 +25,12 @@ def wine_split():
     return train_test_split(X, y, test_size=0.25, random_state=0, stratify=y)
 
 
-def make_pdc():
-    return PairwiseDifferenceClassifier(estimator=ExtraTreesClassifier(n_estimators=20, class_weight='balanced', random_state=0))
+def make_pdc(**kwargs):
+    return PairwiseDifferenceClassifier(estimator=ExtraTreesClassifier(n_estimators=20, class_weight='balanced', random_state=0), **kwargs)
 
 
-def proba(X_train, y_train, X_test):
-    return np.asarray(make_pdc().fit(X_train, y_train).predict_proba(X_test))
+def proba(X_train, y_train, X_test, **kwargs):
+    return np.asarray(make_pdc(**kwargs).fit(X_train, y_train).predict_proba(X_test))
 
 
 class PandasIndexTest(unittest.TestCase):
@@ -60,12 +60,12 @@ class PandasIndexTest(unittest.TestCase):
         np.testing.assert_allclose(proba(self.X_tr, self.y_tr, self.X_te).sum(axis=1), 1.)
 
     def test_prior_path_with_shuffled_index(self):
-        """A class with < 5 training rows switches predict_proba to the prior-based path."""
+        """The prior-based path (use_prior=True, here with a class of 3 rows) must not depend on the index either."""
         keep = (self.y_tr != 2) | (self.y_tr.groupby(self.y_tr).cumcount() < 3)
         X_tr, y_tr = self.X_tr[keep], self.y_tr[keep]
-        self.assertTrue(make_pdc().fit(X_tr, y_tr).decide_use_prior())
-        np.testing.assert_allclose(proba(X_tr, y_tr, self.X_te),
-                                   proba(X_tr.reset_index(drop=True), y_tr.reset_index(drop=True), self.X_te))
+        self.assertTrue(make_pdc(use_prior=True).fit(X_tr, y_tr).decide_use_prior())
+        np.testing.assert_allclose(proba(X_tr, y_tr, self.X_te, use_prior=True),
+                                   proba(X_tr.reset_index(drop=True), y_tr.reset_index(drop=True), self.X_te, use_prior=True))
 
     def test_regressor_shuffled_index(self):
         X, y = self.X_tr.drop(columns='alcohol'), self.X_tr['alcohol']

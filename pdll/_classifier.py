@@ -36,7 +36,10 @@ class PairwiseDifferenceClassifier(ClassifierMixin, PairwiseDifferenceMixin, Bas
     use_prior : {"auto", True, False}, default="auto"
         How similarities become probabilities. ``True``: the prior-based posterior of the paper,
         averaged over anchors. ``False``: the mean similarity to each class, normalised.
-        ``"auto"``: ``True`` if some class has fewer than 5 training rows, else ``False``.
+        ``"auto"``: ``True`` if some class has fewer than 5 training rows and the classes are about equally frequent
+        (two classes, or the largest at most twice the smallest), else ``False``. With unequal classes the prior-based
+        posterior favours the large ones, so a tiny class of an imbalanced multiclass problem would never be predicted.
+        Class sizes count ``sample_weight``.
 
     class_weight : dict, "balanced" or None, default=None
         Weights of the classes, applied as sample weights (see ``fit``). ``"balanced"`` gives every class the same
@@ -143,13 +146,13 @@ class PairwiseDifferenceClassifier(ClassifierMixin, PairwiseDifferenceMixin, Bas
 
         weights = np.ones(len(y_all)) if sample_weight is None else sample_weight
         self.prior_ = np.bincount(y_all, weights=weights, minlength=self.n_classes_) / weights.sum()
-        self._min_class_count = int(np.bincount(y_all)[present].min())
+        self._class_sizes = np.bincount(y_all, weights=weights)[present]  # summed weights: a weight of 2 counts as 2 rows
 
         seed_estimator, seed_pairs, seed_anchors = self._random_seeds()
         self.estimator_ = self._make_estimator(seed_estimator, sample_weight)
         self._warn_class_weight()
         left, right = self._sample_pairs(len(X), self._resolve_max_pairs(max_pairs, len(X), X.shape[1]), seed_pairs)
-        left, right = self._ensure_both_targets(y_all, left, right)
+        left, right = self._ensure_pair_coverage(y_all, left, right)
         X_pairs = pair_features(X, X, left, right, order='F')
         y_pairs = (y_all[left] != y_all[right]).astype(int)  # 0 = same class, 1 = different
         if sample_weight is None:
@@ -187,22 +190,25 @@ class PairwiseDifferenceClassifier(ClassifierMixin, PairwiseDifferenceMixin, Bas
             warnings.warn('For better performance, estimator should have class_weight="balanced".', UserWarning, stacklevel=3)
 
     @staticmethod
-    def _ensure_both_targets(y, left, right):
-        """Subsampled pairs could all be "same" or all "different"; add one pair of the missing kind."""
+    def _ensure_pair_coverage(y, left, right):
+        """Make subsampled pairs teach every class: a class without any same-class pair (e.g. a single row once pairs
+        are subsampled) gets its diagonal pairs (i, i), and one "different" pair is added if there is none."""
         same = y[left] == y[right]
-        if same.all():
-            first, other = 0, np.flatnonzero(y != y[0])[0]
-        elif not same.any():
-            first = other = 0
-        else:
-            return left, right
-        return np.append(left, first), np.append(right, other)
+        missing = np.setdiff1d(np.unique(y), y[left][same])
+        if missing.size:
+            rows = np.flatnonzero(np.isin(y, missing))
+            left, right = np.append(left, rows), np.append(right, rows)
+        if np.all(y[left] == y[right]):
+            left, right = np.append(left, 0), np.append(right, np.flatnonzero(y != y[0])[0])
+        return left, right
 
     def decide_use_prior(self) -> bool:
         """Whether predict_proba uses the prior-based aggregation (see ``use_prior``)."""
         if not isinstance(self.use_prior, str):  # True / False, including numpy booleans
             return bool(self.use_prior)
-        return self._min_class_count < MIN_CLASS_SIZE_WITHOUT_PRIOR
+        sizes = self._class_sizes
+        about_equal = len(sizes) == 2 or sizes.max() <= 2 * sizes.min()
+        return bool(sizes.min() < MIN_CLASS_SIZE_WITHOUT_PRIOR and about_equal)
 
     def _p_same(self, X_pairs):
         """Probability that each pair is of the same class, according to the base estimator."""
