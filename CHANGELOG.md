@@ -13,7 +13,8 @@ A rewrite for robustness and speed. On the inputs the paper used (numpy arrays),
 ### Changed (breaking)
 - `use_prior="auto"` takes the prior-based posterior only when a class has fewer than 5 training rows **and** the
   classes are about equally frequent (two classes, or the largest at most twice the smallest); class sizes count
-  `sample_weight`. 0.3.1 took it whenever a class had fewer than 5 rows. On imbalanced multiclass data that posterior
+  `sample_weight` as repeated rows (so `BaggingClassifier` members decide like the full model), `class_weight` does not
+  change them. 0.3.1 took it whenever a class had fewer than 5 rows. On imbalanced multiclass data that posterior
   favours large classes so strongly that a tiny class was never predicted, not even on its own training rows (with
   40/40/40/10/3 rows: accuracy 0.58 against 0.85; on 50 long-tailed classes: 0.06 against 0.76). `use_prior=True`
   still gives the paper's posterior.

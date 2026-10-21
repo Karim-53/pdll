@@ -39,7 +39,7 @@ class PairwiseDifferenceClassifier(ClassifierMixin, PairwiseDifferenceMixin, Bas
         ``"auto"``: ``True`` if some class has fewer than 5 training rows and the classes are about equally frequent
         (two classes, or the largest at most twice the smallest), else ``False``. With unequal classes the prior-based
         posterior favours the large ones, so a tiny class of an imbalanced multiclass problem would never be predicted.
-        Class sizes count ``sample_weight``.
+        Class sizes count ``sample_weight`` as repeated rows; ``class_weight`` does not change them.
 
     class_weight : dict, "balanced" or None, default=None
         Weights of the classes, applied as sample weights (see ``fit``). ``"balanced"`` gives every class the same
@@ -126,6 +126,7 @@ class PairwiseDifferenceClassifier(ClassifierMixin, PairwiseDifferenceMixin, Bas
         max_pairs, max_anchors = self._check_params()
         X, y, sample_weight, _ = self._fit_prepare(X, y, sample_weight)
         check_classification_targets(y)
+        row_weight = sample_weight  # repetition counts; class_weight below is a balancing preference, not more rows
         if self.class_weight is not None:
             if not has_fit_parameter(self._base_estimator(), 'sample_weight'):
                 raise ValueError(f'class_weight is applied through sample weights, but {type(self._base_estimator()).__name__}.fit '
@@ -135,6 +136,7 @@ class PairwiseDifferenceClassifier(ClassifierMixin, PairwiseDifferenceMixin, Bas
             if np.any(sample_weight == 0):  # a class weighted 0 is left out, like a row weighted 0
                 keep = sample_weight > 0
                 X, y, sample_weight = X[keep], y[keep], sample_weight[keep]
+                row_weight = None if row_weight is None else row_weight[keep]
         self._warn_if_large(len(X))
         classes, y_all = np.unique(y, return_inverse=True)
         self.classes_ = classes
@@ -146,7 +148,7 @@ class PairwiseDifferenceClassifier(ClassifierMixin, PairwiseDifferenceMixin, Bas
 
         weights = np.ones(len(y_all)) if sample_weight is None else sample_weight
         self.prior_ = np.bincount(y_all, weights=weights, minlength=self.n_classes_) / weights.sum()
-        self._class_sizes = np.bincount(y_all, weights=weights)[present]  # summed weights: a weight of 2 counts as 2 rows
+        self._class_sizes = np.bincount(y_all, weights=row_weight)[present]  # a sample_weight of 2 counts as 2 rows
 
         seed_estimator, seed_pairs, seed_anchors = self._random_seeds()
         self.estimator_ = self._make_estimator(seed_estimator, sample_weight)
