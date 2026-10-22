@@ -161,7 +161,7 @@ def figure_rank_vs_time(ranks, fit, path):
     median_fit = fit.median()
     fig, ax = plt.subplots(figsize=(7, 4.6), facecolor=SURFACE)
     _style(ax)
-    points = sorted(((median_fit[m], ranks[m], m) for m in ranks.index))
+    points = sorted((median_fit[m], ranks[m], m) for m in ranks.index if not np.isnan(median_fit[m]))  # all-failed models have no time
     front, best = [], np.inf
     for t, r, m in points:
         if r < best:
@@ -232,7 +232,7 @@ def main():
           f'top group (within the CD of {LABELS.get(best, best)}): {[LABELS.get(m, m) for m in top_group]}\n')
     summary = pd.DataFrame({'mean rank': ranks, 'mean accuracy': acc.mean()[ranks.index],
                             'top-3 finishes': (acc.rank(axis=1, ascending=False, method='average') <= 3).sum()[ranks.index],
-                            'median fit s': fit.median()[ranks.index], 'median predict s': frame[frame.status == 'ok'].groupby('model')['predict_seconds'].median()[ranks.index]})
+                            'median fit s': fit.median()[ranks.index], 'median predict s': frame[frame.status == 'ok'].groupby('model')['predict_seconds'].median().reindex(ranks.index)})
     print(summary.rename(index=LABELS).to_markdown(floatfmt='.3f'), '\n')
 
     comparisons = pdl_comparisons(acc, fit)
