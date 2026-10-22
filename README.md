@@ -23,6 +23,7 @@
 - 🧾 **Raw DataFrames welcome** (pandas, polars or pyarrow): string, category, bool and nullable columns are encoded for you; missing values go straight to base learners that support them (e.g. HistGradientBoosting).
 - 📈 **More accurate tree models**: in the paper, PDL improves tree-based learners on 99 OpenML datasets (macro-F1). In the [end-to-end suite](#evaluation) that CI runs on every change, it wins 18 of 30 dataset/learner pairs (11 losses) and raises mean macro-F1 from 0.873 to 0.894.
 - 🧪 **Validated on 131 real datasets** ([results](benchmark/real_world/README.md)): raw Kaggle, OpenML, scikit-learn and Zindi data, with no crashes and at most 2.6 GB of memory.
+- 🏁 **Benchmarked against 10 default classifiers** on 35 small OpenML-CC18 tasks ([results](benchmark/small_data/RESULTS.md)): in the top group, on par with random forest and extra trees, behind CatBoost.
 - 🛡️ **Tested**: Python 3.9–3.14, numpy ≥ 1.23, pandas ≥ 1.5, scikit-learn ≥ 1.2 (Kaggle and Colab stacks included), Linux, Windows and macOS.
 
 [<img src="https://github.com/user-attachments/assets/e15057cf-fef8-4061-8bb9-611adde0128b" width="70%">](https://youtu.be/5Yl6yFiNK3U?si=SXuRrO3mibD188xF "Learn more about PDL on youtube")
@@ -158,6 +159,11 @@ Finally, the predicted class is the most likely prediction:
 </details>
 
 ## Evaluation
+
+### Benchmark: 35 small OpenML-CC18 tasks, default settings
+PDL against 10 popular classifiers, every model with its default settings, on the 35 OpenML-CC18 tasks with 500–2,000 rows (official 10-fold splits, accuracy; protocol fixed before the run). PDL ranks 5th of 11 and is in the top group, within the critical difference of CatBoost. CatBoost is more accurate (−1.2 pp); PDL is practically equivalent to random forest and extra trees, not practically worse than HistGradientBoosting, LightGBM and XGBoost, and more accurate than k-NN and a decision tree. It costs more to fit (median 65 s per task, about 28× extra trees). [Results, statistics and deviations](benchmark/small_data/RESULTS.md).
+
+<img src="benchmark/small_data/figures/f2_pdl_minus_each_model.png" width="80%" alt="PDL accuracy minus each model's, one dot per task">
 
 ### Real-world validation (131 datasets)
 Before release, pdll ran with default settings on 131 raw real datasets: OpenML-CC18 and CTR23 (official task splits), Kaggle datasets, scikit-learn datasets and a Zindi dataset. 129 ran, and 2 were refused with an actionable message (sparse text, multi-target). There were no crashes, out-of-memory errors or timeouts, and peak memory stayed at or below 2.6 GB. [Protocol and findings](benchmark/real_world/README.md), [full table](benchmark/real_world/RESULTS.md).
