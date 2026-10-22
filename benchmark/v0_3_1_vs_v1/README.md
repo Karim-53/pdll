@@ -10,25 +10,30 @@ split of each task, mean accuracy over the folds. Run on 2026-10-21.
   columns ordinal-encoded (NaN kept), labels encoded as 0..K-1. This variant was added after a first run showed
   that 0.3.1's raw output had the wrong labels.
 - Both versions use the same base learner, `ExtraTreesClassifier(class_weight="balanced")`. 0.3.1 trains on every
-  pair and uses every training row as an anchor; 1.0 caps them at 100,000 pairs and 500 anchors.
+  pair and uses every training row as an anchor; 1.0 caps them at 100,000 pairs (26,132 on cnae-9, whose 856 features hit the
+  pair matrix's memory budget) and 500 anchors.
 - **These results come from the first version of `run_task.py` (commit `2781b30`).** In that version 0.3.1's base
   learner was unseeded (its constructor has no `random_state`) and the best-case encoding read the whole dataset.
   None of these 21 tasks has text columns (their categories come from the OpenML dataset declaration, which 1.0
   uses too), so the encoding difference does not matter here; the missing seed means a rerun of 0.3.1 gives
   slightly different numbers, so read differences of up to ±0.005 as ties. The current script seeds 0.3.1 and
   encodes text columns per fold; it was not rerun.
-- Each run has its own process, a timeout (45 min, 60 min for the last 0.3.1 run) and a 10 GB memory watchdog.
+- Each run has its own process and a timeout (30 min for 1.0, 45 min for 0.3.1, 60 min for the last 0.3.1 run on
+  MiceProtein), plus a 10 GB memory watchdog that did not catch cnae-9 in time (it read resident memory while the
+  pagefile filled up; fixed afterwards).
 - The rank in brackets is among the public OpenML methods on the same task and split: 1 + the number of methods
   whose best public run beats the score by more than 0.0005 (a method = an OpenML flow name without its version
-  suffix). "≥" marks two tasks where the download of public runs hit its page cap. Ranks below the lowest downloaded
-  public run are left out (the near-chance 0.3.1 raw scores).
+  suffix). "≥" marks two tasks where the download of public runs hit its page cap. Scores below the lowest public run
+  downloaded for a task get no rank: the four wrong-label 0.3.1 raw scores (0.033 to 0.136, below even random
+  guessing) and diabetes's raw 0.708.
 
 ## Summary
 
 - **1.0 ran on all 21 tasks** from raw DataFrames.
 - **0.3.1 on the same raw input**:
   - 14 errors: category and unsigned-integer columns were rejected;
-  - 4 silently wrong results, 0.03 to 0.14 accuracy where its best case scores 0.81 to 0.97. Two bugs combine: a
+  - 4 silently wrong results, 0.03 to 0.14 accuracy (far below chance: the labels came back systematically
+    wrong) where its best case scores 0.81 to 0.97. Two bugs combine: a
     fold's pandas index is not 0..n-1 and was aligned by label, and categorical labels came back in the wrong order;
   - 1 correct but lower result (diabetes 0.708 against 0.762 for its best case);
   - 2 without a result: out of memory on cnae-9 (945,000 pairs × 2,568 features) and no result within 60 minutes on
@@ -38,8 +43,11 @@ split of each task, mean accuracy over the folds. Run on 2026-10-21.
   - The two losses are tic-tac-toe (−0.058) and vowel (−0.015). They come from 1.0's default caps on pairs and
     anchors. `PairwiseDifferenceClassifier(max_pairs=None, max_anchors=None)` trains on every pair and anchor, as
     0.3.1 did.
-- The paper's experiments passed numpy arrays and are not affected by these input bugs; `tests/test_golden.py`
-  checks that 1.0 reproduces 0.3.1's outputs on them.
+- The paper's experiments passed numpy arrays and are not affected by these input bugs. `tests/test_golden.py`
+  checks that 1.0 reproduces 0.3.1's outputs on small numpy inputs in the paper's format (at most 180 training
+  rows, below 1.0's pair and anchor caps, with 0.3.1's `use_prior` choice). On larger datasets 1.0's default caps
+  subsample, so it does not reproduce 0.3.1 exactly there; `max_pairs=None, max_anchors=None` restores 0.3.1's
+  full training.
 
 ## Results
 

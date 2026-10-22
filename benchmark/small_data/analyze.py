@@ -20,13 +20,13 @@ import os
 
 import numpy as np
 import pandas as pd
-from scipy import stats
-
 from models import MODELS
 from report import LABELS, load
 from run_all import CC18_SMALL
+from scipy import stats
 
 TIE, ROPE, ALPHA, CONTROL = 0.005, 0.01, 0.05, 'pdl'
+SEED = 0  # baycomp samples its posterior: a fixed seed makes borderline verdicts reproducible
 DEFAULTS_STUDY = {'banknote-authentication', 'car', 'cmc', 'credit-g', 'mfeat-morphological', 'pc1', 'qsar-biodeg',
                   'steel-plates-fault', 'vehicle'}  # the 20-dataset study that chose max_pairs and max_anchors
 OTHER_TUNING = {'ilpd', 'pc4', 'diabetes'}  # imbalance_probe.py and the E2E gate
@@ -92,7 +92,8 @@ def pdl_comparisons(scores, fit=None):
     for other in [m for m in scores.columns if m != CONTROL]:
         d = (scores[CONTROL] - scores[other]).round(4)
         boot = np.random.default_rng(0).choice(d.to_numpy(), size=(10000, len(d))).mean(axis=1)
-        p_pdl, p_rope, p_other = baycomp.SignedRankTest.probs(scores[CONTROL].to_numpy(), scores[other].to_numpy(), rope=ROPE)
+        p_pdl, p_rope, p_other = baycomp.SignedRankTest.probs(scores[CONTROL].to_numpy(), scores[other].to_numpy(), rope=ROPE,
+                                                              random_state=SEED)
         wins, ties, losses = wtl(d, TIE)
         row = {'model': other, 'wins': wins, 'ties': ties, 'losses': losses, 'mean_diff': d.mean(),
                'ci_low': np.quantile(boot, 0.025), 'ci_high': np.quantile(boot, 0.975),
@@ -232,7 +233,8 @@ def main():
           f'top group (within the CD of {LABELS.get(best, best)}): {[LABELS.get(m, m) for m in top_group]}\n')
     summary = pd.DataFrame({'mean rank': ranks, 'mean accuracy': acc.mean()[ranks.index],
                             'top-3 finishes': (acc.rank(axis=1, ascending=False, method='average') <= 3).sum()[ranks.index],
-                            'median fit s': fit.median()[ranks.index], 'median predict s': frame[frame.status == 'ok'].groupby('model')['predict_seconds'].median().reindex(ranks.index)})
+                            'median fit s': fit.median()[ranks.index],
+                            'median predict s': frame[frame.status == 'ok'].groupby('model')['predict_seconds'].median().reindex(ranks.index)})
     print(summary.rename(index=LABELS).to_markdown(floatfmt='.3f'), '\n')
 
     comparisons = pdl_comparisons(acc, fit)
@@ -258,11 +260,20 @@ def main():
     variants.append(('mfeat views averaged into one task', pd.concat([acc[~mfeat], acc[mfeat].mean().to_frame('mfeat').T])))
     for metric in ('roc_auc', 'macro_f1'):
         variants.append((f'{metric} instead of accuracy', score_matrix(frame, models, metric)[0]))
+
+    def kind(text):  # the verdict without its numbers
+        return text.split(' (95%')[0]
+
+    full = comparisons.set_index('model')['verdict'].map(kind)
     for title, data in variants:
         r = rank_summary(data)
-        et = pdl_comparisons(data).set_index('model').loc['extra_trees']
+        table = pdl_comparisons(data).set_index('model')
+        et = table.loc['extra_trees']
+        changed = [f'{LABELS.get(m, m)}: {full[m]} -> {kind(table.loc[m, "verdict"])}'
+                   for m in table.index if kind(table.loc[m, 'verdict']) != full[m]]
         print(f'- {title} ({len(data)} tasks): PDL mean rank {r[CONTROL]:.2f} (place {int(r.rank()[CONTROL])}); '
-              f'against ExtraTrees: {et.wins}/{et.ties}/{et.losses}, Holm p {et.holm_p:.3f}, {et.verdict}')
+              f'against ExtraTrees: {et.wins}/{et.ties}/{et.losses}, Holm p {et.holm_p:.3f}, {et.verdict}. '
+              f'Verdicts that change: {"; ".join(changed) if changed else "none"}')
     for tie in (0., 0.01):
         counts = {LABELS.get(m, m): '/'.join(map(str, wtl((acc[CONTROL] - acc[m]).round(4), tie))) for m in models if m != CONTROL}
         print(f'- Wins/ties/losses with a tie threshold of {tie * 100:.0f} pp: {counts}')
