@@ -18,8 +18,6 @@ values and odd dtypes included. The full table is in [RESULTS.md](RESULTS.md) an
   The other datasets use a stratified 75/25 split. Test sets are capped at 2,000 rows.
 - pdll runs with its **default settings** on the raw DataFrame: `PairwiseDifferenceClassifier(random_state=0)` or
   `PairwiseDifferenceRegressor(random_state=0)`.
-- The reference is pdll's own base learner alone: `ExtraTreesClassifier(class_weight="balanced")` or
-  `ExtraTreesRegressor()`, on the same data with non-numeric columns ordinal-encoded.
 - Each dataset runs in its own process, with a 30-minute timeout and a memory watchdog (11 GB), on a 16 GB laptop.
 - We drop identifier columns (Titanic's names and tickets, the `Id` of House Prices, ...) and rows with a missing
   target, as a user would.
@@ -31,21 +29,11 @@ values and odd dtypes included. The full table is in [RESULTS.md](RESULTS.md) an
   (KDD Cup 99) raise scikit-learn's own error, which asks to convert them. There were no crashes, out-of-memory errors
   or timeouts, from 150 rows to 436,000 rows and up to 3,072 features. The median fit took 7 s (classification) and
   29 s (regression), and peak memory stayed at or below 2.6 GB.
-- **Accuracy depends on size.** Macro-F1 for classification and R² for regression, PDL minus base learner:
-
-  | Training rows | Classification: mean gap (wins / ties / losses) | Regression: mean gap (wins / ties / losses) |
-  |---|---|---|
-  | up to 1,000 | -0.001 (10 / 10 / 10) | +0.001 (3 / 4 / 2) |
-  | 1,000 to 2,000 | -0.012 (3 / 5 / 10) | +0.002 (4 / 1 / 2) |
-  | more than 2,000 | -0.061 (5 / 3 / 35) | -0.033 (5 / 4 / 13) |
-
-  PDL is a small-data method: it ties a strong tree ensemble on average up to about 1,000 rows and wins on many
-  datasets. Above 2,000 rows it sees only a sample of the pairs and anchors, and the base learner alone is usually
-  better, so `fit` warns from 2,000 rows on. Weak learners gain most, e.g. a single decision tree on 300 digits:
+- **Small data.** PDL is a small-data method: above 2,000 rows it sees only a sample of the pairs and anchors, so
+  `fit` warns from 2,000 rows on. Weak learners gain most, e.g. a single decision tree on 300 digits:
   0.70-0.75 → 0.86-0.91 accuracy (see `notebooks/colab_quickstart.ipynb`).
-- **Imbalanced classes.** PDL's ROC AUC is on par with or better than the base learner's, but by default it
-  under-predicts minority classes. `class_weight="balanced"` raised macro-F1 by up to 0.05 on 10 imbalanced datasets,
-  and never lowered it (`imbalance_probe.py`).
+- **Imbalanced classes.** `class_weight="balanced"` raised macro-F1 by up to 0.05 on 10 imbalanced datasets, and
+  never lowered it (`imbalance_probe.py`).
 
 ## What the campaign changed in pdll 1.0
 
