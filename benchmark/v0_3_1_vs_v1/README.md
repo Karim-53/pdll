@@ -11,6 +11,12 @@ split of each task, mean accuracy over the folds. Run on 2026-10-21.
   that 0.3.1's raw output had the wrong labels.
 - Both versions use the same base learner, `ExtraTreesClassifier(class_weight="balanced")`. 0.3.1 trains on every
   pair and uses every training row as an anchor; 1.0 caps them at 100,000 pairs and 500 anchors.
+- **These results come from the first version of `run_task.py` (commit `2781b30`).** In that version 0.3.1's base
+  learner was unseeded (its constructor has no `random_state`) and the best-case encoding read the whole dataset.
+  None of these 21 tasks has text columns (their categories come from the OpenML dataset declaration, which 1.0
+  uses too), so the encoding difference does not matter here; the missing seed means a rerun of 0.3.1 gives
+  slightly different numbers, so read differences of up to ±0.005 as ties. The current script seeds 0.3.1 and
+  encodes text columns per fold; it was not rerun.
 - Each run has its own process, a timeout (45 min, 60 min for the last 0.3.1 run) and a 10 GB memory watchdog.
 - The rank in brackets is among the public OpenML methods on the same task and split: 1 + the number of methods
   whose best public run beats the score by more than 0.0005 (a method = an OpenML flow name without its version
