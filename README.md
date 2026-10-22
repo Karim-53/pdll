@@ -1,7 +1,7 @@
 <h1 align="center">Pairwise Difference Learning (pdll)</h1>
 
 <p align="center">
-  <b>A scikit-learn meta-estimator that makes tree models more accurate on small tabular datasets by learning from <i>pairs of points</i>.</b>
+  <b>A scikit-learn meta-estimator that trains your tree model on <i>pairs of points</i>, for small tabular datasets.</b>
 </p>
 
 <p align="center">
@@ -23,7 +23,7 @@
 - 🧾 **Raw DataFrames welcome** (pandas, polars or pyarrow): string, category, bool and nullable columns are encoded for you; missing values go straight to base learners that support them (e.g. HistGradientBoosting).
 - 📈 **More accurate tree models**: in the paper, PDL improves tree-based learners on 99 OpenML datasets (macro-F1). In the [end-to-end suite](#evaluation) that CI runs on every change, it wins 18 of 30 dataset/learner pairs (11 losses) and raises mean macro-F1 from 0.873 to 0.894.
 - 🧪 **Validated on 131 real datasets** ([results](benchmark/real_world/README.md)): raw Kaggle, OpenML, scikit-learn and Zindi data, with no crashes and at most 2.6 GB of memory.
-- 🏁 **Benchmarked against 10 default classifiers** on 35 small OpenML-CC18 tasks ([results](benchmark/small_data/RESULTS.md)): in the top group, on par with random forest and extra trees, behind CatBoost.
+- 🏁 **Benchmarked against 10 classifiers** ([results](benchmark/small_data/RESULTS.md); every model at default settings, the 35 OpenML-CC18 tasks with 500–2,000 rows, 10-fold CV, accuracy): 5th of 11 by mean rank and in the top statistical group, practically equivalent to random forest and extra trees (within 1 pp); CatBoost is more accurate.
 - 🛡️ **Tested**: Python 3.9–3.14, numpy ≥ 1.23, pandas ≥ 1.5, scikit-learn ≥ 1.2 (Kaggle and Colab stacks included), Linux, Windows and macOS.
 
 [<img src="https://github.com/user-attachments/assets/e15057cf-fef8-4061-8bb9-611adde0128b" width="70%">](https://youtu.be/5Yl6yFiNK3U?si=SXuRrO3mibD188xF "Learn more about PDL on youtube")
@@ -93,11 +93,11 @@ More in [`examples/`](examples/): uncertainty from the per-anchor posteriors (`p
 `fit` also accepts `sample_weight`. A pair (i, j) is weighted w_i·w_j, which is exactly equivalent to repeating rows.
 
 ## When to use it
-- ✅ **Small tabular data**: up to about 2,000 training rows. In the [real-data benchmark](benchmark/real_world/) PDL matches its base learner on average below 1,000 rows and beats it on many datasets. Above 2,000 rows it was usually *less* accurate than the base learner alone, and `fit` warns you.
-- ✅ **Tree-based base learners**: DecisionTree, RandomForest, ExtraTrees, Bagging, (Hist)GradientBoosting. The weaker the learner, the larger the gain (a single decision tree gains 15 points on small digits data).
+- ✅ **Small tabular data**: up to about 2,000 training rows. In the [real-data benchmark](benchmark/real_world/), PDL's macro-F1 was on average within 0.001 of its base learner below 1,000 training rows (10 wins / 10 ties / 10 losses, ties within ±0.005) and 0.012 lower from 1,000 to 2,000 rows (3 / 5 / 10). Above 2,000 rows it was usually *less* accurate than the base learner alone (5 / 3 / 35), and `fit` warns you.
+- ✅ **Tree-based base learners**: DecisionTree, RandomForest, ExtraTrees, Bagging, (Hist)GradientBoosting. The weaker the learner, the larger the gain (a single decision tree on 300 rows of digits: macro-F1 0.75 → 0.93 in the CI suite).
 - ⚖️ **Imbalanced classes**: use `class_weight="balanced"`. PDL ranks well (its ROC AUC is on par or better) but under-predicts minority classes by default.
 - ⚠️ **Parametric base learners** (logistic regression, SVM, kNN, naive Bayes, MLP) rarely gain from PDL; pdll warns you.
-- ⏱️ **Cost**: training sees up to `max_pairs` pairs with 3× the features, and prediction compares every point with up to `max_anchors` anchors. With the defaults, a typical dataset fits in seconds and stays well under 2 GB of memory, whatever its size. For more accuracy on a few thousand rows, raise `max_pairs` (e.g. `1_000_000`), at about 10× the time and memory.
+- ⏱️ **Cost**: training sees up to `max_pairs` pairs with 3× the features, and prediction compares every point with up to `max_anchors` anchors. With the defaults, a typical dataset fits in seconds and needs about 1 GB of memory; on the 131 real datasets (up to 436,000 training rows and 3,072 features) peak memory stayed at or below 2.6 GB. For more accuracy on a few thousand rows, raise `max_pairs` (e.g. `1_000_000`), at about 10× the time and memory.
 
 
 ## How does it work?
@@ -161,7 +161,7 @@ Finally, the predicted class is the most likely prediction:
 ## Evaluation
 
 ### Benchmark: 35 small OpenML-CC18 tasks, default settings
-PDL against 10 popular classifiers, every model with its default settings, on the 35 OpenML-CC18 tasks with 500–2,000 rows (official 10-fold splits, accuracy; protocol fixed before the run). PDL ranks 5th of 11 and is in the top group, within the critical difference of CatBoost. CatBoost is more accurate (−1.2 pp); PDL is practically equivalent to random forest and extra trees, not practically worse than HistGradientBoosting, LightGBM and XGBoost, and more accurate than k-NN and a decision tree. It costs more to fit (median 65 s per task, about 28× extra trees). [Results, statistics and deviations](benchmark/small_data/RESULTS.md).
+PDL against 10 popular classifiers, every model with its default settings, on the 35 OpenML-CC18 tasks with 500–2,000 rows (official 10-fold splits, accuracy; protocol fixed before the run). PDL ranks 5th of 11 and is in the top group, within the critical difference of CatBoost. CatBoost is more accurate (−1.2 pp); PDL is practically equivalent to random forest and extra trees (within 1 pp), not practically worse than LightGBM and XGBoost, borderline against HistGradientBoosting, inconclusive against logistic regression and the RBF SVM, and more accurate than k-NN and a decision tree. It costs more to fit (median 65 s per task, about 28× extra trees). [Results, statistics and deviations](benchmark/small_data/RESULTS.md).
 
 <img src="benchmark/small_data/figures/f2_pdl_minus_each_model.png" width="80%" alt="PDL accuracy minus each model's, one dot per task">
 
@@ -194,7 +194,7 @@ pip install -r requirements-benchmark.txt
 python run_benchmark.py --model DecisionTreeClassifier --data 0
 ```
 
-Scores will be stored in `./results/tmp/` directory. `pdll` 1.x reproduces the predictions of the original implementation (0.3.1) on the paper's inputs; [`tests/test_golden.py`](tests/test_golden.py) checks this on every change. On raw OpenML DataFrames, by contrast, 0.3.1 raised an error, returned near-chance labels or ran out of memory or time on 20 of 21 small OpenML-CC18 tasks, while 1.0 ran all 21 ([comparison](benchmark/v0_3_1_vs_v1/README.md)).
+Scores will be stored in `./results/tmp/` directory. `pdll` 1.x reproduces the predictions of the original implementation (0.3.1) on the paper's inputs; [`tests/test_golden.py`](tests/test_golden.py) checks this on every change.
 
 ### Experiment
 We use 99 datasets from the OpenML repository. We compare the performance of the PDC algorithm with 7 base learners. We use the macro F1 score as a metric.
@@ -376,7 +376,7 @@ The search space is inspired from TPOT a state-of-the-art library in optimizing 
 
 ### 2D datasets Examples
 ![2d datasets](./results/2d_datasets.png)
-Here we see the difference in the learned patterns between PDL and the base learner. In case PDL is compatible with the base learner (DecisionTree, RandomForest) then the scores improves. In case the base learner is not compatible with PDL (SVC, AdaBoost, ...) then the scores gets lower. 
+Here we see the difference in the learned decision boundaries between PDL and the base learner on three 2D toy datasets (one train/test split each, 40 test points). The effect on the score depends on both the dataset and the base learner (see the number in each panel): in this figure PDL lowers the decision tree's score on all three datasets, moves random forest, the neural net and AdaBoost up on one dataset and down on another, and leaves the RBF SVM unchanged. These toy examples are too small to rank methods; see the benchmark above for accuracy comparisons.
 
 
 

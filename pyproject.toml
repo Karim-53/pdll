@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "pdll"
 dynamic = ["version"]
-description = "Pairwise Difference Learning: scikit-learn meta-estimators that make tree models more accurate on small tabular data by learning from pairs of points."
+description = "Pairwise Difference Learning: scikit-learn meta-estimators that train tree models on pairs of points, for small tabular data."
 readme = "README.md"
 license = "Apache-2.0"
 license-files = ["LICENSE"]
