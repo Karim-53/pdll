@@ -1,7 +1,5 @@
 # Small-data benchmark: PDL against popular classifiers
 
-**Results: [RESULTS.md](RESULTS.md).**
-
 PDL (pdll 1.0, default settings) against ten popular classifiers, each with its default settings, on every
 OpenML-CC18 task with at most 2,000 rows: 35 tasks, the official 10-fold split of each task, raw DataFrames.
 
@@ -28,12 +26,12 @@ OpenML-CC18 task with at most 2,000 rows: 35 tasks, the official 10-fold split o
 ```shell
 pip install -e . -r benchmark/small_data/requirements.txt autorank==1.3.0 baycomp==1.0.3   # scikit-learn >= 1.6 is required
 cd benchmark/small_data
-python run_all.py --out results/cc18_small.jsonl --workers 1 --n-jobs 12 --timeout 5400   # the published setting; several hours
+python run_all.py --out results/cc18_small.jsonl --workers 1 --n-jobs 12 --timeout 5400   # one run at a time; several hours
 python public_rank.py results/cc18_small.jsonl                                            # needs openml.org
 python report.py results/cc18_small.jsonl results/openml_public.json > report.md          # ranks and the per-task table
 python analyze.py results/cc18_small.jsonl --figures figures > ANALYSIS.md               # statistics and figures
 ```
 
-`RESULTS.md` is the written summary of `report.md` and `ANALYSIS.md`. `run_all.py` skips (task, model) pairs that
+`run_all.py` skips (task, model) pairs that
 are already in the output file, so an interrupted run resumes where it stopped (`--retry-failed` also reruns errors
 and timeouts), and it refuses to start when a requested model's package or scikit-learn >= 1.6 is missing.
