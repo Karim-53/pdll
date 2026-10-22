@@ -56,7 +56,11 @@ def main():
         floor = floors[task_id] - MARGIN
         if str(task_id) in cache and cache[str(task_id)]['floor'] <= floor:
             return
-        best, complete = best_public_per_method(task_id, floor)
+        try:
+            best, complete = best_public_per_method(task_id, floor)
+        except Exception as error:  # noqa: BLE001 - OpenML outages: keep the other tasks, rerun later for this one
+            print(f'{task_id}: not fetched ({type(error).__name__}); run again later', flush=True)
+            return
         with lock:
             cache[str(task_id)] = {'floor': floor, 'complete': complete, 'best_per_method': best}
             with open(out, 'w') as f:

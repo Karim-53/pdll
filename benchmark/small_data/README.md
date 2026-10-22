@@ -1,5 +1,7 @@
 # Small-data benchmark: PDL against popular classifiers
 
+**Results: [RESULTS.md](RESULTS.md).**
+
 PDL (pdll 1.0, default settings) against ten popular classifiers, each with its default settings, on every
 OpenML-CC18 task with at most 2,000 rows: 35 tasks, the official 10-fold split of each task, raw DataFrames.
 
