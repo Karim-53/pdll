@@ -22,6 +22,7 @@
 - 🔌 **Drop-in**: works in `Pipeline`, `GridSearchCV` and `cross_val_score`, passes scikit-learn's own estimator checks, and never modifies the estimator you pass in.
 - 🧾 **Raw DataFrames welcome** (pandas, polars or pyarrow): string, category, bool and nullable columns are encoded for you; missing values go straight to base learners that support them (e.g. HistGradientBoosting).
 - 📈 **More accurate tree models**: in the paper, PDL improves tree-based learners on 99 OpenML datasets (macro-F1). In the [end-to-end suite](#evaluation) that CI runs on every change, it wins 18 of 30 dataset/learner pairs (11 losses) and raises mean macro-F1 from 0.873 to 0.894.
+- 🥈 **2nd of 11 on TabMini** ([results](benchmark/tabmini/README.md)): on 44 small binary datasets (32–500 rows), pdll at its default settings ranks 2nd of 11 untuned classifiers by mean rank of ROC AUC, behind CatBoost and ahead of random forest, XGBoost and LightGBM by mean rank.
 - 🧪 **Validated on 131 real datasets** ([results](benchmark/real_world/README.md)): raw Kaggle, OpenML, scikit-learn and Zindi data, with no crashes and at most 2.6 GB of memory.
 - 🛡️ **Tested**: Python 3.9–3.14, numpy ≥ 1.23, pandas ≥ 1.5, scikit-learn ≥ 1.2 (Kaggle and Colab stacks included), Linux, Windows and macOS.
 
@@ -158,6 +159,9 @@ Finally, the predicted class is the most likely prediction:
 </details>
 
 ## Evaluation
+
+### TabMini (44 small binary datasets)
+On [TabMini](https://github.com/RicardoKnauer/TabMini)'s 44 binary datasets (32–500 rows; its protocol: one fixed shuffle, stratified 3-fold CV), pdll 1.0.0 at default settings ranked **2nd of 11 untuned classifiers by mean rank of per-dataset ROC AUC** (3.98), behind CatBoost (3.65) and with a better mean rank than random forest (4.59), extra trees, SVM, logistic regression, LightGBM, XGBoost, HistGradientBoosting, k-NN and a decision tree. Its gaps to CatBoost and to the next four models are not statistically significant; it is significantly better than HistGradientBoosting, k-NN and the decision tree. It stays 2nd on the 30 datasets it had never been run on. [Protocol, robustness checks and limits](benchmark/tabmini/README.md).
 
 ### Real-world validation (131 datasets)
 Before release, pdll ran with default settings on 131 raw real datasets: OpenML-CC18 and CTR23 (official task splits), Kaggle datasets, scikit-learn datasets and a Zindi dataset. 129 ran, and 2 were refused with an actionable message (sparse text, multi-target). There were no crashes, out-of-memory errors or timeouts, and peak memory stayed at or below 2.6 GB. [Protocol and findings](benchmark/real_world/README.md).
