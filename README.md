@@ -188,7 +188,7 @@ pip install -r requirements-benchmark.txt
 python run_benchmark.py --model DecisionTreeClassifier --data 0
 ```
 
-Scores will be stored in `./results/tmp/` directory. `pdll` 1.x reproduces the predictions of the original implementation (0.3.1) on the paper's inputs; [`tests/test_golden.py`](tests/test_golden.py) checks this on every change.
+Scores will be stored in `./results/tmp/` directory. `pdll` 1.x reproduces the predictions of the original implementation (0.3.1) on the paper's inputs; [`tests/test_golden.py`](tests/test_golden.py) checks this on every change. On raw OpenML DataFrames, by contrast, 0.3.1 raised an error, returned near-chance labels or ran out of memory or time on 20 of 21 small OpenML-CC18 tasks, while 1.0 ran all 21 ([comparison](benchmark/v0_3_1_vs_v1/README.md)).
 
 ### Experiment
 We use 99 datasets from the OpenML repository. We compare the performance of the PDC algorithm with 7 base learners. We use the macro F1 score as a metric.
