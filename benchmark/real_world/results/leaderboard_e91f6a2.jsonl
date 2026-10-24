@@ -1,0 +1,9 @@
+{"task": 125920, "dataset": "dresses-sales", "rows": 500, "pdll": "1.0.0", "accuracy_10fold": 0.582, "best_public": 0.658, "public_methods_better": 38, "seconds": 105.7}
+{"task": 3913, "dataset": "kc2", "rows": 522, "pdll": "1.0.0", "accuracy_10fold": 0.8275, "best_public": 0.8697, "public_methods_better": 68, "seconds": 103.3}
+{"task": 14954, "dataset": "cylinder-bands", "rows": 540, "pdll": "1.0.0", "accuracy_10fold": 0.8315, "best_public": 0.8593, "public_methods_better": 2, "seconds": 92.6}
+{"task": 146819, "dataset": "climate-model-simulation-crashes", "rows": 540, "pdll": "1.0.0", "accuracy_10fold": 0.9148, "best_public": 0.9667, "public_methods_better": 10, "seconds": 51.5}
+{"task": 9946, "dataset": "wdbc", "rows": 569, "pdll": "1.0.0", "accuracy_10fold": 0.9719, "best_public": 0.9842, "public_methods_better": 26, "seconds": 65.5}
+{"task": 9971, "dataset": "ilpd", "rows": 583, "pdll": "1.0.0", "accuracy_10fold": 0.7273, "best_public": 0.7427, "public_methods_better": 8, "seconds": 60.5}
+{"task": 11, "dataset": "balance-scale", "rows": 625, "pdll": "1.0.0", "accuracy_10fold": 0.8561, "best_public": 1.0, "public_methods_better": 208, "seconds": 27.6}
+{"task": 29, "dataset": "credit-approval", "rows": 690, "pdll": "1.0.0", "accuracy_10fold": 0.8681, "best_public": 0.8884, "public_methods_better": 37, "seconds": 50.4}
+{"task": 15, "dataset": "breast-w", "rows": 699, "pdll": "1.0.0", "accuracy_10fold": 0.9714, "best_public": 0.9771, "public_methods_better": 26, "seconds": 27.2}

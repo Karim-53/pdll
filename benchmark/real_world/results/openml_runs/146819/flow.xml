@@ -1,0 +1,77 @@
+<oml:flow xmlns:oml="http://openml.org/openml">
+	<oml:name>pdll._classifier.PairwiseDifferenceClassifier</oml:name>
+	<oml:custom_name>pdll.PairwiseDifferenceClassifier</oml:custom_name>
+	<oml:class_name>pdll._classifier.PairwiseDifferenceClassifier</oml:class_name>
+	<oml:external_version>openml==0.15.1,pdll==1.0.0,sklearn==1.9.1</oml:external_version>
+	<oml:description>Pairwise Difference Classifier (PDC), a scikit-learn meta-estimator.
+
+PDC turns a (multiclass) classification task into a binary one: the base estimator learns whether
+two points belong to the *same* class from the pair ``[x_a, x_b, x_a - x_b]``. To classify a new point,
+PDC compares it with every training point (the *anchors*), whose labels are known, and turns the
+predicted similarities into class probabilities. Tree ensembles such as ExtraTrees or RandomForest
+typically gain accuracy from this, especially on small tabular datasets.
+
+Read more in Belaid, Rabus &amp; Hüllermeier, *Pairwise Difference Learning for Classification*,
+Discovery Science 2024, https://arxiv.org/abs/2406.20031 (``pdll.__citation__`` holds the BibTeX).</oml:description>
+	<oml:language>English</oml:language>
+	<oml:dependencies>sklearn==1.9.1
+numpy&gt;=1.24.1
+scipy&gt;=1.10.0
+joblib&gt;=1.4.0
+threadpoolctl&gt;=3.5.0</oml:dependencies>
+	<oml:parameter>
+		<oml:name>class_weight</oml:name>
+		<oml:data_type>dict</oml:data_type>
+		<oml:default_value>null</oml:default_value>
+		<oml:description>Weights of the classes, applied as sample weights (see ``fit``). ``"balanced"`` gives every class the same
+    total weight; on imbalanced data this counters PDL's tendency to under-predict minority classes
+    (in our benchmark: up to +0.05 macro-F1, never worse). Needs a base estimator whose ``fit`` accepts
+    ``sample_weight``. ``None`` (default) weighs every row equally, as in the paper</oml:description>
+	</oml:parameter>
+	<oml:parameter>
+		<oml:name>estimator</oml:name>
+		<oml:data_type>classifier</oml:data_type>
+		<oml:default_value>null</oml:default_value>
+		<oml:description>Binary classifier used on the pairs. It is cloned, never modified. ``None`` means
+    ``ExtraTreesClassifier(class_weight="balanced", n_jobs=-1)``. Prefer tree-based models and
+    ``class_weight="balanced"``: only about 1/n_classes of the pairs are "same class"
+
+use_prior : {"auto", True, False}, default="auto"
+    How similarities become probabilities. ``True``: the prior-based posterior of the paper,
+    averaged over anchors. ``False``: the mean similarity to each class, normalised
+    ``"auto"``: ``True`` if some class has fewer than 5 training rows, else ``False``</oml:description>
+	</oml:parameter>
+	<oml:parameter>
+		<oml:name>max_anchors</oml:name>
+		<oml:data_type>int or None</oml:data_type>
+		<oml:default_value>500</oml:default_value>
+		<oml:description>Prediction compares each point with every anchor, so its cost grows with the number of anchors
+    If the training set is larger, a class-stratified random subset of ``max_anchors`` rows is used
+    as anchors. ``None`` uses every training row
+
+max_pairs : "auto", int or None, default="auto"
+    The base estimator is trained on n² pairs. If that exceeds ``max_pairs``, a uniform random subset
+    of ``max_pairs`` pairs is used. ``"auto"`` means 100,000 pairs (every pair up to 316 training rows), fewer for
+    very wide data so the pair matrix stays below 0.5 GB. ``None`` uses every pair, as in the paper; time and
+    memory then grow with n²</oml:description>
+	</oml:parameter>
+	<oml:parameter>
+		<oml:name>max_pairs</oml:name>
+		<oml:default_value>"auto"</oml:default_value>
+	</oml:parameter>
+	<oml:parameter>
+		<oml:name>random_state</oml:name>
+		<oml:data_type>int</oml:data_type>
+		<oml:default_value>0</oml:default_value>
+		<oml:description>Seeds the pair and anchor subsampling, and the base estimator if its own ``random_state`` is None.</oml:description>
+	</oml:parameter>
+	<oml:parameter>
+		<oml:name>use_prior</oml:name>
+		<oml:default_value>"auto"</oml:default_value>
+	</oml:parameter>
+	<oml:tag>openml-python</oml:tag>
+	<oml:tag>sklearn</oml:tag>
+	<oml:tag>scikit-learn</oml:tag>
+	<oml:tag>python</oml:tag>
+	<oml:tag>sklearn_1.9.1</oml:tag>
+</oml:flow>
